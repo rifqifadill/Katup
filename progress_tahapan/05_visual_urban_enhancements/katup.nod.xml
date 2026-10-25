@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <!-- Pintu Masuk Arteri Luar Kota (Barat) -->
+    <node id="node_W_far" x="-550.0" y="0.0" type="priority"/>
+    
+    <!-- SIMPANG 1: Simpang 4 Barat (Gerbang Masuk Kawasan Permukiman & Arteri Barat) -->
+    <node id="node_W" x="-300.0" y="0.0" type="priority"/>
+    <node id="node_NW" x="-300.0" y="150.0" type="priority"/>
+    <node id="node_SW" x="-300.0" y="-150.0" type="priority"/>
+    
+    <!-- SIMPANG 2: Simpang 4 Titik Urai (Simpang Bersinyal Terkendali KATUP) -->
+    <node id="titik_urai" x="0.0" y="0.0" type="traffic_light"/>
+    
+    <!-- SIMPANG 3: Simpang 4 Boulevard Utara -->
+    <node id="node_N" x="0.0" y="150.0" type="priority"/>
+    <node id="node_N_far" x="0.0" y="320.0" type="priority"/>
+    
+    <!-- SIMPANG 4: Simpang 4 Kawasan Selatan (Terminal & Lingkar Selatan) -->
+    <node id="node_S" x="0.0" y="-150.0" type="priority"/>
+    <node id="node_S_far" x="0.0" y="-320.0" type="priority"/>
+    
+    <!-- KORIDOR PENYEMPITAN / BOTTLENECK (Galian Proyek Saluran Air) -->
+    <node id="node_bottle_in" x="200.0" y="0.0" type="priority"/>
+    <node id="node_bottle_out" x="350.0" y="0.0" type="priority"/>
+    <node id="node_merge" x="450.0" y="0.0" type="priority"/>
+    
+    <!-- SIMPANG 5: Simpang 4 Bypass Timur (Pertemuan Bypass & Akses Tol Timur) -->
+    <node id="node_alt_corner" x="450.0" y="150.0" type="priority"/>
+    <node id="node_NE" x="450.0" y="320.0" type="priority"/>
+    <node id="node_NE_east" x="650.0" y="150.0" type="priority"/>
+    
+    <!-- SIMPANG 6: Simpang 4 Gerbang Timur CBD (Pusat Kota) -->
+    <node id="node_E" x="650.0" y="0.0" type="priority"/>
+    <node id="node_SE" x="650.0" y="-150.0" type="priority"/>
+    <node id="node_CBD" x="850.0" y="0.0" type="priority"/>
+</nodes>

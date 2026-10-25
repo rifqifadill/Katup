@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- =================================================================== -->
+    <!-- DISTRIBUSI MOBIL PENUMPANG REALISTIS (BENTUK MOBIL ASLI)           -->
+    <!-- Menggunakan guiShape passenger/sedan, hatchback, wagon, van, taxi   -->
+    <!-- =================================================================== -->
+    <vTypeDistribution id="car">
+        <!-- Sedan Silver Metalik -->
+        <vType id="sedan_silver" vClass="passenger" guiShape="passenger/sedan" length="4.55" width="1.80" height="1.45" accel="2.8" decel="4.5" sigma="0.4" maxSpeed="16.67" color="215,220,225" probability="0.22"/>
+        <!-- Sedan Hitam Eksekutif -->
+        <vType id="sedan_black" vClass="passenger" guiShape="passenger/sedan" length="4.60" width="1.82" height="1.45" accel="2.8" decel="4.5" sigma="0.4" maxSpeed="16.67" color="25,28,32" probability="0.18"/>
+        <!-- Sedan Putih Mutiara -->
+        <vType id="sedan_white" vClass="passenger" guiShape="passenger/sedan" length="4.50" width="1.80" height="1.45" accel="2.8" decel="4.5" sigma="0.4" maxSpeed="16.67" color="245,248,252" probability="0.15"/>
+        <!-- Sedan Biru Tua Metalik -->
+        <vType id="sedan_blue" vClass="passenger" guiShape="passenger/sedan" length="4.55" width="1.80" height="1.45" accel="2.8" decel="4.5" sigma="0.4" maxSpeed="16.67" color="25,70,140" probability="0.08"/>
+        <!-- Sedan Merah Metalik -->
+        <vType id="sedan_red" vClass="passenger" guiShape="passenger/sedan" length="4.50" width="1.80" height="1.45" accel="2.8" decel="4.5" sigma="0.4" maxSpeed="16.67" color="185,30,35" probability="0.07"/>
+        <!-- Compact Hatchback Abu-Abu -->
+        <vType id="hatchback_gray" vClass="passenger" guiShape="passenger/hatchback" length="4.05" width="1.75" height="1.48" accel="2.6" decel="4.5" sigma="0.4" maxSpeed="15.0" color="110,115,122" probability="0.12"/>
+        <!-- Family SUV / Station Wagon Gelap -->
+        <vType id="suv_dark" vClass="passenger" guiShape="passenger/wagon" length="4.80" width="1.90" height="1.70" accel="2.7" decel="4.5" sigma="0.4" maxSpeed="16.0" color="45,52,62" probability="0.10"/>
+        <!-- Taksi Kuning Perkotaan -->
+        <vType id="car_taxi" vClass="passenger" guiShape="passenger/sedan" length="4.50" width="1.80" height="1.45" accel="2.9" decel="4.8" sigma="0.4" maxSpeed="16.67" color="245,185,15" probability="0.06"/>
+    </vTypeDistribution>
+
+    <!-- Kendaraan Komersial & Layanan Tambahan -->
+    <vType id="delivery_van" vClass="delivery" guiShape="delivery" length="5.80" width="2.05" height="2.30" accel="2.0" decel="3.8" sigma="0.5" maxSpeed="13.89" color="235,235,240"/>
+    <vType id="city_bus" vClass="bus" guiShape="bus" length="11.80" width="2.50" height="3.20" accel="1.5" decel="3.2" sigma="0.4" maxSpeed="13.89" color="20,120,200"/>
+    <vType id="truck_logistics" vClass="truck" guiShape="truck" length="8.50" width="2.40" height="3.20" accel="1.4" decel="3.0" sigma="0.5" maxSpeed="11.11" color="35,80,140"/>
+
+    <!-- =================================================================== -->
+    <!-- DEFINISI RUTE KENDARAAN                                            -->
+    <!-- =================================================================== -->
+    <!-- Rute 1: Jalur Utama (Melintasi Penyempitan / Bottleneck Galian Proyek) -->
+    <route id="route_main" edges="edge_W2J edge_pre_bottle edge_bottleneck edge_bottle_exit edge_post_merge"/>
+    
+    <!-- Rute 2: Jalur Alternatif (Bypass memutari galian lewat Utara) -->
+    <route id="route_bypass" edges="edge_W2J edge_J2N edge_alt_1 edge_alt_2 edge_post_merge"/>
+    
+    <!-- Rute Arus Silang (Utara <-> Selatan) Melintasi Simpang Titik Urai -->
+    <route id="route_NS" edges="edge_N_far2N edge_N2J edge_J2S edge_S2S_far"/>
+    <route id="route_SN" edges="edge_S_far2S edge_S2J edge_J2N edge_N2N_far"/>
+
+    <!-- Rute Antar Simpang Baru (Menghidupkan Simpang Lainnya) -->
+    <!-- Simpang Barat ke Boulevard Utara -->
+    <route id="route_west_to_north" edges="edge_W_far2W edge_W2NW edge_NW2N"/>
+    <!-- Simpang Barat ke Kawasan Selatan -->
+    <route id="route_west_to_south" edges="edge_W_far2W edge_W2SW edge_SW2S"/>
+    <!-- Boulevard Utara Lanjut ke Tol Timur -->
+    <route id="route_north_to_east" edges="edge_NW2N edge_alt_1 edge_alt2NE_east"/>
+    <!-- Akses Timur Masuk Menuju CBD -->
+    <route id="route_east_to_cbd" edges="edge_NE_east2E edge_E2CBD"/>
+    <!-- Lingkar Selatan Menuju Timur -->
+    <route id="route_south_to_east" edges="edge_SW2S edge_S2SE edge_SE2E"/>
+
+    <!-- =================================================================== -->
+    <!-- ARUS LALU LINTAS (TRAFFIC FLOWS)                                   -->
+    <!-- =================================================================== -->
+    <!-- Arus Utama Menuju Bottleneck: 1500 kendaraan/jam (Fokus KATUP) -->
+    <flow id="flow_main" type="car" route="route_main" begin="0" end="3600" vehsPerHour="1500" departLane="best" departSpeed="max"/>
+    
+    <!-- Arus Silang Utara - Selatan: 350 kendaraan/jam -->
+    <flow id="flow_NS" type="car" route="route_NS" begin="0" end="3600" vehsPerHour="350" departLane="best" departSpeed="max"/>
+    <flow id="flow_SN" type="car" route="route_SN" begin="0" end="3600" vehsPerHour="350" departLane="best" departSpeed="max"/>
+
+    <!-- Arus Kendaraan di Simpang Tambahan (Menjadikan Jaringan Kota Hidup & Aktif) -->
+    <flow id="flow_w2n" type="car" route="route_west_to_north" begin="0" end="3600" vehsPerHour="200" departLane="best" departSpeed="max"/>
+    <flow id="flow_w2s" type="car" route="route_west_to_south" begin="0" end="3600" vehsPerHour="200" departLane="best" departSpeed="max"/>
+    <flow id="flow_n2e" type="car" route="route_north_to_east" begin="0" end="3600" vehsPerHour="250" departLane="best" departSpeed="max"/>
+    <flow id="flow_e2cbd" type="delivery_van" route="route_east_to_cbd" begin="0" end="3600" vehsPerHour="180" departLane="best" departSpeed="max"/>
+    <flow id="flow_s2e" type="truck_logistics" route="route_south_to_east" begin="0" end="3600" vehsPerHour="150" departLane="best" departSpeed="max"/>
+</routes>

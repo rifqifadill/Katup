@@ -1,0 +1,30 @@
+<viewsettings>
+    <scheme name="KATUP_Realistic_Urban">
+        <opengl antialiase="1" dither="1"/>
+        <background backgroundColor="48,115,52" showGrid="0"/>
+        <edges laneEdgeMode="0" scaleMode="0" laneShowBorders="1" showLinkDecals="1" showRails="0" hideConnectors="1" widthExaggeration="1.00">
+            <colorScheme name="uniform">
+                <entry color="38,41,45" name="road"/>
+                <entry color="200,205,210" name="sidewalk"/>
+                <entry color="192,66,44" name="bike lane"/>
+                <entry color="45,115,48" name="green verge"/>
+                <entry color="45,130,195" name="waterway"/>
+            </colorScheme>
+        </edges>
+        <!-- vehicleQuality="2" merender bentuk mobil asli dengan kap, atap, kaca, lampu & roda -->
+        <vehicles vehicleMode="0" vehicleQuality="2" vehicle_minSize="1.50" vehicle_exaggeration="1.00" vehicle_constantSize="0" showBlinker="1" showBrakeLight="1">
+            <colorScheme name="given vehicle/type/route color">
+                <entry color="yellow"/>
+            </colorScheme>
+        </vehicles>
+        <junctions junctionMode="0" drawShape="1">
+            <colorScheme name="uniform">
+                <entry color="38,41,45"/>
+            </colorScheme>
+        </junctions>
+        <polys poly_minSize="0.00" poly_exaggeration="1.00" polyName_show="0"/>
+        <pois poi_minSize="1.00" poi_exaggeration="1.00" poiName_show="1" poiName_size="14.00" poiName_color="255,255,255"/>
+        <viewport zoom="120" x="220" y="50"/>
+        <delay value="45"/>
+    </scheme>
+</viewsettings>
