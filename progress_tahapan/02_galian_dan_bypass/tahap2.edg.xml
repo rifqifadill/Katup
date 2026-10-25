@@ -1,0 +1,22 @@
+<edges>
+    <edge id="W2J" from="W" to="J" numLanes="2" speed="13.89"/>
+    <edge id="J2W" from="J" to="W" numLanes="2" speed="13.89"/>
+    <edge id="N2J" from="N" to="J" numLanes="2" speed="11.11"/>
+    <edge id="J2N" from="J" to="N" numLanes="2" speed="11.11"/>
+    <edge id="S2J" from="S" to="J" numLanes="2" speed="11.11"/>
+    <edge id="J2S" from="J" to="S" numLanes="2" speed="11.11"/>
+    
+    <!-- Ruas Sebelum Galian (2 lajur) -->
+    <edge id="sebelum_galian" from="J" to="galian_masuk" numLanes="2" speed="13.89"/>
+    
+    <!-- Titik Galian Jalan (Menyempit jadi 1 lajur, zona lambat) -->
+    <edge id="area_galian" from="galian_masuk" to="galian_keluar" numLanes="1" speed="3.50"/>
+    
+    <!-- Ruas Setelah Galian -->
+    <edge id="setelah_galian" from="galian_keluar" to="titik_gabung" numLanes="2" speed="13.89"/>
+    <edge id="keluar_timur" from="titik_gabung" to="E" numLanes="2" speed="13.89"/>
+    
+    <!-- Jalur Bypass Alternatif -->
+    <edge id="bypass_1" from="N" to="bypass_pojok" numLanes="2" speed="13.89"/>
+    <edge id="bypass_2" from="bypass_pojok" to="titik_gabung" numLanes="2" speed="11.11"/>
+</edges>

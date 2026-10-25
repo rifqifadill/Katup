@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-10-05T11:05:39.813650+07:00 by Eclipse SUMO netconvert 1.27.1
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="C:\Users\rifqi\KATUP_Simulation\progress_tahapan\02_galian_dan_bypass\tahap2.nod.xml"/>
+        <edge-files value="C:\Users\rifqi\KATUP_Simulation\progress_tahapan\02_galian_dan_bypass\tahap2.edg.xml"/>
+        <connection-files value="C:\Users\rifqi\KATUP_Simulation\progress_tahapan\02_galian_dan_bypass\tahap2.con.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\rifqi\KATUP_Simulation\progress_tahapan\02_galian_dan_bypass\tahap2.net.xml"/>
+    </output>
+
+</netconvertConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="300.00,150.00" convBoundary="0.00,0.00,950.00,300.00" origBoundary="-300.00,-150.00,650.00,150.00" projParameter="!"/>
+
+    <edge id=":J_0" function="internal">
+        <lane id=":J_0_0" index="0" speed="6.51" length="9.03" shape="295.20,160.40 294.85,157.95 293.80,156.20 292.05,155.15 289.60,154.80"/>
+    </edge>
+    <edge id=":J_1" function="internal">
+        <lane id=":J_1_0" index="0" speed="11.11" length="20.80" shape="295.20,160.40 295.20,139.60"/>
+        <lane id=":J_1_1" index="1" speed="11.11" length="20.80" shape="298.40,160.40 298.40,139.60"/>
+    </edge>
+    <edge id=":J_3" function="internal">
+        <lane id=":J_3_0" index="0" speed="9.26" length="5.01" shape="298.40,160.40 299.11,155.44"/>
+    </edge>
+    <edge id=":J_4" function="internal">
+        <lane id=":J_4_0" index="0" speed="3.65" length="1.44" shape="298.40,160.40 299.20,159.20"/>
+    </edge>
+    <edge id=":J_14" function="internal">
+        <lane id=":J_14_0" index="0" speed="9.26" length="14.34" shape="299.11,155.44 299.15,155.15 301.40,151.40 305.15,149.15 310.40,148.40"/>
+    </edge>
+    <edge id=":J_15" function="internal">
+        <lane id=":J_15_0" index="0" speed="3.65" length="3.23" shape="299.20,159.20 300.00,158.80 300.80,159.20 301.60,160.40"/>
+    </edge>
+    <edge id=":J_5" function="internal">
+        <lane id=":J_5_0" index="0" speed="6.51" length="9.03" shape="304.80,139.60 305.15,142.05 306.20,143.80 307.95,144.85 310.40,145.20"/>
+    </edge>
+    <edge id=":J_6" function="internal">
+        <lane id=":J_6_0" index="0" speed="11.11" length="20.80" shape="304.80,139.60 304.80,160.40"/>
+        <lane id=":J_6_1" index="1" speed="11.11" length="20.80" shape="301.60,139.60 301.60,160.40"/>
+    </edge>
+    <edge id=":J_8" function="internal">
+        <lane id=":J_8_0" index="0" speed="9.26" length="5.01" shape="301.60,139.60 300.89,144.56"/>
+    </edge>
+    <edge id=":J_9" function="internal">
+        <lane id=":J_9_0" index="0" speed="3.65" length="1.44" shape="301.60,139.60 300.80,140.80"/>
+    </edge>
+    <edge id=":J_16" function="internal">
+        <lane id=":J_16_0" index="0" speed="9.26" length="14.34" shape="300.89,144.56 300.85,144.85 298.60,148.60 294.85,150.85 289.60,151.60"/>
+    </edge>
+    <edge id=":J_17" function="internal">
+        <lane id=":J_17_0" index="0" speed="3.65" length="3.23" shape="300.80,140.80 300.00,141.20 299.20,140.80 298.40,139.60"/>
+    </edge>
+    <edge id=":J_10" function="internal">
+        <lane id=":J_10_0" index="0" speed="13.89" length="20.80" shape="289.60,145.20 310.40,145.20"/>
+    </edge>
+    <edge id=":J_11" function="internal">
+        <lane id=":J_11_0" index="0" speed="10.36" length="24.51" shape="289.60,145.20 296.25,146.15 301.00,149.00 303.85,153.75 304.80,160.40"/>
+    </edge>
+    <edge id=":J_12" function="internal">
+        <lane id=":J_12_0" index="0" speed="13.89" length="20.80" shape="289.60,148.40 310.40,148.40"/>
+    </edge>
+    <edge id=":J_13" function="internal">
+        <lane id=":J_13_0" index="0" speed="9.26" length="19.35" shape="289.60,148.40 294.85,149.15 298.60,151.40 300.85,155.15 301.60,160.40"/>
+    </edge>
+    <edge id=":N_0" function="internal">
+        <lane id=":N_0_0" index="0" speed="6.51" length="9.03" shape="304.80,289.60 305.15,292.05 306.20,293.80 307.95,294.85 310.40,295.20"/>
+        <lane id=":N_0_1" index="1" speed="8.00" length="14.19" shape="301.60,289.60 302.15,293.45 303.80,296.20 306.55,297.85 310.40,298.40"/>
+    </edge>
+    <edge id=":N_2" function="internal">
+        <lane id=":N_2_0" index="0" speed="3.65" length="4.67" shape="301.60,289.60 300.80,290.80 300.00,291.20 299.20,290.80 298.40,289.60"/>
+    </edge>
+    <edge id=":S_0" function="internal">
+        <lane id=":S_0_0" index="0" speed="3.65" length="4.67" shape="298.40,0.00 299.20,-1.20 300.00,-1.60 300.80,-1.20 301.60,0.00"/>
+    </edge>
+    <edge id=":W_0" function="internal">
+        <lane id=":W_0_0" index="0" speed="3.65" length="4.67" shape="0.00,151.60 -1.20,150.80 -1.60,150.00 -1.20,149.20 0.00,148.40"/>
+    </edge>
+    <edge id=":bypass_pojok_0" function="internal">
+        <lane id=":bypass_pojok_0_0" index="0" speed="3.90" length="2.58" shape="743.60,295.20 744.30,295.10 744.80,294.80 745.10,294.30 745.20,293.60"/>
+        <lane id=":bypass_pojok_0_1" index="1" speed="6.08" length="7.74" shape="743.60,298.40 745.70,298.10 747.20,297.20 748.10,295.70 748.40,293.60"/>
+    </edge>
+    <edge id=":galian_keluar_0" function="internal">
+        <lane id=":galian_keluar_0_0" index="0" speed="8.70" length="8.40" shape="646.00,148.40 648.46,147.90 650.00,146.80 651.54,145.70 654.00,145.20"/>
+        <lane id=":galian_keluar_0_1" index="1" speed="8.70" length="8.40" shape="646.00,148.40 654.00,148.40"/>
+    </edge>
+    <edge id=":galian_masuk_0" function="internal">
+        <lane id=":galian_masuk_0_0" index="0" speed="8.70" length="8.40" shape="496.00,145.20 498.46,145.70 500.00,146.80 501.54,147.90 504.00,148.40"/>
+        <lane id=":galian_masuk_0_1" index="1" speed="8.70" length="8.40" shape="496.00,148.40 504.00,148.40"/>
+    </edge>
+    <edge id=":titik_gabung_0" function="internal">
+        <lane id=":titik_gabung_0_0" index="0" speed="8.00" length="14.19" shape="745.20,154.00 745.75,150.15 747.40,147.40 750.15,145.75 754.00,145.20"/>
+        <lane id=":titik_gabung_0_1" index="1" speed="6.51" length="9.03" shape="748.40,154.00 748.75,151.55 749.80,149.80 751.55,148.75 754.00,148.40"/>
+    </edge>
+    <edge id=":titik_gabung_2" function="internal">
+        <lane id=":titik_gabung_2_0" index="0" speed="13.89" length="14.40" shape="739.60,145.20 754.00,145.20"/>
+        <lane id=":titik_gabung_2_1" index="1" speed="13.89" length="14.40" shape="739.60,148.40 754.00,148.40"/>
+    </edge>
+
+    <edge id="J2N" from="J" to="N" priority="-1">
+        <lane id="J2N_0" index="0" speed="11.11" length="129.20" shape="304.80,160.40 304.80,289.60"/>
+        <lane id="J2N_1" index="1" speed="11.11" length="129.20" shape="301.60,160.40 301.60,289.60"/>
+    </edge>
+    <edge id="J2S" from="J" to="S" priority="-1">
+        <lane id="J2S_0" index="0" speed="11.11" length="139.60" shape="295.20,139.60 295.20,0.00"/>
+        <lane id="J2S_1" index="1" speed="11.11" length="139.60" shape="298.40,139.60 298.40,0.00"/>
+    </edge>
+    <edge id="J2W" from="J" to="W" priority="-1">
+        <lane id="J2W_0" index="0" speed="13.89" length="289.60" shape="289.60,154.80 0.00,154.80"/>
+        <lane id="J2W_1" index="1" speed="13.89" length="289.60" shape="289.60,151.60 0.00,151.60"/>
+    </edge>
+    <edge id="N2J" from="N" to="J" priority="-1">
+        <lane id="N2J_0" index="0" speed="11.11" length="129.20" shape="295.20,289.60 295.20,160.40"/>
+        <lane id="N2J_1" index="1" speed="11.11" length="129.20" shape="298.40,289.60 298.40,160.40"/>
+    </edge>
+    <edge id="S2J" from="S" to="J" priority="-1">
+        <lane id="S2J_0" index="0" speed="11.11" length="139.60" shape="304.80,0.00 304.80,139.60"/>
+        <lane id="S2J_1" index="1" speed="11.11" length="139.60" shape="301.60,0.00 301.60,139.60"/>
+    </edge>
+    <edge id="W2J" from="W" to="J" priority="-1">
+        <lane id="W2J_0" index="0" speed="13.89" length="289.60" shape="0.00,145.20 289.60,145.20"/>
+        <lane id="W2J_1" index="1" speed="13.89" length="289.60" shape="0.00,148.40 289.60,148.40"/>
+    </edge>
+    <edge id="area_galian" from="galian_masuk" to="galian_keluar" priority="-1">
+        <lane id="area_galian_0" index="0" speed="3.50" length="142.00" shape="504.00,148.40 646.00,148.40"/>
+    </edge>
+    <edge id="bypass_1" from="N" to="bypass_pojok" priority="-1">
+        <lane id="bypass_1_0" index="0" speed="13.89" length="433.20" shape="310.40,295.20 743.60,295.20"/>
+        <lane id="bypass_1_1" index="1" speed="13.89" length="433.20" shape="310.40,298.40 743.60,298.40"/>
+    </edge>
+    <edge id="bypass_2" from="bypass_pojok" to="titik_gabung" priority="-1">
+        <lane id="bypass_2_0" index="0" speed="11.11" length="139.60" shape="745.20,293.60 745.20,154.00"/>
+        <lane id="bypass_2_1" index="1" speed="11.11" length="139.60" shape="748.40,293.60 748.40,154.00"/>
+    </edge>
+    <edge id="keluar_timur" from="titik_gabung" to="E" priority="-1">
+        <lane id="keluar_timur_0" index="0" speed="13.89" length="196.00" shape="754.00,145.20 950.00,145.20"/>
+        <lane id="keluar_timur_1" index="1" speed="13.89" length="196.00" shape="754.00,148.40 950.00,148.40"/>
+    </edge>
+    <edge id="sebelum_galian" from="J" to="galian_masuk" priority="-1">
+        <lane id="sebelum_galian_0" index="0" speed="13.89" length="185.60" shape="310.40,145.20 496.00,145.20"/>
+        <lane id="sebelum_galian_1" index="1" speed="13.89" length="185.60" shape="310.40,148.40 496.00,148.40"/>
+    </edge>
+    <edge id="setelah_galian" from="galian_keluar" to="titik_gabung" priority="-1">
+        <lane id="setelah_galian_0" index="0" speed="13.89" length="85.60" shape="654.00,145.20 739.60,145.20"/>
+        <lane id="setelah_galian_1" index="1" speed="13.89" length="85.60" shape="654.00,148.40 739.60,148.40"/>
+    </edge>
+
+    <tlLogic id="J" type="static" programID="0" offset="0">
+        <phase duration="42" state="GGGggGGGggrrrr"/>
+        <phase duration="3"  state="Gyyyyyyyygrrrr"/>
+        <phase duration="42" state="GrrrrrrrrGGgGG"/>
+        <phase duration="3"  state="Grrrrrrrryyyyy"/>
+    </tlLogic>
+
+    <junction id="E" type="dead_end" x="950.00" y="150.00" incLanes="keluar_timur_0 keluar_timur_1" intLanes="" shape="950.00,143.60 950.00,150.00"/>
+    <junction id="J" type="traffic_light" x="300.00" y="150.00" incLanes="N2J_0 N2J_1 S2J_0 S2J_1 W2J_0 W2J_1" intLanes=":J_0_0 :J_1_0 :J_1_1 :J_14_0 :J_15_0 :J_5_0 :J_6_0 :J_6_1 :J_16_0 :J_17_0 :J_10_0 :J_11_0 :J_12_0 :J_13_0" shape="293.60,160.40 306.40,160.40 306.51,157.22 306.84,154.62 307.40,152.60 308.18,151.16 309.18,150.29 310.40,150.00 310.40,143.60 308.18,143.16 307.40,142.60 306.84,141.82 306.51,140.82 306.40,139.60 293.60,139.60 293.16,141.82 292.60,142.60 291.82,143.16 290.82,143.49 289.60,143.60 289.60,156.40 291.82,156.84 292.60,157.40 293.16,158.18 293.49,159.18">
+        <request index="0"  response="00000000000000" foes="00000000000000" cont="0"/>
+        <request index="1"  response="11110000000000" foes="11111100000000" cont="0"/>
+        <request index="2"  response="11110000000000" foes="11111100000000" cont="0"/>
+        <request index="3"  response="11110011000000" foes="11110011000000" cont="1"/>
+        <request index="4"  response="10100011000000" foes="10100011000000" cont="1"/>
+        <request index="5"  response="01010000000000" foes="01010000000000" cont="0"/>
+        <request index="6"  response="11110000000000" foes="11110000011000" cont="0"/>
+        <request index="7"  response="11110000000000" foes="11110000011000" cont="0"/>
+        <request index="8"  response="11110000000110" foes="11110000000110" cont="1"/>
+        <request index="9"  response="00000000000110" foes="00000000000110" cont="1"/>
+        <request index="10" response="00000100000000" foes="00000111101110" cont="0"/>
+        <request index="11" response="01000100001000" foes="01000111011110" cont="0"/>
+        <request index="12" response="00000100001000" foes="00100111101110" cont="0"/>
+        <request index="13" response="00000100001000" foes="00000111011110" cont="0"/>
+    </junction>
+    <junction id="N" type="priority" x="300.00" y="300.00" incLanes="J2N_0 J2N_1" intLanes=":N_0_0 :N_0_1 :N_2_0" shape="310.40,300.00 310.40,293.60 308.18,293.16 307.40,292.60 306.84,291.82 306.51,290.82 306.40,289.60 293.60,289.60 294.07,292.78 295.47,295.38 297.80,297.40 301.07,298.84 305.27,299.71">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="S" type="priority" x="300.00" y="0.00" incLanes="J2S_0 J2S_1" intLanes=":S_0_0" shape="300.00,0.00 293.60,0.00 300.00,0.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="W" type="priority" x="0.00" y="150.00" incLanes="J2W_0 J2W_1" intLanes=":W_0_0" shape="0.00,150.00 0.00,156.40 0.00,150.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="bypass_pojok" type="priority" x="750.00" y="300.00" incLanes="bypass_1_0 bypass_1_1" intLanes=":bypass_pojok_0_0 :bypass_pojok_0_1" shape="750.00,293.60 743.60,293.60 743.60,300.00 747.16,299.29 748.40,298.40 749.29,297.16 749.82,295.56">
+        <request index="0" response="00" foes="00" cont="0"/>
+        <request index="1" response="00" foes="00" cont="0"/>
+    </junction>
+    <junction id="galian_keluar" type="priority" x="650.00" y="150.00" incLanes="area_galian_0" intLanes=":galian_keluar_0_0 :galian_keluar_0_1" shape="654.00,150.00 654.00,143.60 650.97,144.43 649.03,145.97 647.79,146.56 646.00,146.80 646.00,150.00">
+        <request index="0" response="00" foes="00" cont="0"/>
+        <request index="1" response="00" foes="00" cont="0"/>
+    </junction>
+    <junction id="galian_masuk" type="priority" x="500.00" y="150.00" incLanes="sebelum_galian_0 sebelum_galian_1" intLanes=":galian_masuk_0_0 :galian_masuk_0_1" shape="504.00,150.00 504.00,146.80 500.97,145.97 499.03,144.43 497.79,143.84 496.00,143.60 496.00,150.00">
+        <request index="0" response="10" foes="10" cont="0"/>
+        <request index="1" response="00" foes="01" cont="0"/>
+    </junction>
+    <junction id="titik_gabung" type="priority" x="750.00" y="150.00" incLanes="bypass_2_0 bypass_2_1 setelah_galian_0 setelah_galian_1" intLanes=":titik_gabung_0_0 :titik_gabung_0_1 :titik_gabung_2_0 :titik_gabung_2_1" shape="743.60,154.00 750.00,154.00 750.44,151.78 751.00,151.00 751.78,150.44 752.78,150.11 754.00,150.00 754.00,143.60 739.60,143.60 739.60,150.00 741.82,150.44 742.60,151.00 743.16,151.78 743.49,152.78">
+        <request index="0" response="1100" foes="1100" cont="0"/>
+        <request index="1" response="1100" foes="1100" cont="0"/>
+        <request index="2" response="0000" foes="0011" cont="0"/>
+        <request index="3" response="0000" foes="0011" cont="0"/>
+    </junction>
+
+    <junction id=":J_14_0" type="internal" x="299.11" y="155.44" incLanes=":J_3_0 S2J_0 S2J_1" intLanes=":J_5_0 :J_6_0 :J_6_1 :J_10_0 :J_11_0 :J_12_0 :J_13_0"/>
+    <junction id=":J_15_0" type="internal" x="299.20" y="159.20" incLanes=":J_4_0 S2J_0 S2J_1 W2J_0 W2J_1" intLanes=":J_6_0 :J_6_1 :J_11_0 :J_13_0"/>
+    <junction id=":J_16_0" type="internal" x="300.89" y="144.56" incLanes=":J_8_0 N2J_0 N2J_1" intLanes=":J_1_0 :J_1_1 :J_10_0 :J_11_0 :J_12_0 :J_13_0"/>
+    <junction id=":J_17_0" type="internal" x="300.80" y="140.80" incLanes=":J_9_0 N2J_0 N2J_1" intLanes=":J_1_0 :J_1_1"/>
+
+    <connection from="J2N" to="bypass_1" fromLane="0" toLane="0" via=":N_0_0" dir="r" state="M"/>
+    <connection from="J2N" to="bypass_1" fromLane="1" toLane="1" via=":N_0_1" dir="r" state="M"/>
+    <connection from="J2N" to="N2J" fromLane="1" toLane="1" via=":N_2_0" dir="t" state="M"/>
+    <connection from="J2S" to="S2J" fromLane="1" toLane="1" via=":S_0_0" dir="t" state="M"/>
+    <connection from="J2W" to="W2J" fromLane="1" toLane="1" via=":W_0_0" dir="t" state="M"/>
+    <connection from="N2J" to="J2W" fromLane="0" toLane="0" via=":J_0_0" tl="J" linkIndex="0" dir="r" state="O"/>
+    <connection from="N2J" to="J2S" fromLane="0" toLane="0" via=":J_1_0" tl="J" linkIndex="1" dir="s" state="o"/>
+    <connection from="N2J" to="J2S" fromLane="1" toLane="1" via=":J_1_1" tl="J" linkIndex="2" dir="s" state="o"/>
+    <connection from="N2J" to="sebelum_galian" fromLane="1" toLane="1" via=":J_3_0" tl="J" linkIndex="3" dir="l" state="o"/>
+    <connection from="N2J" to="J2N" fromLane="1" toLane="1" via=":J_4_0" tl="J" linkIndex="4" dir="t" state="o"/>
+    <connection from="S2J" to="sebelum_galian" fromLane="0" toLane="0" via=":J_5_0" tl="J" linkIndex="5" dir="r" state="o"/>
+    <connection from="S2J" to="J2N" fromLane="0" toLane="0" via=":J_6_0" tl="J" linkIndex="6" dir="s" state="o"/>
+    <connection from="S2J" to="J2N" fromLane="1" toLane="1" via=":J_6_1" tl="J" linkIndex="7" dir="s" state="o"/>
+    <connection from="S2J" to="J2W" fromLane="1" toLane="1" via=":J_8_0" tl="J" linkIndex="8" dir="l" state="o"/>
+    <connection from="S2J" to="J2S" fromLane="1" toLane="1" via=":J_9_0" tl="J" linkIndex="9" dir="t" state="o"/>
+    <connection from="W2J" to="sebelum_galian" fromLane="0" toLane="0" via=":J_10_0" tl="J" linkIndex="10" dir="s" state="O"/>
+    <connection from="W2J" to="J2N" fromLane="0" toLane="0" via=":J_11_0" tl="J" linkIndex="11" dir="l" state="O"/>
+    <connection from="W2J" to="sebelum_galian" fromLane="1" toLane="1" via=":J_12_0" tl="J" linkIndex="12" dir="s" state="O"/>
+    <connection from="W2J" to="J2N" fromLane="1" toLane="1" via=":J_13_0" tl="J" linkIndex="13" dir="l" state="O"/>
+    <connection from="area_galian" to="setelah_galian" fromLane="0" toLane="0" via=":galian_keluar_0_0" dir="s" state="M"/>
+    <connection from="area_galian" to="setelah_galian" fromLane="0" toLane="1" via=":galian_keluar_0_1" dir="s" state="M"/>
+    <connection from="bypass_1" to="bypass_2" fromLane="0" toLane="0" via=":bypass_pojok_0_0" dir="r" state="M"/>
+    <connection from="bypass_1" to="bypass_2" fromLane="1" toLane="1" via=":bypass_pojok_0_1" dir="r" state="M"/>
+    <connection from="bypass_2" to="keluar_timur" fromLane="0" toLane="0" via=":titik_gabung_0_0" dir="l" state="m"/>
+    <connection from="bypass_2" to="keluar_timur" fromLane="1" toLane="1" via=":titik_gabung_0_1" dir="l" state="m"/>
+    <connection from="sebelum_galian" to="area_galian" fromLane="0" toLane="0" via=":galian_masuk_0_0" dir="s" state="m"/>
+    <connection from="sebelum_galian" to="area_galian" fromLane="1" toLane="0" keepClear="0" via=":galian_masuk_0_1" dir="s" state="M"/>
+    <connection from="setelah_galian" to="keluar_timur" fromLane="0" toLane="0" via=":titik_gabung_2_0" dir="s" state="M"/>
+    <connection from="setelah_galian" to="keluar_timur" fromLane="1" toLane="1" via=":titik_gabung_2_1" dir="s" state="M"/>
+
+    <connection from=":J_0" to="J2W" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":J_1" to="J2S" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":J_1" to="J2S" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":J_3" to="sebelum_galian" fromLane="0" toLane="1" via=":J_14_0" dir="l" state="m"/>
+    <connection from=":J_14" to="sebelum_galian" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":J_4" to="J2N" fromLane="0" toLane="1" via=":J_15_0" dir="t" state="m"/>
+    <connection from=":J_15" to="J2N" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":J_5" to="sebelum_galian" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":J_6" to="J2N" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":J_6" to="J2N" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":J_8" to="J2W" fromLane="0" toLane="1" via=":J_16_0" dir="l" state="m"/>
+    <connection from=":J_16" to="J2W" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":J_9" to="J2S" fromLane="0" toLane="1" via=":J_17_0" dir="t" state="m"/>
+    <connection from=":J_17" to="J2S" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":J_10" to="sebelum_galian" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":J_11" to="J2N" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":J_12" to="sebelum_galian" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":J_13" to="J2N" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":N_0" to="bypass_1" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":N_0" to="bypass_1" fromLane="1" toLane="1" dir="r" state="M"/>
+    <connection from=":N_2" to="N2J" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":S_0" to="S2J" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":W_0" to="W2J" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":bypass_pojok_0" to="bypass_2" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":bypass_pojok_0" to="bypass_2" fromLane="1" toLane="1" dir="r" state="M"/>
+    <connection from=":galian_keluar_0" to="setelah_galian" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":galian_keluar_0" to="setelah_galian" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":galian_masuk_0" to="area_galian" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":galian_masuk_0" to="area_galian" fromLane="1" toLane="0" dir="s" state="M"/>
+    <connection from=":titik_gabung_0" to="keluar_timur" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":titik_gabung_0" to="keluar_timur" fromLane="1" toLane="1" dir="l" state="M"/>
+    <connection from=":titik_gabung_2" to="keluar_timur" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":titik_gabung_2" to="keluar_timur" fromLane="1" toLane="1" dir="s" state="M"/>
+
+</net>

@@ -1,0 +1,8 @@
+<connections>
+    <connection from="sebelum_galian" to="area_galian" fromLane="0" toLane="0"/>
+    <connection from="sebelum_galian" to="area_galian" fromLane="1" toLane="0"/>
+    <connection from="W2J" to="sebelum_galian" fromLane="0" toLane="0"/>
+    <connection from="W2J" to="sebelum_galian" fromLane="1" toLane="1"/>
+    <connection from="W2J" to="J2N" fromLane="0" toLane="0"/>
+    <connection from="W2J" to="J2N" fromLane="1" toLane="1"/>
+</connections>
