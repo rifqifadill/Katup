@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- ============================================================== -->
+    <!-- KORIDOR UTAMA SISTEM KATUP (Kompatibel 100% dengan Controller) -->
+    <!-- ============================================================== -->
+    <edge id="edge_W2J" from="node_W" to="titik_urai" priority="3" numLanes="2" speed="13.89"/>
+    <edge id="edge_J2W" from="titik_urai" to="node_W" priority="3" numLanes="2" speed="13.89"/>
+    
+    <edge id="edge_N2J" from="node_N" to="titik_urai" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_J2N" from="titik_urai" to="node_N" priority="2" numLanes="2" speed="11.11"/>
+    
+    <edge id="edge_S2J" from="node_S" to="titik_urai" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_J2S" from="titik_urai" to="node_S" priority="2" numLanes="2" speed="11.11"/>
+    
+    <edge id="edge_pre_bottle" from="titik_urai" to="node_bottle_in" priority="3" numLanes="2" speed="13.89"/>
+    <!-- BOTTLENECK (Galian Proyek): 1 lajur sempit 12 km/h -->
+    <edge id="edge_bottleneck" from="node_bottle_in" to="node_bottle_out" priority="3" numLanes="1" speed="3.50"/>
+    <edge id="edge_bottle_exit" from="node_bottle_out" to="node_merge" priority="3" numLanes="2" speed="13.89"/>
+    <edge id="edge_post_merge" from="node_merge" to="node_E" priority="3" numLanes="2" speed="13.89"/>
+    
+    <!-- Rute Alternatif Bypass Utara -->
+    <edge id="edge_alt_1" from="node_N" to="node_alt_corner" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="edge_alt_2" from="node_alt_corner" to="node_merge" priority="2" numLanes="2" speed="11.11"/>
+    
+    <!-- ============================================================== -->
+    <!-- JARINGAN PERKOTAAN & SIMPANG PELENGKAP LAINNYA                 -->
+    <!-- ============================================================== -->
+    <!-- Ekstensi Koridor Barat (Simpang 4 Barat) -->
+    <edge id="edge_W_far2W" from="node_W_far" to="node_W" priority="3" numLanes="2" speed="13.89"/>
+    <edge id="edge_W2W_far" from="node_W" to="node_W_far" priority="3" numLanes="2" speed="13.89"/>
+    <edge id="edge_NW2W" from="node_NW" to="node_W" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_W2NW" from="node_W" to="node_NW" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_SW2W" from="node_SW" to="node_W" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_W2SW" from="node_W" to="node_SW" priority="2" numLanes="2" speed="11.11"/>
+    
+    <!-- Lingkar Utara (Boulevard & Akses Tol Timur) -->
+    <edge id="edge_N_far2N" from="node_N_far" to="node_N" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_N2N_far" from="node_N" to="node_N_far" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_NW2N" from="node_NW" to="node_N" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="edge_N2NW" from="node_N" to="node_NW" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="edge_NE2alt" from="node_NE" to="node_alt_corner" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_alt2NE" from="node_alt_corner" to="node_NE" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_alt2NE_east" from="node_alt_corner" to="node_NE_east" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="edge_NE_east2alt" from="node_NE_east" to="node_alt_corner" priority="2" numLanes="2" speed="13.89"/>
+    
+    <!-- Lingkar Selatan (Kawasan Pemukiman & Pergudangan) -->
+    <edge id="edge_S_far2S" from="node_S_far" to="node_S" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_S2S_far" from="node_S" to="node_S_far" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_SW2S" from="node_SW" to="node_S" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="edge_S2SW" from="node_S" to="node_SW" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="edge_S2SE" from="node_S" to="node_SE" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="edge_SE2S" from="node_SE" to="node_S" priority="2" numLanes="2" speed="13.89"/>
+    
+    <!-- Koridor Timur Menuju CBD (Pusat Kota) -->
+    <edge id="edge_E2CBD" from="node_E" to="node_CBD" priority="3" numLanes="2" speed="13.89"/>
+    <edge id="edge_CBD2E" from="node_CBD" to="node_E" priority="3" numLanes="2" speed="13.89"/>
+    <edge id="edge_NE_east2E" from="node_NE_east" to="node_E" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_E2NE_east" from="node_E" to="node_NE_east" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_SE2E" from="node_SE" to="node_E" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="edge_E2SE" from="node_E" to="node_SE" priority="2" numLanes="2" speed="11.11"/>
+</edges>

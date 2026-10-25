@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/connections_file.xsd">
+    <!-- Penyatuan 2 lajur menuju penyempitan 1 lajur (Bottleneck Galian) -->
+    <connection from="edge_pre_bottle" to="edge_bottleneck" fromLane="0" toLane="0"/>
+    <connection from="edge_pre_bottle" to="edge_bottleneck" fromLane="1" toLane="0"/>
+    
+    <!-- Simpang Titik Urai (Arah Masuk Barat): Lurus (Bottleneck), Belok Kiri (Bypass), Belok Kanan (Selatan) -->
+    <connection from="edge_W2J" to="edge_pre_bottle" fromLane="0" toLane="0"/>
+    <connection from="edge_W2J" to="edge_pre_bottle" fromLane="1" toLane="1"/>
+    <connection from="edge_W2J" to="edge_J2N" fromLane="0" toLane="0"/>
+    <connection from="edge_W2J" to="edge_J2N" fromLane="1" toLane="1"/>
+    <connection from="edge_W2J" to="edge_J2S" fromLane="0" toLane="0"/>
+</connections>
