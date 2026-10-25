@@ -1,0 +1,12 @@
+<routes>
+    <vType id="mobil" accel="2.6" decel="4.5" length="4.5" maxSpeed="13.89" color="1,1,0"/>
+    
+    <route id="rute_galian" edges="W2J sebelum_galian area_galian setelah_galian keluar_timur"/>
+    <route id="rute_silang_NS" edges="N2J J2S"/>
+    <route id="rute_silang_SN" edges="S2J J2N"/>
+    
+    <!-- Arus mobil masuk ke jalan galian -->
+    <flow id="arus_utama" type="mobil" route="rute_galian" begin="0" end="1800" vehsPerHour="1400"/>
+    <flow id="arus_NS" type="mobil" route="rute_silang_NS" begin="0" end="1800" vehsPerHour="300"/>
+    <flow id="arus_SN" type="mobil" route="rute_silang_SN" begin="0" end="1800" vehsPerHour="300"/>
+</routes>
