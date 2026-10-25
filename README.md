@@ -1,6 +1,6 @@
 # Simulasi Sistem KATUP (Kendali Antrean Titik Urai Kemacetan Perkotaan)
 
-Proyek simulasi mikroskopik berbasis **Eclipse SUMO** dan **Python (TraCI)** sesuai rancangan pada **Laporan KATUP Bab 1 & Bab 2** (Tim 3 Teknik Komputer UI).
+Proyek simulasi mikroskopik berbasis **Eclipse SUMO** dan **Python (TraCI)** sesuai rancangan pada **Laporan KATUP Bab 1 & Bab 2** (Tim 3).
 
 ---
 
