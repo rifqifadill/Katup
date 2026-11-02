@@ -38,7 +38,7 @@ def evaluate(self):
     counts['pengamat'] += 1
     vehicles = controller.traci.vehicle.getIDList()
     sample = vehicles[0] if vehicles else None
-    data = dict(scenario=mode, simulation_time=controller.traci.simulation.getTime(),
+    data = dict(scenario=mode, gui_delay_ms=int(os.environ.get("KATUP_DELAY", "1000")), simulation_time=controller.traci.simulation.getTime(),
                 vehicles=len(vehicles), sample_vehicle=sample,
                 sample_position=controller.traci.vehicle.getPosition(sample) if sample else None,
                 calls=counts.copy(), control=control.copy(), metrics=metrics, updated=time.time())

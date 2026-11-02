@@ -85,11 +85,13 @@ async def status():
     return {'running':running,'telemetry':data}
 
 @app.post('/api/start/{mode}')
-async def start(mode:str):
+async def start(mode:str, delay_ms:int=1000):
+    if delay_ms not in (100,200,1000): return JSONResponse({'error':'Kecepatan tidak dikenal'},400)
     if mode not in ('baseline','katup'): return JSONResponse({'error':'Skenario tidak dikenal'},400)
     async with lock:
         await stop()
         (STATE/'scenario').write_text(mode)
+        (STATE/'delay-ms').write_text(str(delay_ms))
         (STATE/'telemetry.json').unlink(missing_ok=True)
         result=await asyncio.to_thread(subprocess.run,['systemctl','--user','start','katup-simulation.service'])
         if result.returncode: return JSONResponse({'error':'Gagal memulai layanan'},500)

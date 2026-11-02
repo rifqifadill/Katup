@@ -77,8 +77,9 @@ pengguna itu sendiri. Untuk HP, orientasi lanskap membantu membaca toolbar SUMO.
 
 Peta, kendaraan, lampu, zoom, jeda, dan kontrol lainnya adalah SUMO-GUI asli,
 dikirim melalui noVNC; tidak ada video atau pemutaran hasil lama. Waktu simulasi
-berjalan hingga 1800 detik sesuai controller. Delay awal 1000 ms per langkah
-(sekitar waktu nyata: satu sesi berlangsung 30 menit, bergantung beban), dapat diubah di toolbar SUMO.
+berjalan hingga 1800 detik sesuai controller. Pilihan kecepatan web adalah waktu nyata (1000 ms, sekitar 30 menit),
+5× (200 ms, sekitar 6 menit, pilihan awal), dan 10× (100 ms, sekitar 3 menit).
+Kecepatan juga dapat diubah di toolbar SUMO.
 Setelah selesai, tekan Mulai untuk sesi baru. Renderer memakai CPU Mesa llvmpipe;
 1 CPU berbagi dengan layanan game, sehingga frame rate bisa turun.
 
@@ -242,3 +243,28 @@ berhenti tidak menampilkan jumlah kendaraan lama sebagai status langsung.
 Kecepatan awal diubah dari 100 ms menjadi 1000 ms per langkah agar sesi tidak
 habis dalam sekitar 3 menit. Algoritma, ambang kendali, dan jumlah langkah
 penelitian tetap sama. Pengguna masih dapat menyesuaikan Delay di toolbar SUMO.
+
+## Respons GUI dan pilihan kecepatan
+
+Pemeriksaan saat keluhan GUI lambat: CPU idle 66–76%, memori tersedia sekitar
+1,1 GiB; tidak terlihat tekanan resource saat sampel diambil. Jaringan tunnel
+sempat mengalami reconnect QUIC. Renderer tetap llvmpipe (CPU), tanpa GPU.
+
+Langkah penelitian 1 detik dan Delay 1000 ms membuat posisi kendaraan diperbarui
+sekitar sekali per detik dinding. Mempercepat playback membuat pembaruan lebih
+rapat, tetapi juga memperpendek durasi sesi. Pilihan web diterapkan saat Mulai
+dan disimpan di `runtime/state/delay-ms`. API hanya menerima 100, 200, 1000 ms.
+Launcher melaporkan delay awal yang dipakai dalam telemetri. Mengubah Delay
+langsung di toolbar SUMO tetap memungkinkan; indikator web melaporkan pilihan
+awal sesi. Step-length 1,0 detik, jumlah 1800 langkah, seed, dan algoritma agen
+tidak diubah.
+
+Pengiriman VNC kini memakai MIT-SHM lokal, defer 10 ms, polling 20 ms, serta
+kualitas JPEG noVNC 5 dan compression level 2. X DAMAGE tetap dinonaktifkan
+agar perubahan OpenGL tidak terlewat. Proses VNC yang sudah berjalan diperbarui
+melalui kanal kontrol lokal Xauthority; pengaturan yang sama berlaku saat
+service berikutnya dimulai. Tidak diperlukan restart tunnel atau URL baru.
+
+Ini membantu respons dan frekuensi pembaruan; bukan jaminan animasi 60 fps.
+Memperkecil langkah SUMO akan memengaruhi perilaku model dan perlu validasi
+penelitian terpisah. Uji perbandingan tersedia pada `verification-performance.json`.
