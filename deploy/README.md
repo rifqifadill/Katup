@@ -5,7 +5,54 @@ RAM 1,9 GiB, swap 4 GiB, disk kosong awal 124 GiB. Layanan game PHP
 pada UDP 19132/19133 serta SSH tetap berjalan dengan PID yang sama.
 Tidak dilakukan reboot, instalasi paket sistem, perubahan firewall, atau restart layanan lain.
 
-## Akses dan login
+## Pembaruan HTTPS melalui tunnel (2 November 2026)
+
+Pemetaan port validasi 80/443 belum tersedia dari provider. Akses dengan sertifikat
+tepercaya disediakan melalui Cloudflare Quick Tunnel, tanpa membuka port baru:
+
+**https://created-predicted-victory-beliefs.trycloudflare.com**
+
+Gunakan login yang sama. Alamat IP `https://163.52.135.171:8443` tetap memakai
+sertifikat self-signed; tunnel tidak mengganti sertifikat pada alamat IP itu.
+Koneksi browser ke Cloudflare memakai sertifikat publik tepercaya. Tunnel ke
+origin juga memakai TLS, dengan sertifikat lokal diverifikasi menggunakan
+`--origin-ca-pool` dan hostname `localhost`; verifikasi TLS tidak dinonaktifkan.
+Login, cookie Secure/HttpOnly, pemeriksaan Origin, dan autentikasi VNC tetap aktif.
+
+Quick Tunnel adalah akses sementara untuk pengujian. URL dapat berubah ketika
+proses tunnel/VPS restart dan tidak memiliki jaminan uptime. Untuk alamat tetap,
+gunakan named tunnel dengan akun Cloudflare serta domain milik pengguna.
+Dokumentasi penyedia: https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/
+
+Layanan `katup-tunnel.service` enabled dan otomatis dijalankan kembali. Perintah
+berikut dijalankan dari direktori repository:
+
+```bash
+source deploy/env.sh
+python deploy/access-url.py
+journalctl --user -u katup-tunnel -f
+systemctl --user status katup-tunnel
+# Instalasi ulang opsional; tidak me-restart tunnel yang sudah hidup:
+python deploy/install-tunnel.py
+```
+
+Binary cloudflared versi 2026.10.7 diunduh dari release resmi dan diverifikasi
+SHA-256; terpasang di `../runtime/bin/cloudflared`. Prosedur update aplikasi
+mempertahankan proses tunnel agar alamatnya tidak berubah pada update biasa.
+
+Uji browser melalui hostname publik menggunakan verifikasi sertifikat aktif:
+
+```bash
+source deploy/env.sh
+python deploy/tests/browser_smoke.py --url "$(python deploy/access-url.py)"
+```
+
+Uji lewat jaringan publik ini dilakukan oleh browser otomatis pada VPS; pengguna
+masih perlu mencoba alamat baru dari laptop/HP. Bukti ada pada
+`verification-https.json`. Browser tidak diberi opsi untuk melewati kesalahan
+sertifikat.
+
+## Akses dan login awal
 
 - Alamat LAN: **https://192.168.28.56:8443**.
 - Dari VPS sendiri: **https://127.0.0.1:8443**.
@@ -171,7 +218,7 @@ Untuk mengulangi uji browser lokal (uji ini mengganti/menghentikan sesi bersama)
 source deploy/env.sh
 python -m pip install -r deploy/tests/requirements.txt
 python -m playwright install chromium --only-shell
-python deploy/tests/browser_smoke.py
+python deploy/tests/browser_smoke.py --allow-self-signed
 ```
 
 Pada instalasi tanpa pustaka browser sistem, Chromium juga memerlukan
@@ -179,3 +226,7 @@ Pada instalasi tanpa pustaka browser sistem, Chromium juga memerlukan
 Pustaka tersebut sudah diekstrak lokal pada VPS ini. Bukti tambahan kontrol
 SUMO melalui noVNC: tombol jeda membekukan waktu simulasi, zoom mengubah
 viewport, dan tombol lanjut membuat waktu kembali bertambah.
+
+Catatan uji HTTPS: noVNC mencatat penolakan izin clipboard pada browser otomatis.
+Hal ini tidak menghalangi login, tampilan, input desktop, atau kontrol simulasi;
+bukan kesalahan sertifikat. Tidak ada exception halaman pada uji tersebut.

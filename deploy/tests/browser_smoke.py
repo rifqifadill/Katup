@@ -1,11 +1,15 @@
-import json,time
+import argparse,json,time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 RUNTIME=Path(__file__).resolve().parents[3]/'runtime'
 creds=json.loads((RUNTIME/'state/credentials.json').read_text())
-results={}
+parser=argparse.ArgumentParser()
+parser.add_argument('--url',default='https://127.0.0.1:8443')
+parser.add_argument('--allow-self-signed',action='store_true')
+args=parser.parse_args()
+results={'url':args.url,'browser_certificate_validation':not args.allow_self_signed}
 def login(page):
- page.goto('https://127.0.0.1:8443/')
+ page.goto(args.url.rstrip('/')+'/')
  page.locator('[name=username]').fill(creds['username'])
  page.locator('[name=password]').fill(creds['password'])
  page.locator('button').click()
@@ -22,7 +26,7 @@ def wait_state(page, predicate, timeout=35):
 
 with sync_playwright() as p:
  b=p.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
- ctx=b.new_context(ignore_https_errors=True,viewport={'width':1400,'height':1050})
+ ctx=b.new_context(ignore_https_errors=args.allow_self_signed,viewport={'width':1400,'height':1050})
  page=ctx.new_page()
  errors=[]
  page.on('pageerror',lambda e:errors.append(str(e)))
@@ -52,7 +56,7 @@ with sync_playwright() as p:
  page.click('#start')
  wait_state(page,lambda s:s['running'] and s['telemetry'].get('simulation_time',0)>5)
  results['restart_after_stop']=True
- mobile=b.new_context(ignore_https_errors=True,viewport={'width':390,'height':844},is_mobile=True,has_touch=True,device_scale_factor=1)
+ mobile=b.new_context(ignore_https_errors=args.allow_self_signed,viewport={'width':390,'height':844},is_mobile=True,has_touch=True,device_scale_factor=1)
  mp=mobile.new_page()
  login(mp)
  assert mp.locator('#start').is_visible()
