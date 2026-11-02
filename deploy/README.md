@@ -77,8 +77,8 @@ pengguna itu sendiri. Untuk HP, orientasi lanskap membantu membaca toolbar SUMO.
 
 Peta, kendaraan, lampu, zoom, jeda, dan kontrol lainnya adalah SUMO-GUI asli,
 dikirim melalui noVNC; tidak ada video atau pemutaran hasil lama. Waktu simulasi
-berjalan hingga 1800 detik sesuai controller. Delay awal 100 ms per langkah
-(sekitar 10 kali waktu nyata, bergantung beban), dapat diubah di toolbar SUMO.
+berjalan hingga 1800 detik sesuai controller. Delay awal 1000 ms per langkah
+(sekitar waktu nyata: satu sesi berlangsung 30 menit, bergantung beban), dapat diubah di toolbar SUMO.
 Setelah selesai, tekan Mulai untuk sesi baru. Renderer memakai CPU Mesa llvmpipe;
 1 CPU berbagi dengan layanan game, sehingga frame rate bisa turun.
 
@@ -230,3 +230,15 @@ viewport, dan tombol lanjut membuat waktu kembali bertambah.
 Catatan uji HTTPS: noVNC mencatat penolakan izin clipboard pada browser otomatis.
 Hal ini tidak menghalangi login, tampilan, input desktop, atau kontrol simulasi;
 bukan kesalahan sertifikat. Tidak ada exception halaman pada uji tersebut.
+
+## Tampilan saat sesi selesai
+
+Sesi tetap berakhir pada 1800 langkah sesuai controller. Sesudah selesai atau
+dihentikan, halaman menampilkan petunjuk dan tombol Mulai di area desktop,
+sehingga pengguna tidak hanya melihat desktop hitam. Saat mulai, halaman
+menampilkan “Menyiapkan SUMO-GUI” hingga telemetri pertama tersedia. Status
+berhenti tidak menampilkan jumlah kendaraan lama sebagai status langsung.
+
+Kecepatan awal diubah dari 100 ms menjadi 1000 ms per langkah agar sesi tidak
+habis dalam sekitar 3 menit. Algoritma, ambang kendali, dan jumlah langkah
+penelitian tetap sama. Pengguna masih dapat menyesuaikan Delay di toolbar SUMO.

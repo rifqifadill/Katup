@@ -1,0 +1,9 @@
+{
+  "completed_overlay": true,
+  "start_from_overlay": true,
+  "vehicle_movement": true,
+  "stop_overlay": true,
+  "restart": true,
+  "public_https": true,
+  "mobile": true
+}

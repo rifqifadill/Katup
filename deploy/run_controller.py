@@ -18,7 +18,7 @@ state_file = Path(os.environ['KATUP_TELEMETRY'])
 start = controller.traci.start
 
 def start_gui(cmd, *args, **kwargs):
-    return start(cmd + ['--delay', os.environ.get('KATUP_DELAY', '100'), '--seed', '42', '--window-size', '1280,800', '--window-pos', '0,0', '--quit-on-end', 'true'], *args, **kwargs)
+    return start(cmd + ['--delay', os.environ.get('KATUP_DELAY', '1000'), '--seed', '42', '--window-size', '1280,800', '--window-pos', '0,0', '--quit-on-end', 'true'], *args, **kwargs)
 controller.traci.start = start_gui
 original_evaluate = controller.AgenPengamat.evaluate
 counts = {'pengamat': 0, 'katup': 0, 'rute': 0}

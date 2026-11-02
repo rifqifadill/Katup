@@ -16,7 +16,7 @@ def login(page):
  page.wait_for_function("document.querySelector('#connection')?.textContent.includes('Desktop terhubung')",timeout=25000)
 
 def state(page): return page.evaluate("fetch('/api/status').then(r=>r.json())")
-def wait_state(page, predicate, timeout=35):
+def wait_state(page, predicate, timeout=120):
  end=time.time()+timeout
  while time.time()<end:
   s=state(page)
