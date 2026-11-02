@@ -1,0 +1,12 @@
+<!doctype html><html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KATUP</title>
+<style>body{margin:0;background:#102131;color:#ecf6f7;font:16px system-ui}header{padding:12px 18px}h1{margin:0 0 8px}button,select{font:inherit;padding:9px;margin:4px;border:0;border-radius:5px}button{background:#42d8bc;cursor:pointer}#stop{background:#f49c91}#screen{height:72vh;min-height:300px;background:#000}#status{margin:8px 0}small{display:block;color:#bdced0}</style>
+<header><h1>KATUP</h1><small>Satu sesi langsung di VPS. Semua pengguna melihat dan mengendalikan simulasi yang sama.</small><select id="mode"><option value="katup">KATUP — tiga agen</option><option value="baseline">Baseline — tanpa kendali KATUP</option></select><button id="start">Mulai / Ganti skenario</button><button id="stop">Hentikan</button><button id="reconnect">Hubungkan desktop</button><label><input type="checkbox" id="view">Hanya lihat</label><div id="status">Memuat status…</div><small id="connection"></small></header><div id="screen"></div>
+<script type="module">
+import RFB from '/novnc/core/rfb.js';
+let rfb;
+const q=id=>document.getElementById(id);
+async function connect(){if(rfb)rfb.disconnect();const creds=await(await fetch('/api/desktop')).json();rfb=new RFB(q('screen'),`wss://${location.host}/websockify`,{credentials:{password:creds.password}});rfb.scaleViewport=true;rfb.resizeSession=false;rfb.viewOnly=q('view').checked;rfb.addEventListener('connect',()=>q('connection').textContent='Desktop terhubung. Gunakan toolbar SUMO untuk jeda, zoom, dan kontrol tampilan.');rfb.addEventListener('disconnect',()=>q('connection').textContent='Desktop terputus. Tekan Hubungkan desktop.');}
+async function command(path){q('start').disabled=q('stop').disabled=true;try{const r=await fetch(path,{method:'POST'});if(!r.ok)throw Error(await r.text());await status();}catch(e){q('status').textContent=String(e)}finally{q('start').disabled=q('stop').disabled=false}}
+async function status(){const r=await fetch('/api/status');if(r.redirected){location='/login';return}const s=await r.json(),t=s.telemetry;q('status').textContent=`${s.running?'Berjalan':'Berhenti'} | ${t.scenario||'—'} | Waktu simulasi: ${t.simulation_time||0} detik | Kendaraan: ${t.vehicles||0}`;}
+q('start').onclick=()=>command('/api/start/'+q('mode').value);q('stop').onclick=()=>command('/api/stop');q('reconnect').onclick=connect;q('view').onchange=()=>{if(rfb)rfb.viewOnly=q('view').checked};setInterval(status,2000);status();connect();
+</script></html>

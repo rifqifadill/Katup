@@ -1,0 +1,38 @@
+name: Deploy KATUP to VPS
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: katup-vps
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: katup-vps
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: deploy/katup-vps
+      - name: Configure SSH and deploy existing installation
+        shell: bash
+        env:
+          SSH_HOST: ${{ secrets.KATUP_SSH_HOST }}
+          SSH_PORT: ${{ secrets.KATUP_SSH_PORT }}
+          SSH_USER: ${{ secrets.KATUP_SSH_USER }}
+          SSH_KEY: ${{ secrets.KATUP_SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.KATUP_SSH_KNOWN_HOSTS }}
+          DEPLOY_PATH: ${{ vars.KATUP_DEPLOY_PATH }}
+        run: |
+          set -euo pipefail
+          test -n "$SSH_HOST" && test -n "$SSH_USER" && test -n "$SSH_KEY"
+          test -n "$SSH_KNOWN_HOSTS" && test -n "$DEPLOY_PATH"
+          [[ "${SSH_PORT:-22}" =~ ^[0-9]+$ ]]
+          install -m 700 -d "$HOME/.ssh"
+          umask 077
+          printf '%s\n' "$SSH_KEY" > "$HOME/.ssh/katup_deploy"
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          printf -v quoted_path '%q' "$DEPLOY_PATH"
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            -i "$HOME/.ssh/katup_deploy" -p "${SSH_PORT:-22}" \
+            "$SSH_USER@$SSH_HOST" "bash -s -- $quoted_path" < deploy/update.sh

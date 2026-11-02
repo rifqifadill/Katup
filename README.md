@@ -70,3 +70,8 @@ python katup_controller.py baseline
 sumo-gui -c katup.sumocfg
 ```
 Lalu tekan tombol **Play (segitiga hijau)** di toolbar atas.
+
+## Menjalankan di VPS melalui browser
+
+Panduan instalasi Linux, SUMO-GUI/noVNC, dua skenario, layanan systemd,
+pengujian, dan deployment tersedia di [deploy/README.md](deploy/README.md).
