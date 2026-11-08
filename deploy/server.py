@@ -7,6 +7,7 @@ from pathlib import Path
 import secrets
 import signal
 import subprocess
+import sys
 import time
 from fastapi import FastAPI, Request, WebSocket
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
@@ -15,14 +16,17 @@ from fastapi.staticfiles import StaticFiles
 ROOT=Path(__file__).resolve().parents[1]
 STATE=Path(os.environ['KATUP_STATE'])
 AUTH=json.loads((STATE/'credentials.json').read_text())
+PUBLIC_MODE=os.environ.get('KATUP_PUBLIC_MODE','0') == '1'
+STANDALONE=os.environ.get('KATUP_STANDALONE','0') == '1'
 sessions=set()
 attempts={}
 lock=asyncio.Lock()
 proc=None
+proc_log=None
 scenario=None
 
 def authorized(request):
-    return request.cookies.get('katup_session') in sessions
+    return PUBLIC_MODE or request.cookies.get('katup_session') in sessions
 
 
 def read_json(path, default=None):
@@ -40,15 +44,33 @@ def comparison_data():
     }
 
 
+async def simulation_running():
+    if STANDALONE:
+        return proc is not None and proc.poll() is None
+    return (await asyncio.to_thread(subprocess.run, ['systemctl','--user','is-active','--quiet','katup-simulation.service'])).returncode == 0
+
+
 def origin_allowed(ws):
     origin = ws.headers.get('origin', '')
     host = ws.headers.get('host', '')
     return origin in {f'https://{host}', f'http://{host}'}
 
 async def stop():
-    global proc, scenario
-    # systemd kills all processes in this separate simulation cgroup, including SUMO.
-    await asyncio.to_thread(subprocess.run, ['systemctl','--user','stop','katup-simulation.service'], check=False)
+    global proc, proc_log, scenario
+    if STANDALONE:
+        if proc is not None and proc.poll() is None:
+            try:
+                os.killpg(proc.pid, signal.SIGTERM)
+                await asyncio.to_thread(proc.wait, 12)
+            except (ProcessLookupError, subprocess.TimeoutExpired):
+                try: os.killpg(proc.pid, signal.SIGKILL)
+                except ProcessLookupError: pass
+        if proc_log is not None:
+            proc_log.close()
+            proc_log = None
+    else:
+        # systemd kills all processes in this separate simulation cgroup, including SUMO.
+        await asyncio.to_thread(subprocess.run, ['systemctl','--user','stop','katup-simulation.service'], check=False)
     proc=None
     scenario=None
 
@@ -99,9 +121,10 @@ async def index(): return HTMLResponse((ROOT/'deploy/index.html').read_text())
 
 @app.get('/api/status')
 async def status():
-    running=(await asyncio.to_thread(subprocess.run,['systemctl','--user','is-active','--quiet','katup-simulation.service'])).returncode==0
+    running=await simulation_running()
     data=read_json(STATE/'telemetry.json')
-    return {'running':running,'telemetry':data,'comparison':comparison_data()}
+    data.pop('traceback', None)
+    return {'running':running,'public_mode':PUBLIC_MODE,'telemetry':data,'comparison':comparison_data()}
 
 
 @app.get('/api/comparison')
@@ -110,6 +133,7 @@ async def comparison():
 
 @app.post('/api/start/{mode}')
 async def start(mode:str, delay_ms:int=1000):
+    global proc, proc_log, scenario
     if delay_ms not in (100,200,1000): return JSONResponse({'error':'Kecepatan tidak dikenal'},400)
     if mode not in ('baseline','katup'): return JSONResponse({'error':'Skenario tidak dikenal'},400)
     async with lock:
@@ -117,8 +141,27 @@ async def start(mode:str, delay_ms:int=1000):
         (STATE/'scenario').write_text(mode)
         (STATE/'delay-ms').write_text(str(delay_ms))
         (STATE/'telemetry.json').unlink(missing_ok=True)
-        result=await asyncio.to_thread(subprocess.run,['systemctl','--user','start','katup-simulation.service'])
-        if result.returncode: return JSONResponse({'error':'Gagal memulai layanan'},500)
+        if STANDALONE:
+            env=os.environ.copy()
+            env.update({
+                'KATUP_STATE':str(STATE),
+                'KATUP_TELEMETRY':str(STATE/'telemetry.json'),
+                'KATUP_SCENARIO':mode,
+                'KATUP_DELAY':str(delay_ms),
+                'KATUP_USE_GUI':'0',
+                'SUMO_HOME':env.get('SUMO_HOME','/usr/share/sumo'),
+                'PYTHONUNBUFFERED':'1',
+            })
+            proc_log=open(STATE/'simulation.log','a',encoding='utf-8')
+            proc=subprocess.Popen(
+                [sys.executable,str(ROOT/'deploy/run_controller.py'),mode],
+                cwd=ROOT,env=env,stdout=proc_log,stderr=subprocess.STDOUT,
+                start_new_session=True,
+            )
+            scenario=mode
+        else:
+            result=await asyncio.to_thread(subprocess.run,['systemctl','--user','start','katup-simulation.service'])
+            if result.returncode: return JSONResponse({'error':'Gagal memulai layanan'},500)
     return {'started':mode}
 
 @app.post('/api/stop')
@@ -127,7 +170,9 @@ async def stop_api():
     return {'stopped':True}
 
 @app.get('/api/desktop')
-async def desktop(): return {'password':AUTH['desktop_password']}
+async def desktop():
+    if PUBLIC_MODE: return JSONResponse({'error':'SUMO-GUI detail dinonaktifkan pada mode publik'},403)
+    return {'password':AUTH['desktop_password']}
 
 
 @app.websocket('/api/stream')
@@ -140,7 +185,10 @@ async def telemetry_stream(ws:WebSocket):
     try:
         while True:
             data = read_json(STATE/'telemetry.json')
-            signature = (data.get('updated'), data.get('step'), data.get('finished'))
+            data.pop('traceback', None)
+            data['running'] = await simulation_running()
+            data['public_mode'] = PUBLIC_MODE
+            signature = (data.get('updated'), data.get('step'), data.get('finished'), data['running'])
             if signature != last_signature:
                 await ws.send_json({'telemetry': data, 'comparison': comparison_data()})
                 last_signature = signature
@@ -150,7 +198,7 @@ async def telemetry_stream(ws:WebSocket):
 
 @app.websocket('/websockify')
 async def proxy(ws:WebSocket):
-    if not authorized(ws) or not origin_allowed(ws):
+    if PUBLIC_MODE or not authorized(ws) or not origin_allowed(ws):
         await ws.close(code=1008)
         return
     await ws.accept(subprotocol='binary' if 'binary' in ws.headers.get('sec-websocket-protocol','') else None)

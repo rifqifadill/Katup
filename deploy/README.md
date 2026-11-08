@@ -1,5 +1,7 @@
 # KATUP di VPS — SUMO-GUI langsung melalui browser
 
+> VPS baru dan akses publik tanpa login: lihat [PUBLIC_VPS.md](PUBLIC_VPS.md). Panduan di bawah adalah arsip deployment VPS sebelumnya.
+
 Instalasi yang diuji 2 November 2026: Ubuntu 22.04.5, 1 vCPU,
 RAM 1,9 GiB, swap 4 GiB, disk kosong awal 124 GiB. Layanan game PHP
 pada UDP 19132/19133 serta SSH tetap berjalan dengan PID yang sama.

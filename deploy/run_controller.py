@@ -31,6 +31,18 @@ delay = int(os.environ.get("KATUP_DELAY", "1000"))
 use_gui = os.environ.get("KATUP_USE_GUI", "1") not in {"0", "false", "no"}
 tripinfo_file = runs_dir / f"{mode}-seed-{seed}.tripinfo.xml"
 original_start = controller.traci.start
+original_step = controller.traci.simulationStep
+
+
+def paced_step(*args, **kwargs):
+    started = time.monotonic()
+    result = original_step(*args, **kwargs)
+    if not use_gui:
+        time.sleep(max(0, delay / 1000 - (time.monotonic() - started)))
+    return result
+
+
+controller.traci.simulationStep = paced_step
 
 counts = {"pengamat": 0, "katup": 0, "rute": 0}
 control = {"mode": "DISABLED" if mode == "baseline" else "NORMAL", "rerouted": 0}

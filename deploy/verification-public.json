@@ -1,0 +1,11 @@
+{
+  "url": "https://raymond-signals-refused-seen.trycloudflare.com",
+  "certificate_validation": true,
+  "no_login": true,
+  "vehicle_movement": true,
+  "websocket_frames": 10,
+  "desktop_disabled": true,
+  "mobile_no_overflow": true,
+  "stop": true,
+  "page_errors": []
+}
