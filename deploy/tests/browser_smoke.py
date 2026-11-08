@@ -13,7 +13,7 @@ def login(page):
  page.locator('[name=username]').fill(creds['username'])
  page.locator('[name=password]').fill(creds['password'])
  page.locator('button').click()
- page.wait_for_function("document.querySelector('#connection')?.textContent.includes('Desktop terhubung')",timeout=25000)
+ page.wait_for_function("document.querySelector('#connection')?.textContent.includes('Dashboard terhubung')",timeout=25000)
 
 def state(page): return page.evaluate("fetch('/api/status').then(r=>r.json())")
 def wait_state(page, predicate, timeout=120):

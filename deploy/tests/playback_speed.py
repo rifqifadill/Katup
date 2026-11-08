@@ -12,7 +12,7 @@ with sync_playwright() as p:
  page.on('websocket',lambda ws:ws.on('framereceived',lambda data:frames.append((time.time(),len(data)))))
  page.goto(url)
  page.locator('[name=username]').fill(creds['username']);page.locator('[name=password]').fill(creds['password']);page.locator('button').click()
- page.wait_for_function("document.querySelector('#connection')?.textContent.includes('Desktop terhubung')",timeout=25000)
+ page.wait_for_function("document.querySelector('#connection')?.textContent.includes('Dashboard terhubung')",timeout=25000)
  def status():return page.evaluate("fetch('/api/status').then(r=>r.json())")
  for speed in ('1000','200'):
   page.select_option('#speed',speed);page.click('#start')

@@ -24,6 +24,27 @@ scenario=None
 def authorized(request):
     return request.cookies.get('katup_session') in sessions
 
+
+def read_json(path, default=None):
+    try:
+        return json.loads(path.read_text())
+    except (OSError, ValueError):
+        return {} if default is None else default
+
+
+def comparison_data():
+    runs = STATE / 'runs'
+    return {
+        mode: read_json(runs / f'{mode}.json', {})
+        for mode in ('baseline', 'katup')
+    }
+
+
+def origin_allowed(ws):
+    origin = ws.headers.get('origin', '')
+    host = ws.headers.get('host', '')
+    return origin in {f'https://{host}', f'http://{host}'}
+
 async def stop():
     global proc, scenario
     # systemd kills all processes in this separate simulation cgroup, including SUMO.
@@ -53,7 +74,7 @@ async def authenticate(request, call_next):
 
 @app.get('/login')
 async def login_page():
-    return HTMLResponse('''<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login KATUP</title><style>body{font:18px system-ui;max-width:380px;margin:10vh auto;padding:20px;background:#102131;color:white}input,button{display:block;padding:12px;margin:12px 0;width:90%}</style><h1>KATUP</h1><form method="post"><input name="username" placeholder="Nama pengguna" autocomplete="username" required><input name="password" type="password" placeholder="Kata sandi" autocomplete="current-password" required><button>Masuk</button></form>''')
+    return HTMLResponse('''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Masuk · KATUP</title><style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 75% 0,#16445a,#07131f 55%);color:#eaf6f4;font:16px system-ui;padding:20px}.box{width:min(420px,100%);padding:30px;border:1px solid #214052;border-radius:22px;background:rgba(14,33,48,.94);box-shadow:0 24px 80px #0006}.logo{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#55e6c1,#2ba6c5);color:#05202a;font-size:22px;font-weight:900;margin-bottom:20px}h1{margin:0;font-size:27px}p{color:#8fa9b2;margin:8px 0 24px}label{display:block;font-size:12px;color:#b8d3d4;margin:14px 0 6px}input,button{display:block;width:100%;padding:13px;border-radius:12px;font:inherit}input{border:1px solid #315268;background:#091b29;color:#eaf6f4}button{margin-top:20px;border:0;background:#55e6c1;color:#05202a;font-weight:800;cursor:pointer}</style><main class="box"><div class="logo">K</div><h1>KATUP Traffic Control</h1><p>Dashboard simulasi antrean dan pengaturan rute berbasis SUMO + TraCI.</p><form method="post"><label>Nama pengguna</label><input name="username" autocomplete="username" required><label>Kata sandi</label><input name="password" type="password" autocomplete="current-password" required><button>Masuk ke dashboard</button></form></main>''')
 
 @app.post('/login')
 async def login(request:Request):
@@ -79,10 +100,13 @@ async def index(): return HTMLResponse((ROOT/'deploy/index.html').read_text())
 @app.get('/api/status')
 async def status():
     running=(await asyncio.to_thread(subprocess.run,['systemctl','--user','is-active','--quiet','katup-simulation.service'])).returncode==0
-    data={}
-    try: data=json.loads((STATE/'telemetry.json').read_text())
-    except (OSError,ValueError): pass
-    return {'running':running,'telemetry':data}
+    data=read_json(STATE/'telemetry.json')
+    return {'running':running,'telemetry':data,'comparison':comparison_data()}
+
+
+@app.get('/api/comparison')
+async def comparison():
+    return comparison_data()
 
 @app.post('/api/start/{mode}')
 async def start(mode:str, delay_ms:int=1000):
@@ -105,9 +129,28 @@ async def stop_api():
 @app.get('/api/desktop')
 async def desktop(): return {'password':AUTH['desktop_password']}
 
+
+@app.websocket('/api/stream')
+async def telemetry_stream(ws:WebSocket):
+    if not authorized(ws) or not origin_allowed(ws):
+        await ws.close(code=1008)
+        return
+    await ws.accept()
+    last_signature = None
+    try:
+        while True:
+            data = read_json(STATE/'telemetry.json')
+            signature = (data.get('updated'), data.get('step'), data.get('finished'))
+            if signature != last_signature:
+                await ws.send_json({'telemetry': data, 'comparison': comparison_data()})
+                last_signature = signature
+            await asyncio.sleep(0.5)
+    except Exception:
+        return
+
 @app.websocket('/websockify')
 async def proxy(ws:WebSocket):
-    if not authorized(ws) or ws.headers.get('origin') != 'https://'+ws.headers.get('host',''):
+    if not authorized(ws) or not origin_allowed(ws):
         await ws.close(code=1008)
         return
     await ws.accept(subprotocol='binary' if 'binary' in ws.headers.get('sec-websocket-protocol','') else None)

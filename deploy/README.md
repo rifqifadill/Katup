@@ -75,9 +75,11 @@ cgroup. Tidak ada simulasi kedua yang berjalan bersamaan. Semua pengguna melihat
 dan dapat mengendalikan sesi yang sama. Opsi **Hanya lihat** berlaku pada browser
 pengguna itu sendiri. Untuk HP, orientasi lanskap membantu membaca toolbar SUMO.
 
-Peta, kendaraan, lampu, zoom, jeda, dan kontrol lainnya adalah SUMO-GUI asli,
-dikirim melalui noVNC; tidak ada video atau pemutaran hasil lama. Waktu simulasi
-berjalan hingga 1800 detik sesuai controller. Pilihan kecepatan web adalah waktu nyata (1000 ms, sekitar 30 menit),
+Dashboard utama menampilkan peta koridor 2D KATUP, enam simpang, area bottleneck, bypass, posisi kendaraan, status tiga agent, fase lampu, event timeline, grafik antrean, serta perbandingan hasil Baseline dan KATUP. Data dikirim dari controller melalui telemetry WebSocket dan disimpan per skenario di `runtime/state/runs/`. SUMO-GUI/noVNC tetap tersedia melalui tombol **Buka detail SUMO-GUI** untuk inspeksi teknis.
+
+Peta dan telemetry utama dirender oleh dashboard web; SUMO-GUI asli tetap
+dikirim melalui noVNC sebagai tampilan detail teknis. Tidak ada video atau
+pemutaran hasil lama. Waktu simulasi berjalan hingga 1800 detik sesuai controller. Pilihan kecepatan web adalah waktu nyata (1000 ms, sekitar 30 menit),
 5× (200 ms, sekitar 6 menit, pilihan awal), dan 10× (100 ms, sekitar 3 menit).
 Kecepatan juga dapat diubah di toolbar SUMO.
 Setelah selesai, tekan Mulai untuk sesi baru. Renderer memakai CPU Mesa llvmpipe;

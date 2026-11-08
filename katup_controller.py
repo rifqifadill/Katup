@@ -21,6 +21,21 @@ else:
 
 import traci
 
+
+def get_phase_spent_duration(tls_id):
+    """Return elapsed time in the current TLS phase across SUMO versions.
+
+    ``getSpentDuration`` was added to TraCI after the version used by some
+    student laptops. The fallback uses the phase duration and absolute next
+    switch time, which is equivalent for a static signal program.
+    """
+    getter = getattr(traci.trafficlight, "getSpentDuration", None)
+    if getter is not None:
+        return getter(tls_id)
+    return traci.trafficlight.getPhaseDuration(tls_id) - (
+        traci.trafficlight.getNextSwitch(tls_id) - traci.simulation.getTime()
+    )
+
 # Konfigurasi Parameter Sistem KATUP
 TLS_ID = "titik_urai"
 EDGE_PRE_BOTTLENECK = "edge_pre_bottle"
@@ -95,7 +110,7 @@ class AgenKatup:
         # Jika KATUP aktif dan sedang fase 3 melebihi durasi aman (misal 10s), paksa lanjut ke fase kuning
         if self.mode == "KATUP_ACTIVE":
             if current_phase == 3:
-                spent_time = traci.trafficlight.getSpentDuration(self.tls_id)
+                spent_time = get_phase_spent_duration(self.tls_id)
                 if spent_time >= 10:  # Batasi hijau arah bottleneck hanya 10 detik
                     traci.trafficlight.setPhase(self.tls_id, 4)  # Pindah ke kuning
 

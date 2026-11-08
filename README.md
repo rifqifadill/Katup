@@ -73,5 +73,7 @@ Lalu tekan tombol **Play (segitiga hijau)** di toolbar atas.
 
 ## Menjalankan di VPS melalui browser
 
-Panduan instalasi Linux, SUMO-GUI/noVNC, dua skenario, layanan systemd,
-pengujian, dan deployment tersedia di [deploy/README.md](deploy/README.md).
+Dashboard web KATUP menampilkan peta koridor 2D, posisi kendaraan, status tiga
+agent, grafik telemetry, serta perbandingan Baseline dan KATUP. SUMO-GUI/noVNC
+tetap tersedia sebagai tampilan detail teknis. Panduan instalasi Linux, layanan
+systemd, pengujian, dan deployment tersedia di [deploy/README.md](deploy/README.md).
