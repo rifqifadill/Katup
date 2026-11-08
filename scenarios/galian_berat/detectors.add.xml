@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<additional>
+    <laneAreaDetector id="pre_0" lane="edge_pre_bottle_0" pos="0" length="185.5" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="pre_1" lane="edge_pre_bottle_1" pos="0" length="185.5" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="west_0" lane="edge_W2J_0" pos="0" length="279.09999999999997" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="west_1" lane="edge_W2J_1" pos="0" length="279.09999999999997" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="north_0" lane="edge_N2J_0" pos="0" length="129.1" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="north_1" lane="edge_N2J_1" pos="0" length="129.1" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="south_0" lane="edge_S2J_0" pos="0" length="129.1" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="south_1" lane="edge_S2J_1" pos="0" length="129.1" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="farwest_0" lane="edge_W_far2W_0" pos="0" length="239.5" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+    <laneAreaDetector id="farwest_1" lane="edge_W_far2W_1" pos="0" length="239.5" timeThreshold="1" speedThreshold="1.39" jamThreshold="10" freq="60" file="/dev/null" />
+</additional>

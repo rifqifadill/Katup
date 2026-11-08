@@ -9,9 +9,12 @@ import signal
 import subprocess
 import sys
 import time
+import xml.etree.ElementTree as ET
+from functools import lru_cache
 from fastapi import FastAPI, Request, WebSocket
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from katup_scenario import CASE_DIR, build_scenario, case_metadata
 
 ROOT=Path(__file__).resolve().parents[1]
 STATE=Path(os.environ['KATUP_STATE'])
@@ -24,24 +27,32 @@ lock=asyncio.Lock()
 proc=None
 proc_log=None
 scenario=None
+build_scenario()
+CASE = case_metadata()
 
 def authorized(request):
     return PUBLIC_MODE or request.cookies.get('katup_session') in sessions
 
 
+@lru_cache(maxsize=8)
+def cached_json(path, modified):
+    return json.loads(path.read_text())
+
+
 def read_json(path, default=None):
     try:
-        return json.loads(path.read_text())
+        return dict(cached_json(path, path.stat().st_mtime_ns))
     except (OSError, ValueError):
         return {} if default is None else default
 
 
 def comparison_data():
     runs = STATE / 'runs'
-    return {
-        mode: read_json(runs / f'{mode}.json', {})
-        for mode in ('baseline', 'katup')
-    }
+    result = {}
+    for mode in ('baseline', 'katup'):
+        run = read_json(runs / f'{mode}.json', {})
+        result[mode] = run if run.get('case', {}).get('signature') == CASE['signature'] else {}
+    return result
 
 
 async def simulation_running():
@@ -124,12 +135,34 @@ async def status():
     running=await simulation_running()
     data=read_json(STATE/'telemetry.json')
     data.pop('traceback', None)
-    return {'running':running,'public_mode':PUBLIC_MODE,'telemetry':data,'comparison':comparison_data()}
+    if data.get('case', {}).get('signature') != CASE['signature']:
+        data = {}
+    return {'running':running,'public_mode':PUBLIC_MODE,'case':CASE,'telemetry':data,'comparison':comparison_data()}
 
 
 @app.get('/api/comparison')
 async def comparison():
     return comparison_data()
+
+
+@lru_cache(maxsize=1)
+def network_data():
+    root = ET.parse(CASE_DIR/'network.net.xml').getroot()
+    def points(shape):
+        return [[float(v) for v in pair.split(',')] for pair in shape.split()]
+    edges = []
+    for edge in root.findall('edge'):
+        edges.append({'id': edge.get('id'), 'internal': edge.get('function') == 'internal',
+                      'lanes': [{'shape': points(lane.get('shape')), 'width': float(lane.get('width', '3.2'))}
+                                for lane in edge.findall('lane')]})
+    junctions = [{'id': j.get('id'), 'shape': points(j.get('shape'))}
+                 for j in root.findall('junction') if j.get('type') != 'internal' and j.get('shape')]
+    return {'edges': edges, 'junctions': junctions, 'case': CASE}
+
+
+@app.get('/api/network')
+async def network():
+    return network_data()
 
 @app.post('/api/start/{mode}')
 async def start(mode:str, delay_ms:int=1000):
@@ -182,19 +215,37 @@ async def telemetry_stream(ws:WebSocket):
         return
     await ws.accept()
     last_signature = None
+    last_series = None
+    last_comparison = None
+    disconnected = asyncio.create_task(ws.receive())
     try:
-        while True:
+        while not disconnected.done():
             data = read_json(STATE/'telemetry.json')
+            if data.get('case', {}).get('signature') != CASE['signature']:
+                data = {}
             data.pop('traceback', None)
             data['running'] = await simulation_running()
             data['public_mode'] = PUBLIC_MODE
             signature = (data.get('updated'), data.get('step'), data.get('finished'), data['running'])
             if signature != last_signature:
-                await ws.send_json({'telemetry': data, 'comparison': comparison_data()})
+                history = data.get('series', [])
+                series_signature = (data.get('run_id'), history[-1].get('time') if history else None)
+                if series_signature == last_series:
+                    data.pop('series', None)
+                last_series = series_signature
+                revision = tuple((STATE/'runs'/f'{mode}.json').stat().st_mtime_ns if (STATE/'runs'/f'{mode}.json').exists() else 0 for mode in ('baseline','katup'))
+                payload = {'telemetry': data, 'case': CASE}
+                if revision != last_comparison:
+                    payload['comparison'] = comparison_data()
+                    last_comparison = revision
+                await ws.send_json(payload)
                 last_signature = signature
-            await asyncio.sleep(0.5)
+            await asyncio.wait([disconnected], timeout=0.1)
     except Exception:
         return
+    finally:
+        disconnected.cancel()
+        await asyncio.gather(disconnected, return_exceptions=True)
 
 @app.websocket('/websockify')
 async def proxy(ws:WebSocket):
@@ -218,3 +269,4 @@ async def proxy(ws:WebSocket):
         await writer.wait_closed()
 
 app.mount('/novnc',StaticFiles(directory=os.environ['KATUP_NOVNC']),name='novnc')
+app.mount('/assets',StaticFiles(directory=ROOT/'deploy/assets'),name='assets')
