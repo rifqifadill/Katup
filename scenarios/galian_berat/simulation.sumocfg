@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+    <input>
+        <net-file value="network.net.xml" />
+        <route-files value="demand.rou.xml" />
+        <additional-files value="detectors.add.xml" />
+    </input>
+    <time>
+        <begin value="0" />
+        <end value="1800" />
+        <step-length value="1" />
+    </time>
+    <processing>
+        <time-to-teleport value="-1" />
+    </processing>
+</configuration>
