@@ -125,7 +125,7 @@ function renderComparison(c){const sig=JSON.stringify(c);if(sig===lastComparison
   const better=kw<bw&&kd<bd&&ks.completed_trips>=bs.completed_trips&&ks.total_vehicle_hours<bs.total_vehicle_hours;
   setText('resultVerdict',better?'Pada skenario ini, KATUP menurunkan waktu tunggu, waktu perjalanan, dan total beban waktu jaringan, sekaligus meningkatkan trip selesai. Periksa juga spillback dan kendaraan tertahan di bawah.':'KATUP belum lebih baik secara keseluruhan pada sesi ini. Ruas hilir dapat lebih kosong, tetapi waktu tunggu dan antrean hulu tetap perlu diperiksa.');
   $('resultVerdict').classList.toggle('warning',!better);
-  setText('comparisonMethod',`${b.case.name} · seed ${b.seed} · ${b.final.simulation_time} detik · ${b.case.planned_vehicles} kendaraan terjadwal. Waktu tunggu/perjalanan adalah rata-rata trip selesai. Total jam-kendaraan mencakup semua kendaraan, termasuk yang masih berjalan dan tertahan masuk. Input dan versi SUMO cocok pada kedua sesi.`);
+  setText('comparisonMethod',`Seed ${b.seed} · ${b.final.simulation_time} detik · ${b.case.planned_vehicles} kendaraan. Rata-rata dari trip selesai; jam-kendaraan mencakup kendaraan aktif dan tertahan.`);
 }
 function render(t){const m=t.metrics||{},d=m.downstream||{},u=m.upstream||{},ctrl=t.control||{};
   setText('downstream',fmt(d.vehicles));setText('upstream',fmt(u.vehicles));setText('speedValue',d.vehicles===0?'—':fmt(d.speed_kmh,1));setText('rerouted',fmt(ctrl.rerouted));
@@ -143,7 +143,7 @@ function render(t){const m=t.metrics||{},d=m.downstream||{},u=m.upstream||{},ctr
   setText('phaseDetail',phase.next_switch?`Sisa fase ${fmt(Math.max(0,phase.next_switch-t.simulation_time),1)} detik`:'—');
   const signal=$('signal-light');if(signal)signal.style.fill=green?'#80ef95':yellow?'#ffd269':'#ff758f';
   $('lights').innerHTML=`<i class="light ${!green&&!yellow?'red':''}"></i><i class="light ${yellow?'yellow':''}"></i><i class="light ${green?'green':''}"></i>`;
-  if(t.public_mode){$('desktop').hidden=true;setText('connection','Dashboard publik · satu sesi bersama · HTTPS');}
+  if(t.public_mode){$('desktop').hidden=true;setText('connection','Live · SUMO + TraCI · HTTPS');}
   renderCharts(t);renderEvents(t);$('stop').disabled=!t.running;
 }
 function accept(payload){const t=payload.telemetry||{};const run=t.run_id||`${t.scenario}`;
