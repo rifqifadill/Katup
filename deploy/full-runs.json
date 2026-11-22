@@ -1,0 +1,60 @@
+{
+  "baseline": {
+    "scenario": "baseline",
+    "simulation_time": 1800.0,
+    "vehicles": 93,
+    "sample_vehicle": "flow_NS.168",
+    "sample_position": [
+      -4.8,
+      11.401019840688775
+    ],
+    "calls": {
+      "pengamat": 1800,
+      "katup": 0,
+      "rute": 0
+    },
+    "control": {
+      "mode": "DISABLED",
+      "rerouted": 0
+    },
+    "metrics": {
+      "veh_count": 19,
+      "halting": 0,
+      "occupancy": 23.24907584654861,
+      "mean_speed_kmh": 9.898301581573302,
+      "density_ratio": 100.0,
+      "is_high_risk": true,
+      "can_return_to_normal": false
+    },
+    "updated": 1793594988.9874835
+  },
+  "katup": {
+    "scenario": "katup",
+    "simulation_time": 1800.0,
+    "vehicles": 114,
+    "sample_vehicle": "flow_NS.168",
+    "sample_position": [
+      -4.8,
+      11.401000430131518
+    ],
+    "calls": {
+      "pengamat": 1800,
+      "katup": 1799,
+      "rute": 1799
+    },
+    "control": {
+      "mode": "NORMAL",
+      "rerouted": 157
+    },
+    "metrics": {
+      "veh_count": 7,
+      "halting": 0,
+      "occupancy": 8.364762931034484,
+      "mean_speed_kmh": 44.231092429592934,
+      "density_ratio": 38.88888888888889,
+      "is_high_risk": false,
+      "can_return_to_normal": false
+    },
+    "updated": 1793594929.7378542
+  }
+}
