@@ -1,0 +1,16 @@
+{
+  "1000": {
+    "wall_seconds": 6.12,
+    "sim_seconds": 6,
+    "ws_bytes": 2306,
+    "ws_messages": 24
+  },
+  "200": {
+    "wall_seconds": 6.1,
+    "sim_seconds": 31,
+    "ws_bytes": 13601,
+    "ws_messages": 91
+  },
+  "invalid_speed_rejected": true,
+  "tls_verification": true
+}

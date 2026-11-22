@@ -1,0 +1,75 @@
+{
+  "login_and_novnc": true,
+  "baseline": {
+    "scenario": "baseline",
+    "simulation_time": 18,
+    "vehicles": 18,
+    "sample_vehicle": "flow_NS.0",
+    "sample_position": [
+      -4.8,
+      154.38716134040058
+    ],
+    "calls": {
+      "pengamat": 18,
+      "katup": 0,
+      "rute": 0
+    },
+    "control": {
+      "mode": "DISABLED",
+      "rerouted": 0
+    },
+    "metrics": {
+      "veh_count": 0,
+      "halting": 0,
+      "occupancy": 0,
+      "mean_speed_kmh": 50.004000000000005,
+      "density_ratio": 0,
+      "is_high_risk": false,
+      "can_return_to_normal": true
+    },
+    "updated": 1793596123.7011673
+  },
+  "katup": {
+    "scenario": "katup",
+    "simulation_time": 63,
+    "vehicles": 56,
+    "sample_vehicle": "flow_NS.0",
+    "sample_position": [
+      -4.8,
+      -241.99554322792312
+    ],
+    "calls": {
+      "pengamat": 63,
+      "katup": 62,
+      "rute": 62
+    },
+    "control": {
+      "mode": "KATUP_ACTIVE",
+      "rerouted": 7
+    },
+    "metrics": {
+      "veh_count": 11,
+      "halting": 0,
+      "occupancy": 13.963244813177505,
+      "mean_speed_kmh": 38.066585855415376,
+      "density_ratio": 61.111111111111114,
+      "is_high_risk": true,
+      "can_return_to_normal": false
+    },
+    "updated": 1793596134.26058
+  },
+  "stop": true,
+  "restart_after_stop": true,
+  "mobile_view_and_novnc": true,
+  "url": "https://created-predicted-victory-beliefs.trycloudflare.com",
+  "browser_certificate_validation": true,
+  "https_status": 200,
+  "ssl_verify_result": 0,
+  "tls": "TLSv1.3",
+  "issuer": "Google Trust Services WE1",
+  "test_location": "Chromium on VPS, connecting through public Cloudflare hostname",
+  "console_warnings": [
+    "Clipboard write failed:  NotAllowedError: Failed to execute 'writeText' on 'Clipboard': Write permission denied."
+  ],
+  "page_exceptions": []
+}

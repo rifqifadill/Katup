@@ -1,0 +1,7 @@
+eclipse-sumo
+traci
+fastapi
+uvicorn
+websockets
+websockify
+pillow
