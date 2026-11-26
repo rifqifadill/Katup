@@ -10,6 +10,8 @@ if 'SUMO_HOME' in os.environ:
 import traci
 import traci.constants as tc
 from katup_scenario import build_scenario, DURATION
+from katup_core.scenarios import build_case, get_profile
+from katup_core.strategy import PROFILES, Strategy, Supervisor
 
 TLS_ID = 'titik_urai'
 EDGE_PRE_BOTTLENECK = 'edge_pre_bottle'
@@ -17,6 +19,7 @@ EDGE_INBOUND_WEST = 'edge_W2J'
 EDGE_DECISION = 'edge_W_far2W'
 BYPASS_EDGES = ['edge_W2J', 'edge_J2N', 'edge_alt_1', 'edge_alt_2', 'edge_post_merge']
 LOG = logging.getLogger(__name__)
+PROFILE = get_profile()
 
 
 def get_phase_spent_duration(tls_id):
@@ -28,7 +31,8 @@ def get_phase_spent_duration(tls_id):
 
 
 def queue_length(prefix):
-    return max(traci.lanearea.getJamLengthMeters(f'{prefix}_{lane}') for lane in (0, 1))
+    edge = PROFILE['detectors'][prefix]
+    return max((traci.lanearea.getJamLengthMeters(f'{prefix}_{lane}') for lane in range(traci.edge.getLaneNumber(edge))), default=0)
 
 
 class AgenPengamat:
@@ -36,10 +40,11 @@ class AgenPengamat:
     def __init__(self, edge_id):
         self.edge_id = edge_id
         self.length = traci.lane.getLength(edge_id + '_0')
-        self.capacity = sum(traci.lane.getLength(edge_id + f'_{i}') for i in (0, 1)) / 7.5
+        self.capacity = sum(traci.lane.getLength(edge_id + f'_{i}') for i in range(traci.edge.getLaneNumber(edge_id))) / 7.5
         self.safe_seconds = 0
         self.metrics = {}
-        traci.junction.subscribeContext(TLS_ID, tc.CMD_GET_VEHICLE_VARIABLE, 30,
+        self.junction_id = PROFILE.get('junction', TLS_ID)
+        traci.junction.subscribeContext(self.junction_id, tc.CMD_GET_VEHICLE_VARIABLE, 30,
             [tc.VAR_SPEED, tc.VAR_ROAD_ID])
 
     def evaluate(self):
@@ -50,9 +55,9 @@ class AgenPengamat:
         ratio = jam / self.length
         safe = ratio < 0.2 and west < 70
         self.safe_seconds = self.safe_seconds + 1 if safe else 0
-        nearby = traci.junction.getContextSubscriptionResults(TLS_ID) or {}
+        nearby = traci.junction.getContextSubscriptionResults(self.junction_id) or {}
         stopped_in_box = sum(
-            car[tc.VAR_SPEED] < 0.1 and car[tc.VAR_ROAD_ID].startswith(':titik_urai')
+            car[tc.VAR_SPEED] < 0.1 and car[tc.VAR_ROAD_ID].startswith(':' + self.junction_id)
             for car in nearby.values())
         self.metrics = {
             'veh_count': count,
@@ -62,7 +67,7 @@ class AgenPengamat:
             'density_ratio': min(100, count / self.capacity * 100),
             'queue_m': jam, 'queue_ratio': ratio,
             'upstream_queue_m': west, 'far_upstream_queue_m': farwest,
-            'cross_queue_m': max(queue_length('north'), queue_length('south')),
+            'cross_queue_m': max(queue_length(prefix) for prefix in PROFILE.get('cross_detectors', ('north', 'south'))),
             'junction_stopped': stopped_in_box,
             'spillback': ratio >= 0.9,
             'is_high_risk': ratio >= 0.55 or west >= 180,
@@ -79,6 +84,7 @@ class AgenKatup:
         self.last_phase = -1
         self.phase_started = 0
         self.last_action = 'Memantau antrean dua arah'
+        self.strategy = Strategy()
 
     def apply_control(self, is_high_risk, can_return_to_normal):
         if is_high_risk:
@@ -91,33 +97,33 @@ class AgenKatup:
             self.phase_started = now
             self.last_phase = phase
         elapsed = now - self.phase_started
-        west = traci.edge.getLastStepHaltingNumber('edge_W2J')
-        cross = (traci.edge.getLastStepHaltingNumber('edge_N2J')
-                 + traci.edge.getLastStepHaltingNumber('edge_S2J'))
-        if phase == 0 and elapsed >= 12 and (cross == 0 or (elapsed >= 30 and west > 0)):
-            traci.trafficlight.setPhase(self.tls_id, 1)
-            self.last_action = 'Melayani arus barat setelah antrean silang terlayani'
-        elif phase == 3 and elapsed >= 10:
-            downstream_full = queue_length('pre') > 0.75 * traci.lane.getLength('edge_pre_bottle_0')
-            if west == 0 or (elapsed >= 30 and cross > 0) or downstream_full:
-                traci.trafficlight.setPhase(self.tls_id, 4)
+        west = traci.edge.getLastStepHaltingNumber(PROFILE['west'])
+        served = PROFILE['north'] + PROFILE['south']
+        if phase in PROFILE['phases']['cross']:
+            served = PROFILE['phases'].get('served', {}).get(str(phase), served)
+        cross = sum(traci.edge.getLastStepHaltingNumber(edge) for edge in served)
+        limit = PROFILES[self.strategy.profile]['green_limit']
+        if phase in PROFILE['phases']['cross'] and elapsed >= 12 and (cross == 0 or (elapsed >= 30 and west > 0)):
+            traci.trafficlight.setPhase(self.tls_id, phase + 1)
+            self.last_action = 'Melayani arus utama setelah antrean silang terlayani'
+        elif phase in PROFILE['phases']['main'] and elapsed >= 10:
+            downstream_full = queue_length('pre') > 0.75 * traci.lane.getLength(PROFILE['pre'] + '_0')
+            if west == 0 or (elapsed >= limit and cross > 0) or downstream_full:
+                traci.trafficlight.setPhase(self.tls_id, phase + 1)
                 self.last_action = 'Menahan arus masuk galian' if downstream_full else 'Melayani arus silang'
 
 
 class AgenRute:
     """Select detours before the upstream junction, preserving the destination."""
     def __init__(self, inbound_edge=EDGE_DECISION, bypass_route=None):
-        self.inbound_edge = inbound_edge
-        self.paths = [
-            ['edge_W_far2W', 'edge_W2NW', 'edge_NW2N', 'edge_alt_1', 'edge_alt_2', 'edge_post_merge', 'edge_E2CBD'],
-            ['edge_W_far2W', 'edge_W2NW', 'edge_NW2N', 'edge_alt_1', 'edge_alt2NE_east', 'edge_NE_east2E', 'edge_E2CBD'],
-            ['edge_W_far2W', 'edge_W2SW', 'edge_SW2S', 'edge_S2SE', 'edge_SE2E', 'edge_E2CBD'],
-        ]
-        self.route_names = ['Utara', 'Boulevard timur', 'Selatan']
+        self.inbound_edge = PROFILE['decision'] if inbound_edge == 'edge_W_far2W' else inbound_edge
+        self.paths = [list(path) for path in PROFILE['paths']]
+        self.route_names = list(PROFILE['route_names'])
         if inbound_edge != EDGE_DECISION and bypass_route:
             self.paths = [list(bypass_route)]
             self.route_names = ['Bypass']
-        self.main = ['edge_W2J', 'edge_pre_bottle', 'edge_bottleneck', 'edge_bottle_exit', 'edge_post_merge', 'edge_E2CBD']
+        self.main = list(PROFILE['main'])
+        self.strategy = Strategy()
         self.seen = set()
         self.credit = 0.0
         self.reroute_counter = 0
@@ -158,18 +164,19 @@ class AgenRute:
             if vehicle in self.seen:
                 continue
             original = traci.vehicle.getRoute(vehicle)
-            if 'edge_bottleneck' not in original:
+            if PROFILE['bottleneck'] not in original:
                 continue
             self.seen.add(vehicle)
             eligible = [i for i, path in enumerate(self.paths) if self.available[i] and original[-1] in path]
             if not eligible:
                 continue
-            scores = [cost + 3 * count for cost, count in zip(self.costs, counts)]
+            scores = [cost + 3 * count - (5 if self.route_names[i] == self.strategy.route_bias else 0) for i, (cost, count) in enumerate(zip(self.costs, counts))]
             choice = min(eligible, key=lambda i: scores[i])
-            if scores[choice] > self.main_cost + 30:
+            if self.costs[choice] + 3 * counts[choice] > self.main_cost + 30:
                 continue
-            count = traci.edge.getLastStepVehicleNumber('edge_pre_bottle')
+            count = traci.edge.getLastStepVehicleNumber(PROFILE['pre'])
             self.target_fraction = 0.70 if count < 8 else 0.82 if count < 16 else 0.90
+            self.target_fraction = min(0.90, self.target_fraction + PROFILES[self.strategy.profile]['reroute_delta'])
             self.credit += self.target_fraction
             self.route_mode = 'ACTIVE'
             if self.credit < 1:
@@ -243,30 +250,52 @@ class RunMetrics:
         }
 
 
-def run_simulation(enable_katup=True, use_gui=True, on_step=None):
-    config = build_scenario()
+def run_simulation(enable_katup=True, use_gui=True, on_step=None, corridor=None, demand='peak', mode=None, run_id=None, audit_path=None):
+    global PROFILE, TLS_ID, EDGE_PRE_BOTTLENECK, EDGE_INBOUND_WEST, EDGE_DECISION
+    if corridor:
+        config, case = build_case(corridor, demand)
+        PROFILE = case['profile']
+        duration = case['duration']
+    else:
+        config = build_scenario()
+        PROFILE = get_profile()
+        duration = DURATION
+    TLS_ID, EDGE_PRE_BOTTLENECK, EDGE_INBOUND_WEST, EDGE_DECISION = (PROFILE[key] for key in ('tls', 'pre', 'west', 'decision'))
+    mode = mode or ('katup' if enable_katup else 'baseline')
+    if mode not in ('baseline', 'katup', 'hybrid'):
+        raise ValueError('Mode tidak dikenal')
+    enable_katup = mode != 'baseline'
+    supervisor = Supervisor(run_id or f'{mode}-{os.getpid()}', audit_path=audit_path) if mode == 'hybrid' else None
     command = ['sumo-gui' if use_gui else 'sumo', '-c', str(config), '--start', 'true']
     traci.start(command)
     try:
         observer = AgenPengamat(EDGE_PRE_BOTTLENECK)
         valve = AgenKatup(TLS_ID)
         route = AgenRute()
+        route.supervisor = supervisor
         recorder = RunMetrics()
-        for step in range(1, DURATION + 1):
+        for step in range(1, duration + 1):
             traci.simulationStep()
             metrics = observer.evaluate()
             if enable_katup:
+                if supervisor:
+                    if step >= route.next_refresh:
+                        route.refresh_routes(step)
+                    routes = [{'name': name, 'cost_seconds': round(cost, 1), 'available': available} for name, cost, available in zip(route.route_names, route.costs, route.available)]
+                    strategy = supervisor.update(step, metrics, routes)
+                    route.strategy = strategy
+                    valve.strategy = strategy
                 valve.apply_control(metrics['is_high_risk'], metrics['can_return_to_normal'])
                 route.guide_traffic(True)
             recorder.update(metrics)
             if on_step is not None:
                 on_step(step, metrics, valve, route, recorder)
             if step % 60 == 0:
-                print(f'{step}s | antrean hilir {metrics["queue_m"]:.0f}m | '
-                      f'hulu {metrics["upstream_queue_m"]:.0f}m | '
-                      f'tiba {recorder.arrived} | alih rute {route.reroute_counter}', flush=True)
+                print(f'{step}s | hilir {metrics["queue_m"]:.0f}m | hulu {metrics["upstream_queue_m"]:.0f}m | tiba {recorder.arrived} | alih {route.reroute_counter}', flush=True)
         return recorder.summary()
     finally:
+        if supervisor:
+            supervisor.close()
         traci.close()
 
 

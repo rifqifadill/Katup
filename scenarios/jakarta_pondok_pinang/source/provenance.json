@@ -1,0 +1,24 @@
+{
+  "source": "OpenStreetMap contributors",
+  "license": "ODbL 1.0",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "url": "https://api.openstreetmap.org/api/0.6/map?bbox=106.775,-6.288,106.792,-6.269",
+  "bbox": [
+    106.775,
+    -6.288,
+    106.792,
+    -6.269
+  ],
+  "fetched_at_utc": "2026-11-26T13:40:52.190754+00:00",
+  "filter": [
+    "primary",
+    "primary_link",
+    "secondary",
+    "secondary_link",
+    "tertiary",
+    "tertiary_link",
+    "trunk",
+    "trunk_link"
+  ],
+  "traffic_source": "synthetic simulation demand, no measured live traffic"
+}

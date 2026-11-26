@@ -1,0 +1,99 @@
+{
+  "id": "ui_depok",
+  "name": "Universitas Indonesia–Margonda, Depok",
+  "geographic": true,
+  "duration": 1800,
+  "tls": "1641060607",
+  "junction": "1641060607",
+  "pre": "katup_pre",
+  "west": "395092827#1",
+  "decision": "671212768#1",
+  "bottleneck": "katup_work",
+  "north": [
+    "-1577316868"
+  ],
+  "south": [],
+  "detectors": {
+    "pre": "katup_pre",
+    "west": "395092827#1",
+    "farwest": "671212768#1",
+    "north": "-1577316868",
+    "south": "-1577316868"
+  },
+  "cross_detectors": [
+    "north"
+  ],
+  "main": [
+    "395092827#1",
+    "katup_pre",
+    "katup_work",
+    "katup_exit",
+    "395092827#3",
+    "395092827#4",
+    "395092827#5",
+    "395092827#6",
+    "687509317",
+    "151285993"
+  ],
+  "paths": [
+    [
+      "671212768#1",
+      "395092827#1",
+      "724259480",
+      "592549581#0",
+      "592549581#1",
+      "592549581#3",
+      "152033770",
+      "395092827#3",
+      "395092827#4",
+      "395092827#5",
+      "395092827#6",
+      "687509317",
+      "151285993"
+    ]
+  ],
+  "route_names": [
+    "Cengkeh–Sawo"
+  ],
+  "phases": {
+    "main": [
+      0
+    ],
+    "cross": [
+      3
+    ],
+    "served": {
+      "0": [
+        "395092827#1"
+      ],
+      "3": [
+        "-1577316868"
+      ]
+    },
+    "movement_states": [
+      "green",
+      "yellow",
+      "red",
+      "red",
+      "red",
+      "red"
+    ]
+  },
+  "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+  "map_attribution": "© OpenStreetMap contributors · ODbL",
+  "center": [
+    106.83391654627708,
+    -6.366246160550591
+  ],
+  "bbox": [
+    106.815,
+    -6.383,
+    106.846,
+    -6.352
+  ],
+  "source_edge": "395092827#2",
+  "source_road": "Jalan Raya Margonda",
+  "workzone_type": "lane_drop",
+  "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+  "context_edge_limit": 400
+}

@@ -1,0 +1,2775 @@
+{
+  "created_at_utc": "2026-11-26T15:50:47.889977+00:00",
+  "branch": "llm",
+  "traffic_source": "synthetic, geographic OSM roads",
+  "api_enabled": false,
+  "unit_tests_passed": 17,
+  "paired_runs": [
+    {
+      "scenario": "baseline",
+      "seed": 42,
+      "case": {
+        "name": "Universitas Indonesia–Margonda, Depok",
+        "corridor": "ui_depok",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 985,
+        "signature": "57819b7f32f18a2f",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 172.07,
+        "pre_length_m": 168.91,
+        "pre_lane_count": 3,
+        "bottleneck_lane_count": 1,
+        "lane_label": "3 → 1 lajur",
+        "profile": {
+          "id": "ui_depok",
+          "name": "Universitas Indonesia–Margonda, Depok",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "1641060607",
+          "junction": "1641060607",
+          "pre": "katup_pre",
+          "west": "395092827#1",
+          "decision": "671212768#1",
+          "bottleneck": "katup_work",
+          "north": [
+            "-1577316868"
+          ],
+          "south": [],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "395092827#1",
+            "farwest": "671212768#1",
+            "north": "-1577316868",
+            "south": "-1577316868"
+          },
+          "cross_detectors": [
+            "north"
+          ],
+          "main": [
+            "395092827#1",
+            "katup_pre",
+            "katup_work",
+            "katup_exit",
+            "395092827#3",
+            "395092827#4",
+            "395092827#5",
+            "395092827#6",
+            "687509317",
+            "151285993"
+          ],
+          "paths": [
+            [
+              "671212768#1",
+              "395092827#1",
+              "724259480",
+              "592549581#0",
+              "592549581#1",
+              "592549581#3",
+              "152033770",
+              "395092827#3",
+              "395092827#4",
+              "395092827#5",
+              "395092827#6",
+              "687509317",
+              "151285993"
+            ]
+          ],
+          "route_names": [
+            "Cengkeh–Sawo"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3
+            ],
+            "served": {
+              "0": [
+                "395092827#1"
+              ],
+              "3": [
+                "-1577316868"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.83391654627708,
+            -6.366246160550591
+          ],
+          "bbox": [
+            106.815,
+            -6.383,
+            106.846,
+            -6.352
+          ],
+          "source_edge": "395092827#2",
+          "source_road": "Jalan Raya Margonda",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 212.233,
+        "pending_vehicle_hours": 114.026,
+        "spillback_seconds": 512,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 168.9,
+        "max_upstream_queue_m": 415.5,
+        "arrived": 166,
+        "departed": 388,
+        "pending": 597,
+        "running": 222,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 166,
+        "avg_duration": 854.271,
+        "avg_waitingTime": 210.373,
+        "avg_timeLoss": 577.025,
+        "avg_routeLength": 1684.707,
+        "avg_departDelay": 12.492
+      },
+      "evidence": {
+        "phase_checks": 79,
+        "rerouted": 0,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "katup",
+      "seed": 42,
+      "case": {
+        "name": "Universitas Indonesia–Margonda, Depok",
+        "corridor": "ui_depok",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 985,
+        "signature": "57819b7f32f18a2f",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 172.07,
+        "pre_length_m": 168.91,
+        "pre_lane_count": 3,
+        "bottleneck_lane_count": 1,
+        "lane_label": "3 → 1 lajur",
+        "profile": {
+          "id": "ui_depok",
+          "name": "Universitas Indonesia–Margonda, Depok",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "1641060607",
+          "junction": "1641060607",
+          "pre": "katup_pre",
+          "west": "395092827#1",
+          "decision": "671212768#1",
+          "bottleneck": "katup_work",
+          "north": [
+            "-1577316868"
+          ],
+          "south": [],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "395092827#1",
+            "farwest": "671212768#1",
+            "north": "-1577316868",
+            "south": "-1577316868"
+          },
+          "cross_detectors": [
+            "north"
+          ],
+          "main": [
+            "395092827#1",
+            "katup_pre",
+            "katup_work",
+            "katup_exit",
+            "395092827#3",
+            "395092827#4",
+            "395092827#5",
+            "395092827#6",
+            "687509317",
+            "151285993"
+          ],
+          "paths": [
+            [
+              "671212768#1",
+              "395092827#1",
+              "724259480",
+              "592549581#0",
+              "592549581#1",
+              "592549581#3",
+              "152033770",
+              "395092827#3",
+              "395092827#4",
+              "395092827#5",
+              "395092827#6",
+              "687509317",
+              "151285993"
+            ]
+          ],
+          "route_names": [
+            "Cengkeh–Sawo"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3
+            ],
+            "served": {
+              "0": [
+                "395092827#1"
+              ],
+              "3": [
+                "-1577316868"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.83391654627708,
+            -6.366246160550591
+          ],
+          "bbox": [
+            106.815,
+            -6.383,
+            106.846,
+            -6.352
+          ],
+          "source_edge": "395092827#2",
+          "source_road": "Jalan Raya Margonda",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 207.597,
+        "pending_vehicle_hours": 105.648,
+        "spillback_seconds": 241,
+        "junction_stopped_seconds": 14,
+        "junction_blocked_seconds": 14,
+        "max_queue_m": 168.9,
+        "max_upstream_queue_m": 414.6,
+        "arrived": 201,
+        "departed": 447,
+        "pending": 538,
+        "running": 246,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 201,
+        "avg_duration": 829.478,
+        "avg_waitingTime": 184.453,
+        "avg_timeLoss": 537.906,
+        "avg_routeLength": 1669.215,
+        "avg_departDelay": 26.818
+      },
+      "evidence": {
+        "phase_checks": 188,
+        "rerouted": 138,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "hybrid",
+      "seed": 42,
+      "case": {
+        "name": "Universitas Indonesia–Margonda, Depok",
+        "corridor": "ui_depok",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 985,
+        "signature": "57819b7f32f18a2f",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 172.07,
+        "pre_length_m": 168.91,
+        "pre_lane_count": 3,
+        "bottleneck_lane_count": 1,
+        "lane_label": "3 → 1 lajur",
+        "profile": {
+          "id": "ui_depok",
+          "name": "Universitas Indonesia–Margonda, Depok",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "1641060607",
+          "junction": "1641060607",
+          "pre": "katup_pre",
+          "west": "395092827#1",
+          "decision": "671212768#1",
+          "bottleneck": "katup_work",
+          "north": [
+            "-1577316868"
+          ],
+          "south": [],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "395092827#1",
+            "farwest": "671212768#1",
+            "north": "-1577316868",
+            "south": "-1577316868"
+          },
+          "cross_detectors": [
+            "north"
+          ],
+          "main": [
+            "395092827#1",
+            "katup_pre",
+            "katup_work",
+            "katup_exit",
+            "395092827#3",
+            "395092827#4",
+            "395092827#5",
+            "395092827#6",
+            "687509317",
+            "151285993"
+          ],
+          "paths": [
+            [
+              "671212768#1",
+              "395092827#1",
+              "724259480",
+              "592549581#0",
+              "592549581#1",
+              "592549581#3",
+              "152033770",
+              "395092827#3",
+              "395092827#4",
+              "395092827#5",
+              "395092827#6",
+              "687509317",
+              "151285993"
+            ]
+          ],
+          "route_names": [
+            "Cengkeh–Sawo"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3
+            ],
+            "served": {
+              "0": [
+                "395092827#1"
+              ],
+              "3": [
+                "-1577316868"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.83391654627708,
+            -6.366246160550591
+          ],
+          "bbox": [
+            106.815,
+            -6.383,
+            106.846,
+            -6.352
+          ],
+          "source_edge": "395092827#2",
+          "source_road": "Jalan Raya Margonda",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 207.597,
+        "pending_vehicle_hours": 105.648,
+        "spillback_seconds": 241,
+        "junction_stopped_seconds": 14,
+        "junction_blocked_seconds": 14,
+        "max_queue_m": 168.9,
+        "max_upstream_queue_m": 414.6,
+        "arrived": 201,
+        "departed": 447,
+        "pending": 538,
+        "running": 246,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 201,
+        "avg_duration": 829.478,
+        "avg_waitingTime": 184.453,
+        "avg_timeLoss": 537.906,
+        "avg_routeLength": 1669.215,
+        "avg_departDelay": 26.818
+      },
+      "evidence": {
+        "phase_checks": 188,
+        "rerouted": 138,
+        "supervisor": {
+          "provider": "disabled",
+          "model": null,
+          "configured": false,
+          "requests": 0,
+          "accepted": 0,
+          "rejected": 0,
+          "errors": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "last_latency_ms": null,
+          "status": "not_configured",
+          "reason": "API LLM belum dihubungkan, kendali memakai heuristik",
+          "profile": "balanced",
+          "route_bias": "auto",
+          "pending": false,
+          "applied_at": null,
+          "history": [],
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "baseline",
+      "seed": 42,
+      "case": {
+        "name": "Akses UI–Kelapa Dua, Depok",
+        "corridor": "akses_ui",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1245,
+        "signature": "0dbed1aad30b5bf9",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 86.94,
+        "pre_length_m": 71.97,
+        "pre_lane_count": 1,
+        "bottleneck_lane_count": 1,
+        "lane_label": "1 lajur · hambatan galian",
+        "profile": {
+          "id": "akses_ui",
+          "name": "Akses UI–Kelapa Dua, Depok",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "cluster_3494258906_4711366687",
+          "junction": "cluster_3494258906_4711366687",
+          "pre": "katup_pre",
+          "west": "10522129#1",
+          "decision": "1105649848",
+          "bottleneck": "katup_work",
+          "north": [
+            "-10522129#3"
+          ],
+          "south": [
+            "-342420279#0",
+            "-477837216"
+          ],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "10522129#1",
+            "farwest": "1105649848",
+            "north": "-10522129#3",
+            "south": "-342420279#0",
+            "cross_2": "-477837216"
+          },
+          "cross_detectors": [
+            "north",
+            "south",
+            "cross_2"
+          ],
+          "main": [
+            "553193760#6",
+            "10522129#0",
+            "10522129#1",
+            "katup_pre",
+            "katup_work",
+            "10522129#6",
+            "10522129#7",
+            "1322317207#2"
+          ],
+          "paths": [
+            [
+              "1105649848",
+              "-553193760#4",
+              "-342420171",
+              "174895202#8",
+              "174895202#10",
+              "-174895194#2",
+              "-174895194#1",
+              "-174895194#0",
+              "594404675",
+              "10522129#6",
+              "10522129#7",
+              "1322317207#2"
+            ],
+            [
+              "1105649848",
+              "553193760#6",
+              "10522129#0",
+              "10522129#1",
+              "477837216",
+              "-174895194#1",
+              "-174895194#0",
+              "594404675",
+              "10522129#6",
+              "10522129#7",
+              "1322317207#2"
+            ]
+          ],
+          "route_names": [
+            "Menpor",
+            "Bhakti–Menpor"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3,
+              6,
+              9
+            ],
+            "served": {
+              "0": [
+                "10522129#1"
+              ],
+              "3": [
+                "-10522129#3"
+              ],
+              "6": [
+                "-342420279#0"
+              ],
+              "9": [
+                "-477837216"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.85180934242776,
+            -6.355340290975421
+          ],
+          "bbox": [
+            106.84,
+            -6.378,
+            106.869,
+            -6.349
+          ],
+          "source_edge": "10522129#3",
+          "source_road": "Jalan Komjen Polisi Mohammad Jasin",
+          "workzone_type": "speed_restriction",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 206.557,
+        "pending_vehicle_hours": 146.557,
+        "spillback_seconds": 62,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 72.0,
+        "max_upstream_queue_m": 104.0,
+        "arrived": 461,
+        "departed": 595,
+        "pending": 650,
+        "running": 134,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 461,
+        "avg_duration": 348.145,
+        "avg_waitingTime": 195.035,
+        "avg_timeLoss": 254.742,
+        "avg_routeLength": 770.437,
+        "avg_departDelay": 151.205
+      },
+      "evidence": {
+        "phase_checks": 79,
+        "rerouted": 0,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "katup",
+      "seed": 42,
+      "case": {
+        "name": "Akses UI–Kelapa Dua, Depok",
+        "corridor": "akses_ui",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1245,
+        "signature": "0dbed1aad30b5bf9",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 86.94,
+        "pre_length_m": 71.97,
+        "pre_lane_count": 1,
+        "bottleneck_lane_count": 1,
+        "lane_label": "1 lajur · hambatan galian",
+        "profile": {
+          "id": "akses_ui",
+          "name": "Akses UI–Kelapa Dua, Depok",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "cluster_3494258906_4711366687",
+          "junction": "cluster_3494258906_4711366687",
+          "pre": "katup_pre",
+          "west": "10522129#1",
+          "decision": "1105649848",
+          "bottleneck": "katup_work",
+          "north": [
+            "-10522129#3"
+          ],
+          "south": [
+            "-342420279#0",
+            "-477837216"
+          ],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "10522129#1",
+            "farwest": "1105649848",
+            "north": "-10522129#3",
+            "south": "-342420279#0",
+            "cross_2": "-477837216"
+          },
+          "cross_detectors": [
+            "north",
+            "south",
+            "cross_2"
+          ],
+          "main": [
+            "553193760#6",
+            "10522129#0",
+            "10522129#1",
+            "katup_pre",
+            "katup_work",
+            "10522129#6",
+            "10522129#7",
+            "1322317207#2"
+          ],
+          "paths": [
+            [
+              "1105649848",
+              "-553193760#4",
+              "-342420171",
+              "174895202#8",
+              "174895202#10",
+              "-174895194#2",
+              "-174895194#1",
+              "-174895194#0",
+              "594404675",
+              "10522129#6",
+              "10522129#7",
+              "1322317207#2"
+            ],
+            [
+              "1105649848",
+              "553193760#6",
+              "10522129#0",
+              "10522129#1",
+              "477837216",
+              "-174895194#1",
+              "-174895194#0",
+              "594404675",
+              "10522129#6",
+              "10522129#7",
+              "1322317207#2"
+            ]
+          ],
+          "route_names": [
+            "Menpor",
+            "Bhakti–Menpor"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3,
+              6,
+              9
+            ],
+            "served": {
+              "0": [
+                "10522129#1"
+              ],
+              "3": [
+                "-10522129#3"
+              ],
+              "6": [
+                "-342420279#0"
+              ],
+              "9": [
+                "-477837216"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.85180934242776,
+            -6.355340290975421
+          ],
+          "bbox": [
+            106.84,
+            -6.378,
+            106.869,
+            -6.349
+          ],
+          "source_edge": "10522129#3",
+          "source_road": "Jalan Komjen Polisi Mohammad Jasin",
+          "workzone_type": "speed_restriction",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 194.024,
+        "pending_vehicle_hours": 141.103,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 25.5,
+        "max_upstream_queue_m": 62.4,
+        "arrived": 490,
+        "departed": 611,
+        "pending": 634,
+        "running": 121,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 490,
+        "avg_duration": 283.869,
+        "avg_waitingTime": 150.561,
+        "avg_timeLoss": 195.579,
+        "avg_routeLength": 831.993,
+        "avg_departDelay": 175.633
+      },
+      "evidence": {
+        "phase_checks": 198,
+        "rerouted": 104,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "hybrid",
+      "seed": 42,
+      "case": {
+        "name": "Akses UI–Kelapa Dua, Depok",
+        "corridor": "akses_ui",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1245,
+        "signature": "0dbed1aad30b5bf9",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 86.94,
+        "pre_length_m": 71.97,
+        "pre_lane_count": 1,
+        "bottleneck_lane_count": 1,
+        "lane_label": "1 lajur · hambatan galian",
+        "profile": {
+          "id": "akses_ui",
+          "name": "Akses UI–Kelapa Dua, Depok",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "cluster_3494258906_4711366687",
+          "junction": "cluster_3494258906_4711366687",
+          "pre": "katup_pre",
+          "west": "10522129#1",
+          "decision": "1105649848",
+          "bottleneck": "katup_work",
+          "north": [
+            "-10522129#3"
+          ],
+          "south": [
+            "-342420279#0",
+            "-477837216"
+          ],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "10522129#1",
+            "farwest": "1105649848",
+            "north": "-10522129#3",
+            "south": "-342420279#0",
+            "cross_2": "-477837216"
+          },
+          "cross_detectors": [
+            "north",
+            "south",
+            "cross_2"
+          ],
+          "main": [
+            "553193760#6",
+            "10522129#0",
+            "10522129#1",
+            "katup_pre",
+            "katup_work",
+            "10522129#6",
+            "10522129#7",
+            "1322317207#2"
+          ],
+          "paths": [
+            [
+              "1105649848",
+              "-553193760#4",
+              "-342420171",
+              "174895202#8",
+              "174895202#10",
+              "-174895194#2",
+              "-174895194#1",
+              "-174895194#0",
+              "594404675",
+              "10522129#6",
+              "10522129#7",
+              "1322317207#2"
+            ],
+            [
+              "1105649848",
+              "553193760#6",
+              "10522129#0",
+              "10522129#1",
+              "477837216",
+              "-174895194#1",
+              "-174895194#0",
+              "594404675",
+              "10522129#6",
+              "10522129#7",
+              "1322317207#2"
+            ]
+          ],
+          "route_names": [
+            "Menpor",
+            "Bhakti–Menpor"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3,
+              6,
+              9
+            ],
+            "served": {
+              "0": [
+                "10522129#1"
+              ],
+              "3": [
+                "-10522129#3"
+              ],
+              "6": [
+                "-342420279#0"
+              ],
+              "9": [
+                "-477837216"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.85180934242776,
+            -6.355340290975421
+          ],
+          "bbox": [
+            106.84,
+            -6.378,
+            106.869,
+            -6.349
+          ],
+          "source_edge": "10522129#3",
+          "source_road": "Jalan Komjen Polisi Mohammad Jasin",
+          "workzone_type": "speed_restriction",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 194.024,
+        "pending_vehicle_hours": 141.103,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 25.5,
+        "max_upstream_queue_m": 62.4,
+        "arrived": 490,
+        "departed": 611,
+        "pending": 634,
+        "running": 121,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 490,
+        "avg_duration": 283.869,
+        "avg_waitingTime": 150.561,
+        "avg_timeLoss": 195.579,
+        "avg_routeLength": 831.993,
+        "avg_departDelay": 175.633
+      },
+      "evidence": {
+        "phase_checks": 198,
+        "rerouted": 104,
+        "supervisor": {
+          "provider": "disabled",
+          "model": null,
+          "configured": false,
+          "requests": 0,
+          "accepted": 0,
+          "rejected": 0,
+          "errors": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "last_latency_ms": null,
+          "status": "not_configured",
+          "reason": "API LLM belum dihubungkan, kendali memakai heuristik",
+          "profile": "balanced",
+          "route_bias": "auto",
+          "pending": false,
+          "applied_at": null,
+          "history": [],
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "baseline",
+      "seed": 42,
+      "case": {
+        "name": "Pasar Rebo–Raya Bogor, Jakarta Timur",
+        "corridor": "pasar_rebo",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1220,
+        "signature": "5498e77d85f28952",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 215.54,
+        "pre_length_m": 169.12,
+        "pre_lane_count": 2,
+        "bottleneck_lane_count": 1,
+        "lane_label": "2 → 1 lajur",
+        "profile": {
+          "id": "pasar_rebo",
+          "name": "Pasar Rebo–Raya Bogor, Jakarta Timur",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "cluster_5004860886_5034407042",
+          "junction": "cluster_5004860886_5034407042",
+          "pre": "katup_pre",
+          "west": "768026163#2",
+          "decision": "-507118332#0",
+          "bottleneck": "katup_work",
+          "north": [
+            "590071693"
+          ],
+          "south": [
+            "768026162#5"
+          ],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "768026163#2",
+            "farwest": "-507118332#0",
+            "north": "590071693",
+            "south": "768026162#5"
+          },
+          "cross_detectors": [
+            "north",
+            "south"
+          ],
+          "main": [
+            "1259596886#2",
+            "1259596886#3",
+            "1107428759#0",
+            "1107428759#1",
+            "1107428759#2",
+            "1107428758",
+            "768026163#0",
+            "768026163#1",
+            "768026163#2",
+            "katup_pre",
+            "katup_work",
+            "1108566824",
+            "1108566823",
+            "1240335016",
+            "768020816",
+            "823719213"
+          ],
+          "paths": [
+            [
+              "-507118332#0",
+              "1259596886#2",
+              "1259596886#3",
+              "1107428759#0",
+              "1107428759#1",
+              "1107428759#2",
+              "1107428758",
+              "768026163#0",
+              "768026163#1",
+              "768026163#2",
+              "-511933641#0",
+              "-511717249",
+              "-982454704#1",
+              "-982454704#0",
+              "749959830#1",
+              "515528400",
+              "749959829#0",
+              "749959829#1",
+              "749959829#2",
+              "749959829#3",
+              "511717236#0",
+              "511717236#1",
+              "511717236#2",
+              "515528399",
+              "515528398",
+              "1240335017",
+              "1240335016",
+              "768020816",
+              "823719213"
+            ],
+            [
+              "-507118332#0",
+              "1259596886#2",
+              "1259596886#3",
+              "1107428759#0",
+              "1107428759#1",
+              "1107428759#2",
+              "1107428758",
+              "768026163#0",
+              "-1240335022",
+              "-511717232#1",
+              "-511717232#0",
+              "515528348#5",
+              "-511717249",
+              "-982454704#1",
+              "-982454704#0",
+              "749959830#1",
+              "515528400",
+              "749959829#0",
+              "749959829#1",
+              "749959829#2",
+              "749959829#3",
+              "511717236#0",
+              "511717236#1",
+              "511717236#2",
+              "515528399",
+              "515528398",
+              "1240335017",
+              "1240335016",
+              "768020816",
+              "823719213"
+            ]
+          ],
+          "route_names": [
+            "Pendidikan–Jati",
+            "Pedati–Pendidikan"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3,
+              6
+            ],
+            "served": {
+              "0": [
+                "768026163#2"
+              ],
+              "3": [
+                "590071693"
+              ],
+              "6": [
+                "768026162#5"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.86349365002546,
+            -6.315528162626294
+          ],
+          "bbox": [
+            106.852,
+            -6.324,
+            106.88,
+            -6.296
+          ],
+          "source_edge": "768026163#3",
+          "source_road": "Jalan Raya Bogor",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 198.006,
+        "pending_vehicle_hours": 87.146,
+        "spillback_seconds": 173,
+        "junction_stopped_seconds": 18,
+        "junction_blocked_seconds": 7,
+        "max_queue_m": 169.1,
+        "max_upstream_queue_m": 250.5,
+        "arrived": 489,
+        "departed": 736,
+        "pending": 484,
+        "running": 247,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 489,
+        "avg_duration": 359.423,
+        "avg_waitingTime": 103.476,
+        "avg_timeLoss": 201.726,
+        "avg_routeLength": 1635.364,
+        "avg_departDelay": 20.084
+      },
+      "evidence": {
+        "phase_checks": 79,
+        "rerouted": 0,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "katup",
+      "seed": 42,
+      "case": {
+        "name": "Pasar Rebo–Raya Bogor, Jakarta Timur",
+        "corridor": "pasar_rebo",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1220,
+        "signature": "5498e77d85f28952",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 215.54,
+        "pre_length_m": 169.12,
+        "pre_lane_count": 2,
+        "bottleneck_lane_count": 1,
+        "lane_label": "2 → 1 lajur",
+        "profile": {
+          "id": "pasar_rebo",
+          "name": "Pasar Rebo–Raya Bogor, Jakarta Timur",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "cluster_5004860886_5034407042",
+          "junction": "cluster_5004860886_5034407042",
+          "pre": "katup_pre",
+          "west": "768026163#2",
+          "decision": "-507118332#0",
+          "bottleneck": "katup_work",
+          "north": [
+            "590071693"
+          ],
+          "south": [
+            "768026162#5"
+          ],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "768026163#2",
+            "farwest": "-507118332#0",
+            "north": "590071693",
+            "south": "768026162#5"
+          },
+          "cross_detectors": [
+            "north",
+            "south"
+          ],
+          "main": [
+            "1259596886#2",
+            "1259596886#3",
+            "1107428759#0",
+            "1107428759#1",
+            "1107428759#2",
+            "1107428758",
+            "768026163#0",
+            "768026163#1",
+            "768026163#2",
+            "katup_pre",
+            "katup_work",
+            "1108566824",
+            "1108566823",
+            "1240335016",
+            "768020816",
+            "823719213"
+          ],
+          "paths": [
+            [
+              "-507118332#0",
+              "1259596886#2",
+              "1259596886#3",
+              "1107428759#0",
+              "1107428759#1",
+              "1107428759#2",
+              "1107428758",
+              "768026163#0",
+              "768026163#1",
+              "768026163#2",
+              "-511933641#0",
+              "-511717249",
+              "-982454704#1",
+              "-982454704#0",
+              "749959830#1",
+              "515528400",
+              "749959829#0",
+              "749959829#1",
+              "749959829#2",
+              "749959829#3",
+              "511717236#0",
+              "511717236#1",
+              "511717236#2",
+              "515528399",
+              "515528398",
+              "1240335017",
+              "1240335016",
+              "768020816",
+              "823719213"
+            ],
+            [
+              "-507118332#0",
+              "1259596886#2",
+              "1259596886#3",
+              "1107428759#0",
+              "1107428759#1",
+              "1107428759#2",
+              "1107428758",
+              "768026163#0",
+              "-1240335022",
+              "-511717232#1",
+              "-511717232#0",
+              "515528348#5",
+              "-511717249",
+              "-982454704#1",
+              "-982454704#0",
+              "749959830#1",
+              "515528400",
+              "749959829#0",
+              "749959829#1",
+              "749959829#2",
+              "749959829#3",
+              "511717236#0",
+              "511717236#1",
+              "511717236#2",
+              "515528399",
+              "515528398",
+              "1240335017",
+              "1240335016",
+              "768020816",
+              "823719213"
+            ]
+          ],
+          "route_names": [
+            "Pendidikan–Jati",
+            "Pedati–Pendidikan"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3,
+              6
+            ],
+            "served": {
+              "0": [
+                "768026163#2"
+              ],
+              "3": [
+                "590071693"
+              ],
+              "6": [
+                "768026162#5"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.86349365002546,
+            -6.315528162626294
+          ],
+          "bbox": [
+            106.852,
+            -6.324,
+            106.88,
+            -6.296
+          ],
+          "source_edge": "768026163#3",
+          "source_road": "Jalan Raya Bogor",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 166.953,
+        "pending_vehicle_hours": 61.885,
+        "spillback_seconds": 48,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 169.1,
+        "max_upstream_queue_m": 249.9,
+        "arrived": 616,
+        "departed": 917,
+        "pending": 303,
+        "running": 301,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 616,
+        "avg_duration": 366.245,
+        "avg_waitingTime": 103.515,
+        "avg_timeLoss": 197.638,
+        "avg_routeLength": 1919.464,
+        "avg_departDelay": 49.371
+      },
+      "evidence": {
+        "phase_checks": 168,
+        "rerouted": 157,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "hybrid",
+      "seed": 42,
+      "case": {
+        "name": "Pasar Rebo–Raya Bogor, Jakarta Timur",
+        "corridor": "pasar_rebo",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1220,
+        "signature": "5498e77d85f28952",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 215.54,
+        "pre_length_m": 169.12,
+        "pre_lane_count": 2,
+        "bottleneck_lane_count": 1,
+        "lane_label": "2 → 1 lajur",
+        "profile": {
+          "id": "pasar_rebo",
+          "name": "Pasar Rebo–Raya Bogor, Jakarta Timur",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "cluster_5004860886_5034407042",
+          "junction": "cluster_5004860886_5034407042",
+          "pre": "katup_pre",
+          "west": "768026163#2",
+          "decision": "-507118332#0",
+          "bottleneck": "katup_work",
+          "north": [
+            "590071693"
+          ],
+          "south": [
+            "768026162#5"
+          ],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "768026163#2",
+            "farwest": "-507118332#0",
+            "north": "590071693",
+            "south": "768026162#5"
+          },
+          "cross_detectors": [
+            "north",
+            "south"
+          ],
+          "main": [
+            "1259596886#2",
+            "1259596886#3",
+            "1107428759#0",
+            "1107428759#1",
+            "1107428759#2",
+            "1107428758",
+            "768026163#0",
+            "768026163#1",
+            "768026163#2",
+            "katup_pre",
+            "katup_work",
+            "1108566824",
+            "1108566823",
+            "1240335016",
+            "768020816",
+            "823719213"
+          ],
+          "paths": [
+            [
+              "-507118332#0",
+              "1259596886#2",
+              "1259596886#3",
+              "1107428759#0",
+              "1107428759#1",
+              "1107428759#2",
+              "1107428758",
+              "768026163#0",
+              "768026163#1",
+              "768026163#2",
+              "-511933641#0",
+              "-511717249",
+              "-982454704#1",
+              "-982454704#0",
+              "749959830#1",
+              "515528400",
+              "749959829#0",
+              "749959829#1",
+              "749959829#2",
+              "749959829#3",
+              "511717236#0",
+              "511717236#1",
+              "511717236#2",
+              "515528399",
+              "515528398",
+              "1240335017",
+              "1240335016",
+              "768020816",
+              "823719213"
+            ],
+            [
+              "-507118332#0",
+              "1259596886#2",
+              "1259596886#3",
+              "1107428759#0",
+              "1107428759#1",
+              "1107428759#2",
+              "1107428758",
+              "768026163#0",
+              "-1240335022",
+              "-511717232#1",
+              "-511717232#0",
+              "515528348#5",
+              "-511717249",
+              "-982454704#1",
+              "-982454704#0",
+              "749959830#1",
+              "515528400",
+              "749959829#0",
+              "749959829#1",
+              "749959829#2",
+              "749959829#3",
+              "511717236#0",
+              "511717236#1",
+              "511717236#2",
+              "515528399",
+              "515528398",
+              "1240335017",
+              "1240335016",
+              "768020816",
+              "823719213"
+            ]
+          ],
+          "route_names": [
+            "Pendidikan–Jati",
+            "Pedati–Pendidikan"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3,
+              6
+            ],
+            "served": {
+              "0": [
+                "768026163#2"
+              ],
+              "3": [
+                "590071693"
+              ],
+              "6": [
+                "768026162#5"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.86349365002546,
+            -6.315528162626294
+          ],
+          "bbox": [
+            106.852,
+            -6.324,
+            106.88,
+            -6.296
+          ],
+          "source_edge": "768026163#3",
+          "source_road": "Jalan Raya Bogor",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 166.953,
+        "pending_vehicle_hours": 61.885,
+        "spillback_seconds": 48,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 169.1,
+        "max_upstream_queue_m": 249.9,
+        "arrived": 616,
+        "departed": 917,
+        "pending": 303,
+        "running": 301,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 616,
+        "avg_duration": 366.245,
+        "avg_waitingTime": 103.515,
+        "avg_timeLoss": 197.638,
+        "avg_routeLength": 1919.464,
+        "avg_departDelay": 49.371
+      },
+      "evidence": {
+        "phase_checks": 168,
+        "rerouted": 157,
+        "supervisor": {
+          "provider": "disabled",
+          "model": null,
+          "configured": false,
+          "requests": 0,
+          "accepted": 0,
+          "rejected": 0,
+          "errors": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "last_latency_ms": null,
+          "status": "not_configured",
+          "reason": "API LLM belum dihubungkan, kendali memakai heuristik",
+          "profile": "balanced",
+          "route_bias": "auto",
+          "pending": false,
+          "applied_at": null,
+          "history": [],
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "baseline",
+      "seed": 42,
+      "case": {
+        "name": "TB Simatupang–Tanjung Barat, Jakarta Selatan",
+        "corridor": "tb_simatupang",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1045,
+        "signature": "ed52a5cb04a5edc1",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 171.87,
+        "pre_length_m": 169.2,
+        "pre_lane_count": 2,
+        "bottleneck_lane_count": 1,
+        "lane_label": "2 → 1 lajur",
+        "profile": {
+          "id": "tb_simatupang",
+          "name": "TB Simatupang–Tanjung Barat, Jakarta Selatan",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "1346352258",
+          "junction": "1346352258",
+          "pre": "katup_pre",
+          "west": "166821793#2",
+          "decision": "703409722",
+          "bottleneck": "katup_work",
+          "north": [
+            "508365323"
+          ],
+          "south": [],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "166821793#2",
+            "farwest": "703409722",
+            "north": "508365323",
+            "south": "508365323"
+          },
+          "cross_detectors": [
+            "north"
+          ],
+          "main": [
+            "569567332#0",
+            "569567332#1",
+            "569567331",
+            "1186177357",
+            "166821793#0",
+            "166821793#1",
+            "166821793#2",
+            "katup_pre",
+            "katup_work",
+            "katup_exit",
+            "1186177355#1",
+            "1186177354",
+            "501977449",
+            "691567026"
+          ],
+          "paths": [
+            [
+              "703409722",
+              "569567332#0",
+              "569567332#1",
+              "569567331",
+              "1186177357",
+              "166821793#0",
+              "508365289",
+              "508365286",
+              "508365296#1",
+              "-508365297",
+              "508381004#4",
+              "508381004#5",
+              "-119968402#6",
+              "-119968402#5",
+              "-119968402#4",
+              "-119968402#3",
+              "-119968402#0",
+              "-589999178#2",
+              "-589999178#1",
+              "-589999178#0",
+              "-34506803#8",
+              "-34506803#7",
+              "-34506803#6",
+              "-34506803#4",
+              "-34506803#3",
+              "-34506803#1",
+              "690190556",
+              "501977449",
+              "691567026"
+            ],
+            [
+              "703409722",
+              "569567332#0",
+              "569567332#1",
+              "569567331",
+              "1186177357",
+              "166821793#0",
+              "166821793#1",
+              "166821793#2",
+              "-508365324",
+              "-119968402#7",
+              "-119968402#6",
+              "-119968402#5",
+              "-119968402#4",
+              "-119968402#3",
+              "-119968402#0",
+              "-589999178#2",
+              "-589999178#1",
+              "-589999178#0",
+              "-34506803#8",
+              "-34506803#7",
+              "-34506803#6",
+              "-34506803#4",
+              "-34506803#3",
+              "-34506803#1",
+              "690190556",
+              "501977449",
+              "691567026"
+            ]
+          ],
+          "route_names": [
+            "Assakinah–Sepat",
+            "Kebagusan I–Raya"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3
+            ],
+            "served": {
+              "0": [
+                "166821793#2"
+              ],
+              "3": [
+                "508365323"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.83280575464556,
+            -6.299573629882363
+          ],
+          "bbox": [
+            106.817,
+            -6.318,
+            106.85,
+            -6.292
+          ],
+          "source_edge": "1186177356#1",
+          "source_road": "Jalan Tahi Bonar Simatupang",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 225.825,
+        "pending_vehicle_hours": 82.123,
+        "spillback_seconds": 590,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 169.2,
+        "max_upstream_queue_m": 340.4,
+        "arrived": 168,
+        "departed": 535,
+        "pending": 510,
+        "running": 367,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 168,
+        "avg_duration": 840.917,
+        "avg_waitingTime": 285.137,
+        "avg_timeLoss": 588.942,
+        "avg_routeLength": 2034.212,
+        "avg_departDelay": 0.45
+      },
+      "evidence": {
+        "phase_checks": 79,
+        "rerouted": 0,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "katup",
+      "seed": 42,
+      "case": {
+        "name": "TB Simatupang–Tanjung Barat, Jakarta Selatan",
+        "corridor": "tb_simatupang",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1045,
+        "signature": "ed52a5cb04a5edc1",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 171.87,
+        "pre_length_m": 169.2,
+        "pre_lane_count": 2,
+        "bottleneck_lane_count": 1,
+        "lane_label": "2 → 1 lajur",
+        "profile": {
+          "id": "tb_simatupang",
+          "name": "TB Simatupang–Tanjung Barat, Jakarta Selatan",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "1346352258",
+          "junction": "1346352258",
+          "pre": "katup_pre",
+          "west": "166821793#2",
+          "decision": "703409722",
+          "bottleneck": "katup_work",
+          "north": [
+            "508365323"
+          ],
+          "south": [],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "166821793#2",
+            "farwest": "703409722",
+            "north": "508365323",
+            "south": "508365323"
+          },
+          "cross_detectors": [
+            "north"
+          ],
+          "main": [
+            "569567332#0",
+            "569567332#1",
+            "569567331",
+            "1186177357",
+            "166821793#0",
+            "166821793#1",
+            "166821793#2",
+            "katup_pre",
+            "katup_work",
+            "katup_exit",
+            "1186177355#1",
+            "1186177354",
+            "501977449",
+            "691567026"
+          ],
+          "paths": [
+            [
+              "703409722",
+              "569567332#0",
+              "569567332#1",
+              "569567331",
+              "1186177357",
+              "166821793#0",
+              "508365289",
+              "508365286",
+              "508365296#1",
+              "-508365297",
+              "508381004#4",
+              "508381004#5",
+              "-119968402#6",
+              "-119968402#5",
+              "-119968402#4",
+              "-119968402#3",
+              "-119968402#0",
+              "-589999178#2",
+              "-589999178#1",
+              "-589999178#0",
+              "-34506803#8",
+              "-34506803#7",
+              "-34506803#6",
+              "-34506803#4",
+              "-34506803#3",
+              "-34506803#1",
+              "690190556",
+              "501977449",
+              "691567026"
+            ],
+            [
+              "703409722",
+              "569567332#0",
+              "569567332#1",
+              "569567331",
+              "1186177357",
+              "166821793#0",
+              "166821793#1",
+              "166821793#2",
+              "-508365324",
+              "-119968402#7",
+              "-119968402#6",
+              "-119968402#5",
+              "-119968402#4",
+              "-119968402#3",
+              "-119968402#0",
+              "-589999178#2",
+              "-589999178#1",
+              "-589999178#0",
+              "-34506803#8",
+              "-34506803#7",
+              "-34506803#6",
+              "-34506803#4",
+              "-34506803#3",
+              "-34506803#1",
+              "690190556",
+              "501977449",
+              "691567026"
+            ]
+          ],
+          "route_names": [
+            "Assakinah–Sepat",
+            "Kebagusan I–Raya"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3
+            ],
+            "served": {
+              "0": [
+                "166821793#2"
+              ],
+              "3": [
+                "508365323"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.83280575464556,
+            -6.299573629882363
+          ],
+          "bbox": [
+            106.817,
+            -6.318,
+            106.85,
+            -6.292
+          ],
+          "source_edge": "1186177356#1",
+          "source_road": "Jalan Tahi Bonar Simatupang",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 186.071,
+        "pending_vehicle_hours": 52.557,
+        "spillback_seconds": 617,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 169.2,
+        "max_upstream_queue_m": 340.1,
+        "arrived": 304,
+        "departed": 687,
+        "pending": 358,
+        "running": 383,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 304,
+        "avg_duration": 596.582,
+        "avg_waitingTime": 156.089,
+        "avg_timeLoss": 362.968,
+        "avg_routeLength": 2295.485,
+        "avg_departDelay": 0.445
+      },
+      "evidence": {
+        "phase_checks": 160,
+        "rerouted": 188,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "hybrid",
+      "seed": 42,
+      "case": {
+        "name": "TB Simatupang–Tanjung Barat, Jakarta Selatan",
+        "corridor": "tb_simatupang",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1045,
+        "signature": "ed52a5cb04a5edc1",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 171.87,
+        "pre_length_m": 169.2,
+        "pre_lane_count": 2,
+        "bottleneck_lane_count": 1,
+        "lane_label": "2 → 1 lajur",
+        "profile": {
+          "id": "tb_simatupang",
+          "name": "TB Simatupang–Tanjung Barat, Jakarta Selatan",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "1346352258",
+          "junction": "1346352258",
+          "pre": "katup_pre",
+          "west": "166821793#2",
+          "decision": "703409722",
+          "bottleneck": "katup_work",
+          "north": [
+            "508365323"
+          ],
+          "south": [],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "166821793#2",
+            "farwest": "703409722",
+            "north": "508365323",
+            "south": "508365323"
+          },
+          "cross_detectors": [
+            "north"
+          ],
+          "main": [
+            "569567332#0",
+            "569567332#1",
+            "569567331",
+            "1186177357",
+            "166821793#0",
+            "166821793#1",
+            "166821793#2",
+            "katup_pre",
+            "katup_work",
+            "katup_exit",
+            "1186177355#1",
+            "1186177354",
+            "501977449",
+            "691567026"
+          ],
+          "paths": [
+            [
+              "703409722",
+              "569567332#0",
+              "569567332#1",
+              "569567331",
+              "1186177357",
+              "166821793#0",
+              "508365289",
+              "508365286",
+              "508365296#1",
+              "-508365297",
+              "508381004#4",
+              "508381004#5",
+              "-119968402#6",
+              "-119968402#5",
+              "-119968402#4",
+              "-119968402#3",
+              "-119968402#0",
+              "-589999178#2",
+              "-589999178#1",
+              "-589999178#0",
+              "-34506803#8",
+              "-34506803#7",
+              "-34506803#6",
+              "-34506803#4",
+              "-34506803#3",
+              "-34506803#1",
+              "690190556",
+              "501977449",
+              "691567026"
+            ],
+            [
+              "703409722",
+              "569567332#0",
+              "569567332#1",
+              "569567331",
+              "1186177357",
+              "166821793#0",
+              "166821793#1",
+              "166821793#2",
+              "-508365324",
+              "-119968402#7",
+              "-119968402#6",
+              "-119968402#5",
+              "-119968402#4",
+              "-119968402#3",
+              "-119968402#0",
+              "-589999178#2",
+              "-589999178#1",
+              "-589999178#0",
+              "-34506803#8",
+              "-34506803#7",
+              "-34506803#6",
+              "-34506803#4",
+              "-34506803#3",
+              "-34506803#1",
+              "690190556",
+              "501977449",
+              "691567026"
+            ]
+          ],
+          "route_names": [
+            "Assakinah–Sepat",
+            "Kebagusan I–Raya"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3
+            ],
+            "served": {
+              "0": [
+                "166821793#2"
+              ],
+              "3": [
+                "508365323"
+              ]
+            },
+            "movement_states": [
+              "green",
+              "yellow",
+              "red",
+              "red",
+              "red",
+              "red"
+            ]
+          },
+          "context": "Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.83280575464556,
+            -6.299573629882363
+          ],
+          "bbox": [
+            106.817,
+            -6.318,
+            106.85,
+            -6.292
+          ],
+          "source_edge": "1186177356#1",
+          "source_road": "Jalan Tahi Bonar Simatupang",
+          "workzone_type": "lane_drop",
+          "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+          "context_edge_limit": 400
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 186.071,
+        "pending_vehicle_hours": 52.557,
+        "spillback_seconds": 617,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 169.2,
+        "max_upstream_queue_m": 340.1,
+        "arrived": 304,
+        "departed": 687,
+        "pending": 358,
+        "running": 383,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 304,
+        "avg_duration": 596.582,
+        "avg_waitingTime": 156.089,
+        "avg_timeLoss": 362.968,
+        "avg_routeLength": 2295.485,
+        "avg_departDelay": 0.445
+      },
+      "evidence": {
+        "phase_checks": 160,
+        "rerouted": 188,
+        "supervisor": {
+          "provider": "disabled",
+          "model": null,
+          "configured": false,
+          "requests": 0,
+          "accepted": 0,
+          "rejected": 0,
+          "errors": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "last_latency_ms": null,
+          "status": "not_configured",
+          "reason": "API LLM belum dihubungkan, kendali memakai heuristik",
+          "profile": "balanced",
+          "route_bias": "auto",
+          "pending": false,
+          "applied_at": null,
+          "history": [],
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "baseline",
+      "seed": 42,
+      "case": {
+        "name": "Pondok Pinang–Pondok Indah, Jakarta",
+        "corridor": "jakarta_pondok_pinang",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1590,
+        "signature": "7d9069e404eeecac",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, penutupan 2 menjadi 1 lajur dan arus kendaraan merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 214.93,
+        "pre_length_m": 208.31,
+        "pre_lane_count": 2,
+        "bottleneck_lane_count": 1,
+        "lane_label": "2 → 1 lajur",
+        "profile": {
+          "id": "jakarta_pondok_pinang",
+          "name": "Pondok Pinang–Pondok Indah, Jakarta",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "cluster_305182956_5647027166",
+          "pre": "katup_pre",
+          "west": "-311490299#2",
+          "decision": "358846360#1",
+          "bottleneck": "katup_work",
+          "north": [
+            "27795091"
+          ],
+          "south": [
+            "311490299#0"
+          ],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "-311490299#2",
+            "farwest": "358846360#1",
+            "north": "27795091",
+            "south": "311490299#0"
+          },
+          "main": [
+            "358846353#1",
+            "358846353#2",
+            "358846353#3",
+            "358846353#4",
+            "-311490299#2",
+            "katup_pre",
+            "katup_work",
+            "358846361#2"
+          ],
+          "paths": [
+            [
+              "358846360#1",
+              "358846353#1",
+              "358846353#2",
+              "358846353#3",
+              "358846353#4",
+              "358846353#5",
+              "358846358#0",
+              "358846358#1",
+              "32077433#2",
+              "358846361#0",
+              "358846361#1",
+              "358846361#2"
+            ],
+            [
+              "358846360#1",
+              "358846353#1",
+              "358846354#0",
+              "573039856",
+              "27962043#0",
+              "307011112#2",
+              "32077433#0",
+              "32077433#1",
+              "32077433#2",
+              "358846361#0",
+              "358846361#1",
+              "358846361#2"
+            ]
+          ],
+          "route_names": [
+            "Gedung Hijau Raya",
+            "Niaga Hijau Raya"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3
+            ]
+          },
+          "context": "Geometri OpenStreetMap, penutupan 2 menjadi 1 lajur dan arus kendaraan merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.781,
+            -6.278
+          ],
+          "signal_note": "Sinyal simulasi ditambahkan pada simpang Kartika Utama–Metro Alam III, bukan klaim jadwal APILL lapangan"
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 252.334,
+        "pending_vehicle_hours": 82.168,
+        "spillback_seconds": 1060,
+        "junction_stopped_seconds": 122,
+        "junction_blocked_seconds": 122,
+        "max_queue_m": 208.3,
+        "max_upstream_queue_m": 432.7,
+        "arrived": 642,
+        "departed": 1118,
+        "pending": 472,
+        "running": 476,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 642,
+        "avg_duration": 279.427,
+        "avg_waitingTime": 65.083,
+        "avg_timeLoss": 130.964,
+        "avg_routeLength": 1526.543,
+        "avg_departDelay": 0.273
+      },
+      "evidence": {
+        "phase_checks": 79,
+        "rerouted": 0,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    },
+    {
+      "scenario": "katup",
+      "seed": 42,
+      "case": {
+        "name": "Pondok Pinang–Pondok Indah, Jakarta",
+        "corridor": "jakarta_pondok_pinang",
+        "demand": "peak",
+        "demand_label": "Jam sibuk",
+        "duration": 1800,
+        "planned_vehicles": 1590,
+        "signature": "7d9069e404eeecac",
+        "geographic": true,
+        "data_source": "Geometri OpenStreetMap, penutupan 2 menjadi 1 lajur dan arus kendaraan merupakan skenario eksperimen",
+        "traffic_source": "Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan",
+        "bottleneck_speed_kmh": 5.0,
+        "bottleneck_length_m": 214.93,
+        "pre_length_m": 208.31,
+        "pre_lane_count": 2,
+        "bottleneck_lane_count": 1,
+        "lane_label": "2 → 1 lajur",
+        "profile": {
+          "id": "jakarta_pondok_pinang",
+          "name": "Pondok Pinang–Pondok Indah, Jakarta",
+          "geographic": true,
+          "duration": 1800,
+          "tls": "cluster_305182956_5647027166",
+          "pre": "katup_pre",
+          "west": "-311490299#2",
+          "decision": "358846360#1",
+          "bottleneck": "katup_work",
+          "north": [
+            "27795091"
+          ],
+          "south": [
+            "311490299#0"
+          ],
+          "detectors": {
+            "pre": "katup_pre",
+            "west": "-311490299#2",
+            "farwest": "358846360#1",
+            "north": "27795091",
+            "south": "311490299#0"
+          },
+          "main": [
+            "358846353#1",
+            "358846353#2",
+            "358846353#3",
+            "358846353#4",
+            "-311490299#2",
+            "katup_pre",
+            "katup_work",
+            "358846361#2"
+          ],
+          "paths": [
+            [
+              "358846360#1",
+              "358846353#1",
+              "358846353#2",
+              "358846353#3",
+              "358846353#4",
+              "358846353#5",
+              "358846358#0",
+              "358846358#1",
+              "32077433#2",
+              "358846361#0",
+              "358846361#1",
+              "358846361#2"
+            ],
+            [
+              "358846360#1",
+              "358846353#1",
+              "358846354#0",
+              "573039856",
+              "27962043#0",
+              "307011112#2",
+              "32077433#0",
+              "32077433#1",
+              "32077433#2",
+              "358846361#0",
+              "358846361#1",
+              "358846361#2"
+            ]
+          ],
+          "route_names": [
+            "Gedung Hijau Raya",
+            "Niaga Hijau Raya"
+          ],
+          "phases": {
+            "main": [
+              0
+            ],
+            "cross": [
+              3
+            ]
+          },
+          "context": "Geometri OpenStreetMap, penutupan 2 menjadi 1 lajur dan arus kendaraan merupakan skenario eksperimen",
+          "map_attribution": "© OpenStreetMap contributors · ODbL",
+          "center": [
+            106.781,
+            -6.278
+          ],
+          "signal_note": "Sinyal simulasi ditambahkan pada simpang Kartika Utama–Metro Alam III, bukan klaim jadwal APILL lapangan"
+        }
+      },
+      "sumo_version": "SUMO 1.18.0",
+      "summary": {
+        "total_vehicle_hours": 175.706,
+        "pending_vehicle_hours": 13.306,
+        "spillback_seconds": 1332,
+        "junction_stopped_seconds": 502,
+        "junction_blocked_seconds": 501,
+        "max_queue_m": 208.3,
+        "max_upstream_queue_m": 432.7,
+        "arrived": 972,
+        "departed": 1504,
+        "pending": 86,
+        "running": 532,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 972,
+        "avg_duration": 259.863,
+        "avg_waitingTime": 43.955,
+        "avg_timeLoss": 91.514,
+        "avg_routeLength": 2110.264,
+        "avg_departDelay": 12.544
+      },
+      "evidence": {
+        "phase_checks": 152,
+        "rerouted": 562,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      }
+    }
+  ],
+  "local_browser": {
+    "base": "http://127.0.0.1:19011",
+    "corridors": [
+      {
+        "corridor": "ui_depok",
+        "lane_label": "3 → 1 lajur",
+        "moving_vehicles": 6,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "akses_ui",
+        "lane_label": "1 lajur · hambatan galian",
+        "moving_vehicles": 7,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "pasar_rebo",
+        "lane_label": "2 → 1 lajur",
+        "moving_vehicles": 8,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "tb_simatupang",
+        "lane_label": "2 → 1 lajur",
+        "moving_vehicles": 7,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      }
+    ],
+    "page_errors": []
+  },
+  "public_browser": {
+    "base": "https://propecia-smithsonian-idaho-adjust.trycloudflare.com",
+    "corridors": [
+      {
+        "corridor": "ui_depok",
+        "lane_label": "3 → 1 lajur",
+        "moving_vehicles": 6,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "akses_ui",
+        "lane_label": "1 lajur · hambatan galian",
+        "moving_vehicles": 7,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "pasar_rebo",
+        "lane_label": "2 → 1 lajur",
+        "moving_vehicles": 8,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "tb_simatupang",
+        "lane_label": "2 → 1 lajur",
+        "moving_vehicles": 7,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      }
+    ],
+    "page_errors": []
+  },
+  "public_comparison": {
+    "three_finished_modes": true,
+    "trip_counts": [
+      "166",
+      "201",
+      "201"
+    ],
+    "mismatched_seed_hidden": true,
+    "mismatched_saved_session_hidden": true,
+    "mismatched_live_session_hidden": true,
+    "llm_playback_mismatch_hidden": true
+  },
+  "source_sha256": {
+    "katup_controller.py": "ebce9a0657fa453841e87610fe7ade0f6df92e9fd718e8e4ed390ca7c54a1c39",
+    "katup_core/scenarios.py": "65f015dd6eac395c0f60c3153181894933142b881615fac78058298bfec643f5",
+    "deploy/server.py": "0cf7c4e22b80e94cc1da67ad898a5d832793f6ec6716ead4eb76426755e5dca0",
+    "deploy/run_controller.py": "e84f4433ee23d82cbbeca1bbb035cf71e0868014df7aa2b5ae6a30e6467d64a7",
+    "deploy/assets/dashboard.js": "35d3b0cbb99ac7170121e9b8132e3ee707ae0cfba447d4eada6625124c864db7",
+    "deploy/index.html": "9fd45884498cb66500429c65162d472ac76b2f3d4960e4104cd49dc6c3a9c4b1",
+    "tools/build_corridors.py": "076b53bb1f0531973d6e2512e8edafc54242449c2bea8621787565909e525905",
+    "tools/fetch_corridors.py": "4509ce2d42e7398fc95128925e164fa3efc28e6498fa6f766d79e19c631c3e35"
+  },
+  "web_runner": [
+    {
+      "scenario": "baseline",
+      "seed": 42,
+      "run_id": "baseline-1916407-1795707702116247295",
+      "summary": {
+        "completed_trips": 166,
+        "avg_duration": 854.27,
+        "avg_waitingTime": 210.37,
+        "avg_timeLoss": 577.02,
+        "avg_routeLength": 1684.71,
+        "avg_departDelay": 12.49,
+        "total_vehicle_hours": 212.233,
+        "pending_vehicle_hours": 114.026,
+        "spillback_seconds": 512,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 168.9,
+        "max_upstream_queue_m": 415.5,
+        "arrived": 166,
+        "departed": 388,
+        "pending": 597,
+        "running": 222,
+        "collisions": 0,
+        "teleports": 0
+      }
+    },
+    {
+      "scenario": "katup",
+      "seed": 42,
+      "run_id": "katup-1916932-1795707824015054509",
+      "summary": {
+        "completed_trips": 201,
+        "avg_duration": 829.48,
+        "avg_waitingTime": 184.45,
+        "avg_timeLoss": 537.91,
+        "avg_routeLength": 1669.22,
+        "avg_departDelay": 26.82,
+        "total_vehicle_hours": 207.597,
+        "pending_vehicle_hours": 105.648,
+        "spillback_seconds": 241,
+        "junction_stopped_seconds": 14,
+        "junction_blocked_seconds": 14,
+        "max_queue_m": 168.9,
+        "max_upstream_queue_m": 414.6,
+        "arrived": 201,
+        "departed": 447,
+        "pending": 538,
+        "running": 246,
+        "collisions": 0,
+        "teleports": 0
+      }
+    },
+    {
+      "scenario": "hybrid",
+      "seed": 42,
+      "run_id": "hybrid-1916931-1795707823893265987",
+      "summary": {
+        "completed_trips": 201,
+        "avg_duration": 829.48,
+        "avg_waitingTime": 184.45,
+        "avg_timeLoss": 537.91,
+        "avg_routeLength": 1669.22,
+        "avg_departDelay": 26.82,
+        "total_vehicle_hours": 207.597,
+        "pending_vehicle_hours": 105.648,
+        "spillback_seconds": 241,
+        "junction_stopped_seconds": 14,
+        "junction_blocked_seconds": 14,
+        "max_queue_m": 168.9,
+        "max_upstream_queue_m": 414.6,
+        "arrived": 201,
+        "departed": 447,
+        "pending": 538,
+        "running": 246,
+        "collisions": 0,
+        "teleports": 0
+      }
+    }
+  ]
+}

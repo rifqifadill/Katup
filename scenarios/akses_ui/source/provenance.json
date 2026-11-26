@@ -1,0 +1,36 @@
+{
+  "source": "OpenStreetMap contributors",
+  "license": "ODbL 1.0",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "urls": [
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8400000,-6.3780000,106.8545000,-6.3635000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8400000,-6.3635000,106.8545000,-6.3490000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8545000,-6.3780000,106.8690000,-6.3635000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8545000,-6.3635000,106.8690000,-6.3490000"
+  ],
+  "bbox": [
+    106.84,
+    -6.378,
+    106.869,
+    -6.349
+  ],
+  "fetched_at_utc": "2026-11-26T15:22:20.966168+00:00",
+  "filter": [
+    "living_street",
+    "primary",
+    "primary_link",
+    "residential",
+    "secondary",
+    "secondary_link",
+    "tertiary",
+    "tertiary_link",
+    "trunk",
+    "trunk_link",
+    "unclassified"
+  ],
+  "access_filter": "exclude explicitly private or prohibited motor vehicle roads",
+  "traffic_source": "synthetic demand, not measured current traffic",
+  "osm_ways": 1601,
+  "osm_nodes": 8711,
+  "snapshot_sha256": "61f302712f648f416a905fcf3ecc267578228723b3c692ab193bf6905e09363a"
+}

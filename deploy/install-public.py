@@ -5,6 +5,7 @@ must already be installed. Only systemd registration invokes sudo.
 """
 import hashlib
 import json
+import os
 from pathlib import Path
 import secrets
 import shlex
@@ -15,6 +16,7 @@ import urllib.request
 repo = Path(__file__).resolve().parents[1]
 runtime = repo.parent / 'runtime'
 state = runtime / 'state'
+frontend_origins = os.environ.get('KATUP_FRONTEND_ORIGINS', '').strip()
 for directory in (state, runtime / 'novnc', runtime / 'bin'):
     directory.mkdir(parents=True, exist_ok=True)
 state.chmod(0o700)
@@ -50,6 +52,7 @@ Wants=network-online.target
 {common}WorkingDirectory={repo}
 Environment=KATUP_PUBLIC_MODE=1
 Environment=KATUP_STANDALONE=1
+Environment=KATUP_FRONTEND_ORIGINS={shlex.quote(frontend_origins)}
 Environment=KATUP_STATE={state}
 Environment=KATUP_NOVNC={runtime / 'novnc'}
 Environment=SUMO_HOME=/usr/share/sumo

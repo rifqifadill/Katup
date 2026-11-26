@@ -1,0 +1,83 @@
+{
+  "id": "jakarta_pondok_pinang",
+  "name": "Pondok Pinang\u2013Pondok Indah, Jakarta",
+  "geographic": true,
+  "duration": 1800,
+  "tls": "cluster_305182956_5647027166",
+  "pre": "katup_pre",
+  "west": "-311490299#2",
+  "decision": "358846360#1",
+  "bottleneck": "katup_work",
+  "north": [
+    "27795091"
+  ],
+  "south": [
+    "311490299#0"
+  ],
+  "detectors": {
+    "pre": "katup_pre",
+    "west": "-311490299#2",
+    "farwest": "358846360#1",
+    "north": "27795091",
+    "south": "311490299#0"
+  },
+  "main": [
+    "358846353#1",
+    "358846353#2",
+    "358846353#3",
+    "358846353#4",
+    "-311490299#2",
+    "katup_pre",
+    "katup_work",
+    "358846361#2"
+  ],
+  "paths": [
+    [
+      "358846360#1",
+      "358846353#1",
+      "358846353#2",
+      "358846353#3",
+      "358846353#4",
+      "358846353#5",
+      "358846358#0",
+      "358846358#1",
+      "32077433#2",
+      "358846361#0",
+      "358846361#1",
+      "358846361#2"
+    ],
+    [
+      "358846360#1",
+      "358846353#1",
+      "358846354#0",
+      "573039856",
+      "27962043#0",
+      "307011112#2",
+      "32077433#0",
+      "32077433#1",
+      "32077433#2",
+      "358846361#0",
+      "358846361#1",
+      "358846361#2"
+    ]
+  ],
+  "route_names": [
+    "Gedung Hijau Raya",
+    "Niaga Hijau Raya"
+  ],
+  "phases": {
+    "main": [
+      0
+    ],
+    "cross": [
+      3
+    ]
+  },
+  "context": "Geometri OpenStreetMap, penutupan 2 menjadi 1 lajur dan arus kendaraan merupakan skenario eksperimen",
+  "map_attribution": "\u00a9 OpenStreetMap contributors \u00b7 ODbL",
+  "center": [
+    106.781,
+    -6.278
+  ],
+  "signal_note": "Sinyal simulasi ditambahkan pada simpang Kartika Utama\u2013Metro Alam III, bukan klaim jadwal APILL lapangan"
+}

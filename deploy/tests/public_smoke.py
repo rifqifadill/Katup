@@ -21,6 +21,7 @@ with sync_playwright() as p:
     response = page.goto(url, wait_until='domcontentloaded', timeout=45000)
     assert response.status == 200
     assert page.locator('[name=username]').count() == 0
+    assert page.locator('#comparison').get_attribute('hidden') is not None
     report['no_login'] = True
     page.select_option('#mode', 'katup')
     page.select_option('#speed', '100')

@@ -20,8 +20,16 @@ Thumbs.db
 # Large Simulation Outputs / Scratch Logs
 *.log
 *.dump
+dist/
 
 # Private deployment credentials
 *.key
 *.pass
 credentials.json
+
+# Local task attachments
+.codex-attachments/
+
+scenarios/generated/
+output/
+.runtime-llm/

@@ -13,10 +13,12 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from katup_scenario import CASE_DIR, build_scenario, case_metadata
-build_scenario()
-CASE = case_metadata()
-SIM_DIR = CASE_DIR
+from katup_core.scenarios import build_case
+CORRIDOR = os.getenv('KATUP_CORRIDOR', 'ui_depok')
+DEMAND = os.getenv('KATUP_DEMAND', 'peak')
+CONFIG, CASE = build_case(CORRIDOR, DEMAND)
+PROFILE = CASE['profile']
+SIM_DIR = CONFIG.parent
 spec = importlib.util.spec_from_file_location("katup_research", ROOT / "katup_controller.py")
 controller = importlib.util.module_from_spec(spec)
 assert spec.loader is not None
@@ -25,14 +27,15 @@ import traci.constants as tc
 os.chdir(SIM_DIR)
 
 mode = os.environ.get("KATUP_SCENARIO") or (os.sys.argv[1] if len(os.sys.argv) > 1 else "katup")
-if mode not in ("baseline", "katup"):
+if mode not in ("baseline", "katup", "hybrid"):
     raise SystemExit("Unknown scenario")
 
 state_file = Path(os.environ["KATUP_TELEMETRY"])
 state_file.parent.mkdir(parents=True, exist_ok=True)
-runs_dir = state_file.parent / "runs"
+runs_dir = state_file.parent / "runs" / f"{CORRIDOR}-{DEMAND}"
 runs_dir.mkdir(parents=True, exist_ok=True)
 seed = int(os.environ.get("KATUP_SEED", "42"))
+RUN_ID = f"{mode}-{os.getpid()}-{time.time_ns()}"
 delay = int(os.environ.get("KATUP_DELAY", "1000"))
 use_gui = os.environ.get("KATUP_USE_GUI", "1") not in {"0", "false", "no"}
 tripinfo_file = runs_dir / f"{mode}-seed-{seed}-{CASE['signature']}.tripinfo.xml"
@@ -137,12 +140,12 @@ def record_event(kind: str, message: str, step: int, **extra) -> None:
 def make_state(metrics: dict, step: int) -> dict:
     global last_vehicle_sample
     traci = controller.traci
-    downstream = edge_snapshot("edge_pre_bottle")
-    upstream = edge_snapshot("edge_W2J")
-    bottleneck = edge_snapshot("edge_bottleneck")
+    downstream = edge_snapshot(PROFILE["pre"])
+    upstream = edge_snapshot(PROFILE["west"])
+    bottleneck = edge_snapshot(PROFILE["bottleneck"])
     bypass = {
-        "vehicles": sum(edge_snapshot(e)["vehicles"] for e in ("edge_J2N", "edge_alt_1", "edge_alt_2")),
-        "halting": sum(edge_snapshot(e)["halting"] for e in ("edge_J2N", "edge_alt_1", "edge_alt_2")),
+        "vehicles": sum(edge_snapshot(e)["vehicles"] for e in set(edge for path in PROFILE['paths'] for edge in path[1:-1])),
+        "halting": sum(edge_snapshot(e)["halting"] for e in set(edge for path in PROFILE['paths'] for edge in path[1:-1])),
     }
     phase = {
         "index": traci.trafficlight.getPhase(controller.TLS_ID),
@@ -153,7 +156,7 @@ def make_state(metrics: dict, step: int) -> dict:
     state = {
         "schema": 4,
         "case": CASE,
-        "run_id": f"{mode}-{os.getpid()}",
+        "run_id": RUN_ID,
         "scenario": mode,
         "seed": seed,
         "running": True,
@@ -187,15 +190,15 @@ def make_state(metrics: dict, step: int) -> dict:
 def publish_step(step, metrics, valve, route, recorder):
     global last_data, last_mode, last_rerouted, last_vehicle_sample
     counts["pengamat"] = step
-    counts["katup"] = step if mode == "katup" else 0
-    counts["rute"] = step if mode == "katup" else 0
+    counts["katup"] = step if mode != "baseline" else 0
+    counts["rute"] = step if mode != "baseline" else 0
     control.update({
-        "mode": valve.mode if mode == "katup" else "DISABLED",
+        "mode": valve.mode if mode != "baseline" else "DISABLED",
         "rerouted": route.reroute_counter,
-        "route_mode": route.route_mode if mode == "katup" else "DISABLED",
+        "route_mode": route.route_mode if mode != "baseline" else "DISABLED",
         "route_totals": route.route_totals,
-        "target_fraction": route.target_fraction,
-        "last_action": valve.last_action if mode == "katup" else "Lampu tetap 40 / 3 / 47 detik",
+        "target_fraction": route.target_fraction if mode != "baseline" else 0,
+        "last_action": valve.last_action if mode != "baseline" else "Lampu mengikuti jadwal tetap tanpa penyesuaian antrean",
         "failed_reroutes": route.failed_reroutes,
     })
     if control["mode"] != last_mode:
@@ -209,16 +212,18 @@ def publish_step(step, metrics, valve, route, recorder):
     if step % 5 == 0 or step <= 2:
         series.append({
             "time": step, "downstream": metrics["veh_count"],
-            "upstream": controller.traci.edge.getLastStepVehicleNumber("edge_W2J"),
+            "upstream": controller.traci.edge.getLastStepVehicleNumber(PROFILE["west"]),
             "speed": round(metrics["mean_speed_kmh"], 2),
             "queue_m": round(metrics["queue_m"], 1),
             "upstream_queue_m": round(metrics["upstream_queue_m"], 1),
-            "bottleneck": controller.traci.edge.getLastStepVehicleNumber("edge_bottleneck"),
+            "bottleneck": controller.traci.edge.getLastStepVehicleNumber(PROFILE["bottleneck"]),
             "rerouted": control["rerouted"], "mode": control["mode"],
         })
     last_vehicle_sample = vehicle_snapshot()
     last_data = make_state(metrics, step)
     last_data["system"] = recorder.summary()
+    last_data["supervisor"] = route.supervisor.telemetry() if route.supervisor else {"status": "disabled", "external_decisions": False}
+    last_data["control"]["strategy_reason"] = valve.strategy.reason if mode != "baseline" else "Antrean tetap dipantau, lampu memakai jadwal tetap dan kendaraan mengikuti rute awal"
     last_data["sumo_version"] = controller.traci.getVersion()[1] if step == 1 else sumo_version[0]
     if step == 1:
         sumo_version[0] = last_data["sumo_version"]
@@ -246,9 +251,9 @@ def trip_summary() -> dict:
 
 try:
     print(f"Scenario={mode}; seed={seed}; dashboard controller", flush=True)
-    system_summary = controller.run_simulation(enable_katup=mode == "katup", use_gui=use_gui, on_step=publish_step)
+    system_summary = controller.run_simulation(use_gui=use_gui, on_step=publish_step, corridor=CORRIDOR, demand=DEMAND, mode=mode, run_id=RUN_ID, audit_path=runs_dir / f"{RUN_ID}.decisions.jsonl")
     final = dict(last_data)
-    final.update({"running": False, "finished": True, "simulation_time": 1800, "updated": time.time()})
+    final.update({"running": False, "finished": True, "simulation_time": CASE["duration"], "updated": time.time()})
     final["summary"] = {**trip_summary(), **system_summary}
     write_state(final)
     saved = {
@@ -256,6 +261,8 @@ try:
         "seed": seed,
         "case": CASE,
         "sumo_version": sumo_version[0],
+        "supervisor": final.get("supervisor", {}),
+        "run_id": RUN_ID,
         "summary": final["summary"],
         "series": series,
         "events": events,

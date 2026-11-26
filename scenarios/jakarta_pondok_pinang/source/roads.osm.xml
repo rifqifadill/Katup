@@ -1,0 +1,2181 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="KATUP road-type filter" copyright="OpenStreetMap contributors"><node id="94995158" visible="true" version="20" changeset="81204539" timestamp="2020-02-19T06:28:52Z" user="martinmbaihaqi" uid="1840603" lat="-6.2883578" lon="106.7783183" />
+ <node id="191458229" visible="true" version="21" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2829962" lon="106.7859819" />
+ <node id="191458281" visible="true" version="25" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2803737" lon="106.7809727" />
+ <node id="191458302" visible="true" version="16" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804879" lon="106.7807951" />
+ <node id="191458320" visible="true" version="34" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2803940" lon="106.7804994" />
+ <node id="191458337" visible="true" version="16" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2802758" lon="106.7804334" />
+ <node id="191458361" visible="true" version="17" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2801409" lon="106.7804253" />
+ <node id="191458382" visible="true" version="16" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2799902" lon="106.7804970" />
+ <node id="191458394" visible="true" version="16" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2798893" lon="106.7806838" />
+ <node id="191458432" visible="true" version="17" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2800263" lon="106.7809856" />
+ <node id="191458448" visible="true" version="17" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2801796" lon="106.7810339" />
+ <node id="191458466" visible="true" version="23" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2860919" lon="106.7802631" />
+ <node id="191458504" visible="true" version="24" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2830391" lon="106.7801531" />
+ <node id="191458522" visible="true" version="22" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2825735" lon="106.7801811" />
+ <node id="191458543" visible="true" version="21" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2820454" lon="106.7802310" />
+ <node id="191458903" visible="true" version="22" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2865003" lon="106.7801031" />
+ <node id="191458987" visible="true" version="22" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2867633" lon="106.7799091" />
+ <node id="305176942" visible="true" version="13" changeset="78385285" timestamp="2019-12-13T16:43:58Z" user="punya_man" uid="8995710" lat="-6.2697375" lon="106.7787565" />
+ <node id="305182954" visible="true" version="9" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2732530" lon="106.7826375" />
+ <node id="305182956" visible="true" version="14" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2728969" lon="106.7786474" />
+ <node id="305183619" visible="true" version="13" changeset="117158870" timestamp="2022-02-08T12:26:59Z" user="Eixample" uid="9320686" lat="-6.2710177" lon="106.7787172" />
+ <node id="305183622" visible="true" version="11" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2711707" lon="106.7831951" />
+ <node id="307211297" visible="true" version="8" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2729184" lon="106.7792318" />
+ <node id="307218181" visible="true" version="20" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2730526" lon="106.7819028" />
+ <node id="307234004" visible="true" version="19" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2729308" lon="106.7797960" />
+ <node id="307239799" visible="true" version="8" changeset="142054130" timestamp="2023-10-02T19:30:47Z" user="Pegasus21" uid="13510663" lat="-6.2744499" lon="106.7785089" />
+ <node id="307243055" visible="true" version="7" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2729595" lon="106.7803486" />
+ <node id="307259045" visible="true" version="9" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2777057" lon="106.7814871" />
+ <node id="307286520" visible="true" version="10" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2800855" lon="106.7804401" />
+ <node id="307286522" visible="true" version="6" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2793472" lon="106.7782608" />
+ <node id="307286524" visible="true" version="5" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2790832" lon="106.7779148" />
+ <node id="307286525" visible="true" version="5" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2788660" lon="106.7777163" />
+ <node id="307286527" visible="true" version="6" changeset="142533315" timestamp="2023-10-13T17:17:18Z" user="MrAlaska" uid="14389165" lat="-6.2786674" lon="106.7775634" />
+ <node id="307286528" visible="true" version="6" changeset="127735013" timestamp="2022-10-18T15:47:44Z" user="127logs" uid="9633823" lat="-6.2782648" lon="106.7773274" />
+ <node id="307288236" visible="true" version="16" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2765605" lon="106.7767867" />
+ <node id="307290618" visible="true" version="12" changeset="142054130" timestamp="2023-10-02T19:30:47Z" user="Pegasus21" uid="13510663" lat="-6.2761046" lon="106.7773949" />
+ <node id="307290620" visible="true" version="10" changeset="142054130" timestamp="2023-10-02T19:30:47Z" user="Pegasus21" uid="13510663" lat="-6.2756672" lon="106.7778582" />
+ <node id="307290622" visible="true" version="10" changeset="142054130" timestamp="2023-10-02T19:30:47Z" user="Pegasus21" uid="13510663" lat="-6.2750253" lon="106.7782874" />
+ <node id="307290623" visible="true" version="11" changeset="142054130" timestamp="2023-10-02T19:30:47Z" user="Pegasus21" uid="13510663" lat="-6.2745565" lon="106.7784775" />
+ <node id="307290625" visible="true" version="9" changeset="68754142" timestamp="2019-04-01T13:15:09Z" user="pravenya" uid="8925029" lat="-6.2738293" lon="106.7786122" />
+ <node id="307290626" visible="true" version="10" changeset="68754142" timestamp="2019-04-01T13:15:09Z" user="pravenya" uid="8925029" lat="-6.2732838" lon="106.7786406" />
+ <node id="307290628" visible="true" version="11" changeset="68754142" timestamp="2019-04-01T13:15:09Z" user="pravenya" uid="8925029" lat="-6.2685020" lon="106.7788367" />
+ <node id="307290631" visible="true" version="13" changeset="142065900" timestamp="2023-10-02T23:08:14Z" user="Pegasus21" uid="13510663" lat="-6.2679653" lon="106.7789017" />
+ <node id="307290632" visible="true" version="13" changeset="142065900" timestamp="2023-10-02T23:08:14Z" user="Pegasus21" uid="13510663" lat="-6.2676225" lon="106.7789816" />
+ <node id="307290633" visible="true" version="15" changeset="142065900" timestamp="2023-10-02T23:08:14Z" user="Pegasus21" uid="13510663" lat="-6.2670898" lon="106.7791904" />
+ <node id="307290634" visible="true" version="12" changeset="142065900" timestamp="2023-10-02T23:08:14Z" user="Pegasus21" uid="13510663" lat="-6.2667367" lon="106.7793960" />
+ <node id="307290635" visible="true" version="12" changeset="142065900" timestamp="2023-10-02T23:08:14Z" user="Pegasus21" uid="13510663" lat="-6.2665928" lon="106.7794984" />
+ <node id="307290636" visible="true" version="12" changeset="142065900" timestamp="2023-10-02T23:08:14Z" user="Pegasus21" uid="13510663" lat="-6.2663475" lon="106.7797033" />
+ <node id="307290637" visible="true" version="10" changeset="142065900" timestamp="2023-10-02T23:08:14Z" user="Pegasus21" uid="13510663" lat="-6.2661016" lon="106.7799566" />
+ <node id="307296989" visible="true" version="5" changeset="32444843" timestamp="2015-07-06T10:29:07Z" user="TangSentinel" uid="2965717" lat="-6.2757280" lon="106.7766353" />
+ <node id="307301150" visible="true" version="5" changeset="142054130" timestamp="2023-10-02T19:30:47Z" user="Pegasus21" uid="13510663" lat="-6.2756029" lon="106.7779122" />
+ <node id="307306767" visible="true" version="7" changeset="142053541" timestamp="2023-10-02T19:14:02Z" user="Pegasus21" uid="13510663" lat="-6.2762083" lon="106.7767467" />
+ <node id="307306769" visible="true" version="7" changeset="85434192" timestamp="2020-05-19T10:18:50Z" user="Nockamixon" uid="9847864" lat="-6.2754093" lon="106.7765012" />
+ <node id="307306770" visible="true" version="6" changeset="85434192" timestamp="2020-05-19T10:18:50Z" user="Nockamixon" uid="9847864" lat="-6.2751200" lon="106.7763443" />
+ <node id="307306774" visible="true" version="7" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2745209" lon="106.7757348" />
+ <node id="307329178" visible="true" version="6" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2746495" lon="106.7759038" />
+ <node id="307331255" visible="true" version="12" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2768035" lon="106.7761675" />
+ <node id="307331257" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2769769" lon="106.7760007" />
+ <node id="307331259" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2770714" lon="106.7759115" />
+ <node id="307331260" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2772116" lon="106.7758141" />
+ <node id="307331262" visible="true" version="10" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2775240" lon="106.7756364" />
+ <node id="307331264" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2778384" lon="106.7755127" />
+ <node id="307331265" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2779922" lon="106.7754888" />
+ <node id="307331275" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2797661" lon="106.7756202" />
+ <node id="307331276" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2800123" lon="106.7756336" />
+ <node id="307331278" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2802691" lon="106.7756075" />
+ <node id="307331279" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2805096" lon="106.7755736" />
+ <node id="307331282" visible="true" version="10" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2811147" lon="106.7754265" />
+ <node id="307331283" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2812659" lon="106.7753718" />
+ <node id="307331285" visible="true" version="8" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2814705" lon="106.7752942" />
+ <node id="307331293" visible="true" version="8" changeset="71023665" timestamp="2019-06-07T13:21:47Z" user="dhanumuri" uid="10050955" lat="-6.2820644" lon="106.7750454" />
+ <node id="307333194" visible="true" version="6" changeset="59329881" timestamp="2018-05-28T06:27:22Z" user="Kolla6" uid="7671615" lat="-6.2822502" lon="106.7752337" />
+ <node id="307334270" visible="true" version="4" changeset="166808164" timestamp="2025-05-27T06:24:30Z" user="iSetia" uid="22941836" lat="-6.2776702" lon="106.7771420" />
+ <node id="307334274" visible="true" version="5" changeset="166808164" timestamp="2025-05-27T06:24:30Z" user="iSetia" uid="22941836" lat="-6.2774075" lon="106.7757035" />
+ <node id="307334833" visible="true" version="9" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2782004" lon="106.7755039" />
+ <node id="307336076" visible="true" version="10" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2790858" lon="106.7755628" />
+ <node id="307337986" visible="true" version="5" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2796818" lon="106.7790963" />
+ <node id="307338004" visible="true" version="6" changeset="68754142" timestamp="2019-04-01T13:15:10Z" user="pravenya" uid="8925029" lat="-6.2856335" lon="106.7783979" />
+ <node id="307338344" visible="true" version="9" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2839810" lon="106.7802045" />
+ <node id="307338463" visible="true" version="10" changeset="51737766" timestamp="2017-09-05T06:30:28Z" user="Fadlilaa" uid="4706334" lat="-6.2863609" lon="106.7790792" />
+ <node id="307338892" visible="true" version="4" changeset="128361413" timestamp="2022-11-01T19:45:49Z" user="PlinyTheYoungest" uid="9884664" lat="-6.2852847" lon="106.7780749">
+  <tag k="note" v="Please check the turn restrictions on this intersection" />
+ </node>
+ <node id="307339668" visible="true" version="6" changeset="804037" timestamp="2009-03-14T03:26:16Z" user="Firman Hadi" uid="76518" lat="-6.2831298" lon="106.7760533">
+  <tag k="created_by" v="Merkaartor 0.13" />
+ </node>
+ <node id="307339729" visible="true" version="8" changeset="68755280" timestamp="2019-04-01T13:46:38Z" user="pravenya" uid="8925029" lat="-6.2844502" lon="106.7773161" />
+ <node id="307339746" visible="true" version="6" changeset="68755280" timestamp="2019-04-01T13:46:38Z" user="pravenya" uid="8925029" lat="-6.2838243" lon="106.7767259" />
+ <node id="307340201" visible="true" version="5" changeset="68754142" timestamp="2019-04-01T13:15:11Z" user="pravenya" uid="8925029" lat="-6.2825627" lon="106.7755506" />
+ <node id="307340654" visible="true" version="2" changeset="804037" timestamp="2009-03-14T03:26:17Z" user="Firman Hadi" uid="76518" lat="-6.2832071" lon="106.7759655">
+  <tag k="created_by" v="Merkaartor 0.13" />
+ </node>
+ <node id="307340666" visible="true" version="13" changeset="71023665" timestamp="2019-06-07T13:21:47Z" user="dhanumuri" uid="10050955" lat="-6.2821781" lon="106.7750529" />
+ <node id="307340667" visible="true" version="12" changeset="59329881" timestamp="2018-05-28T06:27:23Z" user="Kolla6" uid="7671615" lat="-6.2821223" lon="106.7750031" />
+ <node id="307340670" visible="true" version="13" changeset="59329881" timestamp="2018-05-28T06:27:23Z" user="Kolla6" uid="7671615" lat="-6.2820791" lon="106.7749598" />
+ <node id="307340694" visible="true" version="5" changeset="118080334" timestamp="2022-03-04T06:49:52Z" user="DeltaDelTigre" uid="10653188" lat="-6.2845871" lon="106.7772706" />
+ <node id="307340736" visible="true" version="7" changeset="128356983" timestamp="2022-11-01T17:30:44Z" user="PlinyTheYoungest" uid="9884664" lat="-6.2864285" lon="106.7790103" />
+ <node id="307340790" visible="true" version="5" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2806726" lon="106.7755398" />
+ <node id="307341006" visible="true" version="6" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2818403" lon="106.7751338" />
+ <node id="307341537" visible="true" version="12" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2785557" lon="106.7755236" />
+ <node id="312149657" visible="true" version="10" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2802336" lon="106.7810311" />
+ <node id="312149658" visible="true" version="5" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2815027" lon="106.7843735" />
+ <node id="312149659" visible="true" version="7" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2816400" lon="106.7846417" />
+ <node id="312149660" visible="true" version="5" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2819840" lon="106.7851460" />
+ <node id="312149661" visible="true" version="8" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2828053" lon="106.7859886" />
+ <node id="312149662" visible="true" version="3" changeset="26607490" timestamp="2014-11-07T04:04:04Z" user="Dody Suria Wijaya" uid="229861" lat="-6.2840730" lon="106.7869348" />
+ <node id="312149663" visible="true" version="3" changeset="26607490" timestamp="2014-11-07T04:04:04Z" user="Dody Suria Wijaya" uid="229861" lat="-6.2841935" lon="106.7871111" />
+ <node id="312149811" visible="true" version="8" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2813015" lon="106.7839940" />
+ <node id="312150486" visible="true" version="2" changeset="804037" timestamp="2009-03-14T03:13:28Z" user="Firman Hadi" uid="76518" lat="-6.2777328" lon="106.7815951">
+  <tag k="created_by" v="Merkaartor 0.13" />
+ </node>
+ <node id="312152696" visible="true" version="5" changeset="117154309" timestamp="2022-02-08T10:35:37Z" user="Eixample" uid="9320686" lat="-6.2744720" lon="106.7824455" />
+ <node id="312161884" visible="true" version="15" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2810811" lon="106.7805248" />
+ <node id="312161885" visible="true" version="14" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2820140" lon="106.7803420" />
+ <node id="312161886" visible="true" version="14" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2825790" lon="106.7802762" />
+ <node id="312161888" visible="true" version="13" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2861098" lon="106.7803778" />
+ <node id="312161892" visible="true" version="13" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2865847" lon="106.7802025" />
+ <node id="312161894" visible="true" version="13" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2869213" lon="106.7799612" />
+ <node id="312162078" visible="true" version="16" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2870026" lon="106.7798871" />
+ <node id="312163655" visible="true" version="24" changeset="144629291" timestamp="2023-11-30T15:32:24Z" user="GbabethemapGod" uid="15314242" lat="-6.2815380" lon="106.7842075" />
+ <node id="312164283" visible="true" version="10" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2837969" lon="106.7866883" />
+ <node id="312164572" visible="true" version="11" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2838589" lon="106.7865930" />
+ <node id="312165275" visible="true" version="15" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2850438" lon="106.7803717" />
+ <node id="312165386" visible="true" version="11" changeset="128403444" timestamp="2022-11-02T17:20:43Z" user="(Inactive) Buddy-the-Elf" uid="9476874" lat="-6.2829816" lon="106.7802640" />
+ <node id="312165397" visible="true" version="13" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2809282" lon="106.7827119" />
+ <node id="312165822" visible="true" version="10" changeset="144113712" timestamp="2023-11-16T21:07:44Z" user="Pegasus21" uid="13510663" lat="-6.2811868" lon="106.7834167" />
+ <node id="312165963" visible="true" version="6" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2824372" lon="106.7854531" />
+ <node id="312165971" visible="true" version="7" changeset="123740527" timestamp="2022-07-18T03:32:02Z" user="Belladina" uid="15975213" lat="-6.2819875" lon="106.7849730" />
+ <node id="312166507" visible="true" version="6" changeset="753403" timestamp="2008-11-15T15:18:25Z" user="BudiRustandi" uid="71195" lat="-6.2861644" lon="106.7763889" />
+ <node id="312166508" visible="true" version="6" changeset="753403" timestamp="2008-11-15T15:18:26Z" user="BudiRustandi" uid="71195" lat="-6.2858572" lon="106.7761572" />
+ <node id="312166509" visible="true" version="7" changeset="117285959" timestamp="2022-02-11T12:21:27Z" user="Highveld" uid="10656918" lat="-6.2856912" lon="106.7760381" />
+ <node id="312166511" visible="true" version="7" changeset="85583291" timestamp="2020-05-22T04:41:45Z" user="GreatSandDunes" uid="10409732" lat="-6.2853179" lon="106.7758253" />
+ <node id="312166512" visible="true" version="7" changeset="85583291" timestamp="2020-05-22T04:41:45Z" user="GreatSandDunes" uid="10409732" lat="-6.2850913" lon="106.7756979" />
+ <node id="312166514" visible="true" version="8" changeset="128358191" timestamp="2022-11-01T18:04:40Z" user="PlinyTheYoungest" uid="9884664" lat="-6.2846681" lon="106.7753787" />
+ <node id="312166516" visible="true" version="8" changeset="82416572" timestamp="2020-03-20T05:53:47Z" user="Karoo02" uid="10529464" lat="-6.2845354" lon="106.7752781" />
+ <node id="312166519" visible="true" version="8" changeset="82416572" timestamp="2020-03-20T05:53:47Z" user="Karoo02" uid="10529464" lat="-6.2838476" lon="106.7746706" />
+ <node id="312166716" visible="true" version="10" changeset="51737766" timestamp="2017-09-05T06:30:29Z" user="Fadlilaa" uid="4706334" lat="-6.2882483" lon="106.7782177" />
+ <node id="312169118" visible="true" version="20" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2733090" lon="106.7746487" />
+ <node id="312169119" visible="true" version="20" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2732065" lon="106.7747142" />
+ <node id="312169120" visible="true" version="20" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2729400" lon="106.7748431" />
+ <node id="312169122" visible="true" version="19" changeset="142053541" timestamp="2023-10-02T19:14:02Z" user="Pegasus21" uid="13510663" lat="-6.2725910" lon="106.7749631" />
+ <node id="312169124" visible="true" version="22" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2713279" lon="106.7753252" />
+ <node id="312169125" visible="true" version="19" changeset="71033288" timestamp="2019-06-07T18:01:49Z" user="dhanumuri" uid="10050955" lat="-6.2711637" lon="106.7753334" />
+ <node id="312169126" visible="true" version="18" changeset="45774936" timestamp="2017-02-03T10:59:16Z" user="abdulbadii" uid="3606453" lat="-6.2710058" lon="106.7753198" />
+ <node id="312169127" visible="true" version="17" changeset="437441" timestamp="2008-12-17T15:52:57Z" user="Firman Hadi" uid="76518" lat="-6.2705686" lon="106.7752302" />
+ <node id="312169128" visible="true" version="17" changeset="437441" timestamp="2008-12-17T15:52:57Z" user="Firman Hadi" uid="76518" lat="-6.2701506" lon="106.7751529" />
+ <node id="312169129" visible="true" version="19" changeset="70995223" timestamp="2019-06-06T16:00:48Z" user="dhanumuri" uid="10050955" lat="-6.2697919" lon="106.7750977" />
+ <node id="312169130" visible="true" version="19" changeset="70993300" timestamp="2019-06-06T14:57:21Z" user="dhanumuri" uid="10050955" lat="-6.2693739" lon="106.7750675" />
+ <node id="312169131" visible="true" version="20" changeset="70993300" timestamp="2019-06-06T14:57:21Z" user="dhanumuri" uid="10050955" lat="-6.2690228" lon="106.7750679" />
+ <node id="356668897" visible="true" version="6" changeset="142161919" timestamp="2023-10-04T20:01:17Z" user="martymcfly14" uid="14434812" lat="-6.2870848" lon="106.7795885" />
+ <node id="360082463" visible="true" version="3" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2692428" lon="106.7837189" />
+ <node id="360082464" visible="true" version="3" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2691772" lon="106.7836091" />
+ <node id="360082466" visible="true" version="4" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2701730" lon="106.7834817" />
+ <node id="360082468" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2696850" lon="106.7835862" />
+ <node id="360082470" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2698029" lon="106.7836795" />
+ <node id="360082472" visible="true" version="3" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2701951" lon="106.7836087" />
+ <node id="360083759" visible="true" version="9" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2803281" lon="106.7810012" />
+ <node id="360163119" visible="true" version="3" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2843995" lon="106.7876619" />
+ <node id="360163120" visible="true" version="3" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2847587" lon="106.7879737" />
+ <node id="360163121" visible="true" version="7" changeset="109455346" timestamp="2021-08-10T10:26:38Z" user="AntelopeCliif" uid="10353518" lat="-6.2847541" lon="106.7882473" />
+ <node id="360163122" visible="true" version="6" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2845328" lon="106.7886114" />
+ <node id="360163126" visible="true" version="6" changeset="74388790" timestamp="2019-09-12T11:23:36Z" user="Qomar IRM-ED" uid="9543905" lat="-6.2823053" lon="106.7916783" />
+ <node id="360163141" visible="true" version="6" changeset="71170159" timestamp="2019-06-12T08:18:35Z" user="p_kiranmai" uid="9316702" lat="-6.2825854" lon="106.7921087" />
+ <node id="360574031" visible="true" version="5" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2845681" lon="106.7877565" />
+ <node id="361322817" visible="true" version="6" changeset="74388790" timestamp="2019-09-12T11:23:36Z" user="Qomar IRM-ED" uid="9543905" lat="-6.2829918" lon="106.7912304" />
+ <node id="361322970" visible="true" version="7" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875209" lon="106.7904429" />
+ <node id="361323530" visible="true" version="5" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2866890" lon="106.7900333" />
+ <node id="361323533" visible="true" version="3" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2848593" lon="106.7901564" />
+ <node id="361323534" visible="true" version="2" changeset="59072098" timestamp="2018-05-18T08:35:05Z" user="lakkarssu" uid="8196672" lat="-6.2839515" lon="106.7903011" />
+ <node id="361323536" visible="true" version="5" changeset="144630311" timestamp="2023-11-30T16:04:22Z" user="GbabethemapGod" uid="15314242" lat="-6.2833658" lon="106.7904298" />
+ <node id="361323721" visible="true" version="4" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2849535" lon="106.7901483" />
+ <node id="361323793" visible="true" version="4" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2862225" lon="106.7899979" />
+ <node id="361323902" visible="true" version="4" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2867286" lon="106.7903615" />
+ <node id="361323946" visible="true" version="8" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875747" lon="106.7907290" />
+ <node id="361323947" visible="true" version="1" changeset="822662" timestamp="2009-03-17T04:48:02Z" user="Firman Hadi" uid="76518" lat="-6.2895343" lon="106.7908644">
+  <tag k="created_by" v="Merkaartor 0.13" />
+ </node>
+ <node id="361323949" visible="true" version="4" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2919439" lon="106.7912159" />
+ <node id="361323985" visible="true" version="2" changeset="50744481" timestamp="2017-08-01T09:26:33Z" user="Randy Febri Nanda" uid="4472999" lat="-6.2906049" lon="106.7910920" />
+ <node id="1376652913" visible="true" version="6" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2799231" lon="106.7805813" />
+ <node id="1376652992" visible="true" version="6" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2801861" lon="106.7804212" />
+ <node id="1376653055" visible="true" version="6" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2801259" lon="106.7810271" />
+ <node id="1376653057" visible="true" version="6" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2803580" lon="106.7804715" />
+ <node id="1376653062" visible="true" version="6" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804465" lon="106.7808942" />
+ <node id="1695778657" visible="true" version="7" changeset="89706687" timestamp="2020-08-20T18:19:12Z" user="sasQuach" uid="9917894" lat="-6.2687571" lon="106.7750613" />
+ <node id="1695778675" visible="true" version="5" changeset="127737148" timestamp="2022-10-18T16:36:48Z" user="127logs" uid="9633823" lat="-6.2696786" lon="106.7750826">
+  <tag k="highway" v="crossing" />
+ </node>
+ <node id="1709665549" visible="true" version="6" changeset="142493019" timestamp="2023-10-12T18:46:20Z" user="Toddtodd" uid="13560445" lat="-6.2708417" lon="106.7752888" />
+ <node id="2282149039" visible="true" version="4" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2847100" lon="106.7878868" />
+ <node id="2375014232" visible="true" version="4" changeset="57526302" timestamp="2018-03-26T08:19:00Z" user="akhil2" uid="7795526" lat="-6.2696393" lon="106.7750777" />
+ <node id="2375014234" visible="true" version="1" changeset="16836166" timestamp="2013-07-05T13:20:04Z" user="Naufal Afif" uid="1565493" lat="-6.2702678" lon="106.7751746" />
+ <node id="3171567007" visible="true" version="5" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2677661" lon="106.7835959" />
+ <node id="3171567008" visible="true" version="4" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2677698" lon="106.7837292" />
+ <node id="3171606022" visible="true" version="4" changeset="144113712" timestamp="2023-11-16T21:07:45Z" user="Pegasus21" uid="13510663" lat="-6.2813215" lon="106.7837419" />
+ <node id="3171606023" visible="true" version="2" changeset="50744481" timestamp="2017-08-01T09:26:35Z" user="Randy Febri Nanda" uid="4472999" lat="-6.2839613" lon="106.7894431" />
+ <node id="3171606026" visible="true" version="1" changeset="26607490" timestamp="2014-11-07T04:04:03Z" user="Dody Suria Wijaya" uid="229861" lat="-6.2841210" lon="106.7868410" />
+ <node id="3171606027" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2842836" lon="106.7870583" />
+ <node id="3171606028" visible="true" version="1" changeset="26607490" timestamp="2014-11-07T04:04:03Z" user="Dody Suria Wijaya" uid="229861" lat="-6.2843316" lon="106.7871950" />
+ <node id="3171606029" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2844646" lon="106.7875259" />
+ <node id="3171606030" visible="true" version="3" changeset="144629291" timestamp="2023-11-30T15:32:24Z" user="GbabethemapGod" uid="15314242" lat="-6.2842682" lon="106.7873352" />
+ <node id="3171606039" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2842968" lon="106.7874406" />
+ <node id="3171606047" visible="true" version="4" changeset="144629291" timestamp="2023-11-30T15:32:24Z" user="GbabethemapGod" uid="15314242" lat="-6.2843800" lon="106.7873264" />
+ <node id="3172459583" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2837335" lon="106.7802990" />
+ <node id="3173599268" visible="true" version="4" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2683069" lon="106.7837172" />
+ <node id="3173599275" visible="true" version="4" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2691384" lon="106.7837152" />
+ <node id="3372497309" visible="true" version="2" changeset="142368121" timestamp="2023-10-09T22:09:23Z" user="(Inactive) hayduke1275" uid="12854712" lat="-6.2732583" lon="106.7827596">
+  <tag k="highway" v="bus_stop" />
+  <tag k="name" v="Metro Alam III" />
+  <tag k="public_transport" v="stop_position" />
+ </node>
+ <node id="3372497311" visible="true" version="5" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2753938" lon="106.7821019">
+  <tag k="bus" v="yes" />
+  <tag k="highway" v="bus_stop" />
+  <tag k="name" v="Metro Alam III" />
+  <tag k="public_transport" v="platform" />
+ </node>
+ <node id="3415432541" visible="true" version="5" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2799137" lon="106.7808550" />
+ <node id="3428200492" visible="true" version="2" changeset="141923491" timestamp="2023-09-29T17:21:39Z" user="MrAlaska" uid="14389165" lat="-6.2868043" lon="106.7762756" />
+ <node id="3428200493" visible="true" version="3" changeset="141923491" timestamp="2023-09-29T17:21:39Z" user="MrAlaska" uid="14389165" lat="-6.2873738" lon="106.7767503" />
+ <node id="3576411420" visible="true" version="2" changeset="51739799" timestamp="2017-09-05T07:35:56Z" user="Randy Febri Nanda" uid="4472999" lat="-6.2706219" lon="106.7752412" />
+ <node id="3594358789" visible="true" version="2" changeset="133500302" timestamp="2023-03-10T02:07:23Z" user="martinmbaihaqi" uid="1840603" lat="-6.2878446" lon="106.7778616" />
+ <node id="3594358790" visible="true" version="2" changeset="133500302" timestamp="2023-03-10T02:07:23Z" user="martinmbaihaqi" uid="1840603" lat="-6.2879567" lon="106.7779105" />
+ <node id="3594358791" visible="true" version="2" changeset="133500302" timestamp="2023-03-10T02:07:23Z" user="martinmbaihaqi" uid="1840603" lat="-6.2880275" lon="106.7779110" />
+ <node id="3594358792" visible="true" version="3" changeset="144113712" timestamp="2023-11-16T21:07:45Z" user="Pegasus21" uid="13510663" lat="-6.2881646" lon="106.7778847" />
+ <node id="3594360601" visible="true" version="5" changeset="144113712" timestamp="2023-11-16T21:07:45Z" user="Pegasus21" uid="13510663" lat="-6.2881414" lon="106.7774185" />
+ <node id="3636829866" visible="true" version="6" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2810346" lon="106.7804260" />
+ <node id="3636829867" visible="true" version="6" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2829817" lon="106.7801515" />
+ <node id="3636829868" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2764254" lon="106.7766914" />
+ <node id="3636829869" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2763776" lon="106.7766952" />
+ <node id="3636829870" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2763331" lon="106.7767130" />
+ <node id="3636829871" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2763190" lon="106.7769820" />
+ <node id="3636829872" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2764005" lon="106.7770128" />
+ <node id="3636829873" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2764433" lon="106.7770107" />
+ <node id="3636829874" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2764840" lon="106.7769972" />
+ <node id="3636829875" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2765197" lon="106.7769734" />
+ <node id="3636829876" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2762959" lon="106.7767433" />
+ <node id="3636829877" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2762708" lon="106.7767800" />
+ <node id="3636829878" visible="true" version="9" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2762545" lon="106.7768665" />
+ <node id="3636829879" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2762647" lon="106.7769106" />
+ <node id="3636829880" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2762868" lon="106.7769502" />
+ <node id="3636829881" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2765706" lon="106.7768868" />
+ <node id="3636829885" visible="true" version="8" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2765408" lon="106.7767535" />
+ <node id="3636829887" visible="true" version="3" changeset="127735013" timestamp="2022-10-18T15:47:44Z" user="127logs" uid="9633823" lat="-6.2756839" lon="106.7767136" />
+ <node id="3636829888" visible="true" version="1" changeset="32444843" timestamp="2015-07-06T10:29:04Z" user="TangSentinel" uid="2965717" lat="-6.2754076" lon="106.7765934" />
+ <node id="3636829889" visible="true" version="4" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2750947" lon="106.7764288" />
+ <node id="3636829890" visible="true" version="3" changeset="144113712" timestamp="2023-11-16T21:07:45Z" user="Pegasus21" uid="13510663" lat="-6.2746635" lon="106.7761070" />
+ <node id="3636829891" visible="true" version="2" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2745522" lon="106.7759720" />
+ <node id="3636831593" visible="true" version="5" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2736741" lon="106.7743728">
+  <tag k="highway" v="traffic_signals" />
+ </node>
+ <node id="3636831596" visible="true" version="9" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2763587" lon="106.7770035" />
+ <node id="3636831597" visible="true" version="6" changeset="144249413" timestamp="2023-11-20T14:17:52Z" user="Pegasus21" uid="13510663" lat="-6.2782235" lon="106.7774078" />
+ <node id="3636831598" visible="true" version="3" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2787740" lon="106.7777726" />
+ <node id="3636831599" visible="true" version="3" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2789819" lon="106.7779550" />
+ <node id="3636831600" visible="true" version="2" changeset="68754142" timestamp="2019-04-01T13:15:12Z" user="pravenya" uid="8925029" lat="-6.2792313" lon="106.7782967" />
+ <node id="3636831601" visible="true" version="5" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2800337" lon="106.7804651" />
+ <node id="4513208739" visible="true" version="2" changeset="44559819" timestamp="2016-12-21T08:44:31Z" user="Mettal" uid="515232" lat="-6.2680353" lon="106.7837222" />
+ <node id="4659232812" visible="true" version="3" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2714938" lon="106.7752884" />
+ <node id="4659232820" visible="true" version="5" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2741597" lon="106.7753069" />
+ <node id="4933897755" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2800743" lon="106.7810108" />
+ <node id="4933897756" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2799530" lon="106.7805362" />
+ <node id="4933897757" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2799017" lon="106.7806310" />
+ <node id="4933897758" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2803183" lon="106.7804494" />
+ <node id="4933897759" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2802314" lon="106.7804239" />
+ <node id="4933897760" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804136" lon="106.7809367" />
+ <node id="4933897761" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804716" lon="106.7808465" />
+ <node id="5006371139" visible="true" version="2" changeset="82416572" timestamp="2020-03-20T05:53:47Z" user="Karoo02" uid="10529464" lat="-6.2849393" lon="106.7755893" />
+ <node id="5006371143" visible="true" version="4" changeset="141923491" timestamp="2023-09-29T17:21:39Z" user="MrAlaska" uid="14389165" lat="-6.2853957" lon="106.7750430" />
+ <node id="5006838939" visible="true" version="3" changeset="144630311" timestamp="2023-11-30T16:04:22Z" user="GbabethemapGod" uid="15314242" lat="-6.2834726" lon="106.7902300" />
+ <node id="5006839246" visible="true" version="2" changeset="87970381" timestamp="2020-07-14T10:17:41Z" user="Vindhallow" uid="10210179" lat="-6.2836642" lon="106.7898955" />
+ <node id="5006839249" visible="true" version="2" changeset="68792988" timestamp="2019-04-02T13:02:47Z" user="pravenya" uid="8925029" lat="-6.2841162" lon="106.7892169" />
+ <node id="5006839258" visible="true" version="2" changeset="105672260" timestamp="2021-06-01T10:41:43Z" user="bhar_gavi" uid="11659052" lat="-6.2854630" lon="106.7900914" />
+ <node id="5006839276" visible="true" version="3" changeset="87966481" timestamp="2020-07-14T09:15:18Z" user="Vindhallow" uid="10210179" lat="-6.2868330" lon="106.7903875" />
+ <node id="5006839296" visible="true" version="4" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2861448" lon="106.7899965" />
+ <node id="5006839568" visible="true" version="4" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2888113" lon="106.7907956" />
+ <node id="5006839603" visible="true" version="3" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2879763" lon="106.7907455" />
+ <node id="5006840011" visible="true" version="1" changeset="50744481" timestamp="2017-08-01T09:25:45Z" user="Randy Febri Nanda" uid="4472999" lat="-6.2901721" lon="106.7909952" />
+ <node id="5006840013" visible="true" version="3" changeset="128142539" timestamp="2022-10-27T18:45:20Z" user="Pegasus21" uid="13510663" lat="-6.2910339" lon="106.7911706" />
+ <node id="5006840015" visible="true" version="2" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2892857" lon="106.7908237" />
+ <node id="5006840016" visible="true" version="2" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2890695" lon="106.7908121" />
+ <node id="5006840244" visible="true" version="3" changeset="117182527" timestamp="2022-02-09T02:22:26Z" user="Skiddaw" uid="10888840" lat="-6.2896750" lon="106.7908888" />
+ <node id="5006840255" visible="true" version="3" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2889382" lon="106.7908005" />
+ <node id="5080801804" visible="true" version="11" changeset="170378673" timestamp="2025-08-13T09:24:24Z" user="GrabID_Utami Gendis" uid="10036729" lat="-6.2727008" lon="106.7786447">
+  <tag k="access" v="permissive" />
+  <tag k="access:conditional" v="no @ (22:00-06:00)" />
+  <tag k="barrier" v="lift_gate" />
+  <tag k="lift_gate:type" v="double" />
+ </node>
+ <node id="5080801805" visible="true" version="6" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2728412" lon="106.7792349" />
+ <node id="5080801806" visible="true" version="9" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2728545" lon="106.7797983" />
+ <node id="5080801807" visible="true" version="5" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2728891" lon="106.7807103" />
+ <node id="5080801808" visible="true" version="8" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2729757" lon="106.7819195" />
+ <node id="5080801809" visible="true" version="6" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2730171" lon="106.7821198" />
+ <node id="5080801810" visible="true" version="6" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2731644" lon="106.7826602" />
+ <node id="5080886823" visible="true" version="2" changeset="141912614" timestamp="2023-09-29T13:24:04Z" user="GbabethemapGod" uid="15314242" lat="-6.2702027" lon="106.7751625">
+  <tag k="crossing" v="uncontrolled" />
+  <tag k="highway" v="crossing" />
+ </node>
+ <node id="5080887251" visible="true" version="2" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2740723" lon="106.7751437" />
+ <node id="5080887266" visible="true" version="3" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2726127" lon="106.7750137" />
+ <node id="5080887994" visible="true" version="5" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2737845" lon="106.7743686">
+  <tag k="highway" v="traffic_signals" />
+ </node>
+ <node id="5080887995" visible="true" version="5" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2737105" lon="106.7744253">
+  <tag k="highway" v="traffic_signals" />
+ </node>
+ <node id="5080887996" visible="true" version="2" changeset="70995223" timestamp="2019-06-06T16:00:48Z" user="dhanumuri" uid="10050955" lat="-6.2733735" lon="106.7746737" />
+ <node id="5080887997" visible="true" version="3" changeset="142053541" timestamp="2023-10-02T19:14:02Z" user="Pegasus21" uid="13510663" lat="-6.2732228" lon="106.7747730" />
+ <node id="5080887998" visible="true" version="3" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2729562" lon="106.7748943" />
+ <node id="5080888001" visible="true" version="4" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2714549" lon="106.7753547" />
+ <node id="5080888002" visible="true" version="3" changeset="71033288" timestamp="2019-06-07T18:01:49Z" user="dhanumuri" uid="10050955" lat="-6.2711129" lon="106.7753986" />
+ <node id="5080888003" visible="true" version="2" changeset="70995223" timestamp="2019-06-06T16:00:48Z" user="dhanumuri" uid="10050955" lat="-6.2706085" lon="106.7753095" />
+ <node id="5080888004" visible="true" version="4" changeset="82416813" timestamp="2020-03-20T06:00:41Z" user="PikesPeak" uid="10334717" lat="-6.2700102" lon="106.7751924" />
+ <node id="5080888005" visible="true" version="2" changeset="68844764" timestamp="2019-04-03T15:36:55Z" user="pravenya" uid="8925029" lat="-6.2696391" lon="106.7751391" />
+ <node id="5080888006" visible="true" version="3" changeset="89706687" timestamp="2020-08-20T18:19:12Z" user="sasQuach" uid="9917894" lat="-6.2687566" lon="106.7751117" />
+ <node id="5106689335" visible="true" version="6" changeset="142161919" timestamp="2023-10-04T20:01:17Z" user="martymcfly14" uid="14434812" lat="-6.2869993" lon="106.7796785" />
+ <node id="5459454907" visible="true" version="6" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2878707" lon="106.7786644" />
+ <node id="5459454908" visible="true" version="3" changeset="57520314" timestamp="2018-03-26T00:51:05Z" user="mutpuri" uid="7795551" lat="-6.2879140" lon="106.7785806" />
+ <node id="5459454909" visible="true" version="1" changeset="56937689" timestamp="2018-03-06T14:33:29Z" user="Farras" uid="136807" lat="-6.2880200" lon="106.7783734" />
+ <node id="5459454910" visible="true" version="1" changeset="56937689" timestamp="2018-03-06T14:33:29Z" user="Farras" uid="136807" lat="-6.2880387" lon="106.7782675" />
+ <node id="5459454911" visible="true" version="1" changeset="56937689" timestamp="2018-03-06T14:33:29Z" user="Farras" uid="136807" lat="-6.2880240" lon="106.7781387" />
+ <node id="5459454912" visible="true" version="1" changeset="56937689" timestamp="2018-03-06T14:33:29Z" user="Farras" uid="136807" lat="-6.2879695" lon="106.7779714" />
+ <node id="5459454913" visible="true" version="5" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2880653" lon="106.7784365" />
+ <node id="5459454918" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2881776" lon="106.7785832" />
+ <node id="5459456232" visible="true" version="3" changeset="74019632" timestamp="2019-09-03T04:37:53Z" user="martinmbaihaqi" uid="1840603" lat="-6.2875981" lon="106.7791315" />
+ <node id="5472478988" visible="true" version="2" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2904339" lon="106.7910606" />
+ <node id="5472478991" visible="true" version="1" changeset="57104039" timestamp="2018-03-12T09:07:22Z" user="srivastav5" uid="7446651" lat="-6.2906524" lon="106.7910994" />
+ <node id="5490188702" visible="true" version="4" changeset="88026879" timestamp="2020-07-15T10:33:39Z" user="Vindhallow" uid="10210179" lat="-6.2831396" lon="106.7909289" />
+ <node id="5490188705" visible="true" version="3" changeset="74388790" timestamp="2019-09-12T11:23:36Z" user="Qomar IRM-ED" uid="9543905" lat="-6.2826168" lon="106.7914684" />
+ <node id="5490189067" visible="true" version="2" changeset="68792988" timestamp="2019-04-02T13:02:47Z" user="pravenya" uid="8925029" lat="-6.2840900" lon="106.7892546" />
+ <node id="5490189077" visible="true" version="3" changeset="74388790" timestamp="2019-09-12T11:23:36Z" user="Qomar IRM-ED" uid="9543905" lat="-6.2830065" lon="106.7912083" />
+ <node id="5490189083" visible="true" version="2" changeset="144630311" timestamp="2023-11-30T16:04:22Z" user="GbabethemapGod" uid="15314242" lat="-6.2835011" lon="106.7901769" />
+ <node id="5490189088" visible="true" version="3" changeset="144630311" timestamp="2023-11-30T16:04:22Z" user="GbabethemapGod" uid="15314242" lat="-6.2832501" lon="106.7906719" />
+ <node id="5498089912" visible="true" version="4" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2857024" lon="106.7802929" />
+ <node id="5504807950" visible="true" version="3" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2719365" lon="106.7751585" />
+ <node id="5504807955" visible="true" version="3" changeset="70995223" timestamp="2019-06-06T16:00:48Z" user="dhanumuri" uid="10050955" lat="-6.2709649" lon="106.7753828" />
+ <node id="5504807977" visible="true" version="3" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2697091" lon="106.7836949" />
+ <node id="5504807986" visible="true" version="4" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2725621" lon="106.7829600" />
+ <node id="5504808007" visible="true" version="4" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2721718" lon="106.7830610" />
+ <node id="5626180504" visible="true" version="2" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2845821" lon="106.7901899" />
+ <node id="5626180505" visible="true" version="2" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2841675" lon="106.7902664" />
+ <node id="5626180506" visible="true" version="2" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2843301" lon="106.7902341" />
+ <node id="5647027165" visible="true" version="2" changeset="111223513" timestamp="2021-09-15T05:17:17Z" user="Skogafoss" uid="9848091" lat="-6.2739922" lon="106.7825647" />
+ <node id="5647027166" visible="true" version="7" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2728220" lon="106.7786459" />
+ <node id="5647027191" visible="true" version="2" changeset="141923491" timestamp="2023-09-29T17:21:39Z" user="MrAlaska" uid="14389165" lat="-6.2852899" lon="106.7749387" />
+ <node id="5647027210" visible="true" version="5" changeset="166808164" timestamp="2025-05-27T06:24:30Z" user="iSetia" uid="22941836" lat="-6.2772352" lon="106.7770200" />
+ <node id="5647027211" visible="true" version="1" changeset="59329881" timestamp="2018-05-28T06:27:21Z" user="Kolla6" uid="7671615" lat="-6.2820339" lon="106.7750109" />
+ <node id="6053785260" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2850487" lon="106.7802683" />
+ <node id="6059148549" visible="true" version="7" changeset="142065900" timestamp="2023-10-02T23:08:15Z" user="Pegasus21" uid="13510663" lat="-6.2660159" lon="106.7800595">
+  <tag k="access" v="yes" />
+  <tag k="access:conditional" v="no @ (22:00-06:00)" />
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="6147631942" visible="true" version="1" changeset="65610911" timestamp="2018-12-19T13:58:44Z" user="JojoMonster" uid="2704394" lat="-6.2873155" lon="106.7793311" />
+ <node id="6305486803" visible="true" version="2" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2867003" lon="106.7902731" />
+ <node id="6305486814" visible="true" version="3" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2846707" lon="106.7884089" />
+ <node id="6305486815" visible="true" version="3" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2847854" lon="106.7880414" />
+ <node id="6330028804" visible="true" version="7" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2765735" lon="106.7768359" />
+ <node id="6331322116" visible="true" version="3" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2817377" lon="106.7845954" />
+ <node id="6331322117" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2833644" lon="106.7862242" />
+ <node id="6331322118" visible="true" version="1" changeset="68028772" timestamp="2019-03-11T16:21:48Z" user="a_rif" uid="9035957" lat="-6.2832850" lon="106.7863369" />
+ <node id="6331322119" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2827238" lon="106.7857173" />
+ <node id="6331322120" visible="true" version="3" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2816871" lon="106.7845046" />
+ <node id="6331322121" visible="true" version="3" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2814087" lon="106.7839588" />
+ <node id="6331322122" visible="true" version="3" changeset="144113712" timestamp="2023-11-16T21:07:46Z" user="Pegasus21" uid="13510663" lat="-6.2810735" lon="106.7834522" />
+ <node id="6331322128" visible="true" version="4" changeset="74388790" timestamp="2019-09-12T11:23:36Z" user="Qomar IRM-ED" uid="9543905" lat="-6.2824480" lon="106.7918596" />
+ <node id="6367134517" visible="true" version="2" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2871922" lon="106.7794678" />
+ <node id="6367134518" visible="true" version="1" changeset="68617447" timestamp="2019-03-28T09:09:12Z" user="Mettal" uid="515232" lat="-6.2873780" lon="106.7792551" />
+ <node id="6367134520" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2876434" lon="106.7792168" />
+ <node id="6375910615" visible="true" version="2" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2740262" lon="106.7785946" />
+ <node id="6375910616" visible="true" version="2" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2742360" lon="106.7785598" />
+ <node id="6375910617" visible="true" version="2" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2748244" lon="106.7783798" />
+ <node id="6375910618" visible="true" version="2" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2753042" lon="106.7781288" />
+ <node id="6375910619" visible="true" version="5" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2759335" lon="106.7775990" />
+ <node id="6375910620" visible="true" version="3" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2762282" lon="106.7772225" />
+ <node id="6376064697" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2846050" lon="106.7877817" />
+ <node id="6376373623" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2821119" lon="106.7851245" />
+ <node id="6376373624" visible="true" version="3" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2818466" lon="106.7847772" />
+ <node id="6376373625" visible="true" version="2" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2818760" lon="106.7850186" />
+ <node id="6376373626" visible="true" version="3" changeset="144113712" timestamp="2023-11-16T21:07:46Z" user="Pegasus21" uid="13510663" lat="-6.2817520" lon="106.7848482" />
+ <node id="6378468656" visible="true" version="3" changeset="74388790" timestamp="2019-09-12T11:23:36Z" user="Qomar IRM-ED" uid="9543905" lat="-6.2829144" lon="106.7912896" />
+ <node id="6378468657" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2847900" lon="106.7881715" />
+ <node id="6378468658" visible="true" version="2" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2847967" lon="106.7881105" />
+ <node id="6380969120" visible="true" version="2" changeset="142065900" timestamp="2023-10-02T23:08:16Z" user="Pegasus21" uid="13510663" lat="-6.2659686" lon="106.7801203" />
+ <node id="6383259579" visible="true" version="2" changeset="71170159" timestamp="2019-06-12T08:18:35Z" user="p_kiranmai" uid="9316702" lat="-6.2823591" lon="106.7916346" />
+ <node id="6386176137" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2726816" lon="106.7829273" />
+ <node id="6435163398" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2735342" lon="106.7825705" />
+ <node id="6435373734" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2702360" lon="106.7835956" />
+ <node id="6435523797" visible="true" version="4" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2709587" lon="106.7833837" />
+ <node id="6459062010" visible="true" version="4" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2876677" lon="106.7769975" />
+ <node id="6459062011" visible="true" version="4" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2876544" lon="106.7771431" />
+ <node id="6459062012" visible="true" version="4" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2875905" lon="106.7772743" />
+ <node id="6459062013" visible="true" version="3" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2874844" lon="106.7773742" />
+ <node id="6459062014" visible="true" version="3" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2873499" lon="106.7774295" />
+ <node id="6459195465" visible="true" version="4" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2742480" lon="106.7752718" />
+ <node id="6503889367" visible="true" version="2" changeset="141923491" timestamp="2023-09-29T17:21:39Z" user="MrAlaska" uid="14389165" lat="-6.2847361" lon="106.7744476" />
+ <node id="6504008305" visible="true" version="1" changeset="70662648" timestamp="2019-05-27T13:46:02Z" user="vagginati" uid="8967882" lat="-6.2833573" lon="106.7742332" />
+ <node id="6528680731" visible="true" version="1" changeset="70995223" timestamp="2019-06-06T16:00:48Z" user="dhanumuri" uid="10050955" lat="-6.2712648" lon="106.7753948" />
+ <node id="6541888122" visible="true" version="1" changeset="71170159" timestamp="2019-06-12T08:18:35Z" user="p_kiranmai" uid="9316702" lat="-6.2825838" lon="106.7920829" />
+ <node id="6541888123" visible="true" version="1" changeset="71170159" timestamp="2019-06-12T08:18:35Z" user="p_kiranmai" uid="9316702" lat="-6.2825745" lon="106.7920500" />
+ <node id="6544273513" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2816197" lon="106.7804071" />
+ <node id="6544273514" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2806866" lon="106.7806209" />
+ <node id="6658505218" visible="true" version="1" changeset="72781966" timestamp="2019-07-29T18:11:45Z" user="ki_ran" uid="10050951" lat="-6.2829374" lon="106.7757263" />
+ <node id="6658505219" visible="true" version="1" changeset="72781966" timestamp="2019-07-29T18:11:45Z" user="ki_ran" uid="10050951" lat="-6.2828625" lon="106.7758133" />
+ <node id="6670746880" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2870512" lon="106.7797712" />
+ <node id="6670746881" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2870677" lon="106.7798519" />
+ <node id="6670746882" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2871127" lon="106.7796890" />
+ <node id="6670746883" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2871296" lon="106.7798016" />
+ <node id="6670746884" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2871687" lon="106.7797577" />
+ <node id="6670769485" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2871862" lon="106.7797386" />
+ <node id="6702049816" visible="true" version="4" changeset="118457742" timestamp="2022-03-14T07:37:52Z" user="ErzsebetTer" uid="10142187" lat="-6.2909406" lon="106.7911541">
+  <tag k="access" v="permissive" />
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="6702049830" visible="true" version="3" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875629" lon="106.7904752" />
+ <node id="6702049831" visible="true" version="3" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875618" lon="106.7904615" />
+ <node id="6702049832" visible="true" version="1" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2867083" lon="106.7903347" />
+ <node id="6702049833" visible="true" version="1" changeset="73253577" timestamp="2019-08-12T02:08:45Z" user="Zainab IRM-ED" uid="7445592" lat="-6.2867656" lon="106.7903790" />
+ <node id="6702049834" visible="true" version="4" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2865193" lon="106.7900028" />
+ <node id="6702049835" visible="true" version="3" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2866593" lon="106.7900182" />
+ <node id="6735800752" visible="true" version="1" changeset="73630475" timestamp="2019-08-22T15:17:04Z" user="aj_34" uid="8911947" lat="-6.2850170" lon="106.7776870" />
+ <node id="6735800753" visible="true" version="1" changeset="73630475" timestamp="2019-08-22T15:17:04Z" user="aj_34" uid="8911947" lat="-6.2849462" lon="106.7777671" />
+ <node id="6768406378" visible="true" version="2" changeset="87074046" timestamp="2020-06-24T09:01:52Z" user="GreatSandDunes" uid="10409732" lat="-6.2879288" lon="106.7785984" />
+ <node id="6768406383" visible="true" version="2" changeset="167983575" timestamp="2025-06-23T05:00:05Z" user="FajrAl" uid="2649988" lat="-6.2880868" lon="106.7785269" />
+ <node id="6925968164" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2799607" lon="106.7809285" />
+ <node id="6954983461" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2798892" lon="106.7807711" />
+ <node id="6975683845" visible="true" version="1" changeset="77050723" timestamp="2019-11-14T05:50:02Z" user="ravalim" uid="8925012" lat="-6.2830385" lon="106.7802650" />
+ <node id="7047302705" visible="true" version="2" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2791099" lon="106.7781025" />
+ <node id="7095461301" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2684341" lon="106.7835999" />
+ <node id="7095797398" visible="true" version="5" changeset="144113882" timestamp="2023-11-16T21:12:51Z" user="Pegasus21" uid="13510663" lat="-6.2767710" lon="106.7762052">
+  <tag k="access" v="permissive" />
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="7104196769" visible="true" version="1" changeset="79150272" timestamp="2020-01-03T10:22:17Z" user="sujatha_1" uid="8911899" lat="-6.2688493" lon="106.7750642" />
+ <node id="7112740705" visible="true" version="2" changeset="141923491" timestamp="2023-09-29T17:21:39Z" user="MrAlaska" uid="14389165" lat="-6.2871024" lon="106.7765271" />
+ <node id="7226505897" visible="true" version="2" changeset="128606281" timestamp="2022-11-07T16:56:57Z" user="OuterPace" uid="10028118" lat="-6.2884668" lon="106.7779540" />
+ <node id="7256997629" visible="true" version="1" changeset="81660477" timestamp="2020-03-02T03:41:21Z" user="GrabID_Mutia" uid="10124264" lat="-6.2900921" lon="106.7909773" />
+ <node id="7299304718" visible="true" version="1" changeset="82261514" timestamp="2020-03-16T14:10:45Z" user="pra_vin" uid="10050960" lat="-6.2749401" lon="106.7762183" />
+ <node id="7311219817" visible="true" version="1" changeset="82416813" timestamp="2020-03-20T06:00:41Z" user="PikesPeak" uid="10334717" lat="-6.2700190" lon="106.7751326" />
+ <node id="7465658463" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2719433" lon="106.7831193" />
+ <node id="7537136109" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2704690" lon="106.7833904" />
+ <node id="7537136120" visible="true" version="3" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663" lat="-6.2760073" lon="106.7775153" />
+ <node id="7537136124" visible="true" version="1" changeset="85434192" timestamp="2020-05-19T10:18:50Z" user="Nockamixon" uid="9847864" lat="-6.2744335" lon="106.7757945" />
+ <node id="7537136126" visible="true" version="1" changeset="85434192" timestamp="2020-05-19T10:18:50Z" user="Nockamixon" uid="9847864" lat="-6.2748428" lon="106.7762692" />
+ <node id="7537136127" visible="true" version="2" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2719474" lon="106.7752080" />
+ <node id="7537136128" visible="true" version="2" changeset="141912614" timestamp="2023-09-29T13:24:04Z" user="GbabethemapGod" uid="15314242" lat="-6.2701960" lon="106.7752288">
+  <tag k="crossing" v="uncontrolled" />
+  <tag k="highway" v="crossing" />
+ </node>
+ <node id="7537364332" visible="true" version="5" changeset="166808164" timestamp="2025-05-27T06:24:30Z" user="iSetia" uid="22941836" lat="-6.2768599" lon="106.7769144" />
+ <node id="7537574822" visible="true" version="1" changeset="85441061" timestamp="2020-05-19T12:10:24Z" user="Nockamixon" uid="9847864" lat="-6.2713502" lon="106.7753792" />
+ <node id="7546824645" visible="true" version="3" changeset="144113712" timestamp="2023-11-16T21:07:47Z" user="Pegasus21" uid="13510663" lat="-6.2803800" lon="106.7811554" />
+ <node id="7546824646" visible="true" version="2" changeset="144113712" timestamp="2023-11-16T21:07:47Z" user="Pegasus21" uid="13510663" lat="-6.2799942" lon="106.7803210" />
+ <node id="7546824647" visible="true" version="2" changeset="144113712" timestamp="2023-11-16T21:07:47Z" user="Pegasus21" uid="13510663" lat="-6.2795698" lon="106.7791298" />
+ <node id="7546824648" visible="true" version="2" changeset="142533315" timestamp="2023-10-13T17:17:18Z" user="MrAlaska" uid="14389165" lat="-6.2786021" lon="106.7776250" />
+ <node id="7546824649" visible="true" version="2" changeset="142533315" timestamp="2023-10-13T17:17:18Z" user="MrAlaska" uid="14389165" lat="-6.2784713" lon="106.7774266" />
+ <node id="7546824650" visible="true" version="4" changeset="144249413" timestamp="2023-11-20T14:17:52Z" user="Pegasus21" uid="13510663" lat="-6.2784273" lon="106.7775017" />
+ <node id="7546824651" visible="true" version="1" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2792299" lon="106.7780703" />
+ <node id="7546824652" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2862534" lon="106.7803493" />
+ <node id="7546824653" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2864209" lon="106.7802796" />
+ <node id="7546824654" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2856132" lon="106.7804049" />
+ <node id="7546824655" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2859070" lon="106.7804019" />
+ <node id="7546824656" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2822813" lon="106.7803035" />
+ <node id="7546824657" visible="true" version="1" changeset="85582726" timestamp="2020-05-22T04:29:18Z" user="GreatSandDunes" uid="10409732" lat="-6.2816507" lon="106.7802885" />
+ <node id="7546824658" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2859572" lon="106.7802816" />
+ <node id="7546824659" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2862082" lon="106.7802405" />
+ <node id="7546824660" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2863520" lon="106.7801793" />
+ <node id="7546824661" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2866315" lon="106.7800121" />
+ <node id="7546824662" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2869022" lon="106.7797851" />
+ <node id="7546824663" visible="true" version="3" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2824077" lon="106.7801879" />
+ <node id="7546867286" visible="true" version="3" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2874196" lon="106.7774080" />
+ <node id="7546867287" visible="true" version="3" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2875420" lon="106.7773291" />
+ <node id="7546867288" visible="true" version="4" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2876676" lon="106.7770709" />
+ <node id="7546867289" visible="true" version="3" changeset="144249794" timestamp="2023-11-20T14:27:46Z" user="Pegasus21" uid="13510663" lat="-6.2876284" lon="106.7772116" />
+ <node id="7559717998" visible="true" version="2" changeset="142065900" timestamp="2023-10-02T23:08:16Z" user="Pegasus21" uid="13510663" lat="-6.2678024" lon="106.7789347" />
+ <node id="7611248330" visible="true" version="2" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2731491" lon="106.7747451" />
+ <node id="7611621774" visible="true" version="2" changeset="142053541" timestamp="2023-10-02T19:14:03Z" user="Pegasus21" uid="13510663" lat="-6.2733232" lon="106.7747101" />
+ <node id="7669543035" visible="true" version="3" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2869733" lon="106.7796001" />
+ <node id="7669543036" visible="true" version="3" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2870055" lon="106.7795797" />
+ <node id="7669543037" visible="true" version="3" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2870197" lon="106.7795540" />
+ <node id="7669543038" visible="true" version="3" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2870129" lon="106.7795710" />
+ <node id="7669543039" visible="true" version="3" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2869948" lon="106.7795890" />
+ <node id="7669543040" visible="true" version="3" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2869839" lon="106.7795956" />
+ <node id="7669543041" visible="true" version="3" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2869624" lon="106.7796042" />
+ <node id="7710587644" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2841102" lon="106.7869820" />
+ <node id="7710587645" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2840169" lon="106.7868720" />
+ <node id="7710587646" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2839542" lon="106.7868157" />
+ <node id="7710587650" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2844894" lon="106.7875864" />
+ <node id="7710587653" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2844176" lon="106.7874141" />
+ <node id="7710587657" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2841695" lon="106.7868841" />
+ <node id="7710587658" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2843761" lon="106.7876351" />
+ <node id="7710587659" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2844548" lon="106.7876961" />
+ <node id="7710587660" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2842142" lon="106.7869431" />
+ <node id="7710587661" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2843521" lon="106.7875955" />
+ <node id="7710587662" visible="true" version="1" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179" lat="-6.2843241" lon="106.7875385" />
+ <node id="7712433618" visible="true" version="2" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875629" lon="106.7904689" />
+ <node id="7712433619" visible="true" version="2" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875459" lon="106.7904483" />
+ <node id="7712433620" visible="true" version="2" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875588" lon="106.7904558" />
+ <node id="7712433621" visible="true" version="2" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875548" lon="106.7904526" />
+ <node id="7712433625" visible="true" version="2" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875374" lon="106.7904455" />
+ <node id="7712433626" visible="true" version="1" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2867453" lon="106.7903716" />
+ <node id="7712433627" visible="true" version="1" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2867020" lon="106.7903059" />
+ <node id="7712433628" visible="true" version="1" changeset="87951085" timestamp="2020-07-14T04:19:44Z" user="Vindhallow" uid="10210179" lat="-6.2867160" lon="106.7903481" />
+ <node id="7712718051" visible="true" version="1" changeset="87956798" timestamp="2020-07-14T06:25:14Z" user="Vindhallow" uid="10210179" lat="-6.2836316" lon="106.7903790" />
+ <node id="7712718053" visible="true" version="3" changeset="144630311" timestamp="2023-11-30T16:04:23Z" user="GbabethemapGod" uid="15314242" lat="-6.2832990" lon="106.7905690" />
+ <node id="7712718054" visible="true" version="2" changeset="144630311" timestamp="2023-11-30T16:04:23Z" user="GbabethemapGod" uid="15314242" lat="-6.2834076" lon="106.7903535" />
+ <node id="7716637803" visible="true" version="1" changeset="88029752" timestamp="2020-07-15T11:22:43Z" user="Vindhallow" uid="10210179" lat="-6.2825799" lon="106.7920659" />
+ <node id="8519587053" visible="true" version="1" changeset="101021283" timestamp="2021-03-15T05:26:29Z" user="boyini01" uid="11585580" lat="-6.2867480" lon="106.7793017" />
+ <node id="8519587062" visible="true" version="1" changeset="101021283" timestamp="2021-03-15T05:26:29Z" user="boyini01" uid="11585580" lat="-6.2866981" lon="106.7792536" />
+ <node id="8586780628" visible="true" version="3" changeset="167983575" timestamp="2025-06-23T05:00:05Z" user="FajrAl" uid="2649988" lat="-6.2882031" lon="106.7782726">
+  <tag k="crossing" v="traffic_signals" />
+  <tag k="crossing:markings" v="yes" />
+  <tag k="highway" v="traffic_signals;crossing" />
+ </node>
+ <node id="8586780630" visible="true" version="3" changeset="167983575" timestamp="2025-06-23T05:00:05Z" user="FajrAl" uid="2649988" lat="-6.2881758" lon="106.7781519">
+  <tag k="crossing" v="traffic_signals" />
+  <tag k="crossing:markings" v="yes" />
+  <tag k="highway" v="traffic_signals;crossing" />
+ </node>
+ <node id="8679335365" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2685388" lon="106.7837138" />
+ <node id="8995681196" visible="true" version="2" changeset="144629291" timestamp="2023-11-30T15:32:24Z" user="GbabethemapGod" uid="15314242" lat="-6.2843018" lon="106.7889534" />
+ <node id="8995681216" visible="true" version="1" changeset="109455346" timestamp="2021-08-10T10:26:38Z" user="AntelopeCliif" uid="10353518" lat="-6.2847211" lon="106.7879066" />
+ <node id="9050335320" visible="true" version="5" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2764722" lon="106.7767019" />
+ <node id="9050342039" visible="true" version="4" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2765137" lon="106.7767259" />
+ <node id="9125549474" visible="true" version="2" changeset="142368121" timestamp="2023-10-09T22:09:23Z" user="(Inactive) hayduke1275" uid="12854712" lat="-6.2754994" lon="106.7821764" />
+ <node id="9125554294" visible="true" version="2" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2740451" lon="106.7748529" />
+ <node id="9143594610" visible="true" version="1" changeset="112055297" timestamp="2021-10-04T04:12:27Z" user="BlandaRiver" uid="12205134" lat="-6.2705353" lon="106.7752952" />
+ <node id="9489604456" visible="true" version="1" changeset="117156573" timestamp="2022-02-08T11:36:28Z" user="Eixample" uid="9320686" lat="-6.2729938" lon="106.7811394" />
+ <node id="9491229527" visible="true" version="1" changeset="117182527" timestamp="2022-02-09T02:22:26Z" user="Skiddaw" uid="10888840" lat="-6.2883299" lon="106.7907625" />
+ <node id="9491229532" visible="true" version="1" changeset="117182527" timestamp="2022-02-09T02:22:26Z" user="Skiddaw" uid="10888840" lat="-6.2897625" lon="106.7909070" />
+ <node id="9491229533" visible="true" version="1" changeset="117182527" timestamp="2022-02-09T02:22:26Z" user="Skiddaw" uid="10888840" lat="-6.2900399" lon="106.7909661" />
+ <node id="9491229546" visible="true" version="1" changeset="117182527" timestamp="2022-02-09T02:22:26Z" user="Skiddaw" uid="10888840" lat="-6.2915539" lon="106.7911957" />
+ <node id="9491229547" visible="true" version="1" changeset="117182527" timestamp="2022-02-09T02:22:26Z" user="Skiddaw" uid="10888840" lat="-6.2910953" lon="106.7911756" />
+ <node id="9491967299" visible="true" version="2" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2725384" lon="106.7828300" />
+ <node id="9491967304" visible="true" version="3" changeset="144113945" timestamp="2023-11-16T21:14:48Z" user="Pegasus21" uid="13510663" lat="-6.2730398" lon="106.7817825">
+  <tag k="access" v="permissive" />
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="9523313228" visible="true" version="1" changeset="117662292" timestamp="2022-02-21T04:48:09Z" user="JonesFalls" uid="9535231" lat="-6.2841366" lon="106.7891851" />
+ <node id="9523369395" visible="true" version="1" changeset="117663268" timestamp="2022-02-21T05:34:43Z" user="JonesFalls" uid="9535231" lat="-6.2841625" lon="106.7891480" />
+ <node id="9553916248" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2841458" lon="106.7802146" />
+ <node id="9594069929" visible="true" version="1" changeset="118729026" timestamp="2022-03-21T10:27:12Z" user="dea-darm" uid="9850317" lat="-6.2836433" lon="106.7899298" />
+ <node id="9594080645" visible="true" version="2" changeset="144630311" timestamp="2023-11-30T16:04:23Z" user="GbabethemapGod" uid="15314242" lat="-6.2833358" lon="106.7904940" />
+ <node id="9802410060" visible="true" version="2" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2742234" lon="106.7752157" />
+ <node id="10111653663" visible="true" version="3" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2765520" lon="106.7769342" />
+ <node id="10128429624" visible="true" version="4" changeset="153091806" timestamp="2024-06-24T03:09:33Z" user="GrabID_Mutia" uid="10124264" lat="-6.2729004" lon="106.7787436">
+  <tag k="access:conditional" v="no @ (00:00-05:00)" />
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="10128429625" visible="true" version="4" changeset="153091806" timestamp="2024-06-24T03:09:33Z" user="GrabID_Mutia" uid="10124264" lat="-6.2728251" lon="106.7787408">
+  <tag k="access:conditional" v="no @ (00:00-05:00)" />
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="10147879786" visible="true" version="2" changeset="141923491" timestamp="2023-09-29T17:21:39Z" user="MrAlaska" uid="14389165" lat="-6.2856466" lon="106.7752697" />
+ <node id="10147879789" visible="true" version="1" changeset="128358191" timestamp="2022-11-01T18:04:40Z" user="PlinyTheYoungest" uid="9884664" lat="-6.2848140" lon="106.7754894" />
+ <node id="10152003868" visible="true" version="2" changeset="144113712" timestamp="2023-11-16T21:07:48Z" user="Pegasus21" uid="13510663" lat="-6.2802910" lon="106.7811945" />
+ <node id="10152003869" visible="true" version="3" changeset="144113712" timestamp="2023-11-16T21:07:48Z" user="Pegasus21" uid="13510663" lat="-6.2803071" lon="106.7811740" />
+ <node id="10152003870" visible="true" version="3" changeset="144113712" timestamp="2023-11-16T21:07:48Z" user="Pegasus21" uid="13510663" lat="-6.2803541" lon="106.7811533" />
+ <node id="10152003871" visible="true" version="2" changeset="144113712" timestamp="2023-11-16T21:07:48Z" user="Pegasus21" uid="13510663" lat="-6.2800942" lon="106.7802924" />
+ <node id="10152003872" visible="true" version="2" changeset="144113712" timestamp="2023-11-16T21:07:48Z" user="Pegasus21" uid="13510663" lat="-6.2800624" lon="106.7803271" />
+ <node id="10152003873" visible="true" version="2" changeset="144113712" timestamp="2023-11-16T21:07:48Z" user="Pegasus21" uid="13510663" lat="-6.2800156" lon="106.7803315" />
+ <node id="11056319204" visible="true" version="2" changeset="144113882" timestamp="2023-11-16T21:12:51Z" user="Pegasus21" uid="13510663" lat="-6.2863853" lon="106.7791008">
+  <tag k="access" v="permissive" />
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="11056406005" visible="true" version="2" changeset="144113882" timestamp="2023-11-16T21:12:51Z" user="Pegasus21" uid="13510663" lat="-6.2864503" lon="106.7790300">
+  <tag k="access" v="permissive" />
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="11115593195" visible="true" version="1" changeset="139897933" timestamp="2023-08-15T06:12:12Z" user="latania_a" uid="14584546" lat="-6.2841328" lon="106.7749225" />
+ <node id="11115593196" visible="true" version="1" changeset="139897933" timestamp="2023-08-15T06:12:12Z" user="latania_a" uid="14584546" lat="-6.2842010" lon="106.7749827" />
+ <node id="11226841112" visible="true" version="3" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2741936" lon="106.7752749" />
+ <node id="11226841113" visible="true" version="3" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2741738" lon="106.7752879" />
+ <node id="11226841114" visible="true" version="3" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725" lat="-6.2742166" lon="106.7752695" />
+ <node id="11226841116" visible="true" version="1" changeset="141910610" timestamp="2023-09-29T12:38:31Z" user="GbabethemapGod" uid="15314242" lat="-6.2766078" lon="106.7768392" />
+ <node id="11226841117" visible="true" version="1" changeset="141910610" timestamp="2023-09-29T12:38:31Z" user="GbabethemapGod" uid="15314242" lat="-6.2765831" lon="106.7768157" />
+ <node id="11226841118" visible="true" version="1" changeset="141910610" timestamp="2023-09-29T12:38:31Z" user="GbabethemapGod" uid="15314242" lat="-6.2766477" lon="106.7768608" />
+ <node id="11226841119" visible="true" version="1" changeset="141910610" timestamp="2023-09-29T12:38:31Z" user="GbabethemapGod" uid="15314242" lat="-6.2765798" lon="106.7769532" />
+ <node id="11226841120" visible="true" version="1" changeset="141910610" timestamp="2023-09-29T12:38:31Z" user="GbabethemapGod" uid="15314242" lat="-6.2766238" lon="106.7769535" />
+ <node id="11227341442" visible="true" version="1" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2762566" lon="106.7768221" />
+ <node id="11227341443" visible="true" version="1" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2762004" lon="106.7768328" />
+ <node id="11227341444" visible="true" version="1" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242" lat="-6.2762246" lon="106.7768442" />
+ <node id="11234531041" visible="true" version="1" changeset="142054130" timestamp="2023-10-02T19:30:47Z" user="Pegasus21" uid="13510663" lat="-6.2762491" lon="106.7767505" />
+ <node id="11239723865" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2807819" lon="106.7804905" />
+ <node id="11239723868" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2822536" lon="106.7802031" />
+ <node id="11239794792" visible="true" version="2" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2869834" lon="106.7796355" />
+ <node id="11239794793" visible="true" version="2" changeset="142163757" timestamp="2023-10-04T21:04:09Z" user="martymcfly14" uid="14434812" lat="-6.2870459" lon="106.7795737" />
+ <node id="11239794794" visible="true" version="1" changeset="142161919" timestamp="2023-10-04T20:01:17Z" user="martymcfly14" uid="14434812" lat="-6.2869262" lon="106.7795750">
+  <tag k="access" v="permissive" />
+  <tag k="barrier" v="swing_gate" />
+ </node>
+ <node id="11251944276" visible="true" version="1" changeset="142368121" timestamp="2023-10-09T22:09:23Z" user="(Inactive) hayduke1275" uid="12854712" lat="-6.2743000" lon="106.7824882" />
+ <node id="11251972052" visible="true" version="2" changeset="144113712" timestamp="2023-11-16T21:07:48Z" user="Pegasus21" uid="13510663" lat="-6.2803289" lon="106.7811598" />
+ <node id="11357012650" visible="true" version="1" changeset="144113712" timestamp="2023-11-16T21:07:44Z" user="Pegasus21" uid="13510663" lat="-6.2800815" lon="106.7803127" />
+ <node id="11357012651" visible="true" version="1" changeset="144113712" timestamp="2023-11-16T21:07:44Z" user="Pegasus21" uid="13510663" lat="-6.2800394" lon="106.7803337" />
+ <node id="11385826259" visible="true" version="1" changeset="144629291" timestamp="2023-11-30T15:32:24Z" user="GbabethemapGod" uid="15314242" lat="-6.2843827" lon="106.7888295" />
+ <node id="11385854171" visible="true" version="1" changeset="144629291" timestamp="2023-11-30T15:32:24Z" user="GbabethemapGod" uid="15314242" lat="-6.2815180" lon="106.7841690" />
+ <node id="11385911513" visible="true" version="1" changeset="144630311" timestamp="2023-11-30T16:04:22Z" user="GbabethemapGod" uid="15314242" lat="-6.2826856" lon="106.7914271" />
+ <node id="11385911522" visible="true" version="1" changeset="144630311" timestamp="2023-11-30T16:04:22Z" user="GbabethemapGod" uid="15314242" lat="-6.2824864" lon="106.7919174" />
+ <node id="11385911525" visible="true" version="1" changeset="144630311" timestamp="2023-11-30T16:04:22Z" user="GbabethemapGod" uid="15314242" lat="-6.2833930" lon="106.7904353" />
+ <node id="11385911526" visible="true" version="1" changeset="144630311" timestamp="2023-11-30T16:04:22Z" user="GbabethemapGod" uid="15314242" lat="-6.2834303" lon="106.7904367" />
+ <node id="11386352314" visible="true" version="1" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875948" lon="106.7907341" />
+ <node id="11386352315" visible="true" version="1" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2875641" lon="106.7907156" />
+ <node id="11386352318" visible="true" version="1" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242" lat="-6.2867003" lon="106.7900628" />
+ <node id="11512593794" visible="true" version="2" changeset="152270321" timestamp="2024-06-05T05:37:36Z" user="NaufalFarras" uid="14505749" lat="-6.2867037" lon="106.7799557">
+  <tag k="bus" v="yes" />
+  <tag k="name" v="Underpass Lebak Bulus" />
+  <tag k="network" v="Transjakarta" />
+  <tag k="old_name" v="Pondok Indah 1" />
+  <tag k="operator" v="Transjakarta" />
+  <tag k="public_transport" v="stop_position" />
+  <tag k="ref" v="8-3" />
+ </node>
+ <node id="11512593801" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2858492" lon="106.7802896" />
+ <node id="11512593802" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2853794" lon="106.7802832" />
+ <node id="11512593803" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2853703" lon="106.7803969" />
+ <node id="11512593804" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2841466" lon="106.7803178" />
+ <node id="11512593806" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2805862" lon="106.7806894" />
+ <node id="11512593807" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804928" lon="106.7805351" />
+ <node id="11512593808" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2806184" lon="106.7805329" />
+ <node id="11512593809" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804952" lon="106.7807172" />
+ <node id="11512593810" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804647" lon="106.7805936" />
+ <node id="11512593811" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2814990" lon="106.7804309" />
+ <node id="11512593830" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804864" lon="106.7806538" />
+ <node id="11512593834" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2804310" lon="106.7805392" />
+ <node id="11512593835" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2797958" lon="106.7809586" />
+ <node id="11512593836" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2798947" lon="106.7809527" />
+ <node id="11512593837" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2797153" lon="106.7808811" />
+ <node id="11512593838" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2798135" lon="106.7808105" />
+ <node id="11512593841" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2789078" lon="106.7812627" />
+ <node id="11512593843" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2787143" lon="106.7812180" />
+ <node id="11512593844" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2795783" lon="106.7809387" />
+ <node id="11512593845" visible="true" version="1" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749" lat="-6.2783187" lon="106.7814304" />
+ <node id="11512593862" visible="true" version="2" changeset="152269713" timestamp="2024-06-05T05:08:01Z" user="NaufalFarras" uid="14505749" lat="-6.2867940" lon="106.7800648">
+  <tag k="bus" v="yes" />
+  <tag k="name" v="Underpass Lebak Bulus" />
+  <tag k="network" v="Transjakarta" />
+  <tag k="old_name" v="Pondok Indah 1" />
+  <tag k="operator" v="Transjakarta" />
+  <tag k="public_transport" v="stop_position" />
+  <tag k="ref" v="8-3" />
+ </node>
+ <node id="11512930520" visible="true" version="1" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2743489" lon="106.7823715" />
+ <node id="11512930525" visible="true" version="1" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2699277" lon="106.7835499" />
+ <node id="11512930526" visible="true" version="1" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2699577" lon="106.7836588" />
+ <node id="11512930527" visible="true" version="1" changeset="146201869" timestamp="2024-01-13T02:59:36Z" user="NaufalFarras" uid="14505749" lat="-6.2700647" lon="106.7835168" />
+ <node id="11662288190" visible="true" version="1" changeset="147881671" timestamp="2024-02-25T09:04:32Z" user="NaufalFarras" uid="14505749" lat="-6.2875208" lon="106.7768739">
+  <tag k="bus" v="yes" />
+  <tag k="name" v="Carrefour Lebak Bulus" />
+  <tag k="public_transport" v="stop_position" />
+ </node>
+ <node id="11957654251" visible="true" version="1" changeset="152269713" timestamp="2024-06-05T05:08:01Z" user="NaufalFarras" uid="14505749" lat="-6.2680016" lon="106.7837231" />
+ <node id="11957730029" visible="true" version="1" changeset="152270321" timestamp="2024-06-05T05:37:36Z" user="NaufalFarras" uid="14505749" lat="-6.2880005" lon="106.7780400" />
+ <node id="12563565469" visible="true" version="1" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749" lat="-6.2869507" lon="106.7799344">
+  <tag k="bus" v="yes" />
+  <tag k="name" v="JPO Timur Pondok Indah 1" />
+  <tag k="public_transport" v="stop_position" />
+ </node>
+ <node id="12563565470" visible="true" version="1" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749" lat="-6.2872539" lon="106.7793995">
+  <tag k="bus" v="yes" />
+  <tag k="name" v="JPO Barat Pondok Indah 1" />
+  <tag k="public_transport" v="stop_position" />
+ </node>
+ <node id="12563565471" visible="true" version="1" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749" lat="-6.2840334" lon="106.7803127">
+  <tag k="bus" v="yes" />
+  <tag k="name" v="Pondok Indah Plaza" />
+  <tag k="public_transport" v="stop_position" />
+ </node>
+ <node id="12563565472" visible="true" version="1" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749" lat="-6.2840634" lon="106.7802096">
+  <tag k="bus" v="yes" />
+  <tag k="name" v="Pondok Indah Plaza" />
+  <tag k="public_transport" v="stop_position" />
+ </node>
+ <node id="12563565474" visible="true" version="1" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749" lat="-6.2741914" lon="106.7825152">
+  <tag k="bus" v="yes" />
+  <tag k="public_transport" v="stop_position" />
+ </node>
+ <node id="12563565476" visible="true" version="1" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749" lat="-6.2740737" lon="106.7824387">
+  <tag k="bus" v="yes" />
+  <tag k="public_transport" v="stop_position" />
+ </node>
+ <node id="12945866270" visible="true" version="1" changeset="167983575" timestamp="2025-06-23T05:00:05Z" user="FajrAl" uid="2649988" lat="-6.2882880" lon="106.7782541">
+  <tag k="crossing" v="traffic_signals" />
+  <tag k="crossing:markings" v="yes" />
+  <tag k="highway" v="crossing" />
+ </node>
+ <node id="12945866271" visible="true" version="1" changeset="167983575" timestamp="2025-06-23T05:00:05Z" user="FajrAl" uid="2649988" lat="-6.2882995" lon="106.7781559">
+  <tag k="crossing" v="traffic_signals" />
+  <tag k="crossing:markings" v="yes" />
+  <tag k="highway" v="crossing" />
+ </node>
+ <node id="12945866293" visible="true" version="1" changeset="167983575" timestamp="2025-06-23T05:00:05Z" user="FajrAl" uid="2649988" lat="-6.2880374" lon="106.7782557">
+  <tag k="crossing" v="uncontrolled" />
+  <tag k="crossing:markings" v="yes" />
+  <tag k="highway" v="crossing" />
+ </node>
+ <way id="18568262" visible="true" version="22" changeset="144629291" timestamp="2023-11-30T15:32:25Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="3171606027" />
+  <nd ref="7710587660" />
+  <nd ref="7710587657" />
+  <nd ref="3171606026" />
+  <nd ref="312164572" />
+  <nd ref="6331322117" />
+  <nd ref="191458229" />
+  <nd ref="6331322119" />
+  <nd ref="312165963" />
+  <nd ref="6376373623" />
+  <nd ref="312165971" />
+  <nd ref="6376373624" />
+  <nd ref="6331322116" />
+  <nd ref="6331322120" />
+  <nd ref="312163655" />
+  <nd ref="11385854171" />
+  <nd ref="6331322121" />
+  <nd ref="3171606022" />
+  <nd ref="312165822" />
+  <nd ref="312165397" />
+  <nd ref="7546824645" />
+  <nd ref="360083759" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Sekolah Duta Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="27795091" visible="true" version="11" changeset="128088249" timestamp="2022-10-26T14:40:53Z" user="127logs" uid="9633823">
+  <nd ref="305182954" />
+  <nd ref="307218181" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Metro Alam III" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="27962043" visible="true" version="12" changeset="81443559" timestamp="2020-02-25T08:32:19Z" user="than_mayee" uid="10626093">
+  <nd ref="307333194" />
+  <nd ref="307340201" />
+  <nd ref="6658505219" />
+  <nd ref="307339668" />
+  <nd ref="307339746" />
+  <nd ref="307339729" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="27970261" visible="true" version="25" changeset="141590649" timestamp="2023-09-22T07:28:20Z" user="GrabID_Rexza" uid="17816346">
+  <nd ref="307340736" />
+  <nd ref="6735800752" />
+  <nd ref="307340694" />
+  <nd ref="307340654" />
+  <nd ref="6658505218" />
+  <nd ref="307340666" />
+  <nd ref="307340667" />
+  <nd ref="307340670" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="28415937" visible="true" version="15" changeset="128358191" timestamp="2022-11-01T18:04:40Z" user="PlinyTheYoungest" uid="9884664">
+  <nd ref="312149811" />
+  <nd ref="312149658" />
+  <nd ref="312149659" />
+  <nd ref="6376373626" />
+  <nd ref="6376373625" />
+  <nd ref="312149660" />
+  <nd ref="312149661" />
+  <nd ref="6331322118" />
+  <nd ref="312164283" />
+  <nd ref="7710587646" />
+  <nd ref="7710587645" />
+  <nd ref="312149662" />
+  <nd ref="7710587644" />
+  <nd ref="312149663" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Sekolah Duta Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="28416914" visible="true" version="32" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749">
+  <nd ref="11512593862" />
+  <nd ref="312161894" />
+  <nd ref="12563565469" />
+  <nd ref="312162078" />
+  <tag k="busway:right" v="lane" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="31846896" visible="true" version="30" changeset="183472558" timestamp="2026-06-01T00:50:39Z" user="FajrAl" uid="2649988">
+  <nd ref="6504008305" />
+  <nd ref="312166519" />
+  <nd ref="11115593195" />
+  <nd ref="11115593196" />
+  <nd ref="312166516" />
+  <nd ref="312166514" />
+  <nd ref="10147879789" />
+  <nd ref="5006371139" />
+  <nd ref="312166512" />
+  <nd ref="312166511" />
+  <nd ref="312166509" />
+  <nd ref="312166508" />
+  <nd ref="312166507" />
+  <nd ref="6459062014" />
+  <nd ref="3594358789" />
+  <tag k="alt_name" v="Jalan R. A. Kartini;Jalan RA. Kartini;Jalan Raden Ayu Kartini" />
+  <tag k="est_width" v="7.11" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Raden Ajeng Kartini" />
+  <tag k="name:etymology:wikidata" v="Q1373764" />
+  <tag k="name:etymology:wikipedia" v="id:Kartini" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+  <tag k="short_name" v="Jl. RA. Kartini" />
+ </way>
+ <way id="32077433" visible="true" version="20" changeset="152270321" timestamp="2024-06-05T05:37:36Z" user="NaufalFarras" uid="14505749">
+  <nd ref="191458320" />
+  <nd ref="1376653057" />
+  <nd ref="4933897758" />
+  <nd ref="191458337" />
+  <nd ref="4933897759" />
+  <nd ref="1376652992" />
+  <nd ref="191458361" />
+  <nd ref="307286520" />
+  <nd ref="3636831601" />
+  <nd ref="191458382" />
+  <nd ref="4933897756" />
+  <nd ref="1376652913" />
+  <nd ref="4933897757" />
+  <nd ref="191458394" />
+  <tag k="highway" v="trunk" />
+  <tag k="junction" v="circular" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="32077783" visible="true" version="30" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749">
+  <nd ref="3171567008" />
+  <nd ref="11957654251" />
+  <nd ref="4513208739" />
+  <nd ref="3173599268" />
+  <nd ref="8679335365" />
+  <nd ref="3173599275" />
+  <nd ref="360082463" />
+  <nd ref="5504807977" />
+  <nd ref="360082470" />
+  <nd ref="11512930526" />
+  <nd ref="360082472" />
+  <nd ref="6435373734" />
+  <nd ref="6435523797" />
+  <nd ref="7465658463" />
+  <nd ref="5504808007" />
+  <nd ref="5504807986" />
+  <nd ref="6386176137" />
+  <nd ref="3372497309" />
+  <nd ref="5647027165" />
+  <nd ref="12563565474" />
+  <nd ref="11251944276" />
+  <nd ref="312152696" />
+  <nd ref="9125549474" />
+  <nd ref="312150486" />
+  <nd ref="11512593845" />
+  <nd ref="11512593841" />
+  <nd ref="11512593835" />
+  <nd ref="11512593836" />
+  <nd ref="191458432" />
+  <tag k="busway:right" v="lane" />
+  <tag k="est_width" v="5.17" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="32080503" visible="true" version="28" changeset="144630311" timestamp="2023-11-30T16:04:23Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="2282149039" />
+  <nd ref="8995681216" />
+  <nd ref="360163120" />
+  <nd ref="6305486815" />
+  <nd ref="6378468658" />
+  <nd ref="6378468657" />
+  <nd ref="360163121" />
+  <nd ref="6305486814" />
+  <nd ref="360163122" />
+  <nd ref="11385826259" />
+  <nd ref="8995681196" />
+  <nd ref="9523369395" />
+  <nd ref="9523313228" />
+  <nd ref="5006839249" />
+  <nd ref="5490189067" />
+  <nd ref="3171606023" />
+  <nd ref="5006839246" />
+  <nd ref="9594069929" />
+  <nd ref="5490189083" />
+  <nd ref="5006838939" />
+  <nd ref="7712718054" />
+  <nd ref="361323536" />
+  <nd ref="9594080645" />
+  <nd ref="7712718053" />
+  <nd ref="5490189088" />
+  <nd ref="5490188702" />
+  <nd ref="5490189077" />
+  <nd ref="361322817" />
+  <nd ref="6378468656" />
+  <nd ref="11385911513" />
+  <nd ref="5490188705" />
+  <nd ref="6383259579" />
+  <nd ref="360163126" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Terogong Raya" />
+  <tag k="oneway" v="no" />
+  <tag k="sidewalk" v="both" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="32222798" visible="true" version="18" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="361323946" />
+  <nd ref="11386352314" />
+  <nd ref="5006839603" />
+  <nd ref="9491229527" />
+  <nd ref="5006839568" />
+  <nd ref="5006840255" />
+  <nd ref="5006840016" />
+  <nd ref="5006840015" />
+  <nd ref="361323947" />
+  <nd ref="5006840244" />
+  <nd ref="9491229532" />
+  <nd ref="9491229533" />
+  <nd ref="7256997629" />
+  <nd ref="5006840011" />
+  <nd ref="5472478988" />
+  <nd ref="361323985" />
+  <nd ref="5472478991" />
+  <nd ref="6702049816" />
+  <nd ref="5006840013" />
+  <nd ref="9491229547" />
+  <nd ref="9491229546" />
+  <nd ref="361323949" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Kyai Haji Muhasim Raya" />
+  <tag k="narrow" v="yes" />
+  <tag k="oneway" v="no" />
+  <tag k="sidewalk" v="no" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="4" />
+ </way>
+ <way id="307011112" visible="true" version="26" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749">
+  <nd ref="5459454907" />
+  <nd ref="6367134518" />
+  <nd ref="6147631942" />
+  <nd ref="12563565470" />
+  <nd ref="6367134517" />
+  <nd ref="356668897" />
+  <nd ref="5106689335" />
+  <nd ref="7546824662" />
+  <nd ref="191458987" />
+  <nd ref="11512593794" />
+  <nd ref="7546824661" />
+  <nd ref="191458903" />
+  <nd ref="7546824660" />
+  <nd ref="7546824659" />
+  <nd ref="191458466" />
+  <nd ref="7546824658" />
+  <nd ref="11512593801" />
+  <nd ref="5498089912" />
+  <tag k="est_width" v="6.20" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="311490299" visible="true" version="18" changeset="153970479" timestamp="2024-07-15T12:39:03Z" user="ptrider" uid="19737581">
+  <nd ref="6380969120" />
+  <nd ref="6059148549" />
+  <nd ref="307290637" />
+  <nd ref="307290636" />
+  <nd ref="307290635" />
+  <nd ref="307290634" />
+  <nd ref="307290633" />
+  <nd ref="307290632" />
+  <nd ref="7559717998" />
+  <nd ref="307290631" />
+  <nd ref="307290628" />
+  <nd ref="305176942" />
+  <nd ref="305183619" />
+  <nd ref="5080801804" />
+  <nd ref="5647027166" />
+  <nd ref="305182956" />
+  <nd ref="307290626" />
+  <nd ref="307290625" />
+  <nd ref="6375910615" />
+  <nd ref="6375910616" />
+  <nd ref="307239799" />
+  <nd ref="307290623" />
+  <nd ref="6375910617" />
+  <nd ref="307290622" />
+  <nd ref="6375910618" />
+  <nd ref="307301150" />
+  <nd ref="307290620" />
+  <nd ref="6375910619" />
+  <nd ref="7537136120" />
+  <nd ref="307290618" />
+  <nd ref="6375910620" />
+  <nd ref="3636831596" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="30" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Kartika Utama" />
+  <tag k="oneway" v="no" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="311491597" visible="true" version="7" changeset="128901576" timestamp="2022-11-14T17:11:07Z" user="(Inactive) hairyhaggis_kaart" uid="10541438">
+  <nd ref="360574031" />
+  <nd ref="7710587650" />
+  <nd ref="3171606029" />
+  <nd ref="7710587653" />
+  <nd ref="3171606047" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Terogong Raya" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="311491600" visible="true" version="6" changeset="144629291" timestamp="2023-11-30T15:32:25Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="3171606030" />
+  <nd ref="3171606039" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Sekolah Duta Raya" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="358846351" visible="true" version="9" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749">
+  <nd ref="3636829866" />
+  <nd ref="11239723865" />
+  <nd ref="11512593808" />
+  <nd ref="11512593807" />
+  <nd ref="191458320" />
+  <tag k="est_width" v="7.89" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="358846353" visible="true" version="10" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="3636829881" />
+  <nd ref="6330028804" />
+  <nd ref="307288236" />
+  <nd ref="3636829885" />
+  <nd ref="9050342039" />
+  <nd ref="9050335320" />
+  <nd ref="3636829868" />
+  <nd ref="3636829869" />
+  <nd ref="3636829870" />
+  <nd ref="3636829876" />
+  <nd ref="3636829877" />
+  <nd ref="11227341442" />
+  <nd ref="3636829878" />
+  <nd ref="3636829879" />
+  <nd ref="3636829880" />
+  <nd ref="3636829871" />
+  <nd ref="3636831596" />
+  <nd ref="3636829872" />
+  <nd ref="3636829873" />
+  <nd ref="3636829874" />
+  <nd ref="3636829875" />
+  <nd ref="10111653663" />
+  <nd ref="3636829881" />
+  <tag k="est_width" v="8.26" />
+  <tag k="highway" v="secondary" />
+  <tag k="junction" v="roundabout" />
+  <tag k="lanes" v="2" />
+ </way>
+ <way id="358846354" visible="true" version="16" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725">
+  <nd ref="9050342039" />
+  <nd ref="7095797398" />
+  <nd ref="307331255" />
+  <nd ref="307331257" />
+  <nd ref="307331259" />
+  <nd ref="307331260" />
+  <nd ref="307334274" />
+  <nd ref="307331262" />
+  <nd ref="307331264" />
+  <nd ref="307331265" />
+  <nd ref="307334833" />
+  <nd ref="307341537" />
+  <nd ref="307336076" />
+  <nd ref="307331275" />
+  <nd ref="307331276" />
+  <nd ref="307331278" />
+  <nd ref="307331279" />
+  <nd ref="307340790" />
+  <nd ref="307331282" />
+  <nd ref="307331283" />
+  <nd ref="307331285" />
+  <nd ref="307341006" />
+  <nd ref="5647027211" />
+  <nd ref="307340670" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Gedung Hijau I" />
+  <tag k="oneway" v="no" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="10" />
+ </way>
+ <way id="358846356" visible="true" version="13" changeset="181093087" timestamp="2026-04-09T11:49:15Z" user="lkaisar" uid="21447943">
+  <nd ref="307296989" />
+  <nd ref="307306769" />
+  <nd ref="307306770" />
+  <nd ref="7299304718" />
+  <nd ref="307329178" />
+  <nd ref="307306774" />
+  <nd ref="6459195465" />
+  <tag k="est_width" v="4.56" />
+  <tag k="highway" v="secondary" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="358846358" visible="true" version="9" changeset="141910610" timestamp="2023-09-29T12:38:32Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="3636829875" />
+  <nd ref="11226841119" />
+  <nd ref="11226841120" />
+  <nd ref="3636831597" />
+  <nd ref="7546824650" />
+  <nd ref="7546824648" />
+  <nd ref="3636831598" />
+  <nd ref="3636831599" />
+  <nd ref="7047302705" />
+  <nd ref="3636831600" />
+  <nd ref="7546824647" />
+  <nd ref="7546824646" />
+  <nd ref="3636831601" />
+  <tag k="est_width" v="6.56" />
+  <tag k="highway" v="secondary" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="358846360" visible="true" version="13" changeset="181093087" timestamp="2026-04-09T11:46:54Z" user="lkaisar" uid="21447943">
+  <nd ref="191458361" />
+  <nd ref="10152003871" />
+  <nd ref="307337986" />
+  <nd ref="307286522" />
+  <nd ref="7546824651" />
+  <nd ref="307286524" />
+  <nd ref="307286525" />
+  <nd ref="307286527" />
+  <nd ref="7546824649" />
+  <nd ref="307286528" />
+  <nd ref="307334270" />
+  <nd ref="5647027210" />
+  <nd ref="7537364332" />
+  <nd ref="11226841118" />
+  <nd ref="11226841116" />
+  <nd ref="11226841117" />
+  <nd ref="307288236" />
+  <tag k="est_width" v="9.30" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="358846361" visible="true" version="20" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749">
+  <nd ref="191458394" />
+  <nd ref="11512593838" />
+  <nd ref="11512593837" />
+  <nd ref="11512593844" />
+  <nd ref="11512593843" />
+  <nd ref="307259045" />
+  <nd ref="3372497311" />
+  <nd ref="11512930520" />
+  <nd ref="12563565476" />
+  <nd ref="6435163398" />
+  <nd ref="305182954" />
+  <nd ref="5080801810" />
+  <nd ref="9491967299" />
+  <nd ref="305183622" />
+  <nd ref="7537136109" />
+  <nd ref="360082466" />
+  <nd ref="11512930527" />
+  <nd ref="11512930525" />
+  <nd ref="360082468" />
+  <nd ref="360082464" />
+  <nd ref="7095461301" />
+  <nd ref="3171567007" />
+  <tag k="busway:right" v="lane" />
+  <tag k="est_width" v="5.59" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="511977053" visible="true" version="11" changeset="144638766" timestamp="2023-11-30T20:08:59Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="361323946" />
+  <nd ref="11386352315" />
+  <nd ref="6702049830" />
+  <nd ref="7712433618" />
+  <nd ref="6702049831" />
+  <nd ref="7712433620" />
+  <nd ref="7712433621" />
+  <nd ref="7712433619" />
+  <nd ref="7712433625" />
+  <nd ref="361322970" />
+  <nd ref="5006839276" />
+  <nd ref="6702049833" />
+  <nd ref="7712433626" />
+  <nd ref="361323902" />
+  <nd ref="7712433628" />
+  <nd ref="6702049832" />
+  <nd ref="7712433627" />
+  <nd ref="6305486803" />
+  <nd ref="11386352318" />
+  <nd ref="361323530" />
+  <nd ref="6702049835" />
+  <nd ref="6702049834" />
+  <nd ref="361323793" />
+  <nd ref="5006839296" />
+  <nd ref="5006839258" />
+  <nd ref="361323721" />
+  <nd ref="361323533" />
+  <nd ref="5626180504" />
+  <nd ref="5626180506" />
+  <nd ref="5626180505" />
+  <nd ref="361323534" />
+  <nd ref="7712718051" />
+  <nd ref="11385911526" />
+  <nd ref="11385911525" />
+  <nd ref="361323536" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Haji Batong Raya" />
+  <tag k="oneway" v="no" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="4" />
+ </way>
+ <way id="521441426" visible="true" version="9" changeset="147390936" timestamp="2024-02-13T02:58:37Z" user="GrabID_UmiZumroh" uid="17114895">
+  <nd ref="5647027166" />
+  <nd ref="10128429625" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Metro Alam III" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="531418272" visible="true" version="6" changeset="87923646" timestamp="2020-07-13T12:19:47Z" user="Vindhallow" uid="10210179">
+  <nd ref="3171606039" />
+  <nd ref="7710587662" />
+  <nd ref="7710587661" />
+  <nd ref="7710587658" />
+  <nd ref="360163119" />
+  <nd ref="7710587659" />
+  <nd ref="360574031" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Terogong Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="531919725" visible="true" version="6" changeset="128088249" timestamp="2022-10-26T14:40:53Z" user="127logs" uid="9633823">
+  <nd ref="307218181" />
+  <nd ref="9491967304" />
+  <nd ref="9489604456" />
+  <nd ref="307243055" />
+  <nd ref="307234004" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Metro Alam III" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="531919726" visible="true" version="8" changeset="147390936" timestamp="2024-02-13T02:58:37Z" user="GrabID_UmiZumroh" uid="17114895">
+  <nd ref="307234004" />
+  <nd ref="307211297" />
+  <nd ref="10128429624" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Metro Alam III" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="531919727" visible="true" version="3" changeset="128088249" timestamp="2022-10-26T14:40:53Z" user="127logs" uid="9633823">
+  <nd ref="5080801805" />
+  <nd ref="5080801806" />
+  <nd ref="5080801807" />
+  <nd ref="5080801808" />
+  <nd ref="5080801809" />
+  <nd ref="5080801810" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Metro Alam III" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="562359926" visible="true" version="3" changeset="81428929" timestamp="2020-02-25T01:55:40Z" user="m_tej" uid="10677693">
+  <nd ref="6376064697" />
+  <nd ref="2282149039" />
+  <tag k="bridge" v="yes" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="1" />
+  <tag k="layer" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Terogong Raya" />
+  <tag k="oneway" v="no" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="567062395" visible="true" version="12" changeset="167983575" timestamp="2025-06-23T05:00:05Z" user="FajrAl" uid="2649988">
+  <nd ref="5459454912" />
+  <nd ref="11957730029" />
+  <nd ref="5459454911" />
+  <nd ref="12945866293" />
+  <nd ref="5459454910" />
+  <nd ref="5459454909" />
+  <nd ref="5459454908" />
+  <nd ref="5459454907" />
+  <tag k="destination" v="Kebayoran Lama;Pondok Indah" />
+  <tag k="destination:ref" v="12" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="567062399" visible="true" version="14" changeset="183473295" timestamp="2026-06-01T01:23:02Z" user="FajrAl" uid="2649988">
+  <nd ref="312162078" />
+  <nd ref="6670746880" />
+  <nd ref="6670746882" />
+  <nd ref="5459456232" />
+  <nd ref="6768406383" />
+  <tag k="busway:right" v="lane" />
+  <tag k="cutting" v="yes" />
+  <tag k="est_width" v="8.16" />
+  <tag k="foot" v="no" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="40" />
+  <tag k="name" v="Terowongan Kartini" />
+  <tag k="name:etymology:wikidata" v="Q1373764" />
+  <tag k="name:etymology:wikipedia" v="id:Kartini" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="573039856" visible="true" version="3" changeset="81709056" timestamp="2020-03-03T05:19:23Z" user="rthik007" uid="10326095">
+  <nd ref="5647027211" />
+  <nd ref="307331293" />
+  <nd ref="307333194" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Gedung Hijau I" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="10" />
+ </way>
+ <way id="644735758" visible="true" version="9" changeset="128184818" timestamp="2022-10-28T17:27:33Z" user="Baconcrisp" uid="3778777">
+  <nd ref="3636829891" />
+  <nd ref="3636829890" />
+  <nd ref="7537136126" />
+  <nd ref="3636829889" />
+  <nd ref="3636829888" />
+  <nd ref="3636829887" />
+  <tag k="est_width" v="5.10" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="647181153" visible="true" version="7" changeset="128901576" timestamp="2022-11-14T17:11:07Z" user="(Inactive) hairyhaggis_kaart" uid="10541438">
+  <nd ref="3171606027" />
+  <nd ref="312149663" />
+  <tag k="foot" v="no" />
+  <tag k="highway" v="tertiary_link" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+ </way>
+ <way id="680913379" visible="true" version="4" changeset="128912725" timestamp="2022-11-14T23:24:43Z" user="Baconcrisp" uid="3778777">
+  <nd ref="360574031" />
+  <nd ref="6376064697" />
+  <tag k="est_width" v="4.75" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Terogong Raya" />
+ </way>
+ <way id="685587237" visible="true" version="13" changeset="147954726" timestamp="2024-02-27T02:15:36Z" user="adianto" uid="10264725">
+  <nd ref="5080888006" />
+  <nd ref="5080888005" />
+  <nd ref="5080888004" />
+  <nd ref="7537136128" />
+  <nd ref="9143594610" />
+  <nd ref="5080888003" />
+  <nd ref="5504807955" />
+  <nd ref="5080888002" />
+  <nd ref="6528680731" />
+  <nd ref="7537574822" />
+  <nd ref="5080888001" />
+  <nd ref="7537136127" />
+  <nd ref="5080887266" />
+  <nd ref="5080887998" />
+  <nd ref="5080887997" />
+  <nd ref="7611621774" />
+  <nd ref="5080887996" />
+  <nd ref="5080887995" />
+  <tag k="alt_name" v="Jalan Ciputat Raya" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Pondok Pinang Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="sidewalk" v="left" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="4" />
+ </way>
+ <way id="685587239" visible="true" version="10" changeset="141913402" timestamp="2023-09-29T13:39:40Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="3636831593" />
+  <nd ref="312169118" />
+  <nd ref="312169119" />
+  <nd ref="7611248330" />
+  <nd ref="312169120" />
+  <nd ref="312169122" />
+  <nd ref="5504807950" />
+  <nd ref="4659232812" />
+  <nd ref="312169124" />
+  <nd ref="312169125" />
+  <nd ref="312169126" />
+  <nd ref="1709665549" />
+  <nd ref="3576411420" />
+  <nd ref="312169127" />
+  <nd ref="2375014234" />
+  <nd ref="5080886823" />
+  <nd ref="312169128" />
+  <nd ref="7311219817" />
+  <nd ref="312169129" />
+  <nd ref="1695778675" />
+  <nd ref="2375014232" />
+  <tag k="alt_name" v="Jalan Ciputat Raya" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Pondok Pinang Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="sidewalk" v="left" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="4" />
+ </way>
+ <way id="688687548" visible="true" version="4" changeset="128193362" timestamp="2022-10-28T22:22:28Z" user="(Inactive) hayduke1275" uid="12854712">
+  <nd ref="6459062014" />
+  <nd ref="7546867286" />
+  <nd ref="6459062013" />
+  <nd ref="7546867287" />
+  <nd ref="6459062012" />
+  <nd ref="7546867289" />
+  <nd ref="6459062011" />
+  <nd ref="7546867288" />
+  <nd ref="6459062010" />
+  <tag k="destination" v="Ciputat;Pasar Jum'at" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="688688617" visible="true" version="7" changeset="152269713" timestamp="2024-06-05T05:08:01Z" user="NaufalFarras" uid="14505749">
+  <nd ref="191458302" />
+  <nd ref="11512593806" />
+  <nd ref="6544273514" />
+  <nd ref="312161884" />
+  <nd ref="11512593811" />
+  <nd ref="6544273513" />
+  <nd ref="312161885" />
+  <nd ref="7546824656" />
+  <nd ref="312161886" />
+  <nd ref="312165386" />
+  <tag k="busway:right" v="lane" />
+  <tag k="est_width" v="8.3" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="688697866" visible="true" version="6" changeset="127997174" timestamp="2022-10-24T13:19:45Z" user="127logs" uid="9633823">
+  <nd ref="6459195465" />
+  <nd ref="9802410060" />
+  <nd ref="9125554294" />
+  <nd ref="5080887994" />
+  <tag k="est_width" v="10.13" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="688697867" visible="true" version="4" changeset="181093087" timestamp="2026-04-09T11:50:10Z" user="lkaisar" uid="21447943">
+  <nd ref="5080887995" />
+  <nd ref="5080887251" />
+  <nd ref="4659232820" />
+  <tag k="est_width" v="7.73" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="688697868" visible="true" version="6" changeset="141910610" timestamp="2023-09-29T12:38:32Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="6459195465" />
+  <nd ref="11226841114" />
+  <nd ref="11226841112" />
+  <nd ref="11226841113" />
+  <nd ref="4659232820" />
+  <tag k="est_width" v="4.78" />
+  <tag k="foot" v="no" />
+  <tag k="highway" v="secondary_link" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="688707467" visible="true" version="4" changeset="142054130" timestamp="2023-10-02T19:30:48Z" user="Pegasus21" uid="13510663">
+  <nd ref="3636829876" />
+  <nd ref="11234531041" />
+  <nd ref="307306767" />
+  <nd ref="307296989" />
+  <tag k="est_width" v="5.64" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="688707472" visible="true" version="5" changeset="141917338" timestamp="2023-09-29T14:59:36Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="3636829887" />
+  <nd ref="11227341443" />
+  <nd ref="11227341444" />
+  <nd ref="3636829878" />
+  <tag k="est_width" v="5.51" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="691842957" visible="true" version="7" changeset="145164157" timestamp="2023-12-15T19:50:37Z" user="(Inactive) Huge_OSM_Fan" uid="17275420">
+  <nd ref="312162078" />
+  <nd ref="6670746881" />
+  <nd ref="6670746883" />
+  <nd ref="6670746884" />
+  <nd ref="6670769485" />
+  <nd ref="6367134520" />
+  <tag k="est_width" v="9" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="1" />
+  <tag k="maxspeed" v="40" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="691842958" visible="true" version="8" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749">
+  <nd ref="312165386" />
+  <nd ref="6975683845" />
+  <nd ref="3172459583" />
+  <nd ref="12563565471" />
+  <nd ref="11512593804" />
+  <nd ref="312165275" />
+  <nd ref="11512593803" />
+  <nd ref="7546824654" />
+  <nd ref="7546824655" />
+  <nd ref="312161888" />
+  <nd ref="7546824652" />
+  <nd ref="7546824653" />
+  <nd ref="312161892" />
+  <nd ref="11512593862" />
+  <tag k="busway:right" v="lane" />
+  <tag k="est_width" v="6.3" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="692760299" visible="true" version="8" changeset="183473295" timestamp="2026-06-01T01:23:05Z" user="FajrAl" uid="2649988">
+  <nd ref="3594360601" />
+  <nd ref="6459062010" />
+  <nd ref="11662288190" />
+  <nd ref="3428200493" />
+  <nd ref="7112740705" />
+  <nd ref="3428200492" />
+  <nd ref="10147879786" />
+  <nd ref="5006371143" />
+  <nd ref="5647027191" />
+  <nd ref="6503889367" />
+  <tag k="alt_name" v="Jalan R. A. Kartini;Jalan RA. Kartini;Jalan Raden Ayu Kartini" />
+  <tag k="est_width" v="10.06" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Raden Ajeng Kartini" />
+  <tag k="name:etymology:wikidata" v="Q1373764" />
+  <tag k="name:etymology:wikipedia" v="id:Kartini" />
+  <tag k="oneway" v="yes" />
+  <tag k="short_name" v="Jl. RA. Kartini" />
+ </way>
+ <way id="696851600" visible="true" version="10" changeset="142161919" timestamp="2023-10-04T20:01:17Z" user="martymcfly14" uid="14434812">
+  <nd ref="307338004" />
+  <nd ref="307338463" />
+  <nd ref="11056319204" />
+  <nd ref="11239794794" />
+  <nd ref="7669543041" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="696851601" visible="true" version="2" changeset="81483236" timestamp="2020-02-26T05:05:40Z" user="than_mayee" uid="10626093">
+  <nd ref="307338892" />
+  <nd ref="307338004" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="696851602" visible="true" version="3" changeset="81483060" timestamp="2020-02-26T04:58:53Z" user="than_mayee" uid="10626093">
+  <nd ref="307339729" />
+  <nd ref="6735800753" />
+  <nd ref="307338892" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="708585330" visible="true" version="4" changeset="128901576" timestamp="2022-11-14T17:11:07Z" user="(Inactive) hairyhaggis_kaart" uid="10541438">
+  <nd ref="6658505219" />
+  <nd ref="6658505218" />
+  <tag k="highway" v="tertiary_link" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+ </way>
+ <way id="717195579" visible="true" version="4" changeset="128901576" timestamp="2022-11-14T17:11:07Z" user="(Inactive) hairyhaggis_kaart" uid="10541438">
+  <nd ref="6735800753" />
+  <nd ref="6735800752" />
+  <tag k="est_width" v="7.85" />
+  <tag k="highway" v="tertiary_link" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+ </way>
+ <way id="821421773" visible="true" version="2" changeset="128402152" timestamp="2022-11-02T16:48:37Z" user="(Inactive) Buddy-the-Elf" uid="9476874">
+  <nd ref="7669543041" />
+  <nd ref="7669543035" />
+  <nd ref="7669543040" />
+  <nd ref="7669543039" />
+  <nd ref="7669543036" />
+  <nd ref="7669543038" />
+  <nd ref="7669543037" />
+  <tag k="highway" v="tertiary_link" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="1001043842" visible="true" version="1" changeset="113600646" timestamp="2021-11-10T09:58:07Z" user="ForbiddenCity" uid="10656882">
+  <nd ref="312149663" />
+  <nd ref="3171606030" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Sekolah Duta Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="1001043843" visible="true" version="1" changeset="113600646" timestamp="2021-11-10T09:58:07Z" user="ForbiddenCity" uid="10656882">
+  <nd ref="3171606047" />
+  <nd ref="3171606028" />
+  <nd ref="3171606027" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Sekolah Duta Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="1106607828" visible="true" version="1" changeset="128001060" timestamp="2022-10-24T14:50:56Z" user="127logs" uid="9633823">
+  <nd ref="6367134520" />
+  <nd ref="5459454918" />
+  <tag k="est_width" v="9" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="40" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="1106856953" visible="true" version="2" changeset="141913402" timestamp="2023-09-29T13:39:40Z" user="GbabethemapGod" uid="15314242">
+  <nd ref="2375014232" />
+  <nd ref="312169130" />
+  <nd ref="312169131" />
+  <nd ref="7104196769" />
+  <nd ref="1695778657" />
+  <tag k="alt_name" v="Jalan Ciputat Raya" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Pondok Pinang Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="sidewalk" v="left" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="4" />
+ </way>
+ <way id="1107790013" visible="true" version="2" changeset="181093087" timestamp="2026-04-09T11:49:23Z" user="lkaisar" uid="21447943">
+  <nd ref="4659232820" />
+  <nd ref="7537136124" />
+  <nd ref="3636829891" />
+  <tag k="est_width" v="5.10" />
+  <tag k="highway" v="secondary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Gedung Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1109083753" visible="true" version="1" changeset="128358191" timestamp="2022-11-01T18:04:40Z" user="PlinyTheYoungest" uid="9884664">
+  <nd ref="6331322122" />
+  <nd ref="312149811" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Sekolah Duta Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="1109083754" visible="true" version="3" changeset="144113712" timestamp="2023-11-16T21:07:50Z" user="Pegasus21" uid="13510663">
+  <nd ref="312149657" />
+  <nd ref="10152003868" />
+  <nd ref="6331322122" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Sekolah Duta Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="1109697637" visible="true" version="3" changeset="181093087" timestamp="2026-04-09T11:46:52Z" user="lkaisar" uid="21447943">
+  <nd ref="7546824645" />
+  <nd ref="10152003870" />
+  <nd ref="11251972052" />
+  <nd ref="10152003869" />
+  <nd ref="10152003868" />
+  <tag k="highway" v="tertiary_link" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1109697638" visible="true" version="3" changeset="181093087" timestamp="2026-04-09T11:47:24Z" user="lkaisar" uid="21447943">
+  <nd ref="7546824646" />
+  <nd ref="10152003873" />
+  <nd ref="11357012651" />
+  <nd ref="10152003872" />
+  <nd ref="11357012650" />
+  <nd ref="10152003871" />
+  <tag k="highway" v="secondary_link" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1111123584" visible="true" version="1" changeset="128606281" timestamp="2022-11-07T16:56:57Z" user="OuterPace" uid="10028118">
+  <nd ref="3594358789" />
+  <nd ref="3594358790" />
+  <nd ref="3594358791" />
+  <nd ref="3594358792" />
+  <tag k="destination" v="Lebak Bulus;Ciputat;Pondok Pinang" />
+  <tag k="destination:ref" v="12" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="2" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="1136637749" visible="true" version="3" changeset="162219645" timestamp="2025-02-06T19:08:04Z" user="NaufalFarras" uid="14505749">
+  <nd ref="6053785260" />
+  <nd ref="9553916248" />
+  <nd ref="12563565472" />
+  <nd ref="307338344" />
+  <nd ref="191458504" />
+  <nd ref="3636829867" />
+  <nd ref="191458522" />
+  <nd ref="7546824663" />
+  <nd ref="11239723868" />
+  <nd ref="191458543" />
+  <nd ref="7546824657" />
+  <nd ref="3636829866" />
+  <tag k="est_width" v="6.20" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="1136637750" visible="true" version="2" changeset="146200471" timestamp="2024-01-13T01:00:41Z" user="NaufalFarras" uid="14505749">
+  <nd ref="5498089912" />
+  <nd ref="11512593802" />
+  <nd ref="6053785260" />
+  <tag k="est_width" v="6.20" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="1209968830" visible="true" version="1" changeset="141590649" timestamp="2023-09-22T07:28:20Z" user="GrabID_Rexza" uid="17816346">
+  <nd ref="11056406005" />
+  <nd ref="307340736" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="1209968831" visible="true" version="2" changeset="142161919" timestamp="2023-10-04T20:01:17Z" user="martymcfly14" uid="14434812">
+  <nd ref="7669543037" />
+  <nd ref="8519587053" />
+  <nd ref="8519587062" />
+  <nd ref="11056406005" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="1213140073" visible="true" version="1" changeset="142161919" timestamp="2023-10-04T20:01:17Z" user="martymcfly14" uid="14434812">
+  <nd ref="356668897" />
+  <nd ref="11239794793" />
+  <nd ref="7669543037" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="1213140074" visible="true" version="1" changeset="142161919" timestamp="2023-10-04T20:01:17Z" user="martymcfly14" uid="14434812">
+  <nd ref="7669543041" />
+  <nd ref="11239794792" />
+  <nd ref="5106689335" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="1" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Niaga Hijau Raya" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="8" />
+ </way>
+ <way id="1249780319" visible="true" version="1" changeset="147390936" timestamp="2024-02-13T02:58:37Z" user="GrabID_UmiZumroh" uid="17114895">
+  <nd ref="10128429624" />
+  <nd ref="305182956" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Metro Alam III" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="1249780320" visible="true" version="1" changeset="147390936" timestamp="2024-02-13T02:58:37Z" user="GrabID_UmiZumroh" uid="17114895">
+  <nd ref="10128429625" />
+  <nd ref="5080801805" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="no" />
+  <tag k="lanes" v="2" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Metro Alam III" />
+  <tag k="oneway" v="yes" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="1289555828" visible="true" version="3" changeset="154546262" timestamp="2024-07-29T05:58:50Z" user="ptrider" uid="19737581">
+  <nd ref="191458432" />
+  <nd ref="4933897755" />
+  <nd ref="1376653055" />
+  <nd ref="191458448" />
+  <nd ref="312149657" />
+  <tag k="highway" v="trunk" />
+  <tag k="junction" v="circular" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="1289555829" visible="true" version="2" changeset="152270321" timestamp="2024-06-05T05:37:36Z" user="NaufalFarras" uid="14505749">
+  <nd ref="191458302" />
+  <nd ref="11512593809" />
+  <nd ref="11512593830" />
+  <nd ref="11512593810" />
+  <nd ref="11512593834" />
+  <nd ref="191458320" />
+  <tag k="highway" v="trunk" />
+  <tag k="junction" v="circular" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="1289562056" visible="true" version="1" changeset="152270321" timestamp="2024-06-05T05:37:36Z" user="NaufalFarras" uid="14505749">
+  <nd ref="191458394" />
+  <nd ref="6954983461" />
+  <nd ref="3415432541" />
+  <nd ref="6925968164" />
+  <nd ref="191458432" />
+  <tag k="highway" v="trunk" />
+  <tag k="junction" v="circular" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="1289562059" visible="true" version="2" changeset="167983575" timestamp="2025-06-23T05:00:05Z" user="FajrAl" uid="2649988">
+  <nd ref="7226505897" />
+  <nd ref="12945866271" />
+  <nd ref="312166716" />
+  <nd ref="8586780628" />
+  <nd ref="5459454913" />
+  <nd ref="6768406378" />
+  <nd ref="5459454907" />
+  <tag k="est_width" v="6.20" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Metro Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="1289562060" visible="true" version="3" changeset="183473295" timestamp="2026-06-01T01:23:16Z" user="FajrAl" uid="2649988">
+  <nd ref="5459454912" />
+  <nd ref="8586780630" />
+  <nd ref="312166716" />
+  <nd ref="12945866270" />
+  <nd ref="94995158" />
+  <tag k="alt_name" v="Jalan R. A. Kartini;Jalan RA. Kartini;Jalan Raden Ayu Kartini" />
+  <tag k="est_width" v="7.11" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Raden Ajeng Kartini" />
+  <tag k="name:etymology:wikidata" v="Q1373764" />
+  <tag k="name:etymology:wikipedia" v="id:Kartini" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+  <tag k="short_name" v="Jl. RA. Kartini" />
+ </way>
+ <way id="1301524081" visible="true" version="2" changeset="183473295" timestamp="2026-06-01T01:23:16Z" user="FajrAl" uid="2649988">
+  <nd ref="3594358789" />
+  <nd ref="5459454912" />
+  <tag k="alt_name" v="Jalan R. A. Kartini;Jalan RA. Kartini;Jalan Raden Ayu Kartini" />
+  <tag k="est_width" v="7.11" />
+  <tag k="highway" v="trunk" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="name" v="Jalan Raden Ajeng Kartini" />
+  <tag k="name:etymology:wikidata" v="Q1373764" />
+  <tag k="name:etymology:wikipedia" v="id:Kartini" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+  <tag k="short_name" v="Jl. RA. Kartini" />
+ </way>
+ <way id="1304373728" visible="true" version="1" changeset="154544837" timestamp="2024-07-29T04:46:56Z" user="ptrider" uid="19737581">
+  <nd ref="360163126" />
+  <nd ref="6331322128" />
+  <nd ref="11385911522" />
+  <nd ref="6541888123" />
+  <nd ref="7716637803" />
+  <nd ref="6541888122" />
+  <nd ref="360163141" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lane_markings" v="yes" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="motorcycle" v="yes" />
+  <tag k="name" v="Jalan Terogong Raya" />
+  <tag k="oneway" v="no" />
+  <tag k="sidewalk" v="both" />
+  <tag k="smoothness" v="good" />
+  <tag k="source" v="HOT_InAWARESurvey_2017" />
+  <tag k="surface" v="asphalt" />
+  <tag k="width" v="5" />
+ </way>
+ <way id="1304373729" visible="true" version="1" changeset="154544837" timestamp="2024-07-29T04:46:56Z" user="ptrider" uid="19737581">
+  <nd ref="360083759" />
+  <nd ref="191458281" />
+  <nd ref="4933897760" />
+  <nd ref="1376653062" />
+  <nd ref="4933897761" />
+  <nd ref="191458302" />
+  <tag k="highway" v="trunk" />
+  <tag k="junction" v="circular" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ <way id="1304381184" visible="true" version="1" changeset="154546262" timestamp="2024-07-29T05:58:50Z" user="ptrider" uid="19737581">
+  <nd ref="312149657" />
+  <nd ref="360083759" />
+  <tag k="highway" v="trunk" />
+  <tag k="junction" v="circular" />
+  <tag k="lanes" v="3" />
+  <tag k="name" v="Jalan Pondok Indah" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="12" />
+ </way>
+ </osm>

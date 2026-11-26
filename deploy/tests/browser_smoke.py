@@ -13,7 +13,18 @@ def login(page):
  page.locator('[name=username]').fill(creds['username'])
  page.locator('[name=password]').fill(creds['password'])
  page.locator('button').click()
- page.wait_for_function("document.querySelector('#connection')?.textContent.includes('Dashboard terhubung')",timeout=25000)
+ page.wait_for_function("document.querySelector('#connection')?.textContent.includes('SUMO')",timeout=25000)
+
+ def comparison_visibility():
+  return page.evaluate("""() => {
+   const same = {seed: 42, sumo_version: 'SUMO test', case: {signature: 'same', planned_vehicles: 10}, final: {simulation_time: 1800}, summary: {avg_duration: 100, avg_waitingTime: 10, completed_trips: 10, total_vehicle_hours: 2, spillback_seconds: 0, junction_blocked_seconds: 0, pending: 0}};
+   renderComparison({baseline: same, katup: {...same}}, false);
+   const hidden = document.querySelector('#comparison').hidden;
+   renderComparison({baseline: same, katup: {...same}}, true);
+   return {hidden, visible: !document.querySelector('#comparison').hidden};
+  }""")
+ visibility=comparison_visibility()
+ assert visibility == {'hidden': True, 'visible': True}, visibility
 
 def state(page): return page.evaluate("fetch('/api/status').then(r=>r.json())")
 def wait_state(page, predicate, timeout=120):

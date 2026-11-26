@@ -2,6 +2,12 @@
 
 Proyek simulasi mikroskopik berbasis **Eclipse SUMO** dan **Python (TraCI)** sesuai rancangan pada **Laporan KATUP Bab 1 & Bab 2** (Tim 3).
 
+## Pengembangan pada branch llm
+
+Branch ini menyediakan koridor UI–Margonda, Akses UI–Kelapa Dua, Pasar Rebo–Raya Bogor, TB Simatupang–Tanjung Barat, serta Pondok Pinang–Pondok Indah dari OpenStreetMap, tiga mode perbandingan, dan pengawas strategi LLM dengan fallback. Volume kendaraan masih berupa skenario sintetik. API dapat dihubungkan setelah persiapan lokal selesai. Sumber peta dan hasil koridor tambahan ada di [docs/REGIONAL_CORRIDORS.md](docs/REGIONAL_CORRIDORS.md).
+
+Panduan pengembangan, menjalankan preview terpisah, pengujian, dan konfigurasi API ada di [docs/LLM_DEVELOPMENT.md](docs/LLM_DEVELOPMENT.md). Bukti pengujian dan batas interpretasi hasil ada di [docs/LLM_VALIDATION.md](docs/LLM_VALIDATION.md). Deskripsi jaringan enam simpang di bawah merujuk pada skenario lama yang tetap tersedia sebagai **Koridor uji galian berat**.
+
 ---
 
 ## 🌟 Pembaruan Visual & Tata Kota Realistis

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes>
+    <vType id="car" vClass="passenger" length="4.6" minGap="2.5" accel="2.6" decel="4.5" sigma="0.5" />
+    <route id="route_0" edges="358846360#1 358846353#1 358846353#2 358846353#3 358846353#4 -311490299#2 katup_pre katup_work 358846361#2" />
+    <flow id="flow_0" type="car" route="route_0" begin="0" end="1800" vehsPerHour="1500" departLane="best" departSpeed="max" />
+    <route id="route_1" edges="27795091 311490299#2" />
+    <flow id="flow_1" type="car" route="route_1" begin="0" end="1800" vehsPerHour="350" departLane="best" departSpeed="max" />
+    <route id="route_2" edges="311490299#0 katup_pre katup_work 358846361#2" />
+    <flow id="flow_2" type="car" route="route_2" begin="0" end="1800" vehsPerHour="350" departLane="best" departSpeed="max" />
+    <route id="route_3" edges="688707467 688697868 1107790013 358846353#4 -311490299#2 katup_pre katup_work 358846361#2" />
+    <flow id="flow_3" type="car" route="route_3" begin="0" end="1800" vehsPerHour="200" departLane="best" departSpeed="max" />
+    <route id="route_4" edges="307011112#0 307011112#2 32077433#0 32077433#1 32077433#2" />
+    <flow id="flow_4" type="car" route="route_4" begin="0" end="1800" vehsPerHour="200" departLane="best" departSpeed="max" />
+    <route id="route_5" edges="358846354#0 573039856 27962043#0 307011112#2" />
+    <flow id="flow_5" type="car" route="route_5" begin="0" end="1800" vehsPerHour="250" departLane="best" departSpeed="max" />
+    <route id="route_6" edges="1289555828 1304381184 1304373729 1289555829 32077433#0 32077433#1 32077433#2 358846361#0 358846361#1 358846361#2" />
+    <flow id="flow_6" type="car" route="route_6" begin="0" end="1800" vehsPerHour="180" departLane="best" departSpeed="max" />
+    <route id="route_7" edges="307011112#0 307011112#2 32077433#0 32077433#1 32077433#2 1289562056 1289555828 1304381184 1304373729 688688617" />
+    <flow id="flow_7" type="car" route="route_7" begin="0" end="1800" vehsPerHour="150" departLane="best" departSpeed="max" />
+</routes>

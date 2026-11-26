@@ -1,0 +1,20 @@
+{
+  "url": "https://propecia-smithsonian-idaho-adjust.trycloudflare.com",
+  "https_certificate_validation": true,
+  "no_login": true,
+  "latest_corridor": "Pondok Pinang–Pondok Indah, Jakarta",
+  "hybrid_fallback": true,
+  "api_requests": 0,
+  "simulation_steps": 21,
+  "moving_vehicles": 14,
+  "websocket_frames": 24,
+  "websocket_urls": [
+    "wss://propecia-smithsonian-idaho-adjust.trycloudflare.com/api/stream"
+  ],
+  "start_stop_passed": true,
+  "mobile_no_overflow": true,
+  "page_errors": [],
+  "completed_results_restored": true,
+  "snapshot_status": "historical, before regional corridors were added",
+  "superseded_by": "regional-validation.json"
+}

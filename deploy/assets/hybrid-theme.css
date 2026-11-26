@@ -1,0 +1,46 @@
+.shell { max-width: 1640px; }
+.topbar { position: static; }
+.hero { grid-template-columns: 1fr .82fr; gap: 32px; }
+.hero-copy { min-height: 210px; }
+.hero-visual { height: 230px; min-height: 0; }
+.hero-visual img { min-height: 0; height: 100%; }
+.hero h2 { font-size: clamp(28px, 3.1vw, 44px); max-width: 650px; }
+.hero p { font-size: 16px; max-width: 570px; }
+.brand small { font-size: 13px; max-width: 560px; }
+.simulation-controls { grid-template-columns: 1fr; gap: 14px; }
+.control-heading .eyebrow { display: none; }
+.control-heading p { font-size: 14px; }
+.scenario-picker { display: grid; grid-template-columns: minmax(200px, 1.4fr) minmax(200px, 1fr); gap: 14px; }
+.scenario-picker label { display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
+.scenario-picker select { width: 100%; }
+.simulation-controls .top-actions { grid-template-columns: 1fr 1.4fr 1fr auto auto; }
+.select, .btn, .pill { font-size: 14px; min-height: 44px; }
+.scenario-brief { align-items: center; }
+.scenario-brief p, .signal-schedule small, .kpi-label, .card-sub, .agent-desc { font-size: 14px; }
+.map-wrap { height: 510px; background: #101a20 !important; }
+.grid-main { grid-template-columns: minmax(0, 2.2fr) minmax(320px, .85fr); }
+.road-label { font-size: 14px; stroke-width: 4px; }
+.workzone-line { stroke: #e3a456; stroke-dasharray: 7 5; }
+#mapAttribution { color: #a8c5be; margin-left: auto; font-size: 12px; }
+#mapLocation { color: #a8c5be; font-size: 12px; }
+.agent-name { font-size: 14px; }
+.decision-panel { padding: 22px; margin-top: 18px; border-color: #405d86; }
+.decision-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; }
+.decision-grid h3 { font-size: 21px; margin-bottom: 10px; }
+.decision-grid p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+.decision-grid .eyebrow { margin-bottom: 12px; }
+.llm-metrics { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.llm-metrics span { display: flex; justify-content: space-between; padding: 8px 10px; background: var(--panel2); border-radius: 4px; font-size: 14px; color: var(--muted); }
+.llm-metrics b { color: var(--text); }
+.decision-history { display: grid; gap: 8px; margin-top: 18px; color: var(--muted); font-size: 14px; }
+.results-scroll { overflow-x: auto; }
+.results-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+.results-table th, .results-table td { padding: 14px 16px; text-align: right; border-bottom: 1px solid var(--line); }
+.results-table th:first-child { text-align: left; min-width: 180px; }
+.results-table thead { background: var(--panel2); color: #c3d7fa; }
+.results-table tbody th { color: var(--muted); font-weight: 500; }
+.results-table td { font-variant-numeric: tabular-nums; }
+.result-verdict.tradeoff { background: #332a1d; color: #e5c390; border-color: #785b32; }
+@media(max-width:1050px) { .hero { grid-template-columns: 1fr 1fr; }.grid-main { grid-template-columns: 1fr; }.map-wrap { height: 470px; } }
+@media(max-width:700px) { .hero { grid-template-columns: 1fr; gap: 16px; }.hero-copy { min-height: 0; }.hero-visual { height: 190px; }.hero h2 { font-size: 30px; }.brand small { font-size: 12px; }.scenario-picker { grid-template-columns: 1fr; gap: 12px; }.simulation-controls .top-actions { grid-template-columns: 1fr 1fr; }.simulation-controls .top-actions .pill { grid-column: 1/-1; }.simulation-controls .top-actions .select { font-size: 14px; }.simulation-controls .top-actions .btn { font-size: 14px; }.map-wrap { height: 380px; }.decision-grid { grid-template-columns: 1fr; gap: 24px; }.hero-credit { max-width: 80%; }.decision-panel { padding: 16px; }.results-table th,.results-table td { padding: 12px 10px; }.scenario-brief .eyebrow { line-height: 1.6; } }
+@media(max-width:700px) { .simulation-controls #mode,.simulation-controls #speed { grid-column: 1/-1; } }

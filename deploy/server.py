@@ -12,23 +12,26 @@ import time
 import xml.etree.ElementTree as ET
 from functools import lru_cache
 from fastapi import FastAPI, Request, WebSocket
-from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
-from katup_scenario import CASE_DIR, build_scenario, case_metadata
+from katup_core.scenarios import build_case, catalog, MODES
+from katup_core.strategy import LLMClient
 
 ROOT=Path(__file__).resolve().parents[1]
 STATE=Path(os.environ['KATUP_STATE'])
-AUTH=json.loads((STATE/'credentials.json').read_text())
+STATE.mkdir(parents=True, exist_ok=True)
+AUTH=json.loads((STATE/'credentials.json').read_text()) if (STATE/'credentials.json').exists() else {}
 PUBLIC_MODE=os.environ.get('KATUP_PUBLIC_MODE','0') == '1'
 STANDALONE=os.environ.get('KATUP_STANDALONE','0') == '1'
+FRONTEND_ORIGINS={value.strip().rstrip('/') for value in os.environ.get('KATUP_FRONTEND_ORIGINS','').split(',') if value.strip()}
 sessions=set()
 attempts={}
 lock=asyncio.Lock()
 proc=None
 proc_log=None
 scenario=None
-build_scenario()
-CASE = case_metadata()
+DEFAULT_CORRIDOR = os.getenv('KATUP_CORRIDOR', 'ui_depok')
+selection = {'corridor': DEFAULT_CORRIDOR, 'demand': 'peak'}
 
 def authorized(request):
     return PUBLIC_MODE or request.cookies.get('katup_session') in sessions
@@ -46,13 +49,32 @@ def read_json(path, default=None):
         return {} if default is None else default
 
 
-def comparison_data():
-    runs = STATE / 'runs'
+def comparison_data(corridor=None, demand=None):
+    corridor = corridor or selection['corridor']
+    demand = demand or selection['demand']
+    _, case = build_case(corridor, demand)
+    runs = STATE / 'runs' / f'{corridor}-{demand}'
     result = {}
-    for mode in ('baseline', 'katup'):
+    for mode in MODES:
         run = read_json(runs / f'{mode}.json', {})
-        result[mode] = run if run.get('case', {}).get('signature') == CASE['signature'] else {}
+        if run.get('case', {}).get('signature') != case['signature']:
+            result[mode] = {}
+            continue
+        result[mode] = {key: run.get(key) for key in ('scenario', 'seed', 'case', 'sumo_version', 'summary', 'supervisor', 'run_id')}
+        result[mode]['final'] = {key: run.get('final', {}).get(key) for key in ('simulation_time', 'finished', 'run_id', 'updated', 'gui_delay_ms')}
     return result
+
+
+def filtered_telemetry():
+    data = read_json(STATE / 'telemetry.json')
+    data.pop('traceback', None)
+    _, case = build_case(selection['corridor'], selection['demand'])
+    if data.get('case', {}).get('signature') != case['signature']:
+        data = {}
+    data['case'] = case
+    if proc is not None and proc.poll() is None:
+        data.setdefault('scenario', scenario)
+    return data, case
 
 
 async def simulation_running():
@@ -64,7 +86,7 @@ async def simulation_running():
 def origin_allowed(ws):
     origin = ws.headers.get('origin', '')
     host = ws.headers.get('host', '')
-    return origin in {f'https://{host}', f'http://{host}'}
+    return origin.rstrip('/') in FRONTEND_ORIGINS or origin in {f'https://{host}', f'http://{host}'}
 
 async def stop():
     global proc, proc_log, scenario
@@ -94,15 +116,33 @@ app=FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
 
 @app.middleware('http')
 async def authenticate(request, call_next):
+    origin=request.headers.get('origin','').rstrip('/')
+    own_origins={str(request.base_url).rstrip('/')}
+    allowed_origins=own_origins|FRONTEND_ORIGINS
+    if request.method == 'OPTIONS':
+        if origin and origin not in allowed_origins:
+            return JSONResponse({'error':'Origin tidak diizinkan'}, status_code=403)
+        response=Response(status_code=204)
+        if origin:
+            response.headers['Access-Control-Allow-Origin']=origin
+            response.headers['Access-Control-Allow-Credentials']='true'
+            response.headers['Access-Control-Allow-Methods']='GET, POST, OPTIONS'
+            response.headers['Access-Control-Allow-Headers']='Content-Type'
+            response.headers['Vary']='Origin'
+        return response
     if request.url.path != '/login' and not authorized(request):
         return RedirectResponse('/login', status_code=303)
     if request.method == 'POST' and request.url.path != '/login':
-        if request.headers.get('origin') != str(request.base_url).rstrip('/'):
+        if origin not in allowed_origins:
             return JSONResponse({'error':'Origin tidak diizinkan'}, status_code=403)
     response=await call_next(request)
     response.headers['Cache-Control']='no-store'
     response.headers['X-Frame-Options']='SAMEORIGIN'
     response.headers['X-Content-Type-Options']='nosniff'
+    if origin in allowed_origins:
+        response.headers['Access-Control-Allow-Origin']=origin
+        response.headers['Access-Control-Allow-Credentials']='true'
+        response.headers['Vary']='Origin'
     return response
 
 @app.get('/login')
@@ -117,7 +157,7 @@ async def login(request:Request):
     recent=[t for t in attempts.get(ip,[]) if now-t<60]
     if len(recent)>=10: return HTMLResponse('Coba lagi setelah satu menit.',429)
     fields=parse_qs((await request.body()).decode())
-    good=hmac.compare_digest(fields.get('username',[''])[0],AUTH['username']) and hmac.compare_digest(fields.get('password',[''])[0],AUTH['password'])
+    good=hmac.compare_digest(fields.get('username',[''])[0],AUTH.get('username', secrets.token_urlsafe(32))) and hmac.compare_digest(fields.get('password',[''])[0],AUTH.get('password', secrets.token_urlsafe(32)))
     if not good:
         attempts[ip]=recent+[now]
         return HTMLResponse('Login gagal. <a href="/login">Kembali</a>',401)
@@ -133,44 +173,53 @@ async def index(): return HTMLResponse((ROOT/'deploy/index.html').read_text())
 @app.get('/api/status')
 async def status():
     running=await simulation_running()
-    data=read_json(STATE/'telemetry.json')
-    data.pop('traceback', None)
-    if data.get('case', {}).get('signature') != CASE['signature']:
-        data = {}
-    return {'running':running,'public_mode':PUBLIC_MODE,'case':CASE,'telemetry':data,'comparison':comparison_data()}
+    data, case = filtered_telemetry()
+    return {'running':running,'public_mode':PUBLIC_MODE,'case':case,'telemetry':data,'comparison':comparison_data()}
 
 
 @app.get('/api/comparison')
-async def comparison():
-    return comparison_data()
+async def comparison(corridor:str=DEFAULT_CORRIDOR, demand:str='peak'):
+    try: return comparison_data(corridor, demand)
+    except (ValueError, FileNotFoundError): return JSONResponse({'error':'Koridor atau pola arus tidak dikenal'},400)
 
 
-@lru_cache(maxsize=1)
-def network_data():
-    root = ET.parse(CASE_DIR/'network.net.xml').getroot()
+@app.get('/api/catalog')
+async def options():
+    return {**catalog(), 'llm': LLMClient().public_config(), 'selection': selection}
+
+
+@lru_cache(maxsize=16)
+def network_data(corridor, demand):
+    config, case = build_case(corridor, demand)
+    root = ET.parse(config.parent/'network.net.xml').getroot()
     def points(shape):
         return [[float(v) for v in pair.split(',')] for pair in shape.split()]
     edges = []
     for edge in root.findall('edge'):
-        edges.append({'id': edge.get('id'), 'internal': edge.get('function') == 'internal',
+        edges.append({'id': edge.get('id'), 'name': edge.get('name', ''), 'internal': edge.get('function') == 'internal',
                       'lanes': [{'shape': points(lane.get('shape')), 'width': float(lane.get('width', '3.2'))}
                                 for lane in edge.findall('lane')]})
-    junctions = [{'id': j.get('id'), 'shape': points(j.get('shape'))}
+    junctions = [{'id': j.get('id'), 'x': float(j.get('x')), 'y': float(j.get('y')), 'shape': points(j.get('shape'))}
                  for j in root.findall('junction') if j.get('type') != 'internal' and j.get('shape')]
-    return {'edges': edges, 'junctions': junctions, 'case': CASE}
+    return {'edges': edges, 'junctions': junctions, 'case': case, 'location': root.find('location').attrib}
 
 
 @app.get('/api/network')
-async def network():
-    return network_data()
+async def network(corridor:str=DEFAULT_CORRIDOR, demand:str='peak'):
+    try: return network_data(corridor, demand)
+    except (ValueError, FileNotFoundError): return JSONResponse({'error':'Koridor atau pola arus tidak dikenal'},400)
 
 @app.post('/api/start/{mode}')
-async def start(mode:str, delay_ms:int=1000):
+async def start(mode:str, delay_ms:int=1000, corridor:str=DEFAULT_CORRIDOR, demand:str='peak'):
     global proc, proc_log, scenario
     if delay_ms not in (100,200,1000): return JSONResponse({'error':'Kecepatan tidak dikenal'},400)
-    if mode not in ('baseline','katup'): return JSONResponse({'error':'Skenario tidak dikenal'},400)
+    if mode not in MODES: return JSONResponse({'error':'Skenario tidak dikenal'},400)
+    if not STANDALONE: return JSONResponse({'error':'Gunakan KATUP_STANDALONE=1 untuk branch llm'},400)
+    try: build_case(corridor, demand)
+    except (ValueError, FileNotFoundError): return JSONResponse({'error':'Koridor atau pola arus tidak dikenal'},400)
     async with lock:
         await stop()
+        selection.update(corridor=corridor, demand=demand)
         (STATE/'scenario').write_text(mode)
         (STATE/'delay-ms').write_text(str(delay_ms))
         (STATE/'telemetry.json').unlink(missing_ok=True)
@@ -180,6 +229,8 @@ async def start(mode:str, delay_ms:int=1000):
                 'KATUP_STATE':str(STATE),
                 'KATUP_TELEMETRY':str(STATE/'telemetry.json'),
                 'KATUP_SCENARIO':mode,
+                'KATUP_CORRIDOR':corridor,
+                'KATUP_DEMAND':demand,
                 'KATUP_DELAY':str(delay_ms),
                 'KATUP_USE_GUI':'0',
                 'SUMO_HOME':env.get('SUMO_HOME','/usr/share/sumo'),
@@ -192,9 +243,6 @@ async def start(mode:str, delay_ms:int=1000):
                 start_new_session=True,
             )
             scenario=mode
-        else:
-            result=await asyncio.to_thread(subprocess.run,['systemctl','--user','start','katup-simulation.service'])
-            if result.returncode: return JSONResponse({'error':'Gagal memulai layanan'},500)
     return {'started':mode}
 
 @app.post('/api/stop')
@@ -220,10 +268,7 @@ async def telemetry_stream(ws:WebSocket):
     disconnected = asyncio.create_task(ws.receive())
     try:
         while not disconnected.done():
-            data = read_json(STATE/'telemetry.json')
-            if data.get('case', {}).get('signature') != CASE['signature']:
-                data = {}
-            data.pop('traceback', None)
+            data, case = filtered_telemetry()
             data['running'] = await simulation_running()
             data['public_mode'] = PUBLIC_MODE
             signature = (data.get('updated'), data.get('step'), data.get('finished'), data['running'])
@@ -233,8 +278,8 @@ async def telemetry_stream(ws:WebSocket):
                 if series_signature == last_series:
                     data.pop('series', None)
                 last_series = series_signature
-                revision = tuple((STATE/'runs'/f'{mode}.json').stat().st_mtime_ns if (STATE/'runs'/f'{mode}.json').exists() else 0 for mode in ('baseline','katup'))
-                payload = {'telemetry': data, 'case': CASE}
+                revision = tuple((STATE/'runs'/f"{selection['corridor']}-{selection['demand']}"/f'{mode}.json').stat().st_mtime_ns if (STATE/'runs'/f"{selection['corridor']}-{selection['demand']}"/f'{mode}.json').exists() else 0 for mode in MODES)
+                payload = {'telemetry': data, 'case': case}
                 if revision != last_comparison:
                     payload['comparison'] = comparison_data()
                     last_comparison = revision
@@ -268,5 +313,6 @@ async def proxy(ws:WebSocket):
         writer.close()
         await writer.wait_closed()
 
-app.mount('/novnc',StaticFiles(directory=os.environ['KATUP_NOVNC']),name='novnc')
+if os.environ.get('KATUP_NOVNC') and Path(os.environ['KATUP_NOVNC']).exists():
+    app.mount('/novnc',StaticFiles(directory=os.environ['KATUP_NOVNC']),name='novnc')
 app.mount('/assets',StaticFiles(directory=ROOT/'deploy/assets'),name='assets')
