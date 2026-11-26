@@ -1,46 +1,108 @@
-.shell { max-width: 1640px; }
-.topbar { position: static; }
-.hero { grid-template-columns: 1fr .82fr; gap: 32px; }
-.hero-copy { min-height: 210px; }
-.hero-visual { height: 230px; min-height: 0; }
+[hidden] { display: none !important; }
+.shell { max-width: 1440px; }
+.topbar { position: static; justify-content: space-between; gap: 20px; }
+.brand small { font-size: 13px; max-width: 520px; }
+.connection-line { color: var(--muted); font-size: 14px; }
+.hero { grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
+.hero-copy { min-height: 0; }
+.hero h2 { font-size: clamp(30px, 3.3vw, 44px); margin: 0 0 10px; }
+.hero p { max-width: 460px; margin: 0; font-size: 16px; color: var(--muted); }
+.hero-visual { height: 170px; min-height: 0; }
 .hero-visual img { min-height: 0; height: 100%; }
-.hero h2 { font-size: clamp(28px, 3.1vw, 44px); max-width: 650px; }
-.hero p { font-size: 16px; max-width: 570px; }
-.brand small { font-size: 13px; max-width: 560px; }
-.simulation-controls { grid-template-columns: 1fr; gap: 14px; }
-.control-heading .eyebrow { display: none; }
-.control-heading p { font-size: 14px; }
-.scenario-picker { display: grid; grid-template-columns: minmax(200px, 1.4fr) minmax(200px, 1fr); gap: 14px; }
-.scenario-picker label { display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
-.scenario-picker select { width: 100%; }
-.simulation-controls .top-actions { grid-template-columns: 1fr 1.4fr 1fr auto auto; }
-.select, .btn, .pill { font-size: 14px; min-height: 44px; }
-.scenario-brief { align-items: center; }
-.scenario-brief p, .signal-schedule small, .kpi-label, .card-sub, .agent-desc { font-size: 14px; }
-.map-wrap { height: 510px; background: #101a20 !important; }
-.grid-main { grid-template-columns: minmax(0, 2.2fr) minmax(320px, .85fr); }
+.hero-credit { max-width: 90%; top: auto; bottom: 10px; font-size: 12px; }
+.simulation-controls { grid-template-columns: 1fr; gap: 14px; padding: 20px; background: var(--panel); }
+.control-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.control-heading h3 { font-size: 18px; }
+.control-heading .pill { min-height: 34px; padding: 5px 10px; font-size: 14px; }
+.scenario-picker { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 14px; }
+.run-controls { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) auto auto; gap: 14px; align-items: end; }
+.simulation-controls label { display: grid; gap: 7px; min-width: 0; font-size: 14px; color: var(--muted); }
+.select, .btn { min-height: 44px; font-size: 16px; }
+.select { width: 100%; min-width: 0; }
+.btn { padding-inline: 20px; }
+.control-help { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.ai-note { margin: 0; padding: 10px 12px; border-left: 2px solid #b68d5b; color: #e5c390; font-size: 14px; line-height: 1.6; background: #28251f; }
+.grid-main { grid-template-columns: minmax(0, 1fr) 290px; gap: 16px; }
+.map-card, .road-summary { min-width: 0; }
+.map-heading { gap: 16px; align-items: start; }
+.card-title { margin: 0; font-size: 18px; line-height: 1.45; }
+.card-sub { margin: 5px 0 0; font-size: 14px; }
+.simulation-clock { flex-shrink: 0; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; padding-top: 4px; }
+.map-wrap { height: 540px; background: #101a20 !important; }
+.map-btn { min-height: 38px; font-size: 14px; padding-inline: 11px; }
+.map-toolbar { gap: 8px; }
+.map-caption { font-size: 12px; justify-content: space-between; }
+.legend { margin-top: 12px; justify-content: flex-start; gap: 14px; font-size: 13px; }
+.main-swatch { background: #ff9b63; }
+.bypass-swatch { background: #4ecab1; }
+.reroute-swatch { background: #80ef95; }
 .road-label { font-size: 14px; stroke-width: 4px; }
 .workzone-line { stroke: #e3a456; stroke-dasharray: 7 5; }
-#mapAttribution { color: #a8c5be; margin-left: auto; font-size: 12px; }
-#mapLocation { color: #a8c5be; font-size: 12px; }
-.agent-name { font-size: 14px; }
-.decision-panel { padding: 22px; margin-top: 18px; border-color: #405d86; }
-.decision-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; }
-.decision-grid h3 { font-size: 21px; margin-bottom: 10px; }
-.decision-grid p { color: var(--muted); font-size: 15px; line-height: 1.7; }
-.decision-grid .eyebrow { margin-bottom: 12px; }
-.llm-metrics { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.llm-metrics span { display: flex; justify-content: space-between; padding: 8px 10px; background: var(--panel2); border-radius: 4px; font-size: 14px; color: var(--muted); }
-.llm-metrics b { color: var(--text); }
-.decision-history { display: grid; gap: 8px; margin-top: 18px; color: var(--muted); font-size: 14px; }
+.bottleneck-key { line-height: 1.6; font-size: 13px; }
+#mapLocation, #mapAttribution { color: #a8c5be; font-size: 12px; }
+#mapAttribution { margin-left: auto; }
+.road-summary { padding: 20px; border-color: #6b4a3f; background: #211e24; }
+.road-summary .card-title { color: #f3c28b; }
+.traffic-status { margin: 18px 0 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 5px; font-size: 15px; line-height: 1.5; color: var(--muted); background: #1a1e26; }
+.traffic-status.clear { color: #a1dfbd; background: #203b30; border-color: #3d7257; }
+.traffic-status.danger { color: #f1b0be; background: #3d2530; border-color: #8d4a60; }
+.summary-stats { margin: 0; }
+.summary-stats > div { padding: 17px 0; border-bottom: 1px solid var(--line); }
+.summary-stats dt { color: var(--muted); font-size: 14px; line-height: 1.5; }
+.summary-stats dd { margin: 7px 0 0; font-size: 27px; line-height: 1.2; font-weight: 700; font-variant-numeric: tabular-nums; }
+.summary-stats small { margin-left: 7px; font-size: 14px; font-weight: 400; color: var(--muted); }
+.current-action { padding: 18px 0 3px; }
+.current-action > span, .phase-label { font-size: 14px; color: var(--muted); }
+.current-action p { margin: 7px 0; font-size: 16px; line-height: 1.6; }
+.phase { padding: 13px; margin-top: 16px; }
+.phase b { display: block; margin-top: 6px; font-size: 16px; }
+.phase-lights { gap: 7px; }
+.light { width: 13px; height: 13px; }
+.comparison { margin-top: 18px; padding: 20px; }
+.comparison .card-head { align-items: center; gap: 12px; }
+.status-chip { font-size: 12px; }
 .results-scroll { overflow-x: auto; }
-.results-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
-.results-table th, .results-table td { padding: 14px 16px; text-align: right; border-bottom: 1px solid var(--line); }
-.results-table th:first-child { text-align: left; min-width: 180px; }
-.results-table thead { background: var(--panel2); color: #c3d7fa; }
-.results-table tbody th { color: var(--muted); font-weight: 500; }
-.results-table td { font-variant-numeric: tabular-nums; }
+.results-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.results-table th, .results-table td { padding: 14px; text-align: right; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.results-table th:first-child { min-width: 180px; text-align: left; }
+.results-table thead { color: #c3d7fa; background: var(--panel2); }
+.results-table tbody th { color: var(--muted); font-weight: 400; }
+.result-verdict { margin: 16px 0; font-size: 15px; }
 .result-verdict.tradeoff { background: #332a1d; color: #e5c390; border-color: #785b32; }
-@media(max-width:1050px) { .hero { grid-template-columns: 1fr 1fr; }.grid-main { grid-template-columns: 1fr; }.map-wrap { height: 470px; } }
-@media(max-width:700px) { .hero { grid-template-columns: 1fr; gap: 16px; }.hero-copy { min-height: 0; }.hero-visual { height: 190px; }.hero h2 { font-size: 30px; }.brand small { font-size: 12px; }.scenario-picker { grid-template-columns: 1fr; gap: 12px; }.simulation-controls .top-actions { grid-template-columns: 1fr 1fr; }.simulation-controls .top-actions .pill { grid-column: 1/-1; }.simulation-controls .top-actions .select { font-size: 14px; }.simulation-controls .top-actions .btn { font-size: 14px; }.map-wrap { height: 380px; }.decision-grid { grid-template-columns: 1fr; gap: 24px; }.hero-credit { max-width: 80%; }.decision-panel { padding: 16px; }.results-table th,.results-table td { padding: 12px 10px; }.scenario-brief .eyebrow { line-height: 1.6; } }
-@media(max-width:700px) { .simulation-controls #mode,.simulation-controls #speed { grid-column: 1/-1; } }
+#comparisonMethod { margin-top: 16px; }
+@media(max-width:1050px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+  .grid-main { grid-template-columns: minmax(0, 1fr); }
+  .road-summary { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+  .road-summary > h3, .road-summary > .card-sub, .road-summary > .traffic-status { grid-column: 1/-1; }
+  .summary-stats { grid-row: span 2; }
+  .phase { align-self: start; }
+}
+@media(max-width:620px) {
+  .topbar { gap: 10px; }
+  .brand small { font-size: 12px; }
+  .connection-line { font-size: 13px; }
+  .hero { grid-template-columns: 1fr; gap: 16px; }
+  .hero h2 { font-size: 32px; }
+  .hero-visual { height: 140px; }
+  .simulation-controls { padding: 16px; }
+  .control-heading { align-items: start; flex-wrap: wrap; }
+  .scenario-picker, .run-controls { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  .scenario-picker label { grid-column: 1/-1; }
+  .run-controls .btn { padding-inline: 10px; }
+  .map-heading { flex-wrap: wrap; gap: 8px; }
+  .map-wrap { height: 400px; }
+  .map-caption span:last-child { display: none; }
+  .map-toolbar { align-items: start; }
+  .map-toolbar, .map-toolbar .view-tabs { gap: 6px; }
+  .map-btn { padding-inline: 9px; }
+  .road-summary { grid-template-columns: 1fr; padding: 16px; }
+  .summary-stats { grid-row: auto; }
+  .summary-stats > div { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 13px 0; }
+  .summary-stats dt { max-width: 55%; }
+  .summary-stats dd { margin: 0; text-align: right; font-size: 24px; }
+  .summary-stats small { display: block; margin: 3px 0 0; font-size: 13px; }
+  .comparison { padding: 16px; }
+  .results-table { font-size: 14px; }
+  .results-table th, .results-table td { padding: 12px 10px; }
+}

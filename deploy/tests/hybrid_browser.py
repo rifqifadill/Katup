@@ -23,6 +23,7 @@ def verify():
         config = page.evaluate("fetch('/api/catalog').then(r=>r.json())")
         assert not config['llm']['configured'], 'pengujian ini harus memakai API nonaktif'
         page.wait_for_function("document.querySelector('#corridor').options.length>=6 && document.querySelectorAll('#roads polyline').length>30")
+        assert page.locator('#queueChart,#speedChart,.agent-card,.decision-panel,.events').count() == 0
         for mode in ('baseline', 'katup', 'hybrid'):
             page.select_option('#mode', mode)
             page.select_option('#speed', '100')
@@ -41,7 +42,7 @@ def verify():
             if mode == 'hybrid':
                 assert second['supervisor']['requests'] == 0
                 assert second['supervisor']['status'] == 'not_configured'
-                assert 'API BELUM AKTIF' in page.inner_text('#llmStatus')
+                assert 'AI belum terhubung' in page.inner_text('#aiNote')
                 for width in (1440, 768, 390, 360):
                     page.set_viewport_size({'width': width, 'height': 1000})
                     page.wait_for_timeout(180)
@@ -83,18 +84,23 @@ def verify_results():
         runs = payload['comparison']
         assert payload['telemetry']['finished']
         assert len({run['case']['signature'] for run in runs.values()}) == 1
-        assert page.inner_text('#comparisonStatus') == '3 MODE SIAP'
+        assert page.text_content('#comparisonStatus') == '3 mode selesai'
         values = page.locator('#comparisonRows tr').first.locator('td').all_text_contents()
-        assert values == [str(runs[mode]['summary']['completed_trips']) for mode in ('baseline', 'katup', 'hybrid')]
-        assert 'fallback heuristik' in page.inner_text('#resultVerdict')
+        assert values == [f"{runs[mode]['summary']['completed_trips']:,}".replace(',', '.') for mode in ('baseline', 'katup', 'hybrid')]
+        assert page.locator('#comparisonRows tr').count() == 5
+        assert 'Mode AI belum memakai saran AI' in page.inner_text('#comparisonMethod')
+        assert page.locator('#queueChart,#speedChart,.agent-card,.decision-panel,.events').count() == 0
+        baseline, katup = runs['baseline']['summary'], runs['katup']['summary']
+        if katup['spillback_seconds'] > baseline['spillback_seconds'] or katup['junction_blocked_seconds'] > baseline['junction_blocked_seconds']:
+            assert 'tradeoff' in page.get_attribute('#resultVerdict', 'class')
         page.screenshot(path=str(OUTPUT / 'finished-desktop.png'), full_page=True)
         page.set_viewport_size({'width': 390, 'height': 1000})
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
         page.screenshot(path=str(OUTPUT / 'finished-mobile.png'), full_page=True)
         page.evaluate("window.savedComparison=structuredClone(state.comparison);state.comparison.katup.seed+=1;renderComparison(state.comparison)")
-        assert page.locator('#comparisonRows tr').first.locator('td').nth(1).inner_text() == 'Hasil tidak cocok'
+        assert page.locator('#comparisonRows tr').first.locator('td').nth(1).inner_text() == 'Kondisi berbeda'
         page.evaluate("state.comparison=structuredClone(window.savedComparison);state.comparison.katup.final.run_id='wrong';renderComparison(state.comparison)")
-        assert page.locator('#comparisonRows tr').first.locator('td').nth(1).inner_text() == 'Hasil tidak cocok'
+        assert page.locator('#comparisonRows tr').first.locator('td').nth(1).inner_text() == 'Kondisi berbeda'
         page.evaluate("state.comparison=structuredClone(window.savedComparison);state.comparison.hybrid.supervisor.configured=true;state.comparison.hybrid.final.gui_delay_ms=100;renderComparison(state.comparison)")
         assert not page.is_visible('#comparison')
         page.evaluate("state.comparison=structuredClone(window.savedComparison);state.telemetry.run_id='wrong';renderComparison(state.comparison)")

@@ -2,22 +2,23 @@
 const $ = id => document.getElementById(id);
 const NS = 'http://www.w3.org/2000/svg';
 const API_BASE = String(window.KATUP_CONFIG?.apiBase || '').replace(/\/+$/, '');
-const state = {telemetry: {}, comparison: {}, case: {}, network: null};
-const modeLabels={baseline:'Tanpa KATUP',katup:'KATUP Heuristik',hybrid:'KATUP Hybrid'};
-let mapRevision='',mapRequest=0;
-let stream, retryTimer, lastSeriesTime = -1, lastComparison = '', lastEvents = '';
+const state = {telemetry: {}, comparison: {}, case: {}, network: null, aiConfig: {configured:false}};
+const modeLabels={baseline:'Tanpa KATUP',katup:'Dengan KATUP',hybrid:'KATUP + AI'};
+let mapRequest=0;
+let stream, retryTimer, lastComparison='';
 let frames = [], lastFrameReceived = 0, packetInterval = 250, currentRun = null;
 const vehicleNodes = new Map();
-const views = {corridor: [-340,-205,1020,390], bottleneck:[140,-85,290,170], junction:[-130,-110,450,220], detail:[180,-32,115,64], all:[-580,-355,1460,710]};
-let view = [...views.corridor];
+const views={bottleneck:[140,-85,290,170],junction:[-130,-110,450,220],all:[-580,-355,1460,710]};
+let view=[...views.bottleneck];
 const palette = ['#cbdde9','#84b8ed','#f1d68d','#dda3ab','#b8c1cf','#a6d6d0'];
 function apiUrl(path){return API_BASE ? `${API_BASE}${path.startsWith('/')?path:`/${path}`}` : path;}
 function apiFetch(path, options={}){return fetch(apiUrl(path), {...options, credentials:'include'});}
 function socketUrl(path){const base=new URL(API_BASE||location.origin, location.href);base.protocol=base.protocol==='https:'?'wss':base.protocol==='http:'?'ws':base.protocol;base.pathname=path;base.search='';base.hash='';return base.toString();}
 function svgEl(tag, attrs={}) {const e=document.createElementNS(NS,tag); for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);return e;}
 function setText(id, value){const e=$(id);if(e&&e.textContent!==String(value))e.textContent=value;}
-function fmt(v,d=0){return v===undefined||v===null||!Number.isFinite(Number(v))?'—':Number(v).toFixed(d);}
-function statusClass(el,status){el.textContent=status;el.className='status-chip '+(['ACTIVE','ADAPTIVE','KATUP_ACTIVE','SIAP'].includes(status)?'active':status==='RISIKO'?'warn':'');}
+const numberFormats=[0,1,2].map(d=>new Intl.NumberFormat('id-ID',{minimumFractionDigits:d,maximumFractionDigits:d}));
+function fmt(v,d=0){return v==null||!Number.isFinite(Number(v))?'—':numberFormats[d].format(Number(v));}
+function clock(v){const s=Math.max(0,Math.floor(Number(v)||0));return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;}
 function polyline(points, cls, width){return svgEl('polyline',{points:points.map(([x,y])=>`${x},${-y}`).join(' '),class:cls,'stroke-width':width});}
 function bounds(points,pad=80){const xs=points.map(p=>p[0]),ys=points.map(p=>-p[1]);const x=Math.min(...xs)-pad,y=Math.min(...ys)-pad,w=Math.max(120,Math.max(...xs)-x+pad),h=Math.max(90,Math.max(...ys)-y+pad);return [x,y,w,h];}
 function label(x,y,name,extra={}){const t=svgEl('text',{x,y,class:'road-label',...extra});t.textContent=name;$('labels').append(t);}
@@ -27,7 +28,7 @@ async function buildMap(){
   try{
   const query=new URLSearchParams({corridor:$('corridor').value,demand:$('demand').value});
   const r=await apiFetch('/api/network?'+query);if(!r.ok)throw Error('Jaringan tidak tersedia');const net=await r.json();if(revision!==mapRequest)return;
-  state.network=net;state.case=net.case;mapRevision=query.toString();
+  state.network=net;state.case=net.case;
   const profile=net.case.profile,main=new Set([profile.decision,...profile.main]),bypass=new Set(profile.paths.flat());
   for(const id of ['roads','junctions','workzone','labels','signals'])$(id).replaceChildren();clearFrames();
   for(const edge of net.edges)for(const lane of edge.lanes)$('roads').append(polyline(lane.shape,'road-edge',lane.width+1));
@@ -49,8 +50,8 @@ async function buildMap(){
   const named=new Map();for(const edge of net.edges){if(edge.internal||!edge.name||names.has(edge.name)||edge.lanes[0].shape.length<2)continue;const pts=edge.lanes[0].shape,pt=pts[Math.floor(pts.length/2)],distance=Math.hypot(pt[0]-mid[0],pt[1]-mid[1]);if(!named.has(edge.name)||distance<named.get(edge.name).distance)named.set(edge.name,{pt,distance});}
   for(const [name,{pt,distance}] of named)if(distance>70)label(pt[0],-pt[1]-12,name,{'text-anchor':'middle'});
   const all=net.edges.filter(e=>!e.internal).flatMap(e=>e.lanes.flatMap(l=>l.shape));
-  views.all=bounds(all,80);views.corridor=bounds(net.edges.filter(e=>main.has(e.id)).flatMap(e=>e.lanes[0].shape),120);views.bottleneck=bounds([...pre.lanes[0].shape,...shape],75);views.junction=junction?[junction.x-280,-junction.y-180,560,360]:views.bottleneck;views.detail=[mid[0]-80,-mid[1]-48,160,96];
-  setText('caseLabel',net.case.name);setText('caseTitle',`${net.case.demand_label} · ${net.case.planned_vehicles} kendaraan terjadwal`);setText('caseDescription',net.case.traffic_source);setText('caseMethod',profile.geographic?'Geometri OSM · pengaturan lampu dan galian untuk eksperimen':'Jaringan sintetik · kondisi sama untuk semua mode');setText('workzoneNote',`${fmt(net.case.bottleneck_length_m)} m · ${fmt(net.case.bottleneck_speed_kmh,1)} km/jam`);$('mapAttribution').hidden=!profile.geographic;
+  views.all=bounds(all,80);views.bottleneck=bounds([...pre.lanes[0].shape,...shape],75);views.junction=junction?[junction.x-280,-junction.y-180,560,360]:views.bottleneck;
+  setText('caseLabel',net.case.name);setText('mapSub',profile.geographic?'Peta jalan asli · arus dan galian disimulasikan':'Jaringan uji · arus dan galian disimulasikan');$('mapAttribution').hidden=!profile.geographic;
   setText('zoneLaneLabel',`Zona galian: ${net.case.lane_label||'2 → 1 lajur'}`);$('mapLocation').hidden=!profile.geographic||!profile.center;
   if(profile.center){const [lon,lat]=profile.center;$('mapLocation').href=`https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`;}
   chooseView('bottleneck');
@@ -78,13 +79,13 @@ $('map').addEventListener('pointerup',()=>dragging=null);$('map').addEventListen
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>chooseView(b.dataset.view));
 $('zoomIn').onclick=()=>zoom(.75);$('zoomOut').onclick=()=>zoom(1.3);
 $('mapFullscreen').onclick=async()=>{if(document.fullscreenElement)await document.exitFullscreen();else if($('mapContainer').requestFullscreen)await $('mapContainer').requestFullscreen();else chooseView('bottleneck');};
-function clearFrames(){frames=[];lastFrameReceived=0;for(const n of vehicleNodes.values())n.remove();vehicleNodes.clear();}
+function clearFrames(){frames=[];lastFrameReceived=0;for(const n of vehicleNodes.values())n.remove();vehicleNodes.clear();setText('mapVehicleCount','Belum ada kendaraan');$('mapEmpty').hidden=false;}
 function acceptVehicles(t){
   if(!Array.isArray(t.vehicles_sample)||!Number.isFinite(t.updated))return;
   const stamp=t.updated*1000;if(frames.length&&stamp<=frames[frames.length-1].wall)return;
   if(frames.length){const gap=stamp-frames[frames.length-1].wall;if(gap>0&&gap<2500)packetInterval=packetInterval*.75+gap*.25;}
   frames.push({wall:stamp,vehicles:new Map(t.vehicles_sample.map(v=>[v.id,v]))});if(frames.length>20)frames.shift();lastFrameReceived=performance.now();
-  setText('mapVehicleCount',`${t.vehicles_sample.length} / ${t.vehicles} kendaraan`);$('mapEmpty').hidden=!!t.vehicles_sample.length;
+  setText('mapVehicleCount',`${fmt(t.vehicles)} kendaraan di jalan`);$('mapEmpty').hidden=!!t.vehicles_sample.length;setText('mapEmpty',t.finished?'Simulasi selesai.':t.running?'Kendaraan mulai masuk…':'Tekan Mulai untuk melihat lalu lintas.');
 }
 function carNode(v){
   let e=vehicleNodes.get(v.id);if(e)return e;
@@ -96,8 +97,8 @@ function carNode(v){
 function animate(now){
   if(!document.hidden&&frames.length){
     const latest=frames[frames.length-1];const running=state.telemetry.running;
-    // Buffer roughly two packets. Interpolate between observed positions only;
-    // never extrapolate traffic beyond the most recent SUMO measurement.
+    // tahan beberapa paket, trus gerakin mobil di antara posisi SUMO yg udah diterima
+    // jangan nebak posisi yg belum dikirim SUMO
     const target=running?latest.wall+Math.min(now-lastFrameReceived,packetInterval*2)-Math.min(1700,Math.max(250,packetInterval*1.8)):latest.wall;
     let a=frames[0],b=a;
     for(const frame of frames){if(frame.wall<=target)a=frame;if(frame.wall>=target){b=frame;break;}b=frame;}
@@ -120,23 +121,6 @@ function animate(now){
   }
   requestAnimationFrame(animate);
 }
-function chart(id,sets,colors,maxValue){
-  const W=480,H=125,left=27,bottom=106,top=10; const max=maxValue||Math.ceil(Math.max(1,...sets.flat().filter(Number.isFinite))/10)*10;
-  let s=`<svg viewBox="0 0 ${W} ${H}" role="img"><path class="chart-grid" d="M${left} ${top}H475M${left} 58H475M${left} ${bottom}H475"/><text x="0" y="15" class="axis-label">${max}</text><text x="10" y="108" class="axis-label">0</text>`;
-  for(let k=0;k<sets.length;k++){
-    const values=sets[k];let path='',pen=false;values.forEach((v,i)=>{if(v==null||!Number.isFinite(v)){pen=false;return;}const x=left+(i/(values.length-1||1))*(W-left-5),y=bottom-v/max*(bottom-top);path+=`${pen?'L':'M'}${x.toFixed(1)},${y.toFixed(1)} `;pen=true;});
-    s+=`<path d="${path}" class="chart-line" stroke="${colors[k]}"/>`;
-  }
-  $(id).innerHTML=s+'</svg>';
-}
-function renderCharts(t){const h=t.series||[],revision=`${t.run_id}:${h.at(-1)?.time}:${h.length}`;if(revision===lastSeriesTime)return;lastSeriesTime=revision;
-  chart('queueChart',[h.map(x=>x.downstream),h.map(x=>x.upstream)],['#ffad6b','#ff758f']);
-  chart('speedChart',[h.map(x=>x.downstream>0?x.speed:null)],['#6ed7ff'],60);setText('chartTime',`${fmt(h.at(-1)?.time)} detik`);
-}
-function renderEvents(t){const events=(t.events||[]).slice().reverse(),signature=JSON.stringify(events);if(signature===lastEvents)return;lastEvents=signature;
-  $('events').replaceChildren();if(!events.length){setText('events','Belum ada tindakan agent pada sesi ini.');return;}
-  for(const e of events){const row=document.createElement('div');row.className='event';const time=document.createElement('b'),message=document.createElement('span');time.textContent=`${e.time}s`;message.textContent=e.message;row.append(time,message);$('events').append(row);}
-}
 function comparable(run,reference){return run?.final?.finished===true&&run.run_id===run.final.run_id&&run.final.simulation_time===run.case?.duration&&run?.case?.signature===reference?.case?.signature&&run.seed===reference.seed&&run.sumo_version===reference.sumo_version&&run.final.simulation_time===reference.final.simulation_time&&(!(run.supervisor?.configured||reference.supervisor?.configured)||(Number.isFinite(run.final.gui_delay_ms)&&run.final.gui_delay_ms===reference.final.gui_delay_ms));}
 function renderComparison(c,finished=Boolean(state.telemetry.finished)){
   const sig=JSON.stringify([c,finished,state.case.signature,state.telemetry.run_id,state.telemetry.scenario]);if(sig===lastComparison)return;lastComparison=sig;
@@ -145,77 +129,87 @@ function renderComparison(c,finished=Boolean(state.telemetry.finished)){
   if(!finished||!comparable(reference,reference)||reference.case?.signature!==state.case.signature||reference.run_id!==state.telemetry.run_id)return;
   const valid=Object.fromEntries(Object.entries(c).filter(([,run])=>comparable(run,reference)));
   if(Object.keys(valid).length<2)return;
-  panel.hidden=false;setText('comparisonStatus',Object.keys(valid).length===3?'3 MODE SIAP':'2 MODE SIAP');
-  const metrics=[['Trip selesai','completed_trips',0,''],['Waktu tunggu rata-rata','avg_waitingTime',1,' s'],['Waktu perjalanan rata-rata','avg_duration',1,' s'],['Total waktu kendaraan','total_vehicle_hours',2,' jam'],['Spillback','spillback_seconds',0,' s'],['Simpang terhambat','junction_blocked_seconds',0,' s'],['Tertahan masuk','pending',0,''],['Tabrakan','collisions',0,''],['Teleport','teleports',0,'']];
+  panel.hidden=false;setText('comparisonStatus',`${Object.keys(valid).length} mode selesai`);
+  const metrics=[['Kendaraan sampai tujuan','completed_trips',0,1,''],['Rata-rata waktu perjalanan','avg_duration',1,60,' menit'],['Rata-rata waktu menunggu','avg_waitingTime',1,60,' menit'],['Antrean mencapai simpang','spillback_seconds',0,1,' detik'],['Simpang terhalang','junction_blocked_seconds',0,1,' detik']];
   $('comparisonRows').replaceChildren();
-  for(const [title,key,digits,unit] of metrics){const tr=document.createElement('tr');const heading=document.createElement('th');heading.textContent=title;tr.append(heading);for(const mode of ['baseline','katup','hybrid']){const td=document.createElement('td');td.textContent=valid[mode]?fmt(valid[mode].summary[key],digits)+unit:c[mode]?.final?.finished?'Hasil tidak cocok':'Belum selesai';tr.append(td);}$('comparisonRows').append(tr);}
-  const baseline=valid.baseline?.summary,heuristic=valid.katup?.summary;
-  let verdict='Hasil tercatat sesuai percobaan, nilai lebih kecil lebih baik kecuali trip selesai.';
-  let tradeoff=false;
-  if(baseline&&heuristic){const change=baseline.completed_trips?(heuristic.completed_trips-baseline.completed_trips)/baseline.completed_trips*100:0,spill=heuristic.spillback_seconds-baseline.spillback_seconds,blocked=heuristic.junction_blocked_seconds-baseline.junction_blocked_seconds;verdict=`Trip selesai KATUP Heuristik ${change>=0?'naik':'turun'} ${fmt(Math.abs(change),1)}% dibanding baseline. Spillback ${spill>0?'bertambah':'berkurang'} ${fmt(Math.abs(spill))} s, hambatan simpang ${blocked>0?'bertambah':'berkurang'} ${fmt(Math.abs(blocked))} s.`;tradeoff=change<0||spill>0||blocked>0;}
-  if(valid.hybrid&&!valid.hybrid.supervisor?.external_decisions)verdict+=' Hybrid memakai fallback heuristik, belum ada keputusan API LLM yang diterapkan.';
-  $('resultVerdict').classList.toggle('tradeoff',tradeoff);setText('resultVerdict',verdict);setText('comparisonMethod',`Seed ${reference.seed} · ${reference.final.simulation_time} detik · ${reference.case.planned_vehicles} kendaraan · ${reference.sumo_version}. Rata-rata waktu berasal dari trip selesai, total jam-kendaraan termasuk kendaraan aktif dan tertahan.`);
+  for(const [title,key,digits,divisor,unit] of metrics){
+    const tr=document.createElement('tr'),heading=document.createElement('th');heading.textContent=title;heading.scope='row';tr.append(heading);
+    for(const mode of ['baseline','katup','hybrid']){
+      const td=document.createElement('td'),value=valid[mode]?.summary?.[key];
+      td.textContent=valid[mode]?(value==null?'—':fmt(value/divisor,digits)+unit):c[mode]?.final?.finished?'Kondisi berbeda':'Belum diuji';tr.append(td);
+    }
+    $('comparisonRows').append(tr);
+  }
+  const baseline=valid.baseline?.summary,katup=valid.katup?.summary;
+  let verdict='Bandingkan hasil tiap mode pada tabel di bawah.',tradeoff=false;
+  if(baseline&&katup){
+    const change=baseline.completed_trips?(katup.completed_trips-baseline.completed_trips)/baseline.completed_trips*100:null;
+    const spill=katup.spillback_seconds-baseline.spillback_seconds,blocked=katup.junction_blocked_seconds-baseline.junction_blocked_seconds;
+    const parts=[change==null?`Dengan KATUP, ${fmt(katup.completed_trips)} kendaraan sampai tujuan.`:change===0?'Jumlah kendaraan sampai tujuan tetap sama.':`Dengan KATUP, kendaraan sampai tujuan ${change>0?'naik':'turun'} ${fmt(Math.abs(change),1)}%.`];
+    for(const [name,delta] of [['Antrean yang mencapai simpang',spill],['Waktu simpang terhalang',blocked]])parts.push(delta===0?`${name} tetap sama.`:`${name} ${delta>0?'bertambah':'berkurang'} ${fmt(Math.abs(delta))} detik.`);
+    verdict=parts.join(' ');tradeoff=(change!=null&&change<0)||spill>0||blocked>0;
+  }
+  $('resultVerdict').classList.toggle('tradeoff',tradeoff);setText('resultVerdict',verdict);
+  let method=`Setiap mode memakai ${fmt(reference.case.planned_vehicles)} kendaraan terjadwal selama ${fmt(reference.final.simulation_time/60)} menit. Rata-rata waktu dihitung dari kendaraan yang sudah sampai.`;
+  if(valid.hybrid&&!valid.hybrid.supervisor?.external_decisions)method+=' Mode AI belum memakai saran AI, hasilnya mengikuti aturan KATUP.';
+  setText('comparisonMethod',method);
 }
-function renderDecision(t){
-  const ctrl=t.control||{},llm=t.supervisor||{};const hybrid=t.scenario==='hybrid';
-  setText('strategyTitle',ctrl.last_action||'Mengamati antrean');setText('strategyReason',ctrl.strategy_reason||'Pengamat membaca antrean, Katup melindungi simpang, Rute memeriksa jalur alternatif.');
-  setText('decisionSubtitle',modeLabels[t.scenario]||'Strategi dihitung dari kondisi simulasi');
-  const profiles={balanced:'Seimbang',protect_downstream:'Lindungi hilir',relieve_upstream:'Urai antrean hulu',spread_routes:'Sebar arus'};
-  const strategy=hybrid?`Strategi ${profiles[llm.profile]||'Seimbang'} · `:'';
-  setText('strategyMeta',`${strategy}Target pengalihan ${fmt((ctrl.target_fraction||0)*100)}% kandidat · berhasil ${fmt(ctrl.rerouted)} kendaraan`);
-  const labels={not_configured:'API BELUM AKTIF',waiting:'MENUNGGU API',active:'LLM AKTIF',fallback:'FALLBACK',disabled:'HEURISTIK'};
-  statusClass($('llmStatus'),hybrid?(labels[llm.status]||'API BELUM AKTIF'):'HEURISTIK');
-  setText('llmReason',hybrid?(llm.reason||'API belum dihubungkan, kendali tetap memakai heuristik'):t.scenario==='baseline'?'Pengamat mencatat kondisi, agen Katup dan Rute dinonaktifkan.':'Pengatur LLM digunakan pada mode KATUP Hybrid. Mode KATUP Heuristik memakai aturan tiga agen.');
-  setText('llmRequests',llm.requests||0);setText('llmAccepted',llm.accepted||0);setText('llmLatency',llm.last_latency_ms==null?'—':`${llm.last_latency_ms} ms`);setText('llmTokens',(llm.input_tokens||0)+(llm.output_tokens||0));
-  $('decisionHistory').replaceChildren();for(const event of (llm.history||[]).slice(-3).reverse()){const row=document.createElement('div');row.textContent=`${event.time}s · ${event.status==='accepted'?'Diterapkan':'Fallback'} · ${event.reason||'Tiga agen mengikuti heuristik'}`;$('decisionHistory').append(row);}
+function renderAI(t){
+  const note=$('aiNote');note.hidden=$('mode').value!=='hybrid';if(note.hidden)return;
+  const llm=t.scenario==='hybrid'?t.supervisor||{}:{};
+  if(!state.aiConfig.configured)setText('aiNote','AI belum terhubung. Simulasi tetap memakai aturan KATUP.');
+  else if(llm.status==='fallback')setText('aiNote','AI sedang tidak tersedia. Aturan KATUP tetap berjalan.');
+  else if(llm.status==='active')setText('aiNote','AI membantu memilih strategi lalu lintas.');
+  else setText('aiNote',t.running?'AI sedang membaca kondisi jalan.':'Mode AI siap digunakan.');
 }
-function render(t){const m=t.metrics||{},d=m.downstream||{},u=m.upstream||{},ctrl=t.control||{};
-  setText('downstream',fmt(d.vehicles));setText('upstream',fmt(u.vehicles));setText('speedValue',d.vehicles===0?'—':fmt(d.speed_kmh,1));setText('rerouted',fmt(ctrl.rerouted));
-  setText('mapSub',`${modeLabels[t.scenario]||'Belum berjalan'} · ${fmt(t.simulation_time)} / ${state.case.duration||1800} detik · ${fmt(t.vehicles)} kendaraan aktif`);
-  $('liveDot').className='dot '+(t.running?'live':'');setText('liveLabel',t.running?'Simulasi berjalan':t.error?'Simulasi terganggu':t.finished?'Sesi selesai':'Belum berjalan');
-  statusClass($('scenarioChip'),t.running?ctrl.mode||'RUNNING':t.finished?'SELESAI':'IDLE');statusClass($('obsStatus'),t.running?'ACTIVE':'WAITING');
-  const active=t.running&&t.scenario!=='baseline';statusClass($('valveStatus'),active?ctrl.mode||'NORMAL':'DISABLED');statusClass($('routeStatus'),active?(ctrl.route_mode||'STANDBY'):'DISABLED');
-  const observer=m.observer||{}, system=t.system||{};
-  setText('queueMeters',`${fmt(observer.queue_m,1)} m`);setText('upstreamMeters',`${fmt(observer.upstream_queue_m,1)} m`);setText('pendingVehicles',fmt(system.pending));
-  const spilling=!!observer.spillback,blocked=observer.junction_stopped>0;
-  setText('spillbackStatus',blocked?'Kendaraan berhenti di dalam simpang':spilling?'Spillback: antrean mencapai simpang':'Ruas menuju simpang masih tersedia');
-  $('spillbackStatus').classList.toggle('danger',spilling||blocked);
+function render(t){
+  const observer=t.metrics?.observer||{},ctrl=t.control||{},hasData=Number.isFinite(t.step)&&t.step>0;
+  setText('queueMeters',fmt(observer.queue_m));setText('upstreamMeters',fmt(observer.upstream_queue_m));setText('rerouted',fmt(hasData?ctrl.rerouted:null));
+  setText('simulationClock',`${clock(t.simulation_time)} / ${clock(state.case.duration||1800)}`);
+  $('liveDot').className='dot '+(t.running?'live':'');setText('liveLabel',t.error?'Simulasi terhenti':t.running?'Sedang berjalan':t.finished?'Selesai':hasData?'Dihentikan':'Belum dimulai');
+  setText('summaryCaption',hasData?`${t.running?'Sedang berjalan':'Kondisi terakhir'} · ${modeLabels[t.scenario]||'Simulasi'}`:'Belum ada simulasi');
+  const blocked=observer.junction_stopped>0,spilling=!!observer.spillback;
+  setText('trafficStatus',!hasData?'Menunggu simulasi':blocked?'Simpang terhalang kendaraan':spilling?'Antrean mendekati simpang':'Simpang masih terbuka');
+  $('trafficStatus').className='traffic-status '+(hasData?(blocked||spilling?'danger':'clear'):'');
   const warning=$('junctionWarning');if(warning)warning.setAttribute('fill',blocked?'#ff758f55':'transparent');
-  const phase=t.phase||{},index=phase.index;const schedule=state.case.profile?.phases||{},mains=schedule.main||[3],movement=schedule.movement_states?.[index];const green=movement?movement==='green':mains.includes(index),yellow=movement?movement==='yellow':mains.some(p=>index===p+1);setText('phaseText',index==null?'Belum ada fase':`Arah galian · ${green?'Hijau':yellow?'Kuning':'Merah'} · fase ${index}`);
-  setText('phaseDetail',phase.next_switch?`Sisa fase ${fmt(Math.max(0,phase.next_switch-t.simulation_time),1)} detik`:'—');
-  const signal=$('signal-light');if(signal)signal.style.fill=green?'#80ef95':yellow?'#ffd269':'#ff758f';
-  $('lights').innerHTML=`<i class="light ${!green&&!yellow?'red':''}"></i><i class="light ${yellow?'yellow':''}"></i><i class="light ${green?'green':''}"></i>`;
-  if(t.public_mode){$('desktop').hidden=true;setText('connection','Live · SUMO + TraCI');}
-  if(t.running){if(t.scenario)$('mode').value=t.scenario;if(t.gui_delay_ms)$('speed').value=String(t.gui_delay_ms);}$('mode').disabled=!!t.running;$('speed').disabled=!!t.running;$('start').disabled=!!t.running;renderDecision(t);$('corridor').disabled=!!t.running;$('demand').disabled=!!t.running;renderCharts(t);renderEvents(t);renderComparison(state.comparison,Boolean(t.finished));$('stop').disabled=!t.running;
+  const actions={'Memantau antrean dua arah':'Memantau antrean lalu lintas.','Menahan arus masuk galian':'Menahan kendaraan agar simpang tetap terbuka.','Melayani arus silang':'Memberi giliran untuk arah lain.','Melayani arus utama setelah antrean silang terlayani':'Membuka jalan menuju galian.'};
+  setText('actionText',!hasData?'Mulai simulasi untuk melihat pengaturan lalu lintas.':t.scenario==='baseline'?'Lampu memakai durasi tetap.':actions[ctrl.last_action]||ctrl.last_action||'Memantau antrean lalu lintas.');
+  const index=t.phase?.index,schedule=state.case.profile?.phases||{},mains=schedule.main||[3],movement=schedule.movement_states?.[index],known=Number.isInteger(index);
+  const green=known&&(movement?movement==='green':mains.includes(index)),yellow=known&&(movement?movement==='yellow':mains.some(p=>index===p+1));
+  setText('phaseText',!known?'—':green?'Hijau':yellow?'Kuning':'Merah');
+  const signal=$('signal-light');if(signal)signal.style.fill=!known?'#687581':green?'#80ef95':yellow?'#ffd269':'#ff758f';
+  $('lights').innerHTML=`<i class="light ${known&&!green&&!yellow?'red':''}"></i><i class="light ${yellow?'yellow':''}"></i><i class="light ${green?'green':''}"></i>`;
+  if(t.running){if(t.scenario)$('mode').value=t.scenario;if(t.gui_delay_ms)$('speed').value=String(t.gui_delay_ms);}
+  for(const id of ['mode','speed','start','corridor','demand'])$(id).disabled=!!t.running;
+  $('stop').disabled=!t.running;renderAI(t);renderComparison(state.comparison,Boolean(t.finished));
 }
 function accept(payload){
-  const t=payload.telemetry||{};
-  const incomingCase=t.case||payload.case;
+  const t=payload.telemetry||{},incomingCase=t.case||payload.case;
   const mismatch=incomingCase&&(incomingCase.corridor!==$('corridor').value||incomingCase.demand!==$('demand').value);
   if(mismatch&&!t.running)return;
-  if(mismatch&&t.running){$('corridor').value=incomingCase.corridor;$('demand').value=incomingCase.demand;buildMap().catch(()=>setText('mapSub','Peta gagal dimuat'));}
+  if(mismatch&&t.running){$('corridor').value=incomingCase.corridor;$('demand').value=incomingCase.demand;buildMap().catch(()=>setText('mapSub','Peta belum bisa dimuat.'));}
   const run=t.run_id||`${t.scenario}`;
-  if(run!==currentRun){clearFrames();currentRun=run;lastSeriesTime=-1;state.telemetry={};}
+  if(run!==currentRun){clearFrames();currentRun=run;state.telemetry={};}
   if((t.updated||0)<(state.telemetry.updated||0))return;
   state.telemetry={...state.telemetry,...t};if(payload.case)state.case=payload.case;
   if(payload.comparison)state.comparison=payload.comparison;
   acceptVehicles(state.telemetry);render(state.telemetry);
 }
-async function refresh(){try{const r=await apiFetch('/api/status');if(r.redirected){location.href=apiUrl('/login');return;}if(!r.ok)throw Error();const p=await r.json();p.telemetry={...p.telemetry,running:p.running,public_mode:p.public_mode};accept(p);}catch{setText('connection','Koneksi terputus. Mencoba menghubungkan kembali…');}}
-function connectStream(){clearTimeout(retryTimer);stream=new WebSocket(socketUrl('/api/stream'));stream.onmessage=e=>{try{accept(JSON.parse(e.data));}catch(err){console.error(err);}};stream.onclose=()=>{retryTimer=setTimeout(connectStream,1800);};stream.onerror=()=>stream.close();}
+async function refresh(){try{const r=await apiFetch('/api/status');if(r.redirected){location.href=apiUrl('/login');return;}if(!r.ok)throw Error();const p=await r.json();p.telemetry={...p.telemetry,running:p.running,public_mode:p.public_mode};accept(p);setText('connection','Terhubung');}catch{setText('connection','Koneksi terputus, mencoba kembali…');}}
+function connectStream(){clearTimeout(retryTimer);stream=new WebSocket(socketUrl('/api/stream'));stream.onopen=()=>setText('connection','Terhubung');stream.onmessage=e=>{try{accept(JSON.parse(e.data));}catch(err){console.error(err);}};stream.onclose=()=>{setText('connection','Koneksi terputus, mencoba kembali…');retryTimer=setTimeout(connectStream,1800);};stream.onerror=()=>stream.close();}
 async function command(path){
   $('start').disabled=true;$('stop').disabled=true;
   if(path.includes('/api/start/')){state.telemetry={};state.comparison={};lastComparison='';$('comparison').hidden=true;clearFrames();}
-  try{const r=await apiFetch(path,{method:'POST'});if(!r.ok)throw Error(await r.text());await refresh();}catch{setText('liveLabel','Koneksi gagal, periksa backend');}finally{$('start').disabled=!!state.telemetry.running;$('stop').disabled=!state.telemetry.running;}
+  try{const r=await apiFetch(path,{method:'POST'});if(!r.ok)throw Error(await r.text());await refresh();}catch{setText('liveLabel','Perintah belum berhasil, coba lagi.');}finally{$('start').disabled=!!state.telemetry.running;$('stop').disabled=!state.telemetry.running;}
 }
 $('start').onclick=()=>command(`/api/start/${$('mode').value}?`+new URLSearchParams({delay_ms:$('speed').value,corridor:$('corridor').value,demand:$('demand').value}));$('stop').onclick=()=>command('/api/stop');
-$('desktop').onclick=()=>{const base=new URL(API_BASE||location.origin,location.href);const port=base.port||({'https:':'443','http:':'80'}[base.protocol]||'');$('desktopModal').hidden=false;$('desktopFrame').src=`${base.origin}/novnc/vnc.html?host=${base.hostname}&port=${port}&path=websockify&resize=scale`;};$('closeDesktop').onclick=()=>{$('desktopModal').hidden=true;$('desktopFrame').src='';};
+$('mode').onchange=()=>renderAI(state.telemetry);
 async function init(){
-  try{const response=await apiFetch('/api/catalog');if(!response.ok)throw Error();const data=await response.json();
+  try{const response=await apiFetch('/api/catalog');if(!response.ok)throw Error();const data=await response.json();state.aiConfig=data.llm;
     for(const [id,items] of [['corridor',data.corridors],['demand',data.demands]]){const select=$(id);select.replaceChildren();for(const item of items){const option=document.createElement('option');option.value=item.id;option.textContent=item.name;select.append(option);}}
     $('corridor').value=data.selection.corridor;$('demand').value=data.selection.demand;
     await buildMap();await refresh();connectStream();
-  }catch{setText('connection','Backend belum terhubung. Periksa alamat API dan koneksi VPS.');}
+  }catch{setText('connection','Simulasi belum bisa dihubungi. Coba muat ulang.');}
 }
-$('corridor').onchange=async()=>{state.telemetry={};state.comparison={};currentRun=null;lastComparison='';$('comparison').hidden=true;clearFrames();try{await buildMap();render({});}catch{setText('mapSub','Peta gagal dimuat');}};$('demand').onchange=$('corridor').onchange;
+$('corridor').onchange=async()=>{state.telemetry={};state.comparison={};currentRun=null;lastComparison='';$('comparison').hidden=true;clearFrames();try{await buildMap();render({});}catch{setText('mapSub','Peta belum bisa dimuat.');}};$('demand').onchange=$('corridor').onchange;
 init();setInterval(()=>{if(!stream||stream.readyState!==WebSocket.OPEN)refresh();},4000);requestAnimationFrame(animate);

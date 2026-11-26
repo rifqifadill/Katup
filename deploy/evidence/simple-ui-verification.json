@@ -1,0 +1,110 @@
+{
+  "created_at_utc": "2026-11-26T17:30:06.734230+00:00",
+  "branch": "llm",
+  "previous_version": "d74feae",
+  "simulation_source_unchanged": true,
+  "unit_tests_passed": 17,
+  "removed_sections": [
+    "traffic charts",
+    "agent panel",
+    "technical AI statistics",
+    "event timeline"
+  ],
+  "visible_results": 5,
+  "browser_modes": {
+    "base": "http://127.0.0.1:19011",
+    "modes": [
+      {
+        "mode": "baseline",
+        "run_id": "baseline-1941968-1795713810275872962",
+        "step": 16,
+        "moving_vehicles": 6
+      },
+      {
+        "mode": "katup",
+        "run_id": "katup-1941986-1795713813761802582",
+        "step": 16,
+        "moving_vehicles": 6
+      },
+      {
+        "mode": "hybrid",
+        "run_id": "hybrid-1941991-1795713817148522164",
+        "step": 16,
+        "moving_vehicles": 6
+      }
+    ],
+    "screens": [
+      "output/simple-browser/hybrid-1440.png",
+      "output/simple-browser/hybrid-768.png",
+      "output/simple-browser/hybrid-390.png",
+      "output/simple-browser/hybrid-360.png"
+    ],
+    "console_errors": []
+  },
+  "browser_corridors": {
+    "base": "http://127.0.0.1:19011",
+    "corridors": [
+      {
+        "corridor": "ui_depok",
+        "lane_label": "3 → 1 lajur",
+        "moving_vehicles": 6,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "akses_ui",
+        "lane_label": "1 lajur · hambatan galian",
+        "moving_vehicles": 7,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "pasar_rebo",
+        "lane_label": "2 → 1 lajur",
+        "moving_vehicles": 8,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      },
+      {
+        "corridor": "tb_simatupang",
+        "lane_label": "2 → 1 lajur",
+        "moving_vehicles": 7,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      }
+    ],
+    "page_errors": []
+  },
+  "public_comparison": {
+    "three_finished_modes": true,
+    "trip_counts": [
+      "166",
+      "201",
+      "201"
+    ],
+    "mismatched_seed_hidden": true,
+    "mismatched_saved_session_hidden": true,
+    "mismatched_live_session_hidden": true,
+    "llm_playback_mismatch_hidden": true
+  },
+  "public_smoke": {
+    "url": "https://propecia-smithsonian-idaho-adjust.trycloudflare.com",
+    "certificate_validation": true,
+    "no_login": true,
+    "vehicle_movement": true,
+    "websocket_frames": 36,
+    "desktop_disabled": true,
+    "mobile_no_overflow": true,
+    "stop": true,
+    "page_errors": []
+  },
+  "source_sha256": {
+    "deploy/index.html": "706ff9c9466b94550c80e356a3033fab7d5e32614beb078262f716798c0f8f28",
+    "deploy/assets/dashboard.js": "1e13699a2b3e34dfcf09374b2235862cd806bc5f90e714a71111d9e39a6996c6",
+    "deploy/assets/hybrid-theme.css": "229b9564eb5700a17699f01d13433dc80ccb52bb992ef4783e73b6cc397b0b83"
+  }
+}

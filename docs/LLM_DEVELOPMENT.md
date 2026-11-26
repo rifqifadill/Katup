@@ -9,11 +9,13 @@ Implementasi ini mempertahankan tiga agen heuristik, menambahkan satu pengatur s
 - Tiga mode, baseline, KATUP Heuristik, dan KATUP Hybrid
 - Pengatur strategi asinkron dengan validasi JSON, identitas sesi, umur data, batas permintaan, dan fallback
 - Empat pilihan strategi terbatas, balanced, protect_downstream, relieve_upstream, spread_routes
-- Peta lajur sesuai hasil SUMO, antrean, kendaraan, status agent, alasan keputusan, jumlah permintaan dan token
+- Peta kendaraan, ringkasan antrean, tindakan KATUP, dan warna lampu
 - Perbandingan hasil per koridor dan pola arus, dengan pemeriksaan signature, seed, versi SUMO, durasi, dan sesi selesai
 - Import CSV pengamatan, validasi data ganda, agregasi 15 menit, provenance, dan pemisahan tanggal kalibrasi/holdout
 
 Empat koridor tambahan beserta sumber peta, jumlah lajur, dan hasil uji ada di [REGIONAL_CORRIDORS.md](REGIONAL_CORRIDORS.md). UI–Margonda menjadi pilihan awal. Jalan Akses UI yang dipilih memiliki satu lajur per arah menurut jaringan OSM, sehingga skenario memakai pembatasan kecepatan dan lebar lajur, tanpa mengarang penutupan dari dua lajur.
+
+Tampilan pengguna memakai nama Tanpa KATUP, Dengan KATUP, dan KATUP + AI. Grafik, timeline, panel agen, serta statistik token dan latency telah dihapus dari halaman. Backend tetap merekam data penelitian. Tabel hasil menampilkan kendaraan sampai tujuan, waktu perjalanan dan menunggu, serta durasi antrean mencapai simpang dan simpang terhalang. Perubahan yang memburuk tetap disebut pada ringkasan hasil. Mode AI yang belum terhubung diberi keterangan singkat pada pilihan simulasi dan hasilnya.
 
 ## Menjalankan lokal
 

@@ -1,6 +1,7 @@
 """Public HTTPS end-to-end check; intentionally controls the shared session."""
 import argparse
 import json
+import os
 import time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -12,7 +13,7 @@ args = parser.parse_args()
 url = args.url.rstrip('/')
 report = {'url': url, 'certificate_validation': True}
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-dev-shm-usage'])
+    browser = p.chromium.launch(headless=True, executable_path=os.getenv('KATUP_CHROMIUM'), args=['--no-sandbox', '--disable-dev-shm-usage'])
     page = browser.new_page(viewport={'width': 1440, 'height': 1100})
     errors = []
     frames = []
@@ -21,7 +22,7 @@ with sync_playwright() as p:
     response = page.goto(url, wait_until='domcontentloaded', timeout=45000)
     assert response.status == 200
     assert page.locator('[name=username]').count() == 0
-    assert page.locator('#comparison').get_attribute('hidden') is not None
+    assert page.locator('#queueChart,#speedChart,.agent-card,.decision-panel,.events').count() == 0
     report['no_login'] = True
     page.select_option('#mode', 'katup')
     page.select_option('#speed', '100')
@@ -36,6 +37,7 @@ with sync_playwright() as p:
             break
         page.wait_for_timeout(500)
     assert previous
+    assert not page.is_visible('#comparison')
     page.wait_for_timeout(3000)
     current = page.evaluate("fetch('/api/status').then(r=>r.json()).then(s=>s.telemetry)")
     assert current['simulation_time'] > previous['simulation_time']

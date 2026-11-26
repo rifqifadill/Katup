@@ -39,7 +39,7 @@ Acuan pemeriksaan adalah `KATUP_Reports_Chapter_1_to_5.docx` yang diberikan pada
 | Persiapan CSV observasi | `tools/import_traffic.py`: `import_traffic` |
 | Integrasi simulasi dengan telemetry | `deploy/run_controller.py`: `publish_step`, `make_state`, `trip_summary` |
 | API, pembatasan origin, dan WebSocket | `deploy/server.py`: `start`, `comparison_data`, `telemetry_stream` |
-| Peta, gerak kendaraan, alasan keputusan, hasil | `deploy/assets/dashboard.js`: `buildMap`, `animate`, `renderDecision`, `renderComparison` |
+| Peta, gerak kendaraan, tindakan singkat, hasil | `deploy/assets/dashboard.js`: `buildMap`, `animate`, `render`, `renderAI`, `renderComparison` |
 
 ## Batas klaim
 

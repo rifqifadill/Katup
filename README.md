@@ -79,7 +79,7 @@ Lalu tekan tombol **Play (segitiga hijau)** di toolbar atas.
 
 ## Menjalankan di VPS melalui browser
 
-Dashboard web KATUP menampilkan peta koridor 2D, posisi kendaraan, status tiga
-agent, grafik telemetry, serta perbandingan Baseline dan KATUP. SUMO-GUI/noVNC
-tetap tersedia sebagai tampilan detail teknis. Panduan instalasi Linux, layanan
-systemd, pengujian, dan deployment tersedia di [deploy/README.md](deploy/README.md).
+Dashboard web KATUP menampilkan peta kendaraan, ringkasan antrean, tindakan
+KATUP, dan tabel perbandingan hasil. Pilihan pada website adalah Tanpa KATUP,
+Dengan KATUP, serta KATUP + AI. Panduan menjalankan branch ini dan demo publik
+tersedia di [docs/LLM_DEVELOPMENT.md](docs/LLM_DEVELOPMENT.md).
