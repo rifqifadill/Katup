@@ -120,7 +120,7 @@ def verify_corridors():
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(BASE, wait_until='networkidle')
         page.wait_for_function("document.querySelector('#corridor').options.length>=6")
-        for corridor in ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang'):
+        for corridor in ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo'):
             page.select_option('#corridor', corridor)
             page.wait_for_function("(key)=>state.case.corridor===key && state.network.case.corridor===key && document.querySelector('#map').getAttribute('aria-busy')==='false'", arg=corridor)
             case = page.evaluate('state.case')
@@ -129,6 +129,14 @@ def verify_corridors():
             if corridor == 'akses_ui':
                 assert '1 lajur' in page.inner_text('#zoneLaneLabel')
                 assert '→' not in page.inner_text('#zoneLaneLabel')
+            if corridor == 'simpang_pasar_rebo':
+                assert page.is_visible('#researchNote')
+                assert 'belum tersedia' in page.inner_text('#researchNote')
+                response = page.request.get(BASE + '/research/simpang_pasar_rebo/datasheet.xlsx')
+                assert response.ok and response.body().startswith(b'PK')
+                assert '106.865299' in page.get_attribute('#mapLocation', 'href')
+            else:
+                assert not page.is_visible('#researchNote')
             page.click('[data-view=all]')
             page.locator('#mapContainer').screenshot(path=str(OUTPUT / f'{corridor}-network.png'))
             page.select_option('#mode', 'hybrid')

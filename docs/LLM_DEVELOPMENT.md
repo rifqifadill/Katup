@@ -4,7 +4,7 @@ Implementasi ini mempertahankan tiga agen heuristik, menambahkan satu pengatur s
 
 ## Yang sudah tersedia
 
-- Enam koridor, UI–Margonda, Akses UI–Kelapa Dua, Pasar Rebo–Raya Bogor, TB Simatupang–Tanjung Barat, Pondok Pinang–Pondok Indah, dan jaringan uji lama
+- Tujuh koridor, UI–Margonda, Akses UI–Kelapa Dua, Simpang Pasar Rebo–arah Ciliwung, Pasar Rebo–Raya Bogor, TB Simatupang–Tanjung Barat, Pondok Pinang–Pondok Indah, dan jaringan uji lama
 - Empat variasi arus, lengang, jam sibuk, lonjakan, dan bypass padat
 - Tiga mode, baseline, KATUP Heuristik, dan KATUP Hybrid
 - Pengatur strategi asinkron dengan validasi JSON, identitas sesi, umur data, batas permintaan, dan fallback
@@ -14,6 +14,8 @@ Implementasi ini mempertahankan tiga agen heuristik, menambahkan satu pengatur s
 - Import CSV pengamatan, validasi data ganda, agregasi 15 menit, provenance, dan pemisahan tanggal kalibrasi/holdout
 
 Empat koridor tambahan beserta sumber peta, jumlah lajur, dan hasil uji ada di [REGIONAL_CORRIDORS.md](REGIONAL_CORRIDORS.md). UI–Margonda menjadi pilihan awal. Jalan Akses UI yang dipilih memiliki satu lajur per arah menurut jaringan OSM, sehingga skenario memakai pembatasan kecepatan dan lebar lajur, tanpa mengarang penutupan dari dua lajur.
+
+Tambahan simpang pada pin −6.306099, 106.865299 memiliki [lembar riset tersendiri](../data/simpang_pasar_rebo/README.md), termasuk XLSX dan audit harian 20–26 November 2026. Data lalu lintas terukur serta status galian pada periode itu belum diperoleh dari sumber yang dapat diverifikasi. Galian menuju Ciliwung adalah skenario uji dengan label eksplisit, bukan rekonstruksi kejadian yang telah dikalibrasi. Demo VPS memilih simpang baru ini sebagai tampilan awal melalui `KATUP_CORRIDOR=simpang_pasar_rebo`; default instalasi umum tetap UI–Margonda.
 
 Tampilan pengguna memakai nama Tanpa KATUP, Dengan KATUP, dan KATUP + AI. Grafik, timeline, panel agen, serta statistik token dan latency telah dihapus dari halaman. Backend tetap merekam data penelitian. Tabel hasil menampilkan kendaraan sampai tujuan, waktu perjalanan dan menunggu, serta durasi antrean mencapai simpang dan simpang terhalang. Perubahan yang memburuk tetap disebut pada ringkasan hasil. Mode AI yang belum terhubung diberi keterangan singkat pada pilihan simulasi dan hasilnya.
 

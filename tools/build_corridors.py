@@ -62,8 +62,14 @@ def protected_program(root, junction, west):
     tls = connections[0].get('tl')
     logic = root.find(f"tlLogic[@id='{tls}']")
     old_states = [p.get('state') for p in logic.findall('phase')]
-    size = len(old_states[0])
     controlled = [c for c in root.findall('connection') if c.get('tl') == tls]
+    # buang slot lampu dari ruas yg udah dihapus, urutan koneksi yg masih ada tetep dijaga
+    active_links = sorted({int(c.get('linkIndex')) for c in controlled})
+    old_states = [''.join(state[link] for link in active_links) for state in old_states]
+    link_map = {link: index for index, link in enumerate(active_links)}
+    for connection in controlled:
+        connection.set('linkIndex', str(link_map[int(connection.get('linkIndex'))]))
+    size = len(active_links)
     groups = [west] + sorted({c.get('from') for c in controlled} - {west})
     if len(groups) < 2:
         raise ValueError('Simpang membutuhkan lebih dari satu pendekat')
@@ -120,10 +126,16 @@ def build(corridor):
         paths.extend(spec['paths'])
         rates.extend([120] * len(spec['paths']))
         keep = context_edges(network, paths, spec['tls'])
+        excluded = set(spec.get('exclude_edges', []))
+        if excluded.intersection(edge for path in paths for edge in path):
+            raise ValueError('Ruas yg dipakai rute tidak boleh dihapus')
+        keep -= excluded
         edge_file = Path(temporary) / 'keep-edges.txt'
         edge_file.write_text('\n'.join(sorted(keep)))
         length = original.getLength()
-        pre_length = min(180, length * .5)
+        pre_length = spec.get('pre_length_m', min(180, length * .5))
+        if not 0 < pre_length < length - 10:
+            raise ValueError('Ruang antrean dan galian harus cukup pada ruas sumber')
         work_length = min(180, length - pre_length)
         exit_exists = length - pre_length - work_length >= 60
         passenger_lane = next(lane.getIndex() for lane in original.getLanes() if lane.allows('passenger'))
@@ -137,7 +149,9 @@ def build(corridor):
         patch_file = Path(temporary) / 'workzone.edg.xml'
         ET.ElementTree(patch).write(patch_file, encoding='utf-8', xml_declaration=True)
         target = directory / 'network.net.xml'
-        subprocess.run(['netconvert', '--sumo-net-file', str(base), '--edge-files', str(patch_file), '--keep-edges.input-file', str(edge_file), '--tls.set', spec['tls'], '--output-file', str(target), *common], check=True)
+        # jaga APILL yg udah ada, biar netconvert ga crash di simpang rapat
+        signal_options = [] if network.getNode(spec['tls']).getType() == 'traffic_light' else ['--tls.set', spec['tls']]
+        subprocess.run(['netconvert', '--sumo-net-file', str(base), '--edge-files', str(patch_file), '--keep-edges.input-file', str(edge_file), *signal_options, '--output-file', str(target), *common], check=True)
     tree = ET.parse(target)
     root = tree.getroot()
     for edge in root.findall('edge'):
@@ -169,6 +183,9 @@ def build(corridor):
         cross_detectors.append(f'cross_{index}')
     context = 'Geometri OpenStreetMap, volume kendaraan, zona galian, dan sinyal merupakan skenario eksperimen'
     profile = {'id': corridor, 'name': area['name'], 'geographic': True, 'duration': 1800, 'tls': tls, 'junction': spec['tls'], 'pre': 'katup_pre', 'west': spec['west'], 'decision': spec['decision'], 'bottleneck': 'katup_work', 'north': cross[:1], 'south': cross[1:], 'detectors': detectors, 'cross_detectors': cross_detectors, 'main': replace(spec['main'])[1:], 'paths': spec['paths'], 'route_names': spec['route_names'], 'phases': phases, 'context': context, 'map_attribution': '© OpenStreetMap contributors · ODbL', 'center': spec['center'], 'bbox': area['bbox'], 'source_edge': spec['edge'], 'source_road': spec['road'], 'workzone_type': 'lane_drop' if original.getLaneNumber() > 1 else 'speed_restriction', 'signal_note': 'Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan', 'context_edge_limit': 400}
+    for key in ('requested_point', 'research', 'default_view'):
+        if key in spec:
+            profile[key] = spec[key]
     (directory / 'profile.json').write_text(json.dumps(profile, indent=2, ensure_ascii=False), encoding='utf-8')
     print(corridor, 'ready', 'lanes', original.getLaneNumber(), '→ 1', 'phases', len(phases['movement_states']), 'detours', len(spec['paths']), flush=True)
 

@@ -14,6 +14,7 @@ AREAS = {
     'ui_depok': {'name': 'Universitas Indonesia–Margonda, Depok', 'bbox': [106.815, -6.383, 106.846, -6.352]},
     'akses_ui': {'name': 'Akses UI–Kelapa Dua, Depok', 'bbox': [106.84, -6.378, 106.869, -6.349]},
     'pasar_rebo': {'name': 'Pasar Rebo–Raya Bogor, Jakarta Timur', 'bbox': [106.852, -6.324, 106.88, -6.296]},
+    'simpang_pasar_rebo': {'name': 'Simpang Pasar Rebo–arah Ciliwung', 'bbox': [106.846, -6.32, 106.881, -6.293]},
     'tb_simatupang': {'name': 'TB Simatupang–Tanjung Barat, Jakarta Selatan', 'bbox': [106.817, -6.318, 106.85, -6.292]},
 }
 ROAD_TYPES = {'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link', 'unclassified', 'residential', 'living_street'}

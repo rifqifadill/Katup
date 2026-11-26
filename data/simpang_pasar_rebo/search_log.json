@@ -1,0 +1,26 @@
+{
+  "searched_at_utc": "2026-11-26T17:58:01.838127+00:00",
+  "period_wib": [
+    "2026-11-20",
+    "2026-11-26"
+  ],
+  "queries": [
+    "\"Pasar Rebo\" \"galian\" \"November 2026\"",
+    "\"TB Simatupang\" \"Ciliwung\" galian macet November 2026",
+    "\"simpang Pasar Rebo\" kemacetan \"2026\"",
+    "\"TB Simatupang\" \"galian\" \"Oktober 2026\"",
+    "\"Pasar Rebo\" \"galian\" after:2026-11-19 before:2026-11-27",
+    "site.data.jakarta.go.id volume lalu lintas Pasar Rebo 2026",
+    "site.dishub.jakarta.go.id \"Pasar Rebo\" \"2026\"",
+    "site.pamjaya.co.id \"Simatupang\" \"2026\"",
+    "site.korlantas.polri.go.id \"Simatupang\" \"galian\"",
+    "\"Pasar Rebo\" \"rekonstruksi\" \"22-28\" \"2026\"",
+    "\"TB Simatupang\" kemacetan \"26 November 2026\""
+  ],
+  "limitations": [
+    "hasil pencarian tidak menjamin semua kejadian terindeks",
+    "arsip CCTV selama tujuh hari dan data hitungan per gerakan belum diperoleh",
+    "halaman Korlantas gagal dimuat 502, sumber resmi X gagal dimuat 403",
+    "tanggal perayapan dan tanggal perubahan metadata bukan tanggal kejadian"
+  ]
+}

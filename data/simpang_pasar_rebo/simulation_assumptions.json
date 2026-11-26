@@ -1,0 +1,87 @@
+[
+  {
+    "parameter": "titik pengguna",
+    "value": "-6.306099, 106.865299",
+    "note": "koordinat dari gambar pengguna, lintang lalu bujur"
+  },
+  {
+    "parameter": "geometri",
+    "value": "OpenStreetMap, snapshot tersimpan",
+    "note": "belum diverifikasi survei ukuran lajur"
+  },
+  {
+    "parameter": "arah hambatan",
+    "value": "keluar simpang ke barat arah Ciliwung",
+    "note": "ruas 515987463, posisi galian asumsi"
+  },
+  {
+    "parameter": "ruang antrean sebelum galian",
+    "value": 13.34,
+    "note": "meter, panjang lane SUMO, bukan pengukuran lapangan"
+  },
+  {
+    "parameter": "panjang zona galian",
+    "value": 45.08,
+    "note": "meter, panjang lane SUMO, bukan panjang proyek nyata"
+  },
+  {
+    "parameter": "lajur sebelum / pada galian",
+    "value": "2 → 1 lajur",
+    "note": "asumsi penutupan satu lajur"
+  },
+  {
+    "parameter": "kecepatan maksimum pada galian",
+    "value": 5.0,
+    "note": "km/jam, asumsi model"
+  },
+  {
+    "parameter": "durasi",
+    "value": 1800,
+    "note": "detik simulasi"
+  },
+  {
+    "parameter": "seed pengujian",
+    "value": 42,
+    "note": "bilangan seed sama untuk ketiga mode"
+  },
+  {
+    "parameter": "arus utama jam sibuk",
+    "value": 1500,
+    "note": "kendaraan/jam sintetik, bukan hitungan lapangan"
+  },
+  {
+    "parameter": "arus tiap pendekat silang",
+    "value": 350,
+    "note": "kendaraan/jam sintetik, dua pendekat"
+  },
+  {
+    "parameter": "arus tiap rute alternatif",
+    "value": 120,
+    "note": "kendaraan/jam sintetik, dua rute"
+  },
+  {
+    "parameter": "kendaraan direncanakan",
+    "value": 1220,
+    "note": "kendaraan dalam 30 menit skenario peak"
+  },
+  {
+    "parameter": "jenis kendaraan",
+    "value": "passenger, panjang 4,6 m",
+    "note": "model mobil, belum mewakili komposisi motor/bus/truk nyata"
+  },
+  {
+    "parameter": "lampu baseline",
+    "value": "40 / 3 / 2",
+    "note": "detik hijau / kuning / semua-merah per pendekat, skenario bukan rekaman APILL"
+  },
+  {
+    "parameter": "lokasi proyek aktual",
+    "value": "belum terverifikasi",
+    "note": "galian sekitar Oktober menurut pengguna, data 20–26 November belum tersedia"
+  },
+  {
+    "parameter": "penggunaan API AI",
+    "value": "disabled",
+    "note": "mode hybrid memakai fallback heuristik"
+  }
+]

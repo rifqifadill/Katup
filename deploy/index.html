@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/assets/katup-favicon.png">
 <link rel="stylesheet" href="/assets/dashboard.css?v=2">
 <link rel="stylesheet" href="/assets/operator-theme.css?v=2">
-<link rel="stylesheet" href="/assets/hybrid-theme.css?v=simple1">
+<link rel="stylesheet" href="/assets/hybrid-theme.css?v=simpang1">
 </head>
 <body>
 <div class="shell">
@@ -41,6 +41,7 @@
       <div class="map-caption"><span id="mapVehicleCount">Belum ada kendaraan</span><span>Geser untuk melihat sekitar</span></div><div id="mapEmpty" class="map-empty">Tekan Mulai untuk melihat lalu lintas.</div></div>
       <div class="legend"><span><i class="swatch main-swatch"></i>Jalur utama</span><span><i class="swatch bypass-swatch"></i>Jalur alternatif</span><span><i class="swatch reroute-swatch"></i>Mobil dialihkan</span></div>
       <div class="bottleneck-key"><span class="hazard-key"></span><b id="zoneLaneLabel">Area galian simulasi</b><a id="mapLocation" href="https://www.openstreetmap.org" target="_blank" rel="noreferrer">Lihat lokasi asli</a><a id="mapAttribution" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a></div>
+      <p id="researchNote" class="research-note" hidden><span id="researchText"></span> <a id="researchDownload" download>Unduh lembar riset</a></p>
     </div>
     <aside class="card road-summary"><h3 class="card-title">Kondisi jalan</h3><p id="summaryCaption" class="card-sub">Belum ada simulasi</p><p id="trafficStatus" class="traffic-status" role="status">Menunggu simulasi</p>
       <dl class="summary-stats"><div><dt>Antrean sebelum simpang</dt><dd><span id="upstreamMeters">—</span><small>meter</small></dd></div><div><dt>Antrean dekat galian</dt><dd><span id="queueMeters">—</span><small>meter</small></dd></div><div><dt>Kendaraan dialihkan</dt><dd><span id="rerouted">—</span><small>kendaraan</small></dd></div></dl>
@@ -51,6 +52,6 @@
   <section class="card comparison" id="comparison" hidden><div class="card-head"><h3 class="card-title">Perbandingan hasil</h3><span id="comparisonStatus" class="status-chip">Menunggu hasil</span></div><p id="resultVerdict" class="result-verdict"></p><div class="results-scroll"><table class="results-table"><thead><tr><th>Yang dibandingkan</th><th>Tanpa KATUP</th><th>Dengan KATUP</th><th>KATUP + AI</th></tr></thead><tbody id="comparisonRows"></tbody></table></div><p class="card-sub" id="comparisonMethod"></p></section>
 </div>
 <script src="/assets/runtime-config.js?v=llm1"></script>
-<script src="/assets/dashboard.js?v=simple1" defer></script>
+<script src="/assets/dashboard.js?v=simpang1" defer></script>
 </body>
 </html>

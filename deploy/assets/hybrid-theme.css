@@ -106,3 +106,5 @@
   .results-table { font-size: 14px; }
   .results-table th, .results-table td { padding: 12px 10px; }
 }
+.research-note { margin: 0; padding: 0 18px 16px; font-size: 13px; line-height: 1.6; color: #bbc6d7; }
+.research-note a { color: #91bcff; text-decoration: underline; text-underline-offset: 3px; }

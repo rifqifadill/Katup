@@ -1,0 +1,79 @@
+[
+  {
+    "id": "OSM",
+    "publisher": "OpenStreetMap contributors",
+    "event_date": "snapshot 2026-11-26 UTC",
+    "url": "https://www.openstreetmap.org/?mlat=-6.306099&mlon=106.865299#map=18/-6.306099/106.865299",
+    "status": "verified_geometry_only",
+    "scope": "Simpang Raya Bogor–TB Simatupang dan jalan biasa di sekitarnya",
+    "finding": "Sumber geometri dan konektivitas, bukan bukti volume, kondisi galian, atau waktu lampu aktual",
+    "usable_for": "geometri jalan, arah ruas, rute menurut snapshot OSM",
+    "access_date_wib": "2026-11-27"
+  },
+  {
+    "id": "D02",
+    "publisher": "detikNews, mengutip TMC Polda Metro Jaya",
+    "event_date": "2026-06-02 08:42 WIB",
+    "url": "https://news.detik.com/berita/d-8513997/ada-proyek-galian-lalin-tb-simatupang-arah-pasar-minggu-jaksel-macet",
+    "status": "historical_qualitative",
+    "scope": "TB Simatupang di samping Asrama Tanjung Barat arah Pasar Minggu, antrean dilaporkan sampai TL Pasar Rebo",
+    "finding": "Galian PDAM dilaporkan menimbulkan kemacetan, tanpa pengukuran panjang antrean atau arus kendaraan",
+    "usable_for": "contoh historis antrean dari hambatan hilir, bukan kondisi 20–26 November",
+    "access_date_wib": "2026-11-27"
+  },
+  {
+    "id": "D04",
+    "publisher": "detikNews, liputan di lokasi",
+    "event_date": "2026-06-04 13:36 WIB (publikasi)",
+    "url": "https://news.detik.com/berita/d-8517611/kakorlantas-tindak-lanjuti-aduan-warga-tinjau-galian-tb-simatupang-yang-bikin-macet",
+    "status": "historical_qualitative",
+    "scope": "TB Simatupang, Pasar Rebo arah Jakarta Selatan, titik rinci tidak dinyatakan dengan koordinat",
+    "finding": "Peninjauan polisi terhadap keluhan perlambatan akibat galian di area pertigaan, tidak memastikan titik pin dan lokasi galian yang sama",
+    "usable_for": "latar belakang historis, bukan verifikasi galian Oktober atau November",
+    "access_date_wib": "2026-11-27"
+  },
+  {
+    "id": "SDI",
+    "publisher": "Portal Satu Data Indonesia, Provinsi DKI Jakarta",
+    "event_date": "metadata dimodifikasi 2026-09-03, tag tahun 2014",
+    "url": "https://data.go.id/dataset/dataset/data-rekap-lalu-lintas-di-dki-jakarta",
+    "status": "not_a_current_week_dataset",
+    "scope": "Rekap DKI Jakarta, tidak tersedia seri harian titik pin pada halaman yang diakses",
+    "finding": "Resource CSV dan XLSX ditandai URL Bermasalah, metadata bukan tanggal observasi minggu terakhir",
+    "usable_for": "catatan penelusuran portal resmi, belum dapat dipakai mengkalibrasi simulasi",
+    "access_date_wib": "2026-11-27"
+  },
+  {
+    "id": "A08",
+    "publisher": "ANTARA, pernyataan Direktur Utama PAL Jaya",
+    "event_date": "2026-11-08 17:21 WIB (publikasi)",
+    "url": "https://www.antaranews.com/berita/5839943/pal-jaya-pastikan-pekerjaan-pipa-limbah-tb-simatupang-tak-ganggu-jalan",
+    "status": "different_scope_outside_week",
+    "scope": "Pekerjaan PAL Jaya di area gedung TB Simatupang, Jakarta Selatan, bukan konfirmasi galian pin Pasar Rebo",
+    "finding": "PAL Jaya menyebut pekerjaan di area gedung tidak mengganggu jalan umum, tidak boleh dianggap sebagai bukti semua galian masih berlangsung atau sudah selesai",
+    "usable_for": "membedakan proyek dan lokasi, bukan kalibrasi lalu lintas",
+    "access_date_wib": "2026-11-27"
+  },
+  {
+    "id": "JM23",
+    "publisher": "Mirror pihak ketiga yang menampilkan akun PTJASAMARGA",
+    "event_date": "2026-11-23 (tertera di mirror), jadwal 22–28 November 2026",
+    "url": "https://xitter.cf/PTJASAMARGA/status/2124685078290899005",
+    "status": "unverified_primary_and_different_road",
+    "scope": "Jembatan simpang susun/jalan tol Pasar Rebo, berbeda dari jalan biasa menuju Ciliwung",
+    "finding": "Kandidat pengumuman rekonstruksi jembatan tol, tautan asli X tidak dapat diverifikasi langsung (HTTP 403)",
+    "usable_for": "petunjuk riset yang dikecualikan dari bukti galian jalan biasa dan data angka",
+    "access_date_wib": "2026-11-27"
+  },
+  {
+    "id": "USER",
+    "publisher": "Keterangan pengguna dalam percakapan",
+    "event_date": "sekitar Oktober 2026, tanggal kejadian belum pasti",
+    "url": "",
+    "status": "unverified_eyewitness",
+    "scope": "Setelah simpang ke arah Kali Ciliwung menurut pengguna",
+    "finding": "Pengguna mengingat galian sekitar sebulan sebelumnya, belum ada tanggal, koordinat pekerjaan, foto bertanggal, atau data pengukuran",
+    "usable_for": "arah skenario uji saja, belum menjadi fakta lapangan terverifikasi",
+    "access_date_wib": "2026-11-27"
+  }
+]

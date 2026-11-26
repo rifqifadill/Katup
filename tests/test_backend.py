@@ -32,6 +32,9 @@ class BackendTest(unittest.TestCase):
                 self.assertGreater(len(network['edges']), 30)
                 self.assertIn(network['case']['profile']['pre'], {e['id'] for e in network['edges']})
             self.assertEqual(client.get('/api/network?corridor=wrong').status_code, 400)
+            sheet = client.get('/research/simpang_pasar_rebo/datasheet.xlsx')
+            self.assertEqual(sheet.status_code, 200)
+            self.assertTrue(sheet.content.startswith(b'PK'))
 
     def test_origins_and_options(self):
         with TestClient(self.server.app) as client:

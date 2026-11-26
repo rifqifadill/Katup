@@ -316,3 +316,4 @@ async def proxy(ws:WebSocket):
 if os.environ.get('KATUP_NOVNC') and Path(os.environ['KATUP_NOVNC']).exists():
     app.mount('/novnc',StaticFiles(directory=os.environ['KATUP_NOVNC']),name='novnc')
 app.mount('/assets',StaticFiles(directory=ROOT/'deploy/assets'),name='assets')
+app.mount('/research/simpang_pasar_rebo',StaticFiles(directory=ROOT/'data/simpang_pasar_rebo'),name='research')

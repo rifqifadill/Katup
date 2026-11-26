@@ -1,3 +1,4 @@
+import csv
 import json
 from pathlib import Path
 import unittest
@@ -11,10 +12,42 @@ import katup_controller as controller
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REGIONS = ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang')
+REGIONS = ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo')
 
 
 class CorridorTest(unittest.TestCase):
+    def test_requested_intersection_faces_west_and_does_not_invent_observations(self):
+        config, case = build_case('simpang_pasar_rebo')
+        profile = case['profile']
+        self.assertEqual(profile['requested_point'], [106.865299, -6.306099])
+        lon, lat = profile['center']
+        self.assertLess(abs(lon - 106.865299), 0.0005)
+        self.assertLess(abs(lat + 6.306099), 0.0005)
+        root = ET.parse(config.parent / 'network.net.xml').getroot()
+        tls = profile['tls']
+        phases = root.find(f"tlLogic[@id='{tls}']").findall('phase')
+        links = {int(c.get('linkIndex')) for c in root.findall('connection') if c.get('tl') == tls}
+        self.assertEqual(links, set(range(len(phases[0].get('state')))))
+        self.assertTrue(all(any(p.get('state')[link] in 'Gg' for p in phases) for link in links))
+        shape = root.find("edge[@id='katup_work']/lane").get('shape').split()
+        self.assertLess(float(shape[-1].split(',')[0]), float(shape[0].split(',')[0]))
+        self.assertEqual(case['pre_lane_count'], 2)
+        self.assertEqual(case['bottleneck_lane_count'], 1)
+        self.assertEqual(profile['research']['traffic_status'], 'not_available')
+        self.assertEqual(profile['research']['excavation_status'], 'unverified')
+        source = ET.parse(ROOT / 'scenarios/simpang_pasar_rebo/source/roads.osm.xml').getroot()
+        for way in source.findall('way'):
+            tags = {t.get('k'): t.get('v') for t in way.findall('tag')}
+            self.assertNotIn(tags.get('highway'), ('motorway', 'motorway_link'))
+            self.assertNotEqual(tags.get('toll'), 'yes')
+        with (ROOT / 'data/simpang_pasar_rebo/weekly_observations.csv').open(encoding='utf-8-sig') as stream:
+            rows = list(csv.DictReader(stream))
+        self.assertEqual(len({r['date_wib'] for r in rows}), 7)
+        for row in rows:
+            self.assertEqual(row['data_status'], 'not_available')
+            for field in ('volume_veh_per_hour', 'mean_speed_kmh', 'max_queue_m', 'junction_blocked_seconds', 'excavation_active'):
+                self.assertEqual(row[field], 'NA')
+
     def test_green_main_is_not_cut_for_its_own_queue(self):
         profile = get_profile('akses_ui')
         valve = controller.AgenKatup(profile['tls'])

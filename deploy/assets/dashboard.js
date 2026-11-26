@@ -41,7 +41,7 @@ async function buildMap(){
   const bottle=net.edges.find(e=>e.id===profile.bottleneck),pre=net.edges.find(e=>e.id===profile.pre),junction=net.junctions.find(j=>j.id===(profile.junction||profile.tls));
   const shape=bottle.lanes[0].shape,mid=shape[Math.floor(shape.length/2)];
   const hazard=polyline(shape,'workzone-line',7);hazard.setAttribute('stroke','url(#hazard)');hazard.setAttribute('fill','none');hazard.setAttribute('opacity','.65');$('workzone').append(hazard);
-  label(mid[0],-mid[1]-25,`GALIAN · ${net.case.lane_label||'2 → 1 lajur'}`,{'text-anchor':'middle'});
+  label(mid[0],-mid[1]-25,`${profile.research?'GALIAN UJI':'GALIAN'} · ${net.case.lane_label||'2 → 1 lajur'}`,{'text-anchor':'middle'});
   if(junction){
     $('signals').append(svgEl('rect',{id:'junctionWarning',x:junction.x-14,y:-junction.y-14,width:28,height:28,fill:'transparent',stroke:'#ffd269','stroke-width':1,'stroke-dasharray':'3 2'}),svgEl('circle',{cx:junction.x,cy:-junction.y,r:4,class:'signal-light',id:'signal-light'}));
     label(junction.x,-junction.y-30,'SIMPANG KENDALI',{'text-anchor':'middle'});
@@ -53,8 +53,11 @@ async function buildMap(){
   views.all=bounds(all,80);views.bottleneck=bounds([...pre.lanes[0].shape,...shape],75);views.junction=junction?[junction.x-280,-junction.y-180,560,360]:views.bottleneck;
   setText('caseLabel',net.case.name);setText('mapSub',profile.geographic?'Peta jalan asli · arus dan galian disimulasikan':'Jaringan uji · arus dan galian disimulasikan');$('mapAttribution').hidden=!profile.geographic;
   setText('zoneLaneLabel',`Zona galian: ${net.case.lane_label||'2 → 1 lajur'}`);$('mapLocation').hidden=!profile.geographic||!profile.center;
-  if(profile.center){const [lon,lat]=profile.center;$('mapLocation').href=`https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`;}
-  chooseView('bottleneck');
+  if(profile.center){const [lon,lat]=profile.requested_point||profile.center;$('mapLocation').href=`https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`;}
+  $('researchNote').hidden=!profile.research;
+  setText('researchText',profile.research?.note||'');
+  if(profile.research)$('researchDownload').href=apiUrl(profile.research.download_url);
+  chooseView(profile.default_view||'bottleneck');
   }finally{if(revision===mapRequest)$('map').setAttribute('aria-busy','false');}
 }
 function updateView(){

@@ -10,7 +10,7 @@ from katup_scenario import build_scenario as build_legacy
 ROOT = Path(__file__).resolve().parents[1]
 DEMANDS = {'light': ('Lengang', 0.45), 'peak': ('Jam sibuk', 1.0), 'surge': ('Lonjakan arus', 1.3), 'bypass_busy': ('Jalur alternatif padat', 1.0)}
 MODES = {'baseline': 'Tanpa KATUP', 'katup': 'KATUP Heuristik', 'hybrid': 'KATUP Hybrid'}
-GEOGRAPHIC_CORRIDORS = ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'jakarta_pondok_pinang')
+GEOGRAPHIC_CORRIDORS = ('ui_depok', 'akses_ui', 'simpang_pasar_rebo', 'pasar_rebo', 'tb_simatupang', 'jakarta_pondok_pinang')
 
 
 def get_profile(corridor='galian_berat'):
