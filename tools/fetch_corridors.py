@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 AREAS = {
+    'kebon_sirih': {'name': 'Kebon Sirih–Thamrin–Tugu Tani', 'bbox': [106.818, -6.192, 106.841, -6.177]},
     'ui_depok': {'name': 'Universitas Indonesia–Margonda, Depok', 'bbox': [106.815, -6.383, 106.846, -6.352]},
     'akses_ui': {'name': 'Akses UI–Kelapa Dua, Depok', 'bbox': [106.84, -6.378, 106.869, -6.349]},
     'pasar_rebo': {'name': 'Pasar Rebo–Raya Bogor, Jakarta Timur', 'bbox': [106.852, -6.324, 106.88, -6.296]},

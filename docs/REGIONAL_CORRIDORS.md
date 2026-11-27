@@ -1,18 +1,19 @@
-# Koridor UI, Depok, Pasar Rebo, dan TB Simatupang
+# Koridor Kebon Sirih, UI, Depok, Pasar Rebo, dan TB Simatupang
 
-Keempat pilihan ini menambah koridor lama pada branch `llm`. Geometri dan nama jalan diambil dari snapshot OpenStreetMap pada 26 November 2026. Volume kendaraan, zona pekerjaan, dan jadwal sinyal adalah skenario eksperimen, bukan kondisi lalu lintas lapangan saat ini.
+Pilihan regional ini menambah koridor lama pada branch `llm`. Geometri dan nama jalan diambil dari snapshot OpenStreetMap pada 26 November 2026. Volume kendaraan, zona pekerjaan, dan jadwal sinyal adalah skenario eksperimen, bukan kondisi lalu lintas lapangan saat ini.
 
 ## Area dan jalan utama
 
 | Pilihan | Jalan utama pada sumber peta | Kondisi simulasi | Jalur alternatif |
 | --- | --- | --- | --- |
+| Kebon Sirih–Thamrin–Tugu Tani | Jalan Kebon Sirih, proyek historis Wisma Penta–BNPP RI | Historis 4 menjadi 2 lajur, sekitar 349 m pada tiga ruas, bukan galian aktif | Thamrin–Merdeka Selatan dan Wahid Hasyim–Agus Salim, berbagi koridor utara |
 | Universitas Indonesia–Margonda, Depok | Jalan Raya Margonda, sekitar simpang Jalan Cengkeh | 3 menjadi 1 lajur, zona lambat sekitar 172 m | Cengkeh–Sawo |
 | Akses UI–Kelapa Dua, Depok | Jalan Komjen Polisi Mohammad Jasin, sekitar Jalan Bhakti | Tetap 1 lajur per arah, ruas yang dipantau dibatasi menjadi 5 km/jam dan lebar 2,4 m, sekitar 87 m | Menpor dan Bhakti–Menpor |
 | Pasar Rebo–Raya Bogor, Jakarta Timur | Jalan Raya Bogor, sekitar Jalan Pendidikan III | 2 menjadi 1 lajur, zona lambat sekitar 216 m | Pendidikan–Jati dan Pedati–Pendidikan |
 | Simpang Pasar Rebo–arah Ciliwung | Simpang Raya Bogor–TB Simatupang, pin −6.306099, 106.865299 | 2 menjadi 1 lajur, zona lambat sekitar 45 m di ruas keluar ke barat, posisi galian adalah asumsi | Pendidikan/Jati–Mahoni–Kesehatan |
 | TB Simatupang–Tanjung Barat, Jakarta Selatan | Jalan Tahi Bonar Simatupang, sekitar Jalan Kebagusan I | 2 menjadi 1 lajur, zona lambat sekitar 172 m | Assakinah–Sepat dan Kebagusan I–Raya |
 
-Jumlah lajur sebelum zona pekerjaan mengikuti hasil impor OSM. Sebagian atribut lajur dan kecepatan berasal dari inferensi tipe jalan SUMO saat tag peta tidak lengkap. Tidak ada penambahan lajur hanya untuk membuat koridor tampak seperti skenario dua menjadi satu.
+Kebon Sirih memiliki pengecualian historis yang didokumentasikan: snapshot OSM tiga lajur diubah menjadi empat sebelum pekerjaan dan dua pada zona, berdasarkan liputan saat proyek. Rincian sumber, panjang rute, asumsi dan hasil dua seed ada di [KEBON_SIRIH.md](KEBON_SIRIH.md). Koridor lain mengikuti hasil impor OSM untuk jumlah lajur sebelum zona pekerjaan. Sebagian atribut lajur dan kecepatan berasal dari inferensi tipe jalan SUMO saat tag peta tidak lengkap. Tidak ada penambahan lajur hanya untuk membuat koridor tampak seperti skenario dua menjadi satu.
 
 Snapshot memuat jalan umum yang dapat dilalui kendaraan bermotor menurut tag OSM, dengan pengecualian akses privat atau terlarang yang ditandai secara eksplisit. Hal ini belum membuktikan kelayakan fisik setiap gang untuk pengalihan kendaraan nyata. Jalan tol tidak dimasukkan sebagai bypass. Masing-masing jaringan simulasi mempertahankan rute eksperimen dan sekitar 400 ruas konteks agar tetap ringan, bukan seluruh jaringan kota atau seluruh jalan di dalam kampus UI.
 

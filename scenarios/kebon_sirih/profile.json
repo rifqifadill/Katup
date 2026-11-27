@@ -1,0 +1,301 @@
+{
+  "id": "kebon_sirih",
+  "name": "Kebon Sirih–Thamrin–Tugu Tani",
+  "geographic": true,
+  "duration": 1800,
+  "tls": "cluster_11371611441_4476152430_4488259486_5671317499_#1more",
+  "junction": "cluster_11371611441_4476152430_4488259486_5671317499_#1more",
+  "pre": "katup_pre",
+  "pre_edges": [
+    "katup_pre",
+    "756138856",
+    "248618360",
+    "719606918#1",
+    "katup_buffer"
+  ],
+  "lane_reference_edge": "katup_buffer",
+  "west": "1370010728",
+  "decision": "453439710",
+  "bottleneck": "katup_work",
+  "bottleneck_edges": [
+    "katup_work",
+    "18056345#1",
+    "18056345#3"
+  ],
+  "north": [
+    "1370010724"
+  ],
+  "south": [
+    "1370010731",
+    "630469413"
+  ],
+  "detectors": {
+    "pre": "katup_pre",
+    "pre_1": "756138856",
+    "pre_2": "248618360",
+    "pre_3": "719606918#1",
+    "pre_4": "katup_buffer",
+    "farwest": "453439710",
+    "west": "521425772#1",
+    "west_1": "845235177#1",
+    "west_2": "1370010728",
+    "cross_1": "28216264",
+    "cross_1_1": "1370010724",
+    "cross_2": "1058786384",
+    "cross_2_1": "1058776741",
+    "cross_2_2": "1504956866",
+    "cross_2_3": "1249398756",
+    "cross_2_4": "1249895912",
+    "cross_2_5": "1263664035",
+    "cross_2_6": "450695543",
+    "cross_2_7": "1370010731",
+    "cross_3": "28216274",
+    "cross_3_1": "-248618360",
+    "cross_3_2": "756139322",
+    "cross_3_3": "630469413"
+  },
+  "detector_groups": {
+    "pre": [
+      "pre",
+      "pre_1",
+      "pre_2",
+      "pre_3",
+      "pre_4"
+    ],
+    "farwest": [
+      "farwest"
+    ],
+    "west": [
+      "west",
+      "west_1",
+      "west_2"
+    ],
+    "cross_1": [
+      "cross_1",
+      "cross_1_1"
+    ],
+    "cross_2": [
+      "cross_2",
+      "cross_2_1",
+      "cross_2_2",
+      "cross_2_3",
+      "cross_2_4",
+      "cross_2_5",
+      "cross_2_6",
+      "cross_2_7"
+    ],
+    "cross_3": [
+      "cross_3",
+      "cross_3_1",
+      "cross_3_2",
+      "cross_3_3"
+    ]
+  },
+  "approach_edges": {
+    "1370010728": [
+      "521425772#1",
+      "845235177#1",
+      "1370010728"
+    ],
+    "1370010724": [
+      "28216264",
+      "1370010724"
+    ],
+    "1370010731": [
+      "1058786384",
+      "1058776741",
+      "1504956866",
+      "1249398756",
+      "1249895912",
+      "1263664035",
+      "450695543",
+      "1370010731"
+    ],
+    "630469413": [
+      "28216274",
+      "-248618360",
+      "756139322",
+      "630469413"
+    ]
+  },
+  "cross_detectors": [
+    "cross_1",
+    "cross_2",
+    "cross_3"
+  ],
+  "main": [
+    "521425772#1",
+    "845235177#1",
+    "1370010728",
+    "katup_pre",
+    "756138856",
+    "248618360",
+    "719606918#1",
+    "katup_buffer",
+    "katup_work",
+    "18056345#1",
+    "18056345#3",
+    "18056345#4",
+    "18056345#5",
+    "755769067",
+    "755769006#0",
+    "755769006#1",
+    "755769006#2",
+    "550355392",
+    "760613094",
+    "688522169",
+    "688522170"
+  ],
+  "paths": [
+    [
+      "453439710",
+      "521425772#1",
+      "845235177#1",
+      "1370010728",
+      "1370010732",
+      "449551337",
+      "450695556#0",
+      "450695556#1",
+      "1058786384",
+      "1058776741",
+      "1504956866",
+      "954631967#0",
+      "954631967#1",
+      "659449460",
+      "1267260702",
+      "745242451#1",
+      "1263664032#0",
+      "1263664032#1",
+      "1263664032#2",
+      "745246305",
+      "28704893",
+      "1502749450",
+      "121869998#1",
+      "749959947",
+      "1156967550",
+      "109069458",
+      "1252750445",
+      "760613094",
+      "688522169",
+      "688522170"
+    ],
+    [
+      "453439710",
+      "556966711#1",
+      "483591533",
+      "-248618360",
+      "756139322",
+      "630469413",
+      "1370010732",
+      "449551337",
+      "450695556#0",
+      "450695556#1",
+      "1058786384",
+      "1058776741",
+      "1504956866",
+      "954631967#0",
+      "954631967#1",
+      "659449460",
+      "1267260702",
+      "745242451#1",
+      "1263664032#0",
+      "1263664032#1",
+      "1263664032#2",
+      "745246305",
+      "28704893",
+      "1502749450",
+      "121869998#1",
+      "749959947",
+      "1156967550",
+      "109069458",
+      "1252750445",
+      "760613094",
+      "688522169",
+      "688522170"
+    ]
+  ],
+  "route_names": [
+    "Thamrin–Merdeka Selatan",
+    "Wahid Hasyim–Agus Salim"
+  ],
+  "phases": {
+    "main": [
+      0
+    ],
+    "cross": [
+      3,
+      6,
+      9
+    ],
+    "served": {
+      "0": [
+        "1370010728"
+      ],
+      "3": [
+        "1370010724"
+      ],
+      "6": [
+        "1370010731"
+      ],
+      "9": [
+        "630469413"
+      ]
+    },
+    "movement_states": [
+      "green",
+      "yellow",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red"
+    ]
+  },
+  "context": "Geometri OpenStreetMap, model historis proyek Juli–Agustus 2026, arus dan sinyal eksperimen",
+  "map_attribution": "© OpenStreetMap contributors · ODbL",
+  "center": [
+    106.82303131147543,
+    -6.18333056890005
+  ],
+  "bbox": [
+    106.818,
+    -6.192,
+    106.841,
+    -6.177
+  ],
+  "source_edge": "18056345#0",
+  "source_road": "Jalan Kebon Sirih",
+  "workzone_type": "historical_lane_drop",
+  "workzone_label": "PEKERJAAN JALAN",
+  "signal_note": "Sinyal eksperimen melayani satu pendekat bergantian, hijau 40 s, kuning 3 s, semua-merah 2 s, bukan rekaman APILL lapangan",
+  "context_edge_limit": 400,
+  "workzone": {
+    "edges": [
+      "18056345#0",
+      "18056345#1",
+      "18056345#3"
+    ],
+    "start_m": 76.58,
+    "reported_length_m": 345,
+    "lanes_before": 4,
+    "lanes_during": 2,
+    "speed_kmh": 10,
+    "description": "model historis penyempitan untuk rekonstruksi beton, bukan galian pipa",
+    "lane_override_reason": "liputan 13 Juli 2026 menyebut empat menjadi dua lajur, snapshot OSM memiliki tiga lajur pada ruas proyek, rekonstruksi historis diberi label terpisah",
+    "layout_note": "dua lajur tersisa dimodelkan berdampingan sebagai pendekatan kapasitas, bukan salinan posisi pagar tahap pekerjaan"
+  },
+  "research": {
+    "event_period": "Juli–Agustus 2026",
+    "excavation_status": "historical_verified",
+    "traffic_status": "qualitative_report_only",
+    "note": "Kasus proyek Juli–Agustus 2026 · volume dan lampu disimulasikan",
+    "download_url": "/research/kebon_sirih/datasheet.xlsx",
+    "sources_url": "/research/kebon_sirih/sources.json"
+  },
+  "default_view": "bottleneck"
+}

@@ -99,6 +99,9 @@ def protected_program(root, junction, west):
 
 
 def build(corridor):
+    if corridor == 'kebon_sirih':
+        from build_workzone import build_historical
+        return build_historical(corridor)
     area = AREAS[corridor]
     directory = ROOT / 'scenarios' / corridor
     spec = json.loads((directory / 'spec.json').read_text())

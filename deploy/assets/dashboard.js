@@ -38,10 +38,12 @@ async function buildMap(){
     $('roads').append(polyline(lane.shape,'road-lane'+kind,lane.width-.16));
     if(!edge.internal)$('roads').append(polyline(lane.shape,'lane-guide',.10));
   }
-  const bottle=net.edges.find(e=>e.id===profile.bottleneck),pre=net.edges.find(e=>e.id===profile.pre),junction=net.junctions.find(j=>j.id===(profile.junction||profile.tls));
+  const workIds=profile.bottleneck_edges||[profile.bottleneck],preIds=profile.pre_edges||[profile.pre];
+  const work=workIds.map(id=>net.edges.find(e=>e.id===id)),upstream=preIds.map(id=>net.edges.find(e=>e.id===id));
+  const bottle=work[Math.floor(work.length/2)],pre=upstream.find(e=>e.id===profile.lane_reference_edge)||upstream[0],junction=net.junctions.find(j=>j.id===(profile.junction||profile.tls));
   const shape=bottle.lanes[0].shape,mid=shape[Math.floor(shape.length/2)];
-  const hazard=polyline(shape,'workzone-line',7);hazard.setAttribute('stroke','url(#hazard)');hazard.setAttribute('fill','none');hazard.setAttribute('opacity','.65');$('workzone').append(hazard);
-  label(mid[0],-mid[1]-25,`${profile.research?'GALIAN UJI':'GALIAN'} · ${net.case.lane_label||'2 → 1 lajur'}`,{'text-anchor':'middle'});
+  for(const edge of work){const hazard=polyline(edge.lanes[0].shape,'workzone-line',Math.max(7,edge.lanes.length*3.2));hazard.setAttribute('stroke','url(#hazard)');hazard.setAttribute('fill','none');hazard.setAttribute('opacity','.65');$('workzone').append(hazard);}
+  label(mid[0],-mid[1]-25,`${profile.workzone_label||(profile.research?'GALIAN UJI':'GALIAN')} · ${net.case.lane_label||'2 → 1 lajur'}`,{'text-anchor':'middle'});
   if(junction){
     $('signals').append(svgEl('rect',{id:'junctionWarning',x:junction.x-14,y:-junction.y-14,width:28,height:28,fill:'transparent',stroke:'#ffd269','stroke-width':1,'stroke-dasharray':'3 2'}),svgEl('circle',{cx:junction.x,cy:-junction.y,r:4,class:'signal-light',id:'signal-light'}));
     label(junction.x,-junction.y-30,'SIMPANG KENDALI',{'text-anchor':'middle'});
@@ -50,9 +52,9 @@ async function buildMap(){
   const named=new Map();for(const edge of net.edges){if(edge.internal||!edge.name||names.has(edge.name)||edge.lanes[0].shape.length<2)continue;const pts=edge.lanes[0].shape,pt=pts[Math.floor(pts.length/2)],distance=Math.hypot(pt[0]-mid[0],pt[1]-mid[1]);if(!named.has(edge.name)||distance<named.get(edge.name).distance)named.set(edge.name,{pt,distance});}
   for(const [name,{pt,distance}] of named)if(distance>70)label(pt[0],-pt[1]-12,name,{'text-anchor':'middle'});
   const all=net.edges.filter(e=>!e.internal).flatMap(e=>e.lanes.flatMap(l=>l.shape));
-  views.all=bounds(all,80);views.bottleneck=bounds([...pre.lanes[0].shape,...shape],75);views.junction=junction?[junction.x-280,-junction.y-180,560,360]:views.bottleneck;
-  setText('caseLabel',net.case.name);setText('mapSub',profile.geographic?'Peta jalan asli · arus dan galian disimulasikan':'Jaringan uji · arus dan galian disimulasikan');$('mapAttribution').hidden=!profile.geographic;
-  setText('zoneLaneLabel',`Zona galian: ${net.case.lane_label||'2 → 1 lajur'}`);$('mapLocation').hidden=!profile.geographic||!profile.center;
+  views.all=bounds(all,80);views.bottleneck=bounds([...upstream,...work].flatMap(e=>e.lanes[0].shape),75);views.junction=junction?[junction.x-280,-junction.y-180,560,360]:views.bottleneck;
+  setText('caseLabel',net.case.name);setText('mapSub',profile.workzone_type==='historical_lane_drop'?'Peta jalan asli · model proyek historis':profile.geographic?'Peta jalan asli · arus dan galian disimulasikan':'Jaringan uji · arus dan galian disimulasikan');$('mapAttribution').hidden=!profile.geographic;
+  setText('zoneLaneLabel',`Area pekerjaan: ${net.case.lane_label||'2 → 1 lajur'}`);$('mapLocation').hidden=!profile.geographic||!profile.center;
   if(profile.center){const [lon,lat]=profile.requested_point||profile.center;$('mapLocation').href=`https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`;}
   $('researchNote').hidden=!profile.research;
   setText('researchText',profile.research?.note||'');
@@ -175,7 +177,7 @@ function render(t){
   setText('trafficStatus',!hasData?'Menunggu simulasi':blocked?'Simpang terhalang kendaraan':spilling?'Antrean mendekati simpang':'Simpang masih terbuka');
   $('trafficStatus').className='traffic-status '+(hasData?(blocked||spilling?'danger':'clear'):'');
   const warning=$('junctionWarning');if(warning)warning.setAttribute('fill',blocked?'#ff758f55':'transparent');
-  const actions={'Memantau antrean dua arah':'Memantau antrean lalu lintas.','Menahan arus masuk galian':'Menahan kendaraan agar simpang tetap terbuka.','Melayani arus silang':'Memberi giliran untuk arah lain.','Melayani arus utama setelah antrean silang terlayani':'Membuka jalan menuju galian.'};
+  const actions={'Memantau antrean dua arah':'Memantau antrean lalu lintas.','Menahan arus masuk pekerjaan jalan':'Menahan kendaraan agar simpang tetap terbuka.','Melayani arus silang':'Mengatur giliran untuk arah lain.','Melayani arus utama setelah antrean silang terlayani':'Menyiapkan giliran pendekat berikutnya.'};
   setText('actionText',!hasData?'Mulai simulasi untuk melihat pengaturan lalu lintas.':t.scenario==='baseline'?'Lampu memakai durasi tetap.':actions[ctrl.last_action]||ctrl.last_action||'Memantau antrean lalu lintas.');
   const index=t.phase?.index,schedule=state.case.profile?.phases||{},mains=schedule.main||[3],movement=schedule.movement_states?.[index],known=Number.isInteger(index);
   const green=known&&(movement?movement==='green':mains.includes(index)),yellow=known&&(movement?movement==='yellow':mains.some(p=>index===p+1));

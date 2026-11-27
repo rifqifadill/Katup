@@ -12,7 +12,7 @@ import katup_controller as controller
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REGIONS = ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo')
+REGIONS = ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo', 'kebon_sirih')
 
 
 class CorridorTest(unittest.TestCase):
@@ -80,7 +80,7 @@ class CorridorTest(unittest.TestCase):
                 self.assertTrue(west <= lon <= east and south <= lat <= north)
                 self.assertGreater(case['planned_vehicles'], 0)
                 self.assertGreater(case['bottleneck_length_m'], 40)
-                self.assertEqual(case['bottleneck_lane_count'], 1)
+                self.assertEqual(case['bottleneck_lane_count'], 2 if key == 'kebon_sirih' else 1)
                 signatures.add(case['signature'])
                 if key == 'akses_ui':
                     self.assertEqual(case['pre_lane_count'], 1)

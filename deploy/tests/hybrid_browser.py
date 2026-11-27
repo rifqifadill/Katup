@@ -111,7 +111,7 @@ def verify_results():
         browser.close()
 
 
-def verify_corridors():
+def verify_corridors(corridors=None):
     OUTPUT.mkdir(parents=True, exist_ok=True)
     errors, evidence = [], []
     with sync_playwright() as playwright:
@@ -120,7 +120,7 @@ def verify_corridors():
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(BASE, wait_until='networkidle')
         page.wait_for_function("document.querySelector('#corridor').options.length>=6")
-        for corridor in ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo'):
+        for corridor in corridors or ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo', 'kebon_sirih'):
             page.select_option('#corridor', corridor)
             page.wait_for_function("(key)=>state.case.corridor===key && state.network.case.corridor===key && document.querySelector('#map').getAttribute('aria-busy')==='false'", arg=corridor)
             case = page.evaluate('state.case')
@@ -135,6 +135,14 @@ def verify_corridors():
                 response = page.request.get(BASE + '/research/simpang_pasar_rebo/datasheet.xlsx')
                 assert response.ok and response.body().startswith(b'PK')
                 assert '106.865299' in page.get_attribute('#mapLocation', 'href')
+            elif corridor == 'kebon_sirih':
+                assert page.is_visible('#researchNote')
+                assert 'Juli–Agustus 2026' in page.inner_text('#researchNote')
+                assert '4 → 2 lajur' in page.inner_text('#zoneLaneLabel')
+                assert page.locator('#workzone polyline').count() == 3
+                assert 'PEKERJAAN JALAN' in page.text_content('#labels')
+                response = page.request.get(BASE + '/research/kebon_sirih/datasheet.xlsx')
+                assert response.ok and response.body().startswith(b'PK')
             else:
                 assert not page.is_visible('#researchNote')
             page.click('[data-view=all]')
@@ -168,9 +176,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--results-only', action='store_true')
     parser.add_argument('--all-corridors', action='store_true')
+    parser.add_argument('--corridors', nargs='+')
     args = parser.parse_args()
-    if args.all_corridors:
-        verify_corridors()
+    if args.all_corridors or args.corridors:
+        verify_corridors(args.corridors)
     elif args.results_only:
         verify_results()
     else:

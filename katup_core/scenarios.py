@@ -10,7 +10,7 @@ from katup_scenario import build_scenario as build_legacy
 ROOT = Path(__file__).resolve().parents[1]
 DEMANDS = {'light': ('Lengang', 0.45), 'peak': ('Jam sibuk', 1.0), 'surge': ('Lonjakan arus', 1.3), 'bypass_busy': ('Jalur alternatif padat', 1.0)}
 MODES = {'baseline': 'Tanpa KATUP', 'katup': 'KATUP Heuristik', 'hybrid': 'KATUP Hybrid'}
-GEOGRAPHIC_CORRIDORS = ('ui_depok', 'akses_ui', 'simpang_pasar_rebo', 'pasar_rebo', 'tb_simatupang', 'jakarta_pondok_pinang')
+GEOGRAPHIC_CORRIDORS = ('kebon_sirih', 'ui_depok', 'akses_ui', 'simpang_pasar_rebo', 'pasar_rebo', 'tb_simatupang', 'jakarta_pondok_pinang')
 
 
 def get_profile(corridor='galian_berat'):
@@ -96,10 +96,12 @@ def build_case(corridor='galian_berat', demand='peak'):
     digest.update(json.dumps(profile, sort_keys=True).encode())
     for name in ('katup_controller.py', 'katup_core/strategy.py', 'katup_core/scenarios.py'):
         digest.update((ROOT / name).read_bytes())
-    pre_edge = network.find(f"edge[@id='{profile['pre']}']")
+    pre_edge = network.find(f"edge[@id='{profile.get('lane_reference_edge', profile['pre'])}']")
     bottle_edge = network.find(f"edge[@id='{profile['bottleneck']}']")
     pre, bottle = pre_edge.find('lane'), bottle_edge.find('lane')
     pre_lanes, bottle_lanes = len(pre_edge.findall('lane')), len(bottle_edge.findall('lane'))
     lane_label = f'{pre_lanes} → {bottle_lanes} lajur' if pre_lanes != bottle_lanes else f'{bottle_lanes} lajur · hambatan galian'
-    info = {'name': profile['name'], 'corridor': corridor, 'demand': demand, 'demand_label': DEMANDS[demand][0], 'duration': profile['duration'], 'planned_vehicles': planned, 'signature': digest.hexdigest()[:16], 'geographic': profile['geographic'], 'data_source': profile['context'], 'traffic_source': 'Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan', 'bottleneck_speed_kmh': round(float(bottle.get('speed')) * 3.6, 1), 'bottleneck_length_m': float(bottle.get('length')), 'pre_length_m': float(pre.get('length')), 'pre_lane_count': pre_lanes, 'bottleneck_lane_count': bottle_lanes, 'lane_label': lane_label, 'profile': profile}
+    pre_length = sum(float(network.find(f"edge[@id='{edge}']/lane").get('length')) for edge in profile.get('pre_edges', [profile['pre']]))
+    work_length = sum(float(network.find(f"edge[@id='{edge}']/lane").get('length')) for edge in profile.get('bottleneck_edges', [profile['bottleneck']]))
+    info = {'name': profile['name'], 'corridor': corridor, 'demand': demand, 'demand_label': DEMANDS[demand][0], 'duration': profile['duration'], 'planned_vehicles': planned, 'signature': digest.hexdigest()[:16], 'geographic': profile['geographic'], 'data_source': profile['context'], 'traffic_source': 'Arus kendaraan simulasi, belum dikalibrasi dengan data lapangan', 'bottleneck_speed_kmh': round(float(bottle.get('speed')) * 3.6, 1), 'bottleneck_length_m': round(work_length, 2), 'pre_length_m': round(pre_length, 2), 'pre_lane_count': pre_lanes, 'bottleneck_lane_count': bottle_lanes, 'lane_label': lane_label, 'profile': profile}
     return directory / 'simulation.sumocfg', info

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "DBM_START",
+    "publisher": "Dinas Bina Marga DKI Jakarta",
+    "publication_date": "2026-07-17",
+    "url": "https://binamarga.jakarta.go.id/berita/view/dinas-bina-marga-tingkatkan-kualitas-jalan-kebon-sirih-untuk-dukung-mo",
+    "status": "verified_historical_project",
+    "finding": "Peningkatan jalan dimulai 9 Juli 2026, panjang 345 m dari Wisma Penta hingga BNPP RI, pengecoran bertahap",
+    "limit": "Jadwal rencana bukan bukti pekerjaan masih berlangsung pada November",
+    "access_date": "2026-11-27"
+  },
+  {
+    "id": "SUARA",
+    "publisher": "Suara.com, Adiyoga Priyambodo, liputan di lokasi",
+    "publication_date": "2026-07-13",
+    "url": "https://amp.suara.com/news/2026/07/13/141905/jalan-kebon-sirih-menyempit-jadi-dua-lajur-kemacetan-mengular-hampir-1-kilometer",
+    "status": "historical_qualitative_report",
+    "finding": "Empat menjadi dua lajur, pekerjaan sekitar 350 m, antrean dilaporkan sekitar 850 m, belum ada pengalihan resmi saat liputan",
+    "limit": "Bukan data per jam atau bukti durasi simpang terblokir, awal pekerjaan fisik 12 Juli menurut pekerja berbeda dengan awal proyek resmi 9 Juli",
+    "access_date": "2026-11-27"
+  },
+  {
+    "id": "DBM_DONE",
+    "publisher": "Dinas Bina Marga DKI Jakarta, Buletin Edisi 26 September 2026, halaman cetak 20",
+    "publication_date": "2026-09",
+    "event_date": "2026-08-31",
+    "url": "https://binamarga.jakarta.go.id/uploads/buletin/Buletin%20DBM%20%28Edisi%2026%20-%20September%202026%29.pdf",
+    "status": "verified_historical_completion",
+    "finding": "Berita bertanggal 31 Agustus 2026 menyatakan peningkatan Jalan Kebon Sirih telah selesai, mengonfirmasi panjang 345 m dan mulai 9 Juli",
+    "limit": "Simulasi merekonstruksi masa pekerjaan, bukan kondisi aktif saat ini",
+    "access_date": "2026-11-27"
+  },
+  {
+    "id": "TIRTO",
+    "publisher": "Tirto.id, liputan di lokasi",
+    "publication_date": "2026-07-22",
+    "url": "https://tirto.id/belantara-macet-jakarta-mengapa-galian-jalan-tak-ada-habisnya-hzXt",
+    "status": "historical_qualitative_report",
+    "finding": "Liputan dampak pekerjaan jalan terhadap kemacetan Jakarta, termasuk Kebon Sirih",
+    "limit": "Konteks tambahan, tidak dipakai sebagai angka volume atau jadwal sinyal",
+    "access_date": "2026-11-27"
+  },
+  {
+    "id": "OSM",
+    "publisher": "OpenStreetMap contributors",
+    "publication_date": "snapshot 2026-11-27T03:41:08Z",
+    "url": "https://www.openstreetmap.org/?mlat=-6.18333&mlon=106.8284#map=16/-6.18333/106.8284",
+    "status": "geometry_only",
+    "finding": "Geometri, arah, nama jalan dan koneksi, lisensi ODbL 1.0",
+    "limit": "Snapshot sesudah proyek, tiga lajur OSM pada ruas sumber tidak dianggap konfigurasi historis empat lajur",
+    "access_date": "2026-11-27"
+  }
+]

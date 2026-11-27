@@ -78,14 +78,11 @@ def start_sumo(cmd, *args, **kwargs):
 controller.traci.start = start_sumo
 
 
-def edge_snapshot(edge_id: str) -> dict:
-    traci = controller.traci
-    return {
-        "vehicles": traci.edge.getLastStepVehicleNumber(edge_id),
-        "halting": traci.edge.getLastStepHaltingNumber(edge_id),
-        "speed_kmh": round(traci.edge.getLastStepMeanSpeed(edge_id) * 3.6, 2) if traci.edge.getLastStepVehicleNumber(edge_id) else None,
-        "occupancy_pct": round(traci.edge.getLastStepOccupancy(edge_id), 2),
-    }
+def edge_snapshot(edges) -> dict:
+    result = controller.edge_metrics([edges] if isinstance(edges, str) else edges)
+    result['speed_kmh'] = round(result['speed_kmh'], 2) if result['vehicles'] else None
+    result['occupancy_pct'] = round(result['occupancy_pct'], 2)
+    return result
 
 
 vehicle_metadata = {}
@@ -140,12 +137,13 @@ def record_event(kind: str, message: str, step: int, **extra) -> None:
 def make_state(metrics: dict, step: int) -> dict:
     global last_vehicle_sample
     traci = controller.traci
-    downstream = edge_snapshot(PROFILE["pre"])
-    upstream = edge_snapshot(PROFILE["west"])
-    bottleneck = edge_snapshot(PROFILE["bottleneck"])
+    downstream = edge_snapshot(controller.pre_edges())
+    upstream = edge_snapshot(PROFILE.get('approach_edges', {}).get(PROFILE['west'], [PROFILE['west']]))
+    bottleneck = edge_snapshot(PROFILE.get('bottleneck_edges', [PROFILE['bottleneck']]))
+    bypass_edges = {edge for path in PROFILE['paths'] for edge in path[1:-1]}
     bypass = {
-        "vehicles": sum(edge_snapshot(e)["vehicles"] for e in set(edge for path in PROFILE['paths'] for edge in path[1:-1])),
-        "halting": sum(edge_snapshot(e)["halting"] for e in set(edge for path in PROFILE['paths'] for edge in path[1:-1])),
+        "vehicles": sum(traci.edge.getLastStepVehicleNumber(edge) for edge in bypass_edges),
+        "halting": sum(traci.edge.getLastStepHaltingNumber(edge) for edge in bypass_edges),
     }
     phase = {
         "index": traci.trafficlight.getPhase(controller.TLS_ID),
@@ -208,15 +206,15 @@ def publish_step(step, metrics, valve, route, recorder):
         record_event("route", f"{route.reroute_counter - last_rerouted} kendaraan menerima rute alternatif", step, total=route.reroute_counter)
         last_rerouted = route.reroute_counter
     if metrics["spillback"] and not last_data.get("metrics", {}).get("observer", {}).get("spillback"):
-        record_event("spillback", "Antrean galian mencapai 90% ruas menuju simpang", step)
+        record_event("spillback", "Antrean pekerjaan jalan mencapai 90% ruas menuju simpang", step)
     if step % 5 == 0 or step <= 2:
         series.append({
             "time": step, "downstream": metrics["veh_count"],
-            "upstream": controller.traci.edge.getLastStepVehicleNumber(PROFILE["west"]),
+            "upstream": sum(controller.traci.edge.getLastStepVehicleNumber(edge) for edge in PROFILE.get('approach_edges', {}).get(PROFILE['west'], [PROFILE['west']])),
             "speed": round(metrics["mean_speed_kmh"], 2),
             "queue_m": round(metrics["queue_m"], 1),
             "upstream_queue_m": round(metrics["upstream_queue_m"], 1),
-            "bottleneck": controller.traci.edge.getLastStepVehicleNumber(PROFILE["bottleneck"]),
+            "bottleneck": sum(controller.traci.edge.getLastStepVehicleNumber(edge) for edge in PROFILE.get('bottleneck_edges', [PROFILE['bottleneck']])),
             "rerouted": control["rerouted"], "mode": control["mode"],
         })
     last_vehicle_sample = vehicle_snapshot()

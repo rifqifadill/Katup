@@ -31,16 +31,39 @@ def get_phase_spent_duration(tls_id):
 
 
 def queue_length(prefix):
-    edge = PROFILE['detectors'][prefix]
-    return max((traci.lanearea.getJamLengthMeters(f'{prefix}_{lane}') for lane in range(traci.edge.getLaneNumber(edge))), default=0)
+    sensors = PROFILE.get('detector_groups', {}).get(prefix, [prefix])
+    return sum(max((traci.lanearea.getJamLengthMeters(f'{sensor}_{lane}') for lane in range(traci.edge.getLaneNumber(PROFILE['detectors'][sensor]))), default=0) for sensor in sensors)
+
+
+def pre_edges():
+    return PROFILE.get('pre_edges', [PROFILE['pre']])
+
+
+def monitored_length():
+    return sum(traci.lane.getLength(edge + '_0') for edge in pre_edges())
+
+
+def approach_halting(edges):
+    monitored = {part for edge in edges for part in PROFILE.get('approach_edges', {}).get(edge, [edge])}
+    return sum(traci.edge.getLastStepHaltingNumber(edge) for edge in monitored)
+
+
+def edge_metrics(edges):
+    counts = {edge: traci.edge.getLastStepVehicleNumber(edge) for edge in edges}
+    lengths = {edge: sum(traci.lane.getLength(f'{edge}_{lane}') for lane in range(traci.edge.getLaneNumber(edge))) for edge in edges}
+    count = sum(counts.values())
+    total_length = sum(lengths.values())
+    speed = sum(traci.edge.getLastStepMeanSpeed(edge) * vehicles for edge, vehicles in counts.items()) / count if count else traci.edge.getLastStepMeanSpeed(edges[0])
+    return {'vehicles': count, 'halting': sum(traci.edge.getLastStepHaltingNumber(edge) for edge in edges), 'speed_kmh': speed * 3.6, 'occupancy_pct': sum(traci.edge.getLastStepOccupancy(edge) * length for edge, length in lengths.items()) / total_length}
 
 
 class AgenPengamat:
     """Measure physical queue lengths, upstream pressure and junction blockage."""
     def __init__(self, edge_id):
         self.edge_id = edge_id
-        self.length = traci.lane.getLength(edge_id + '_0')
-        self.capacity = sum(traci.lane.getLength(edge_id + f'_{i}') for i in range(traci.edge.getLaneNumber(edge_id))) / 7.5
+        self.edges = pre_edges() if edge_id == PROFILE['pre'] else [edge_id]
+        self.length = sum(traci.lane.getLength(edge + '_0') for edge in self.edges)
+        self.capacity = sum(traci.lane.getLength(edge + f'_{i}') for edge in self.edges for i in range(traci.edge.getLaneNumber(edge))) / 7.5
         self.safe_seconds = 0
         self.metrics = {}
         self.junction_id = PROFILE.get('junction', TLS_ID)
@@ -48,7 +71,8 @@ class AgenPengamat:
             [tc.VAR_SPEED, tc.VAR_ROAD_ID])
 
     def evaluate(self):
-        count = traci.edge.getLastStepVehicleNumber(self.edge_id)
+        snapshot = edge_metrics(self.edges)
+        count = snapshot['vehicles']
         jam = queue_length('pre')
         west = queue_length('west')
         farwest = queue_length('farwest')
@@ -61,9 +85,9 @@ class AgenPengamat:
             for car in nearby.values())
         self.metrics = {
             'veh_count': count,
-            'halting': traci.edge.getLastStepHaltingNumber(self.edge_id),
-            'occupancy': traci.edge.getLastStepOccupancy(self.edge_id),
-            'mean_speed_kmh': traci.edge.getLastStepMeanSpeed(self.edge_id) * 3.6,
+            'halting': snapshot['halting'],
+            'occupancy': snapshot['occupancy_pct'],
+            'mean_speed_kmh': snapshot['speed_kmh'],
             'density_ratio': min(100, count / self.capacity * 100),
             'queue_m': jam, 'queue_ratio': ratio,
             'upstream_queue_m': west, 'far_upstream_queue_m': farwest,
@@ -97,20 +121,20 @@ class AgenKatup:
             self.phase_started = now
             self.last_phase = phase
         elapsed = now - self.phase_started
-        west = traci.edge.getLastStepHaltingNumber(PROFILE['west'])
-        served = PROFILE['north'] + PROFILE['south']
+        west = approach_halting([PROFILE['west']])
+        served = [edge for edge in PROFILE['north'] + PROFILE['south'] if edge != PROFILE['west']]
         if phase in PROFILE['phases']['cross']:
             served = PROFILE['phases'].get('served', {}).get(str(phase), served)
-        cross = sum(traci.edge.getLastStepHaltingNumber(edge) for edge in served)
+        cross = approach_halting(served)
         limit = PROFILES[self.strategy.profile]['green_limit']
         if phase in PROFILE['phases']['cross'] and elapsed >= 12 and (cross == 0 or (elapsed >= 30 and west > 0)):
             traci.trafficlight.setPhase(self.tls_id, phase + 1)
             self.last_action = 'Melayani arus utama setelah antrean silang terlayani'
         elif phase in PROFILE['phases']['main'] and elapsed >= 10:
-            downstream_full = queue_length('pre') > 0.75 * traci.lane.getLength(PROFILE['pre'] + '_0')
+            downstream_full = queue_length('pre') > 0.75 * monitored_length()
             if west == 0 or (elapsed >= limit and cross > 0) or downstream_full:
                 traci.trafficlight.setPhase(self.tls_id, phase + 1)
-                self.last_action = 'Menahan arus masuk galian' if downstream_full else 'Melayani arus silang'
+                self.last_action = 'Menahan arus masuk pekerjaan jalan' if downstream_full else 'Melayani arus silang'
 
 
 class AgenRute:
@@ -174,7 +198,7 @@ class AgenRute:
             choice = min(eligible, key=lambda i: scores[i])
             if self.costs[choice] + 3 * counts[choice] > self.main_cost + 30:
                 continue
-            count = traci.edge.getLastStepVehicleNumber(PROFILE['pre'])
+            count = sum(traci.edge.getLastStepVehicleNumber(edge) for edge in pre_edges())
             self.target_fraction = 0.70 if count < 8 else 0.82 if count < 16 else 0.90
             self.target_fraction = min(0.90, self.target_fraction + PROFILES[self.strategy.profile]['reroute_delta'])
             self.credit += self.target_fraction
