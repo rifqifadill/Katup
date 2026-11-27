@@ -1,0 +1,50 @@
+{
+  "source": "OpenStreetMap contributors",
+  "license": "ODbL 1.0",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "urls": [
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8650000,-6.3420000,106.8745000,-6.3350000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8745000,-6.3420000,106.8840000,-6.3350000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8650000,-6.3350000,106.8745000,-6.3280000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8745000,-6.3350000,106.8840000,-6.3280000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8650000,-6.3280000,106.8745000,-6.3210000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8745000,-6.3280000,106.8840000,-6.3210000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8650000,-6.3210000,106.8745000,-6.3140000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8745000,-6.3210000,106.8840000,-6.3140000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8650000,-6.3140000,106.8745000,-6.3070000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8745000,-6.3140000,106.8840000,-6.3070000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8650000,-6.3070000,106.8745000,-6.3000000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8745000,-6.3070000,106.8840000,-6.3000000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8840000,-6.3420000,106.9030000,-6.3280000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8840000,-6.3280000,106.9030000,-6.3140000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.8840000,-6.3140000,106.9030000,-6.3000000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.9030000,-6.3420000,106.9220000,-6.3280000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.9030000,-6.3280000,106.9220000,-6.3140000",
+    "https://api.openstreetmap.org/api/0.6/map?bbox=106.9030000,-6.3140000,106.9220000,-6.3000000"
+  ],
+  "bbox": [
+    106.865,
+    -6.342,
+    106.922,
+    -6.3
+  ],
+  "fetched_at_utc": "2026-11-27T21:52:53.721727+00:00",
+  "filter": [
+    "living_street",
+    "primary",
+    "primary_link",
+    "residential",
+    "secondary",
+    "secondary_link",
+    "tertiary",
+    "tertiary_link",
+    "trunk",
+    "trunk_link",
+    "unclassified"
+  ],
+  "access_filter": "exclude explicitly private or prohibited motor vehicle roads",
+  "traffic_source": "synthetic demand, not measured current traffic",
+  "osm_ways": 3710,
+  "osm_nodes": 23267,
+  "snapshot_sha256": "24211f2cd28cf6d4fbda5660442acdc018024b0c784e70881fa4770036a88d72"
+}

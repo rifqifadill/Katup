@@ -99,6 +99,9 @@ def protected_program(root, junction, west):
 
 
 def build(corridor):
+    if corridor == 'bina_marga':
+        from build_bina_marga import build_staged
+        return build_staged()
     if corridor == 'kebon_sirih':
         from build_workzone import build_historical
         return build_historical(corridor)

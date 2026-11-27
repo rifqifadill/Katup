@@ -12,7 +12,7 @@ import katup_controller as controller
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REGIONS = ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo', 'kebon_sirih')
+REGIONS = ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo', 'kebon_sirih', 'bina_marga')
 
 
 class CorridorTest(unittest.TestCase):

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "METRO",
+    "publisher": "Metro TV, Nattasya Amani Vrazeti",
+    "publication_date": "2026-09-11 23:36 WIB",
+    "url": "https://www.metrotvnews.com/read/kqYCdD3G-ada-proyek-pipa-air-dishub-dki-terapkan-rekayasa-lalin-di-cipayung-hingga-2027",
+    "source_level": "secondary_report_quoting_dishub",
+    "finding": "Proyek SPAM Buaran 3 P7 mencakup Gempol Raya dan Bina Marga, rencana rekayasa 8 September 2026–31 Januari 2027, pekerjaan bertahap dan buka-tutup",
+    "limit": "Bukan pengamatan kondisi pin pada 28 November, unggahan asli Dishub belum diverifikasi langsung, tidak menyediakan volume kendaraan terukur",
+    "access_date": "2026-11-28"
+  },
+  {
+    "id": "OSM",
+    "publisher": "OpenStreetMap contributors",
+    "publication_date": "2026-11-27T21:52:53.721727+00:00",
+    "url": "https://www.openstreetmap.org/?mlat=-6.319669&mlon=106.889986#map=17/-6.319669/106.889986",
+    "source_level": "geographic_snapshot_only",
+    "finding": "Geometri, arah dan izin jalan menurut snapshot, lisensi ODbL 1.0",
+    "limit": "Lebar dapat berasal dari tag atau inferensi, bukan survei, peta tidak menunjukkan batas galian saat ini",
+    "access_date": "2026-11-28"
+  },
+  {
+    "id": "USER",
+    "publisher": "Keterangan pengguna dan tangkapan layar",
+    "publication_date": "diterima 2026-11-28",
+    "url": "",
+    "source_level": "user_report_not_independent_verification",
+    "finding": "Pin −6.319669, 106.889986, pengguna melaporkan galian panjang",
+    "limit": "Gambar adalah peta, tidak memperlihatkan galian atau tanggal pengukuran, tidak dianggap bukti volume, panjang, atau status pekerjaan lapangan",
+    "access_date": "2026-11-28"
+  }
+]

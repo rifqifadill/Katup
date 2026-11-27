@@ -91,8 +91,10 @@ def verify_results():
         assert 'Mode AI belum memakai saran AI' in page.inner_text('#comparisonMethod')
         assert page.locator('#queueChart,#speedChart,.agent-card,.decision-panel,.events').count() == 0
         baseline, katup = runs['baseline']['summary'], runs['katup']['summary']
-        if katup['spillback_seconds'] > baseline['spillback_seconds'] or katup['junction_blocked_seconds'] > baseline['junction_blocked_seconds']:
+        if any(katup.get(key, 0) > baseline.get(key, 0) for key in ('spillback_seconds', 'junction_blocked_seconds', 'avg_duration', 'avg_waitingTime')):
             assert 'tradeoff' in page.get_attribute('#resultVerdict', 'class')
+        if katup.get('avg_duration', 0) > baseline.get('avg_duration', 0) + .01:
+            assert 'Waktu perjalanan rata-rata trip selesai bertambah' in page.inner_text('#resultVerdict')
         page.screenshot(path=str(OUTPUT / 'finished-desktop.png'), full_page=True)
         page.set_viewport_size({'width': 390, 'height': 1000})
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
@@ -120,7 +122,7 @@ def verify_corridors(corridors=None):
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(BASE, wait_until='networkidle')
         page.wait_for_function("document.querySelector('#corridor').options.length>=6")
-        for corridor in corridors or ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo', 'kebon_sirih'):
+        for corridor in corridors or ('ui_depok', 'akses_ui', 'pasar_rebo', 'tb_simatupang', 'simpang_pasar_rebo', 'kebon_sirih', 'bina_marga'):
             page.select_option('#corridor', corridor)
             page.wait_for_function("(key)=>state.case.corridor===key && state.network.case.corridor===key && document.querySelector('#map').getAttribute('aria-busy')==='false'", arg=corridor)
             case = page.evaluate('state.case')
@@ -143,6 +145,15 @@ def verify_corridors(corridors=None):
                 assert 'PEKERJAAN JALAN' in page.text_content('#labels')
                 response = page.request.get(BASE + '/research/kebon_sirih/datasheet.xlsx')
                 assert response.ok and response.body().startswith(b'PK')
+            elif corridor == 'bina_marga':
+                assert page.is_visible('#researchNote')
+                assert 'masih asumsi' in page.inner_text('#researchNote')
+                assert '1 lajur per arah' in page.inner_text('#zoneLaneLabel')
+                assert '→' not in page.inner_text('#zoneLaneLabel')
+                assert page.locator('#workzone polyline').count() == 5
+                response = page.request.get(BASE + '/research/bina_marga/datasheet.xlsx')
+                assert response.ok and response.body().startswith(b'PK')
+                assert '106.889986' in page.get_attribute('#mapLocation', 'href')
             else:
                 assert not page.is_visible('#researchNote')
             page.click('[data-view=all]')

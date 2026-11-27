@@ -466,5 +466,91 @@
   "screenshots": [
     "deploy/evidence/kebon-desktop.png",
     "deploy/evidence/kebon-mobile.png"
+  ],
+  "refresh_for_bina_marga": [
+    {
+      "mode": "baseline",
+      "run_id": "baseline-2363296-1795816740091496942",
+      "signature": "84e4e9e1acb95018",
+      "summary": {
+        "completed_trips": 581,
+        "avg_duration": 408.36,
+        "avg_waitingTime": 200.08,
+        "avg_timeLoss": 267.12,
+        "avg_routeLength": 1607.48,
+        "avg_departDelay": 22.8,
+        "total_vehicle_hours": 332.432,
+        "pending_vehicle_hours": 188.922,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 4.6,
+        "max_upstream_queue_m": 373.9,
+        "arrived": 581,
+        "departed": 970,
+        "pending": 875,
+        "running": 389,
+        "collisions": 0,
+        "teleports": 0
+      },
+      "matches_previous_summary": true,
+      "finished": true
+    },
+    {
+      "mode": "katup",
+      "run_id": "katup-2363753-1795816829772058153",
+      "signature": "84e4e9e1acb95018",
+      "summary": {
+        "completed_trips": 779,
+        "avg_duration": 389.81,
+        "avg_waitingTime": 158.26,
+        "avg_timeLoss": 229.39,
+        "avg_routeLength": 1904.11,
+        "avg_departDelay": 64.8,
+        "total_vehicle_hours": 291.352,
+        "pending_vehicle_hours": 186.323,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 4.6,
+        "max_upstream_queue_m": 351.5,
+        "arrived": 779,
+        "departed": 971,
+        "pending": 874,
+        "running": 192,
+        "collisions": 0,
+        "teleports": 0
+      },
+      "matches_previous_summary": true,
+      "finished": true
+    },
+    {
+      "mode": "hybrid",
+      "run_id": "hybrid-2364273-1795816920936273326",
+      "signature": "84e4e9e1acb95018",
+      "summary": {
+        "completed_trips": 779,
+        "avg_duration": 389.81,
+        "avg_waitingTime": 158.26,
+        "avg_timeLoss": 229.39,
+        "avg_routeLength": 1904.11,
+        "avg_departDelay": 64.8,
+        "total_vehicle_hours": 291.352,
+        "pending_vehicle_hours": 186.323,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 4.6,
+        "max_upstream_queue_m": 351.5,
+        "arrived": 779,
+        "departed": 971,
+        "pending": 874,
+        "running": 192,
+        "collisions": 0,
+        "teleports": 0
+      },
+      "matches_previous_summary": true,
+      "finished": true
+    }
   ]
 }

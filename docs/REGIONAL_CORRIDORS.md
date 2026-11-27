@@ -1,4 +1,4 @@
-# Koridor Kebon Sirih, UI, Depok, Pasar Rebo, dan TB Simatupang
+# Koridor Bina Marga, Kebon Sirih, UI, Depok, Pasar Rebo, dan TB Simatupang
 
 Pilihan regional ini menambah koridor lama pada branch `llm`. Geometri dan nama jalan diambil dari snapshot OpenStreetMap pada 26 November 2026. Volume kendaraan, zona pekerjaan, dan jadwal sinyal adalah skenario eksperimen, bukan kondisi lalu lintas lapangan saat ini.
 
@@ -6,6 +6,7 @@ Pilihan regional ini menambah koridor lama pada branch `llm`. Geometri dan nama 
 
 | Pilihan | Jalan utama pada sumber peta | Kondisi simulasi | Jalur alternatif |
 | --- | --- | --- | --- |
+| Bina Marga–Cipayung | Jalan Bina Marga dekat pin −6.319669, 106.889986 | Satu lajur per arah, hambatan uji sekitar 200 m, posisi terbaru belum diverifikasi | Satu kandidat jalan umum via Mpok Nori–Setu–Cilangkap, lebih panjang |
 | Kebon Sirih–Thamrin–Tugu Tani | Jalan Kebon Sirih, proyek historis Wisma Penta–BNPP RI | Historis 4 menjadi 2 lajur, sekitar 349 m pada tiga ruas, bukan galian aktif | Thamrin–Merdeka Selatan dan Wahid Hasyim–Agus Salim, berbagi koridor utara |
 | Universitas Indonesia–Margonda, Depok | Jalan Raya Margonda, sekitar simpang Jalan Cengkeh | 3 menjadi 1 lajur, zona lambat sekitar 172 m | Cengkeh–Sawo |
 | Akses UI–Kelapa Dua, Depok | Jalan Komjen Polisi Mohammad Jasin, sekitar Jalan Bhakti | Tetap 1 lajur per arah, ruas yang dipantau dibatasi menjadi 5 km/jam dan lebar 2,4 m, sekitar 87 m | Menpor dan Bhakti–Menpor |
@@ -14,6 +15,8 @@ Pilihan regional ini menambah koridor lama pada branch `llm`. Geometri dan nama 
 | TB Simatupang–Tanjung Barat, Jakarta Selatan | Jalan Tahi Bonar Simatupang, sekitar Jalan Kebagusan I | 2 menjadi 1 lajur, zona lambat sekitar 172 m | Assakinah–Sepat dan Kebagusan I–Raya |
 
 Kebon Sirih memiliki pengecualian historis yang didokumentasikan: snapshot OSM tiga lajur diubah menjadi empat sebelum pekerjaan dan dua pada zona, berdasarkan liputan saat proyek. Rincian sumber, panjang rute, asumsi dan hasil dua seed ada di [KEBON_SIRIH.md](KEBON_SIRIH.md). Koridor lain mengikuti hasil impor OSM untuk jumlah lajur sebelum zona pekerjaan. Sebagian atribut lajur dan kecepatan berasal dari inferensi tipe jalan SUMO saat tag peta tidak lengkap. Tidak ada penambahan lajur hanya untuk membuat koridor tampak seperti skenario dua menjadi satu.
+
+Bina Marga memiliki [bukti proyek dan batasan tersendiri](../data/bina_marga/README.md). Galian diperlakukan sebagai skenario hambatan, tanpa menganggap jadwal lama sebagai pengukuran kondisi hari ini atau mereplikasi sistem buka-tutup aktual.
 
 Snapshot memuat jalan umum yang dapat dilalui kendaraan bermotor menurut tag OSM, dengan pengecualian akses privat atau terlarang yang ditandai secara eksplisit. Hal ini belum membuktikan kelayakan fisik setiap gang untuk pengalihan kendaraan nyata. Jalan tol tidak dimasukkan sebagai bypass. Masing-masing jaringan simulasi mempertahankan rute eksperimen dan sekitar 400 ruas konteks agar tetap ringan, bukan seluruh jaringan kota atau seluruh jalan di dalam kampus UI.
 

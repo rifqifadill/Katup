@@ -43,7 +43,8 @@ async function buildMap(){
   const bottle=work[Math.floor(work.length/2)],pre=upstream.find(e=>e.id===profile.lane_reference_edge)||upstream[0],junction=net.junctions.find(j=>j.id===(profile.junction||profile.tls));
   const shape=bottle.lanes[0].shape,mid=shape[Math.floor(shape.length/2)];
   for(const edge of work){const hazard=polyline(edge.lanes[0].shape,'workzone-line',Math.max(7,edge.lanes.length*3.2));hazard.setAttribute('stroke','url(#hazard)');hazard.setAttribute('fill','none');hazard.setAttribute('opacity','.65');$('workzone').append(hazard);}
-  label(mid[0],-mid[1]-25,`${profile.workzone_label||(profile.research?'GALIAN UJI':'GALIAN')} · ${net.case.lane_label||'2 → 1 lajur'}`,{'text-anchor':'middle'});
+  const staged=profile.workzone_type==='staged_speed_restriction';
+  label(mid[0],-mid[1]-25,staged?`GALIAN UJI · ${fmt(net.case.bottleneck_length_m)} m`:`${profile.workzone_label||(profile.research?'GALIAN UJI':'GALIAN')} · ${net.case.lane_label||'2 → 1 lajur'}`,{'text-anchor':'middle'});
   if(junction){
     $('signals').append(svgEl('rect',{id:'junctionWarning',x:junction.x-14,y:-junction.y-14,width:28,height:28,fill:'transparent',stroke:'#ffd269','stroke-width':1,'stroke-dasharray':'3 2'}),svgEl('circle',{cx:junction.x,cy:-junction.y,r:4,class:'signal-light',id:'signal-light'}));
     label(junction.x,-junction.y-30,'SIMPANG KENDALI',{'text-anchor':'middle'});
@@ -52,7 +53,7 @@ async function buildMap(){
   const named=new Map();for(const edge of net.edges){if(edge.internal||!edge.name||names.has(edge.name)||edge.lanes[0].shape.length<2)continue;const pts=edge.lanes[0].shape,pt=pts[Math.floor(pts.length/2)],distance=Math.hypot(pt[0]-mid[0],pt[1]-mid[1]);if(!named.has(edge.name)||distance<named.get(edge.name).distance)named.set(edge.name,{pt,distance});}
   for(const [name,{pt,distance}] of named)if(distance>70)label(pt[0],-pt[1]-12,name,{'text-anchor':'middle'});
   const all=net.edges.filter(e=>!e.internal).flatMap(e=>e.lanes.flatMap(l=>l.shape));
-  views.all=bounds(all,80);views.bottleneck=bounds([...upstream,...work].flatMap(e=>e.lanes[0].shape),75);views.junction=junction?[junction.x-280,-junction.y-180,560,360]:views.bottleneck;
+  views.all=bounds(all,80);views.bottleneck=bounds([...(staged?upstream.slice(-1):upstream),...work].flatMap(e=>e.lanes[0].shape),75);views.junction=junction?[junction.x-280,-junction.y-180,560,360]:views.bottleneck;
   setText('caseLabel',net.case.name);setText('mapSub',profile.workzone_type==='historical_lane_drop'?'Peta jalan asli · model proyek historis':profile.geographic?'Peta jalan asli · arus dan galian disimulasikan':'Jaringan uji · arus dan galian disimulasikan');$('mapAttribution').hidden=!profile.geographic;
   setText('zoneLaneLabel',`Area pekerjaan: ${net.case.lane_label||'2 → 1 lajur'}`);$('mapLocation').hidden=!profile.geographic||!profile.center;
   if(profile.center){const [lon,lat]=profile.requested_point||profile.center;$('mapLocation').href=`https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`;}
@@ -152,7 +153,9 @@ function renderComparison(c,finished=Boolean(state.telemetry.finished)){
     const spill=katup.spillback_seconds-baseline.spillback_seconds,blocked=katup.junction_blocked_seconds-baseline.junction_blocked_seconds;
     const parts=[change==null?`Dengan KATUP, ${fmt(katup.completed_trips)} kendaraan sampai tujuan.`:change===0?'Jumlah kendaraan sampai tujuan tetap sama.':`Dengan KATUP, kendaraan sampai tujuan ${change>0?'naik':'turun'} ${fmt(Math.abs(change),1)}%.`];
     for(const [name,delta] of [['Antrean yang mencapai simpang',spill],['Waktu simpang terhalang',blocked]])parts.push(delta===0?`${name} tetap sama.`:`${name} ${delta>0?'bertambah':'berkurang'} ${fmt(Math.abs(delta))} detik.`);
-    verdict=parts.join(' ');tradeoff=(change!=null&&change<0)||spill>0||blocked>0;
+    tradeoff=(change!=null&&change<0)||spill>0||blocked>0;
+    for(const [key,name] of [['avg_duration','Waktu perjalanan'],['avg_waitingTime','Waktu menunggu']])if(Number.isFinite(katup[key])&&Number.isFinite(baseline[key])&&katup[key]>baseline[key]+.01){parts.push(`${name} rata-rata trip selesai bertambah ${fmt((katup[key]-baseline[key])/60,1)} menit.`);tradeoff=true;}
+    verdict=parts.join(' ');
   }
   $('resultVerdict').classList.toggle('tradeoff',tradeoff);setText('resultVerdict',verdict);
   let method=`Setiap mode memakai ${fmt(reference.case.planned_vehicles)} kendaraan terjadwal selama ${fmt(reference.final.simulation_time/60)} menit. Rata-rata waktu dihitung dari kendaraan yang sudah sampai.`;

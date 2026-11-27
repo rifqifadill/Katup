@@ -1,0 +1,433 @@
+{
+  "corridor": "bina_marga",
+  "completed": true,
+  "signature": "a45c305701467c88",
+  "duration_s": 1800,
+  "planned_vehicles": 1010,
+  "runtime_sumo": "1.18.0",
+  "netconvert": "1.28.0",
+  "unit_tests_passed": 25,
+  "rebuild_identical": true,
+  "method": "paired inputs, final conservation, yellow/all-red preserved, trips and total vehicle-hours measured",
+  "llm_provider": "disabled",
+  "limitations": [
+    "current excavation position and length at pin not independently verified",
+    "project evidence is a secondary report of a Dishub announcement, not live measurements",
+    "200 m bottleneck location, 5 km/h, width and demand are assumptions",
+    "model does not reproduce shared-lane alternating traffic control",
+    "one longer alternative, not an official diversion",
+    "completed-trip average travel time worsens and population differs",
+    "no recorded downstream spillback or junction blocking, no claim of prevention"
+  ],
+  "runs": [
+    {
+      "mode": "baseline",
+      "seed": 1,
+      "summary": {
+        "total_vehicle_hours": 154.865,
+        "pending_vehicle_hours": 86.149,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 335.5,
+        "max_upstream_queue_m": 264.7,
+        "arrived": 467,
+        "departed": 617,
+        "pending": 393,
+        "running": 150,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 467,
+        "avg_duration": 355.662,
+        "avg_waitingTime": 93.443,
+        "avg_timeLoss": 183.254,
+        "avg_routeLength": 1921.788,
+        "avg_departDelay": 35.831
+      },
+      "evidence": {
+        "phase_checks": 79,
+        "rerouted": 0,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      },
+      "sumo_version": "SUMO 1.18.0"
+    },
+    {
+      "mode": "katup",
+      "seed": 1,
+      "summary": {
+        "total_vehicle_hours": 119.83,
+        "pending_vehicle_hours": 23.626,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 351.3,
+        "max_upstream_queue_m": 259.8,
+        "arrived": 617,
+        "departed": 871,
+        "pending": 139,
+        "running": 254,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 617,
+        "avg_duration": 407.906,
+        "avg_waitingTime": 58.18,
+        "avg_timeLoss": 165.359,
+        "avg_routeLength": 2949.137,
+        "avg_departDelay": 2.271
+      },
+      "evidence": {
+        "phase_checks": 164,
+        "rerouted": 234,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      },
+      "sumo_version": "SUMO 1.18.0"
+    },
+    {
+      "mode": "hybrid",
+      "seed": 1,
+      "summary": {
+        "total_vehicle_hours": 119.83,
+        "pending_vehicle_hours": 23.626,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 351.3,
+        "max_upstream_queue_m": 259.8,
+        "arrived": 617,
+        "departed": 871,
+        "pending": 139,
+        "running": 254,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 617,
+        "avg_duration": 407.906,
+        "avg_waitingTime": 58.18,
+        "avg_timeLoss": 165.359,
+        "avg_routeLength": 2949.137,
+        "avg_departDelay": 2.271
+      },
+      "evidence": {
+        "phase_checks": 164,
+        "rerouted": 234,
+        "supervisor": {
+          "provider": "disabled",
+          "model": null,
+          "configured": false,
+          "requests": 0,
+          "accepted": 0,
+          "rejected": 0,
+          "errors": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "last_latency_ms": null,
+          "status": "not_configured",
+          "reason": "API LLM belum dihubungkan, kendali memakai heuristik",
+          "profile": "balanced",
+          "route_bias": "auto",
+          "pending": false,
+          "applied_at": null,
+          "history": [],
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      },
+      "sumo_version": "SUMO 1.18.0"
+    },
+    {
+      "mode": "baseline",
+      "seed": 42,
+      "summary": {
+        "total_vehicle_hours": 154.356,
+        "pending_vehicle_hours": 85.355,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 359.3,
+        "max_upstream_queue_m": 265.1,
+        "arrived": 466,
+        "departed": 621,
+        "pending": 389,
+        "running": 155,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 466,
+        "avg_duration": 355.451,
+        "avg_waitingTime": 89.622,
+        "avg_timeLoss": 180.294,
+        "avg_routeLength": 1938.115,
+        "avg_departDelay": 37.935
+      },
+      "evidence": {
+        "phase_checks": 79,
+        "rerouted": 0,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      },
+      "sumo_version": "SUMO 1.18.0"
+    },
+    {
+      "mode": "katup",
+      "seed": 42,
+      "summary": {
+        "total_vehicle_hours": 116.214,
+        "pending_vehicle_hours": 16.793,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 370.0,
+        "max_upstream_queue_m": 260.5,
+        "arrived": 638,
+        "departed": 906,
+        "pending": 104,
+        "running": 268,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 638,
+        "avg_duration": 404.332,
+        "avg_waitingTime": 55.133,
+        "avg_timeLoss": 153.639,
+        "avg_routeLength": 3077.319,
+        "avg_departDelay": 2.606
+      },
+      "evidence": {
+        "phase_checks": 163,
+        "rerouted": 264,
+        "supervisor": {
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      },
+      "sumo_version": "SUMO 1.18.0"
+    },
+    {
+      "mode": "hybrid",
+      "seed": 42,
+      "summary": {
+        "total_vehicle_hours": 116.214,
+        "pending_vehicle_hours": 16.793,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 370.0,
+        "max_upstream_queue_m": 260.5,
+        "arrived": 638,
+        "departed": 906,
+        "pending": 104,
+        "running": 268,
+        "collisions": 0,
+        "teleports": 0,
+        "completed_trips": 638,
+        "avg_duration": 404.332,
+        "avg_waitingTime": 55.133,
+        "avg_timeLoss": 153.639,
+        "avg_routeLength": 3077.319,
+        "avg_departDelay": 2.606
+      },
+      "evidence": {
+        "phase_checks": 163,
+        "rerouted": 264,
+        "supervisor": {
+          "provider": "disabled",
+          "model": null,
+          "configured": false,
+          "requests": 0,
+          "accepted": 0,
+          "rejected": 0,
+          "errors": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "last_latency_ms": null,
+          "status": "not_configured",
+          "reason": "API LLM belum dihubungkan, kendali memakai heuristik",
+          "profile": "balanced",
+          "route_bias": "auto",
+          "pending": false,
+          "applied_at": null,
+          "history": [],
+          "external_decisions": false
+        },
+        "sumo_version": "SUMO 1.18.0"
+      },
+      "sumo_version": "SUMO 1.18.0"
+    }
+  ],
+  "browser_corridor": {
+    "base": "http://127.0.0.1:19011",
+    "corridors": [
+      {
+        "corridor": "bina_marga",
+        "lane_label": "1 lajur per arah · hambatan uji",
+        "moving_vehicles": 7,
+        "step": 16,
+        "start_stop": true,
+        "mobile_no_overflow": true
+      }
+    ],
+    "page_errors": []
+  },
+  "browser_modes": {
+    "base": "http://127.0.0.1:19011",
+    "modes": [
+      {
+        "mode": "baseline",
+        "run_id": "baseline-2364756-1795816980510170251",
+        "step": 16,
+        "moving_vehicles": 7
+      },
+      {
+        "mode": "katup",
+        "run_id": "katup-2364787-1795816984803570792",
+        "step": 16,
+        "moving_vehicles": 7
+      },
+      {
+        "mode": "hybrid",
+        "run_id": "hybrid-2364799-1795816989044384442",
+        "step": 16,
+        "moving_vehicles": 7
+      }
+    ],
+    "screens": [
+      "output/bina-browser/hybrid-1440.png",
+      "output/bina-browser/hybrid-768.png",
+      "output/bina-browser/hybrid-390.png",
+      "output/bina-browser/hybrid-360.png"
+    ],
+    "console_errors": []
+  },
+  "web_runs": [
+    {
+      "mode": "baseline",
+      "run_id": "baseline-2364820-1795816992290014865",
+      "signature": "a45c305701467c88",
+      "summary": {
+        "completed_trips": 466,
+        "avg_duration": 355.45,
+        "avg_waitingTime": 89.62,
+        "avg_timeLoss": 180.29,
+        "avg_routeLength": 1938.12,
+        "avg_departDelay": 37.94,
+        "total_vehicle_hours": 154.356,
+        "pending_vehicle_hours": 85.355,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 359.3,
+        "max_upstream_queue_m": 265.1,
+        "arrived": 466,
+        "departed": 621,
+        "pending": 389,
+        "running": 155,
+        "collisions": 0,
+        "teleports": 0
+      },
+      "matches_paired_run": true,
+      "finished": true
+    },
+    {
+      "mode": "katup",
+      "run_id": "katup-2365169-1795817054367003258",
+      "signature": "a45c305701467c88",
+      "summary": {
+        "completed_trips": 638,
+        "avg_duration": 404.33,
+        "avg_waitingTime": 55.13,
+        "avg_timeLoss": 153.64,
+        "avg_routeLength": 3077.32,
+        "avg_departDelay": 2.61,
+        "total_vehicle_hours": 116.214,
+        "pending_vehicle_hours": 16.793,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 370.0,
+        "max_upstream_queue_m": 260.5,
+        "arrived": 638,
+        "departed": 906,
+        "pending": 104,
+        "running": 268,
+        "collisions": 0,
+        "teleports": 0
+      },
+      "matches_paired_run": true,
+      "finished": true
+    },
+    {
+      "mode": "hybrid",
+      "run_id": "hybrid-2365491-1795817126241296176",
+      "signature": "a45c305701467c88",
+      "summary": {
+        "completed_trips": 638,
+        "avg_duration": 404.33,
+        "avg_waitingTime": 55.13,
+        "avg_timeLoss": 153.64,
+        "avg_routeLength": 3077.32,
+        "avg_departDelay": 2.61,
+        "total_vehicle_hours": 116.214,
+        "pending_vehicle_hours": 16.793,
+        "spillback_seconds": 0,
+        "junction_stopped_seconds": 0,
+        "junction_blocked_seconds": 0,
+        "max_queue_m": 370.0,
+        "max_upstream_queue_m": 260.5,
+        "arrived": 638,
+        "departed": 906,
+        "pending": 104,
+        "running": 268,
+        "collisions": 0,
+        "teleports": 0
+      },
+      "matches_paired_run": true,
+      "finished": true
+    }
+  ],
+  "browser_comparison": {
+    "three_finished_modes": true,
+    "trip_counts": [
+      "466",
+      "638",
+      "638"
+    ],
+    "mismatched_seed_hidden": true,
+    "mismatched_saved_session_hidden": true,
+    "mismatched_live_session_hidden": true,
+    "llm_playback_mismatch_hidden": true
+  },
+  "public": {
+    "url": "https://propecia-smithsonian-idaho-adjust.trycloudflare.com",
+    "checked_at_utc": "2026-11-27T22:09:15.080525+00:00",
+    "default_corridor": "bina_marga",
+    "status_api": 200,
+    "catalog_api": 200,
+    "sources_json": 200,
+    "datasheet_xlsx": 200,
+    "kebon_sirih_comparison": 200,
+    "kebon_sirih_results_preserved": true,
+    "comparison": {
+      "three_finished_modes": true,
+      "trip_counts": [
+        "466",
+        "638",
+        "638"
+      ],
+      "mismatched_seed_hidden": true,
+      "mismatched_saved_session_hidden": true,
+      "mismatched_live_session_hidden": true,
+      "llm_playback_mismatch_hidden": true
+    },
+    "tunnel_restarted": false,
+    "production_services_untouched": true
+  },
+  "screenshots": [
+    "deploy/evidence/bina-desktop.png",
+    "deploy/evidence/bina-mobile.png"
+  ]
+}

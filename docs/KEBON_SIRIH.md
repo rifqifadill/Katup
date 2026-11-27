@@ -39,4 +39,4 @@ python -m unittest discover -s tests -p 'test_*.py' -v
 .venv/bin/python tests/evaluate_hybrid.py --corridor kebon_sirih --seeds 1 42 --output output/kebon-final --without-api
 ```
 
-Instalasi umum tetap memakai default yang sudah ada. Demo VPS khusus branch `llm` memilih `KATUP_CORRIDOR=kebon_sirih` melalui override service `katup-llm-dashboard`. Tunnel yang sama dipertahankan; service produksi branch utama tidak diubah. LLM tetap nonaktif.
+Instalasi umum tetap memakai default yang sudah ada. Demo VPS khusus branch `llm` memilih Bina Marga sebagai tampilan awal melalui override service `katup-llm-dashboard`; Kebon Sirih tetap tersedia pada pilihan koridor dengan hasil yang diperbarui setelah perubahan signature. Tunnel yang sama dipertahankan; service produksi branch utama tidak diubah. LLM tetap nonaktif.

@@ -1,0 +1,352 @@
+{
+  "id": "bina_marga",
+  "name": "Bina Marga–Cipayung, Jakarta Timur",
+  "geographic": true,
+  "duration": 1800,
+  "tls": "cluster_1682867782_1682877275",
+  "junction": "cluster_1682867782_1682877275",
+  "pre": "katup_pre",
+  "pre_edges": [
+    "katup_pre",
+    "-155951157#7",
+    "-155951157#6",
+    "-155951157#4",
+    "-155951157#3",
+    "-155951157#2",
+    "-155951157#0",
+    "katup_buffer"
+  ],
+  "west": "511953344",
+  "decision": "155951159#11",
+  "bottleneck": "katup_work",
+  "bottleneck_edges": [
+    "katup_work",
+    "-1303140028#4",
+    "-1303140028#3",
+    "-1303140028#2",
+    "katup_work_end"
+  ],
+  "north": [
+    "155951157#8"
+  ],
+  "south": [
+    "155951171#25"
+  ],
+  "detectors": {
+    "farwest": "155951159#11",
+    "pre": "katup_pre",
+    "pre_1": "-155951157#7",
+    "pre_2": "-155951157#6",
+    "pre_3": "-155951157#4",
+    "pre_4": "-155951157#3",
+    "pre_5": "-155951157#2",
+    "pre_6": "-155951157#0",
+    "pre_7": "katup_buffer",
+    "west": "155951159#10",
+    "west_1": "155951159#11",
+    "west_2": "155951159#12",
+    "west_3": "155951159#14",
+    "west_4": "511953344",
+    "cross_1": "155951157#3",
+    "cross_1_1": "155951157#4",
+    "cross_1_2": "155951157#6",
+    "cross_1_3": "155951157#7",
+    "cross_1_4": "155951157#8",
+    "cross_2": "155951171#15",
+    "cross_2_1": "155951171#16",
+    "cross_2_2": "155951171#17",
+    "cross_2_3": "155951171#19",
+    "cross_2_4": "155951171#21",
+    "cross_2_5": "155951171#22",
+    "cross_2_6": "155951171#23",
+    "cross_2_7": "155951171#24",
+    "cross_2_8": "155951171#25"
+  },
+  "detector_groups": {
+    "pre": [
+      "pre",
+      "pre_1",
+      "pre_2",
+      "pre_3",
+      "pre_4",
+      "pre_5",
+      "pre_6",
+      "pre_7"
+    ],
+    "farwest": [
+      "farwest"
+    ],
+    "west": [
+      "west",
+      "west_1",
+      "west_2",
+      "west_3",
+      "west_4"
+    ],
+    "cross_1": [
+      "cross_1",
+      "cross_1_1",
+      "cross_1_2",
+      "cross_1_3",
+      "cross_1_4"
+    ],
+    "cross_2": [
+      "cross_2",
+      "cross_2_1",
+      "cross_2_2",
+      "cross_2_3",
+      "cross_2_4",
+      "cross_2_5",
+      "cross_2_6",
+      "cross_2_7",
+      "cross_2_8"
+    ]
+  },
+  "approach_edges": {
+    "511953344": [
+      "155951159#10",
+      "155951159#11",
+      "155951159#12",
+      "155951159#14",
+      "511953344"
+    ],
+    "155951157#8": [
+      "155951157#3",
+      "155951157#4",
+      "155951157#6",
+      "155951157#7",
+      "155951157#8"
+    ],
+    "155951171#25": [
+      "155951171#15",
+      "155951171#16",
+      "155951171#17",
+      "155951171#19",
+      "155951171#21",
+      "155951171#22",
+      "155951171#23",
+      "155951171#24",
+      "155951171#25"
+    ]
+  },
+  "cross_detectors": [
+    "cross_1",
+    "cross_2"
+  ],
+  "main": [
+    "155951159#12",
+    "155951159#14",
+    "511953344",
+    "katup_pre",
+    "-155951157#7",
+    "-155951157#6",
+    "-155951157#4",
+    "-155951157#3",
+    "-155951157#2",
+    "-155951157#0",
+    "katup_buffer",
+    "katup_work",
+    "-1303140028#4",
+    "-1303140028#3",
+    "-1303140028#2",
+    "katup_work_end",
+    "katup_exit",
+    "158315618#0",
+    "158315618#1",
+    "158315618#3",
+    "158315618#4",
+    "-550989271#10",
+    "-550989271#9",
+    "-550989271#8",
+    "-550989271#6",
+    "-550989271#5",
+    "-550989271#4",
+    "-550989271#3",
+    "-550989271#2",
+    "-550989271#1",
+    "155917987#0",
+    "155917987#1",
+    "155917987#2",
+    "155917987#3"
+  ],
+  "paths": [
+    [
+      "155951159#11",
+      "155951159#12",
+      "155951159#14",
+      "155951170#0",
+      "155951170#1",
+      "155951170#3",
+      "155951170#4",
+      "155951170#5",
+      "155951170#6",
+      "155951170#8",
+      "155951170#9",
+      "155951170#10",
+      "155951170#12",
+      "155951170#13",
+      "155951170#15",
+      "1303140026#0",
+      "1303140026#1",
+      "1303140026#2",
+      "1303140026#3",
+      "1303140026#4",
+      "1303140026#5",
+      "572982187",
+      "572982190",
+      "-572982191#1",
+      "-562361366#1",
+      "-562361366#0",
+      "-155942329#11",
+      "-155942329#10",
+      "-155942329#9",
+      "-155942329#8",
+      "-155942329#6",
+      "-155942329#5",
+      "-155942329#3",
+      "-155942329#2",
+      "-155942329#1",
+      "-155942329#0",
+      "-155922626#44",
+      "-155922626#43",
+      "-155922626#42",
+      "-155922626#41",
+      "-155922626#40",
+      "-155922626#39",
+      "-155922626#38",
+      "-155922626#36",
+      "-155922626#35",
+      "-155922626#33",
+      "-155922626#32",
+      "-155922626#31",
+      "-155922626#30",
+      "-155922626#29",
+      "-155922626#28",
+      "-155922626#27",
+      "-155922626#26",
+      "-155922626#25",
+      "-155922626#24",
+      "-155922626#23",
+      "-155922626#22",
+      "-155922626#21",
+      "-155922626#19",
+      "-155922626#17",
+      "-155922626#16",
+      "-155922626#15",
+      "-155922626#14",
+      "-155922626#13",
+      "-155922626#12",
+      "-155922626#10",
+      "-155922626#9",
+      "-155922626#8",
+      "-155922626#7",
+      "-155922626#6",
+      "-155922626#5",
+      "-155922626#3",
+      "-155922626#1",
+      "-155922626#0",
+      "-155922621#8",
+      "-155922621#7",
+      "-155922621#6",
+      "-155922621#4",
+      "-155922621#3",
+      "-155922621#2",
+      "-155922621#1",
+      "155917987#0",
+      "155917987#1",
+      "155917987#2",
+      "155917987#3"
+    ]
+  ],
+  "route_names": [
+    "Mpok Nori–Setu–Cilangkap"
+  ],
+  "phases": {
+    "main": [
+      0
+    ],
+    "cross": [
+      3,
+      6
+    ],
+    "served": {
+      "0": [
+        "511953344"
+      ],
+      "3": [
+        "155951157#8"
+      ],
+      "6": [
+        "155951171#25"
+      ]
+    },
+    "movement_states": [
+      "green",
+      "yellow",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red",
+      "red"
+    ]
+  },
+  "context": "Geometri OSM, koridor proyek SPAM Buaran 3 terdokumentasi, posisi galian, arus dan lampu merupakan skenario uji",
+  "map_attribution": "© OpenStreetMap contributors · ODbL",
+  "center": [
+    106.89289,
+    -6.31539
+  ],
+  "requested_point": [
+    106.889986,
+    -6.319669
+  ],
+  "bbox": [
+    106.865,
+    -6.342,
+    106.922,
+    -6.3
+  ],
+  "source_edge": "-1303140028#5",
+  "source_road": "Jalan Bina Marga",
+  "workzone_type": "staged_speed_restriction",
+  "workzone_label": "GALIAN UJI",
+  "lane_label": "1 lajur per arah · hambatan uji",
+  "signal_note": "Lampu eksperimen di simpang Gempol–Ceger–Bina Marga, bukan APILL terverifikasi atau petugas buka-tutup proyek",
+  "context_edge_limit": 400,
+  "workzone": {
+    "edges": [
+      "-1303140028#5",
+      "-1303140028#4",
+      "-1303140028#3",
+      "-1303140028#2",
+      "-1303140028#0"
+    ],
+    "start_m": 25,
+    "model_length_m": 200,
+    "speed_kmh": 5,
+    "lane_width_m": 2.4,
+    "position_status": "scenario_assumption_near_user_pin",
+    "length_status": "scenario_assumption_inspired_by_reported_200m_stages_not_current_field_measurement",
+    "model_scope": "hambatan pada arah ke Cipayung, satu lajur per arah dipertahankan, bukan model satu lajur bersama dengan buka-tutup",
+    "continuous_full_corridor_closure": false
+  },
+  "research": {
+    "project": "SPAM Buaran 3 P7",
+    "schedule_start": "2026-09-08",
+    "schedule_end": "2027-01-31",
+    "schedule_status": "secondary_report_of_dishub_announcement",
+    "excavation_status": "project_documented_current_pin_unverified",
+    "traffic_status": "not_available",
+    "note": "Koridor proyek terdokumentasi · posisi galian dan arus masih asumsi",
+    "download_url": "/research/bina_marga/datasheet.xlsx",
+    "sources_url": "/research/bina_marga/sources.json"
+  },
+  "default_view": "bottleneck",
+  "model_note": "Model hambatan pada arus ke Cipayung, bukan replika satu lajur bersama dan buka-tutup aktual",
+  "build": {
+    "netconvert": "Eclipse SUMO netconvert 1.28.0",
+    "runtime_tested": "SUMO 1.18.0"
+  }
+}
